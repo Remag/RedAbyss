@@ -181,6 +181,12 @@
       <script>scripts\scrRedAttachSpawner.gml</script>
       <script>scripts\scrRedAttachTimedSpawner.gml</script>
       <script>scripts\scrRedCreateTimedSpawner.gml</script>
+      <script>scripts\scrRedMakeCircle.gml</script>
+      <script>scripts\scrRedSetScale.gml</script>
+      <script>scripts\scrRedBulletFadeOut.gml</script>
+      <script>scripts\scrRedDeactivateBullets.gml</script>
+      <script>scripts\scrRedActivateBullets.gml</script>
+      <script>scripts\scrRedSetBulletsActivation.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -308,6 +314,12 @@
       <object>objects\objGameClear</object>
     </objects>
     <objects name="Redire">
+      <objects name="Intro">
+        <object>objects\oRedS1Bullet</object>
+        <object>objects\oRedS1CurvedBullet</object>
+        <object>objects\oRedS1LCurvedBullet</object>
+        <object>objects\oRedS1RCurvedBullet</object>
+      </objects>
       <object>objects\oRedAbyssAvoidanceController</object>
       <object>objects\oRedProjectileSpawner</object>
       <object>objects\oRedAttachedSpawner</object>
