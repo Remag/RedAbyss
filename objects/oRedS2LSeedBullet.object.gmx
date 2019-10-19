@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>oRedBoundProjectile</parentName>
+  <parentName>oRedS2SeedBullet</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,10 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed = 0;
-image_index = choose( 0, 1 );
-speed = random_range( 3, 9 );
-scrRedSetScale( random_range( 0.5, 1 ) );
+            <string>event_inherited();
+Amplitude = 30;
 </string>
           </argument>
         </arguments>

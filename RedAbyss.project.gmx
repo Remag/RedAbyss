@@ -126,6 +126,7 @@
       <sprite>sprites\sprRedAbyssGrad</sprite>
       <sprite>sprites\sprRedAbyssSphere</sprite>
       <sprite>sprites\sprRedAbyssDagger</sprite>
+      <sprite>sprites\sprRedAbyssFruit</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -181,12 +182,13 @@
       <script>scripts\scrRedAttachSpawner.gml</script>
       <script>scripts\scrRedAttachTimedSpawner.gml</script>
       <script>scripts\scrRedCreateTimedSpawner.gml</script>
-      <script>scripts\scrRedMakeCircle.gml</script>
+      <script>scripts\scrRedCreateCircle.gml</script>
       <script>scripts\scrRedSetScale.gml</script>
       <script>scripts\scrRedBulletFadeOut.gml</script>
       <script>scripts\scrRedDeactivateBullets.gml</script>
       <script>scripts\scrRedActivateBullets.gml</script>
       <script>scripts\scrRedSetBulletsActivation.gml</script>
+      <script>scripts\scrRedDirToPlayer.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -314,11 +316,15 @@
       <object>objects\objGameClear</object>
     </objects>
     <objects name="Redire">
-      <objects name="Intro">
+      <objects name="S1_Intro">
         <object>objects\oRedS1Bullet</object>
         <object>objects\oRedS1CurvedBullet</object>
         <object>objects\oRedS1LCurvedBullet</object>
         <object>objects\oRedS1RCurvedBullet</object>
+      </objects>
+      <objects name="S2_Bloom">
+        <object>objects\oRedS2SeedBullet</object>
+        <object>objects\oRedS2TrailBullet</object>
       </objects>
       <object>objects\oRedAbyssAvoidanceController</object>
       <object>objects\oRedProjectileSpawner</object>
@@ -327,6 +333,8 @@
       <object>objects\oRedProjectile</object>
       <object>objects\oRedDebugInfo</object>
       <object>objects\oRedAbyssBackground</object>
+      <object>objects\oRedBulletCircle</object>
+      <object>objects\oRedDummyObj</object>
     </objects>
   </objects>
   <rooms name="rooms">

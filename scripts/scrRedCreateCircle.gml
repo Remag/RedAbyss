@@ -1,4 +1,4 @@
-///scrMakeCircle(x,y,angle,numprojectiles,speed,obj)
+/// scrRedCreateCircle(x,y,angle,numprojectiles,obj)
 ///spawns a ring of projectiles
 ///argument0 - spawn X
 ///argument1 - spawn Y
@@ -12,7 +12,15 @@ var spawnAngle = argument2;
 var spawnNum = argument3;
 var spawnObj = argument4;
 
+var circle = instance_create( spawnX, spawnY, oRedBulletCircle );
+circle.CircleBulletObj = spawnObj;
 for( var i = 0; i < spawnNum; i++ ) {
-    var bullet = instance_create( spawnX, spawnY, spawnObj );
+    var bullet = instance_create( spawnX, spawnY, oRedDummyObj );
     bullet.direction = spawnAngle + i * ( 360 / spawnNum );
+    bullet.start_direction = bullet.direction;
+    bullet.Circle = circle;
+    with( bullet ) {
+        instance_change( spawnObj, true );
+    }
 }
+return circle;

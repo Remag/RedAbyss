@@ -50,6 +50,8 @@ FadeValueList = ds_list_create();
 FadeDeltaList = ds_list_create();
 
 DeactivatedIdList = ds_list_create();
+
+S2TrailFruitMode = 0;
 </string>
           </argument>
         </arguments>
@@ -101,21 +103,113 @@ if( t == 8 || t == 73 || t == 94 || t == 160 || t == 182 || t == 247 ) {
     repeat( 2 ) {
         var spawnX = random_range( 64, 800 - 64 );
         var spawnY = 150;
-        scrRedMakeCircle( spawnX, spawnY, random( 360 ), 35, oRedS1Bullet );
+        scrRedCreateCircle( spawnX, spawnY, random( 360 ), 35, oRedS1Bullet );
     }
 }
 if( t == 269 ) {
     var spawnX = random_range( 64, 800 - 64 );
     var spawnY = 150;
-    scrRedMakeCircle( spawnX, spawnY, random( 360 ), 32, oRedS1LCurvedBullet );
+    scrRedCreateCircle( spawnX, spawnY, random( 360 ), 34, oRedS1LCurvedBullet );
     
     spawnX = random_range( 64, 800 - 64 );
     spawnY = 150;
-    scrRedMakeCircle( spawnX, spawnY, random( 360 ), 32, oRedS1RCurvedBullet );
+    scrRedCreateCircle( spawnX, spawnY, random( 360 ), 34, oRedS1RCurvedBullet );
 }
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Bloom 
 if( t == 355 ) {
-    //scrRedBulletFadeOut( oRedS1Bullet, 0.05 );
+    var angle = scrRedDirToPlayer( 400, 200 );
+    S2ImageIndex = 5;
+    var lCircle = scrRedCreateCircle( 400, 150, angle, 4, oRedS2SeedBullet );
+    lCircle.Amplitude = 25;
+    lCircle.MinImageIndex = S2ImageIndex;
+    lCircle.MaxImageIndex = S2ImageIndex;
+    S2ImageIndex = 6;
+    var rCircle = scrRedCreateCircle( 400, 150, angle, 4, oRedS2SeedBullet );
+    rCircle.Amplitude = -25;
+    rCircle.MinImageIndex = S2ImageIndex;
+    rCircle.MaxImageIndex = S2ImageIndex;
+} else if( t == 397 ) {
+} else if( t == 441 ) {
+    var angle = scrRedDirToPlayer( 400, 150 );
+    S2ImageIndex = 8;
+    var lCircle = scrRedCreateCircle( 400, 150, angle, 4, oRedS2SeedBullet );
+    lCircle.Amplitude = 25;
+    lCircle.MinImageIndex = S2ImageIndex;
+    lCircle.MaxImageIndex = S2ImageIndex;
+    S2ImageIndex = 9;
+    var rCircle = scrRedCreateCircle( 400, 150, angle, 4, oRedS2SeedBullet );
+    rCircle.Amplitude = -25;
+    rCircle.MinImageIndex = S2ImageIndex;
+    rCircle.MaxImageIndex = S2ImageIndex;
+} else if( t == 484 ) {
+} else if( t == 528 ) {
+    var angle = scrRedDirToPlayer( 400, 150 );
+    S2ImageIndex = 3;
+    var lCircle = scrRedCreateCircle( 400, 150, angle, 4, oRedS2SeedBullet );
+    lCircle.Amplitude = 25;
+    lCircle.MinImageIndex = S2ImageIndex;
+    lCircle.MaxImageIndex = S2ImageIndex;
+    S2ImageIndex = 4;
+    var rCircle = scrRedCreateCircle( 400, 150, angle, 4, oRedS2SeedBullet );
+    rCircle.Amplitude = -25;
+    rCircle.MinImageIndex = S2ImageIndex;
+    rCircle.MaxImageIndex = S2ImageIndex;
+} else if( t == 572 ) {
+} else if( t == 615 ) {
+    var angle = scrRedDirToPlayer( 400, 150 );
+    S2ImageIndex = 1;
+    var lCircle = scrRedCreateCircle( 400, 150, angle, 4, oRedS2SeedBullet );
+    lCircle.Amplitude = 25;
+    lCircle.MinImageIndex = S2ImageIndex;
+    lCircle.MaxImageIndex = S2ImageIndex;
+    S2ImageIndex = 2;
+    var rCircle = scrRedCreateCircle( 400, 150, angle, 4, oRedS2SeedBullet );
+    rCircle.Amplitude = -25;
+    rCircle.MinImageIndex = S2ImageIndex;
+    rCircle.MaxImageIndex = S2ImageIndex;
+} else if( t == 659 ) {
+    with( oRedS2TrailBullet ) {
+        gravity = 0.4;
+        if( y &lt; 568 ) {
+            gravity_direction = 90;   
+        } else {
+            gravity_direction = -90;
+        }
+    }
+    with( oRedS2SeedBullet ) {
+        EnableSineMovement = false;
+        speed = 4;
+        gravity = 0.4;
+        if( y &lt; 568 ) {   
+            gravity_direction = 90;
+        } else {
+            gravity_direction = -90;
+        }
+    }
+    with( oRedAttachedSpawner ) {
+        instance_destroy();
+    }
 }
 </string>
           </argument>

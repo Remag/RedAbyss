@@ -26,9 +26,55 @@
           <argument>
             <kind>1</kind>
             <string>image_speed = 0;
-image_index = choose( 0, 1 );
-speed = random_range( 3, 9 );
-scrRedSetScale( random_range( 0.5, 1 ) );
+image_index = oRedAbyssAvoidanceController.S2ImageIndex;
+scrRedSetScale( 1 );
+Frequency = 0.03;
+StepDelta = 7;
+Step = 0;
+
+var spawner = scrRedAttachSpawner( id, 3.2, oRedS2TrailBullet );
+spawner.SeedBullet = id;
+spawner.Circle = Circle;
+
+EnableSineMovement = true;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if( EnableSineMovement ) {
+    Step += StepDelta;
+    var vDelta = Circle.Amplitude * sin( Frequency * Step );
+
+    var xHDelta = lengthdir_x( Step, start_direction );
+    var yHDelta = lengthdir_y( Step, start_direction );
+
+    var xVDelta = lengthdir_x( vDelta, start_direction + 90 );
+    var yVDelta = lengthdir_y( vDelta, start_direction + 90 );
+
+    x = xstart + xHDelta + xVDelta;
+    y = ystart + yHDelta + yVDelta;
+
+}
+
+
 </string>
           </argument>
         </arguments>

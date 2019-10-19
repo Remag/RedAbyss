@@ -80,7 +80,11 @@ instance_destroy();
 
 while( CurrentPeriod &lt;= 0 ) {
     CurrentPeriod += SpawnPeriod;
-    instance_create( x, y, SpawnObject );
+    var inst = instance_create( OwnerInstance.x, OwnerInstance.y, oRedDummyObj );
+    inst.Spawner = id;
+    with( inst ) {
+        instance_change( other.SpawnObject, true );
+    }
 }
 </string>
           </argument>

@@ -79,13 +79,18 @@ instance_destroy();
             <kind>1</kind>
             <string>if( !instance_exists( OwnerInstance ) ) {
     instance_destroy();
+    exit;
 }
 
 CurrentPeriod -= 1;
 
 while( CurrentPeriod &lt;= 0 ) {
     CurrentPeriod += SpawnPeriod;
-    instance_create( OwnerInstance.x, OwnerInstance.y, SpawnObject );
+    var inst = instance_create( OwnerInstance.x, OwnerInstance.y, oRedDummyObj );
+    inst.Spawner = id;
+    with( inst ) {
+        instance_change( other.SpawnObject, true );
+    }
 }
 </string>
           </argument>
