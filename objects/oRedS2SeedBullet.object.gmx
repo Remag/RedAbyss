@@ -26,13 +26,11 @@
           <argument>
             <kind>1</kind>
             <string>image_speed = 0;
-image_index = oRedAbyssAvoidanceController.S2ImageIndex;
+image_index = Circle.ImageIndex;
 scrRedSetScale( 1 );
-Frequency = 0.03;
-StepDelta = 7;
 Step = 0;
 
-var spawner = scrRedAttachSpawner( id, 3.2, oRedS2TrailBullet );
+var spawner = scrRedAttachSpawner( id, Circle.SpawnPeriod, oRedS2TrailBullet );
 spawner.SeedBullet = id;
 spawner.Circle = Circle;
 
@@ -60,14 +58,14 @@ EnableSineMovement = true;
           <argument>
             <kind>1</kind>
             <string>if( EnableSineMovement ) {
-    Step += StepDelta;
-    var vDelta = Circle.Amplitude * sin( Frequency * Step );
+    Step += Circle.StepDelta;
+    var vDelta = Circle.Amplitude * sin( Circle.Frequency * Step );
 
-    var xHDelta = lengthdir_x( Step, start_direction );
-    var yHDelta = lengthdir_y( Step, start_direction );
+    var xHDelta = lengthdir_x( Step, StartDirection );
+    var yHDelta = lengthdir_y( Step, StartDirection );
 
-    var xVDelta = lengthdir_x( vDelta, start_direction + 90 );
-    var yVDelta = lengthdir_y( vDelta, start_direction + 90 );
+    var xVDelta = lengthdir_x( vDelta, StartDirection + 90 );
+    var yVDelta = lengthdir_y( vDelta, StartDirection + 90 );
 
     x = xstart + xHDelta + xVDelta;
     y = ystart + yHDelta + yVDelta;

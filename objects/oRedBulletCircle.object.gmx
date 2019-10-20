@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[0] = 50;
+            <string>Internal_BulletCount = 0;
+alarm[0] = 50;
 </string>
           </argument>
         </arguments>
@@ -48,18 +49,21 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var circleBulletsFound = false;
-with( CircleBulletObj ) {
-    if( other.id == Circle ) {
-        circleBulletsFound = true;
-        break;
+            <string>//with( CircleBulletObj ) {
+//    if( other.id == Circle ) {
+//        circleBulletsFound = true;
+//        break;
+//    }
+//}
+for( var i = 0; i &lt; Internal_BulletCount; i++ ) {
+    if( instance_exists( Internal_Bullets[i] ) ) {
+        alarm[0] = 50;
+        exit;
     }
 }
-if( !circleBulletsFound ) {
-    instance_destroy();
-} else {
-    alarm[0] = 50;
-}
+
+// No bullets with this circle exist, destroy the parameters instance.
+instance_destroy();
 
 
 

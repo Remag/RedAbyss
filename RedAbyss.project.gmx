@@ -183,12 +183,17 @@
       <script>scripts\scrRedAttachTimedSpawner.gml</script>
       <script>scripts\scrRedCreateTimedSpawner.gml</script>
       <script>scripts\scrRedCreateCircle.gml</script>
+      <script>scripts\scrRedCreateCircleAdditionalParams.gml</script>
+      <script>scripts\scrRedInitializeCircle.gml</script>
       <script>scripts\scrRedSetScale.gml</script>
       <script>scripts\scrRedBulletFadeOut.gml</script>
       <script>scripts\scrRedDeactivateBullets.gml</script>
       <script>scripts\scrRedActivateBullets.gml</script>
       <script>scripts\scrRedSetBulletsActivation.gml</script>
       <script>scripts\scrRedDirToPlayer.gml</script>
+      <script>scripts\scrRedCreateBloomCircle.gml</script>
+      <script>scripts\scrGetPlayerX.gml</script>
+      <script>scripts\scrGetPlayerY.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">

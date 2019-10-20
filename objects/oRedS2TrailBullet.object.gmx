@@ -26,13 +26,13 @@
           <argument>
             <kind>1</kind>
             <string>image_speed = 0;
-scrRedSetScale( 0.75 );
+scrRedSetScale( 0.7 );
 direction = random( 360 );
 speed = 1;
 
 alarm[0] = 30;
 
-image_index = irandom_range( Spawner.Circle.MinImageIndex, Spawner.Circle.MaxImageIndex );
+image_index = Spawner.Circle.ImageIndex;
 </string>
           </argument>
         </arguments>
