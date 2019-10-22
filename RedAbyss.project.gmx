@@ -127,6 +127,7 @@
       <sprite>sprites\sprRedAbyssSphere</sprite>
       <sprite>sprites\sprRedAbyssDagger</sprite>
       <sprite>sprites\sprRedAbyssFruit</sprite>
+      <sprite>sprites\sprRedAbyssLeheeFruit</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -182,6 +183,8 @@
       <script>scripts\scrRedAttachSpawner.gml</script>
       <script>scripts\scrRedAttachTimedSpawner.gml</script>
       <script>scripts\scrRedCreateTimedSpawner.gml</script>
+      <script>scripts\scrRedCreateCustomSpawner.gml</script>
+      <script>scripts\scrRedAttachCustomSpawner.gml</script>
       <script>scripts\scrRedCreateCircle.gml</script>
       <script>scripts\scrRedCreateCircleAdditionalParams.gml</script>
       <script>scripts\scrRedInitializeCircle.gml</script>
@@ -192,8 +195,9 @@
       <script>scripts\scrRedSetBulletsActivation.gml</script>
       <script>scripts\scrRedDirToPlayer.gml</script>
       <script>scripts\scrRedCreateBloomCircle.gml</script>
-      <script>scripts\scrGetPlayerX.gml</script>
-      <script>scripts\scrGetPlayerY.gml</script>
+      <script>scripts\scrRedGetPlayerX.gml</script>
+      <script>scripts\scrRedGetPlayerY.gml</script>
+      <script>scripts\scrRedCreateSlicedCircle.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -331,7 +335,18 @@
         <object>objects\oRedS2SeedBullet</object>
         <object>objects\oRedS2TrailBullet</object>
       </objects>
+      <objects name="S3_Jitter">
+        <object>objects\oRedS3JitterSpawnerBullet</object>
+        <object>objects\oRedS3JitterSpawner</object>
+        <object>objects\oRedS3JitterBullet</object>
+      </objects>
+      <objects name="S4_SlicedCirlces">
+        <object>objects\oRedS4CircleBullet</object>
+        <object>objects\oRedS4LeheeSpawner</object>
+        <object>objects\oRedS4LeheeBullet</object>
+      </objects>
       <object>objects\oRedAbyssAvoidanceController</object>
+      <object>objects\oRedBaseSpawner</object>
       <object>objects\oRedProjectileSpawner</object>
       <object>objects\oRedAttachedSpawner</object>
       <object>objects\oRedBoundProjectile</object>

@@ -1,4 +1,4 @@
-/// scrRedCreateCircle(x,y,angle,numprojectiles,obj)
+/// scrRedInitializeCircle( spawnX, spawnY, spawnAngle, spawnNum, spawnObj, circleParams )
 ///spawns a ring of projectiles
 ///argument0 - spawn X
 ///argument1 - spawn Y

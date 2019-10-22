@@ -30,9 +30,9 @@ image_index = Circle.ImageIndex;
 scrRedSetScale( 1 );
 Step = 0;
 
-var spawner = scrRedAttachSpawner( id, Circle.SpawnPeriod, oRedS2TrailBullet );
-spawner.SeedBullet = id;
-spawner.Circle = Circle;
+Spawner = scrRedAttachSpawner( id, Circle.SpawnPeriod, oRedS2TrailBullet );
+Spawner.SeedBullet = id;
+Spawner.Circle = Circle;
 
 EnableSineMovement = true;
 </string>
@@ -69,7 +69,10 @@ EnableSineMovement = true;
 
     x = xstart + xHDelta + xVDelta;
     y = ystart + yHDelta + yVDelta;
+}
 
+if( instance_exists( Spawner ) ) {
+    Spawner.SpawnPeriod += 0.05;
 }
 
 

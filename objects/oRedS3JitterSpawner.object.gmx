@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>oRedBaseSpawner</parentName>
+  <parentName>oRedAttachedSpawner</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="7" enumb="10">
@@ -25,11 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var inst = instance_create( x, y, oRedDummyObj );
-inst.Spawner = id;
-with( inst ) {
-    instance_change( other.SpawnObject, true );
-}
+            <string>var circleParams = scrRedCreateCircleAdditionalParams();
+circleParams.CurveDir = OwnerInstance.CurveDir;
+circleParams.SpawnImageMin = OwnerInstance.SpawnImageMin;
+circleParams.SpawnImageMax = OwnerInstance.SpawnImageMax;
+scrRedInitializeCircle( x, y, random( 360 ), 8, oRedS3JitterBullet, circleParams );
 </string>
           </argument>
         </arguments>

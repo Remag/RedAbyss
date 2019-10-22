@@ -25,10 +25,21 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var inst = instance_create( x, y, oRedDummyObj );
-inst.Spawner = id;
-with( inst ) {
-    instance_change( other.SpawnObject, true );
+            <string>var slicesCount = 4;
+var sliceBulletCount = 5;
+var sliceDegLength = 15;
+
+var sliceDegDelta = sliceDegLength / sliceBulletCount;
+var gapDegLength = ( 360 - ( sliceDegLength * slicesCount ) ) / slicesCount;
+var sectorDegLength = gapDegLength + sliceDegLength;
+
+for( var i = 0; i &lt; 360; i += sectorDegLength ) {
+    var currentDir = i;
+    for( var j = 0; j &lt; sliceBulletCount; j++ ) {
+        var bullet = instance_create( x, y, oRedS4CircleBullet );
+        bullet.PolarDirection = currentDir;
+        currentDir += sliceDegDelta;
+    }
 }
 </string>
           </argument>

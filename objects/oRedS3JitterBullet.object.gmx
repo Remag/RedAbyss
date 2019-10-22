@@ -26,19 +26,16 @@
           <argument>
             <kind>1</kind>
             <string>image_speed = 0;
-scrRedSetScale( 0.6 );
-var mainDir = scrRedDirToPlayer( x, y );
-if( random_range( 0, 1 ) &lt; 0.4 ) {
-    direction = mainDir + random_range( -90, 90 );
-} else {
-    direction = mainDir + random_range( 90, 270 );
+image_index = irandom_range( Circle.SpawnImageMin, Circle.SpawnImageMax );
+alarm[0] = 20;
+speed = 7;
+
+TrailCount = 7;
+PrevPositionsIndex = 0;
+for( var i = 0; i &lt; TrailCount; i++ ) {
+    PrevPositionsX[i] = x;
+    PrevPositionsY[i] = y;
 }
-speed = 1;
-MaxSpeed = 3;
-
-alarm[0] = 30;
-
-image_index = Spawner.Circle.ImageIndex;
 </string>
           </argument>
         </arguments>
@@ -61,7 +58,8 @@ image_index = Spawner.Circle.ImageIndex;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>friction = -0.5;
+            <string>direction += Circle.CurveDir * 20;
+alarm[0] = 20;
 </string>
           </argument>
         </arguments>
@@ -84,7 +82,49 @@ image_index = Spawner.Circle.ImageIndex;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>speed = min( speed, MaxSpeed );
+            <string>PrevPositionsX[PrevPositionsIndex] = x;
+PrevPositionsY[PrevPositionsIndex] = y;
+PrevPositionsIndex++;
+if( PrevPositionsIndex &gt;= TrailCount ) {
+    PrevPositionsIndex = 0;
+}
+
+speed = clamp( speed, 4, 8 );
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_set_blend_mode( bm_add );
+draw_self();
+draw_set_blend_mode( bm_normal );
+var currentIndex = PrevPositionsIndex;
+var currentScale = 3 / ( TrailCount + 3 );
+for( var i = 0; i &lt; TrailCount; i++ ) {
+    currentScale += 1 / ( TrailCount + 3 );
+    draw_sprite_ext( sprite_index, image_index, PrevPositionsX[currentIndex], PrevPositionsY[currentIndex], currentScale, currentScale, image_angle, image_blend, 0.15 );
+    currentIndex++;
+    if( currentIndex &gt;= TrailCount ) {
+        currentIndex = 0;
+    }
+}
 </string>
           </argument>
         </arguments>

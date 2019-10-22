@@ -52,6 +52,7 @@ FadeDeltaList = ds_list_create();
 DeactivatedIdList = ds_list_create();
 
 S2TrailFruitMode = 0;
+S4CircleDir = 2;
 </string>
           </argument>
         </arguments>
@@ -138,20 +139,28 @@ if( t == 269 ) {
             <kind>1</kind>
             <string>/// Bloom 
 if( t == 355 ) {
-    scrRedCreateBloomCircle( 400, 150, 3, 7, 8 );
+    scrRedCreateBloomCircle( 400, 150, 3, 2.5, 7, 8 );
 } else if( t == 397 ) {
 } else if( t == 441 ) {
-    scrRedCreateBloomCircle( 400, 150, 4, 1, 2 );
+    scrRedCreateBloomCircle( 400, 150, 4, 2.5, 1, 2 );
 } else if( t == 484 ) {
 } else if( t == 528 ) {
-    scrRedCreateBloomCircle( 400, 150, 5, 3, 4 );
+    scrRedCreateBloomCircle( 400, 150, 5, 3.0, 3, 4 );
 } else if( t == 572 ) {
 } else if( t == 615 ) {
-    scrRedCreateBloomCircle( 400, 150, 6, 5, 6 );
+    scrRedCreateBloomCircle( 400, 150, 6, 3.5, 5, 6 );
 } else if( t == 659 ) {
     with( oRedS2TrailBullet ) {
+        MaxSpeed = 100;
         gravity = 0.4;
-        if( x &lt; 400 ) {
+        friction = 0;
+        var divisionX;
+        if( abs( scrRedGetPlayerX() - 400 ) &lt; 32 ) {
+            divisionX = scrRedGetPlayerX();
+        } else {
+            divisionX = 400;
+        }
+        if( x &lt; divisionX ) {
             gravity_direction = 180;   
         } else {
             gravity_direction = 0;
@@ -161,7 +170,13 @@ if( t == 355 ) {
         EnableSineMovement = false;
         speed = 4;
         gravity = 0.4;
-        if( x &lt; 400 ) {   
+        var divisionX;
+        if( abs( scrRedGetPlayerX() - 400 ) &lt; 32 ) {
+            divisionX = scrRedGetPlayerX();
+        } else {
+            divisionX = 400;
+        }
+        if( x &lt; divisionX ) {   
             gravity_direction = 180;
         } else {
             gravity_direction = 0;
@@ -170,6 +185,119 @@ if( t == 355 ) {
     with( oRedAttachedSpawner ) {
         instance_destroy();
     }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Jitter
+
+if( t == 702 || t == 790 || t == 886 ) {
+    var vlSpawner = instance_create( 200, 0, oRedS3JitterSpawnerBullet );
+    vlSpawner.speed = 15;
+    vlSpawner.direction = -90;
+    vlSpawner.gravity_direction = 90;
+    vlSpawner.gravity = 0.4;
+    vlSpawner.CurveDir = 1;
+    vlSpawner.SpawnImageMin = 1;
+    vlSpawner.SpawnImageMax = 3;
+    
+    var vrSpawner = instance_create( 600, 0, oRedS3JitterSpawnerBullet );
+    vrSpawner.speed = 15;
+    vrSpawner.direction = -90;
+    vrSpawner.gravity_direction = 90;
+    vrSpawner.gravity = 0.4;
+    vrSpawner.CurveDir = -1;
+    vrSpawner.SpawnImageMin = 5;
+    vrSpawner.SpawnImageMax = 7;
+} else if( t == 1047 || t == 1132 || t == 1221 ) {
+    var hlSpawner = instance_create( 0, 200, oRedS3JitterSpawnerBullet );
+    hlSpawner.speed = 14;
+    hlSpawner.direction = 0;
+    hlSpawner.gravity_direction = 180;
+    hlSpawner.gravity = 0.4;
+    hlSpawner.CurveDir = -1;
+    hlSpawner.SpawnImageMin = 1;
+    hlSpawner.SpawnImageMax = 3;
+    
+    var hrSpawner = instance_create( 800, 200, oRedS3JitterSpawnerBullet );
+    hrSpawner.speed = 14;
+    hrSpawner.direction = 180;
+    hrSpawner.gravity_direction = 0;
+    hrSpawner.gravity = 0.4;
+    hrSpawner.CurveDir = 1;
+    hrSpawner.SpawnImageMin = 5;
+    hrSpawner.SpawnImageMax = 7;
+    
+} else if( t == 965 || t == 1313 ) {
+    with( oRedS3JitterBullet ) {
+        alarm[0] = -1;
+        friction = 0.2;
+    }  
+} else if( t == 1010 ) {
+    with( oRedS3JitterBullet ) {
+        direction = point_direction( x, y, 400, 304 ) - 100;
+        friction = -0.25;
+        TrailCount--;
+        PrevPositionsIndex = 0;
+    }
+} else if( t == 1360 ) {
+    with( oRedS3JitterBullet ) {
+        direction = point_direction( x, y, 400, 304 ) + 100;
+        friction = -0.25;
+        TrailCount--;
+        PrevPositionsIndex = 0;
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Sliced Circles
+
+if( t == 1400 || t == 1574 || t == 1749 || t = 1923 ) {
+    S4CircleDir = -S4CircleDir;
+    scrRedCreateSlicedCircle( 400, 300, S4CircleDir );
+} else if( t == 1465 || t == 1639 || t == 1815 || t == 1990 ) {
+    S4CircleDir = -S4CircleDir;
+    scrRedCreateSlicedCircle( 400, 300, S4CircleDir );
+} else if( t == 1530 || t == 1705 || t == 1878 ) {
+    S4CircleDir = -S4CircleDir;
+    scrRedCreateSlicedCircle( 400, 300, S4CircleDir );
+} else if( t == 1447 ) {
+    scrRedCreateCustomSpawner( 400, 300, 86, oRedS4LeheeSpawner );
 }
 </string>
           </argument>
