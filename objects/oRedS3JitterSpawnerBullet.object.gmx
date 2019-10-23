@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>image_index = 3;
 scrRedSetScale( 2 );
-scrRedAttachCustomSpawner( id, 13, oRedS3JitterSpawner );
+Spawner = scrRedAttachCustomSpawner( id, 13, oRedS3JitterSpawner );
 </string>
           </argument>
         </arguments>

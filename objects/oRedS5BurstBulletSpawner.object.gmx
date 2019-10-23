@@ -2,10 +2,10 @@
 <object>
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
-  <visible>0</visible>
+  <visible>-1</visible>
   <depth>0</depth>
-  <persistent>-1</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <persistent>0</persistent>
+  <parentName>oRedAttachedSpawner</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,40 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>DebugFileName = "debugInfo";
-if( file_exists( DebugFileName ) ) {
-    var debugFile = file_text_open_read( DebugFileName );
-    StartStep = file_text_read_real( debugFile );
-    global.debugNoDeath = file_text_read_real( debugFile );    
-    file_text_close( debugFile );
-} else {
-    StartStep = 0;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="3" enumb="2">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if( keyboard_check_pressed( vk_home ) ) {
-    event_user( 0 );
-}
+            <string>SpawnCount = 12;
+SpeedMin = 6;
+SpeedMax = 8;
 </string>
           </argument>
         </arguments>
@@ -81,36 +50,17 @@ if( file_exists( DebugFileName ) ) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Save settings to file
-var debugFile = file_text_open_write( DebugFileName );
-file_text_write_real( debugFile, StartStep );
-file_text_write_real( debugFile, global.debugNoDeath );
-file_text_close( debugFile );
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="88">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>StartStep = get_integer( "Start step", string( StartStep ) );
-event_user( 0 );
+            <string>var hCount = round( SpawnCount / 2 );
+repeat( hCount ) {
+    var bullet = instance_create( x, y, oRedS5BurstBullet );
+    bullet.speed = random_range( SpeedMin, SpeedMax );
+    bullet.direction = random_range( 0, 180 );
+}
+repeat( hCount ) {
+    var bullet = instance_create( x, y, oRedS5BurstBullet );
+    bullet.speed = random_range( SpeedMin, SpeedMax );
+    bullet.direction = random_range( 180, 360 );
+}
 </string>
           </argument>
         </arguments>

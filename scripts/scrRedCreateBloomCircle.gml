@@ -1,13 +1,15 @@
-/// scrRedCreateBloomCircle( spawnX, spawnY, bulletCount, spawnPeriod, imageIndex1, imageIndex2 )
+/// scrRedCreateBloomCircle( spawnX, spawnY, bulletCount, spawnPeriod, imageIndex1, imageIndex2, angle )
 var spawnX = argument0;
 var spawnY = argument1;
 var bulletCount = argument2;
 var spawnPeriod = argument3;
 var imageIndex1 = argument4;
 var imageIndex2 = argument5;
+var angle = argument6;
 
-var angle = scrRedDirToPlayer( spawnX, spawnY );
-
+if( scrRedGetPlayerX() > 400 ) {
+    angle = 180 - angle;
+}
 var params1 = scrRedCreateCircleAdditionalParams();
 params1.ImageIndex = imageIndex1;
 params1.Amplitude = 30;

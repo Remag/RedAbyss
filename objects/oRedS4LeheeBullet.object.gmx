@@ -28,8 +28,7 @@
             <string>speed = 4;
 image_angle = random( 360 );
 AngleDelta = choose( random_range( -5, -3 ), random_range( 3, 5 ) );
-image_index = 5;
-image_speed = 0;
+
 </string>
           </argument>
         </arguments>

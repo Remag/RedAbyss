@@ -122,7 +122,9 @@
       <sprite>sprites\sprRedAbyssSpikeDown</sprite>
       <sprite>sprites\sprRedAbyssSpikeLeft</sprite>
       <sprite>sprites\sprRedAbyssSpikeRight</sprite>
-      <sprite>sprites\sprRedBackground</sprite>
+      <sprite>sprites\sprRedSpikeBullet</sprite>
+      <sprite>sprites\sprRedAbyssBackground</sprite>
+      <sprite>sprites\sprRedAbyssRedBackground</sprite>
       <sprite>sprites\sprRedAbyssGrad</sprite>
       <sprite>sprites\sprRedAbyssSphere</sprite>
       <sprite>sprites\sprRedAbyssDagger</sprite>
@@ -201,6 +203,8 @@
         <script>scripts\scrRedShakeViewX.gml</script>
         <script>scripts\scrRedShakeViewY.gml</script>
         <script>scripts\scrRedTweenBackForth.gml</script>
+        <script>scripts\scrRedTweenSine.gml</script>
+        <script>scripts\scrRedSetPolarCoordinates.gml</script>
       </scripts>
       <script>scripts\scrRedCreateBloomCircle.gml</script>
       <script>scripts\scrRedCreateSlicedCircle.gml</script>
@@ -339,6 +343,7 @@
         <object>objects\oRedS1RCurvedBullet</object>
       </objects>
       <objects name="S2_Bloom">
+        <object>objects\oRedS2Bullet</object>
         <object>objects\oRedS2SeedBullet</object>
         <object>objects\oRedS2TrailBullet</object>
       </objects>
@@ -355,6 +360,11 @@
       </objects>
       <objects name="S5_TwinDownpour">
         <object>objects\oRedS5SourceBullet</object>
+        <object>objects\oRedS5BarrageBullet</object>
+        <object>objects\oRedS5BurstBullet</object>
+        <object>objects\oRedS5BurstBulletSpawner</object>
+        <object>objects\oRedS5Spike</object>
+        <object>objects\oRedS5TempBackdrop</object>
       </objects>
       <object>objects\oRedAbyssAvoidanceController</object>
       <object>objects\oRedBaseSpawner</object>

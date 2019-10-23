@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>oRedBoundProjectile</parentName>
+  <parentName>oRedS2Bullet</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -28,10 +28,10 @@
             <string>image_speed = 0;
 scrRedSetScale( 0.6 );
 var mainDir = scrRedDirToPlayer( x, y );
-if( random_range( 0, 1 ) &lt; 0.4 ) {
-    direction = mainDir + random_range( -90, 90 );
+if( random_range( 0, 1 ) &lt; 0.2 ) {
+    direction = mainDir + random_range( -45, 45 );
 } else {
-    direction = mainDir + random_range( 90, 270 );
+    direction = mainDir + random_range( 45, 315 );
 }
 speed = 1;
 MaxSpeed = 3;
