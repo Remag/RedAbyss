@@ -179,25 +179,32 @@
       <script>scripts\scrMakeCircle.gml</script>
     </scripts>
     <scripts name="Redire">
-      <script>scripts\scrRedCreateSpawner.gml</script>
-      <script>scripts\scrRedAttachSpawner.gml</script>
-      <script>scripts\scrRedAttachTimedSpawner.gml</script>
-      <script>scripts\scrRedCreateTimedSpawner.gml</script>
-      <script>scripts\scrRedCreateCustomSpawner.gml</script>
-      <script>scripts\scrRedAttachCustomSpawner.gml</script>
-      <script>scripts\scrRedCreateCircle.gml</script>
-      <script>scripts\scrRedCreateCircleAdditionalParams.gml</script>
-      <script>scripts\scrRedInitializeCircle.gml</script>
-      <script>scripts\scrRedSetScale.gml</script>
-      <script>scripts\scrRedBulletFadeOut.gml</script>
-      <script>scripts\scrRedDeactivateBullets.gml</script>
-      <script>scripts\scrRedActivateBullets.gml</script>
-      <script>scripts\scrRedSetBulletsActivation.gml</script>
-      <script>scripts\scrRedDirToPlayer.gml</script>
+      <scripts name="General">
+        <script>scripts\scrRedCreateSpawner.gml</script>
+        <script>scripts\scrRedAttachSpawner.gml</script>
+        <script>scripts\scrRedCreateTimedSpawner.gml</script>
+        <script>scripts\scrRedAttachTimedSpawner.gml</script>
+        <script>scripts\scrRedCreateCustomSpawner.gml</script>
+        <script>scripts\scrRedAttachCustomSpawner.gml</script>
+        <script>scripts\scrRedCreateCircleAdditionalParams.gml</script>
+        <script>scripts\scrRedInitializeCircle.gml</script>
+        <script>scripts\scrRedCreateCircle.gml</script>
+        <script>scripts\scrRedSetScale.gml</script>
+        <script>scripts\scrRedBulletFadeOut.gml</script>
+        <script>scripts\scrRedDeactivateBullets.gml</script>
+        <script>scripts\scrRedActivateBullets.gml</script>
+        <script>scripts\scrRedSetBulletsActivation.gml</script>
+        <script>scripts\scrRedDirToPlayer.gml</script>
+        <script>scripts\scrRedGetPlayerX.gml</script>
+        <script>scripts\scrRedGetPlayerY.gml</script>
+        <script>scripts\scrRedShakeViewAngle.gml</script>
+        <script>scripts\scrRedShakeViewX.gml</script>
+        <script>scripts\scrRedShakeViewY.gml</script>
+        <script>scripts\scrRedTweenBackForth.gml</script>
+      </scripts>
       <script>scripts\scrRedCreateBloomCircle.gml</script>
-      <script>scripts\scrRedGetPlayerX.gml</script>
-      <script>scripts\scrRedGetPlayerY.gml</script>
       <script>scripts\scrRedCreateSlicedCircle.gml</script>
+      <script>scripts\scrRedCreateSlidingSpike.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -344,6 +351,10 @@
         <object>objects\oRedS4CircleBullet</object>
         <object>objects\oRedS4LeheeSpawner</object>
         <object>objects\oRedS4LeheeBullet</object>
+        <object>objects\oRedS4SlidingSpike</object>
+      </objects>
+      <objects name="S5_TwinDownpour">
+        <object>objects\oRedS5SourceBullet</object>
       </objects>
       <object>objects\oRedAbyssAvoidanceController</object>
       <object>objects\oRedBaseSpawner</object>
@@ -355,6 +366,9 @@
       <object>objects\oRedAbyssBackground</object>
       <object>objects\oRedBulletCircle</object>
       <object>objects\oRedDummyObj</object>
+      <object>objects\oRedViewAngleShaker</object>
+      <object>objects\oRedViewXShaker</object>
+      <object>objects\oRedViewYShaker</object>
     </objects>
   </objects>
   <rooms name="rooms">

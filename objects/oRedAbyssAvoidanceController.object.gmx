@@ -44,6 +44,9 @@ if( global.debugMode ) {
     }
 }
 
+// View operation variables.
+ViewAngle = 0;
+
 // Data structures for projectile operations.
 FadeIdList = ds_list_create();
 FadeValueList = ds_list_create();
@@ -52,7 +55,6 @@ FadeDeltaList = ds_list_create();
 DeactivatedIdList = ds_list_create();
 
 S2TrailFruitMode = 0;
-S4CircleDir = 2;
 </string>
           </argument>
         </arguments>
@@ -286,18 +288,65 @@ if( t == 702 || t == 790 || t == 886 ) {
           <argument>
             <kind>1</kind>
             <string>/// Sliced Circles
+if( t == 1400 ) {
+    var src = instance_create( 400, 300, oRedS5SourceBullet );
+}
 
 if( t == 1400 || t == 1574 || t == 1749 || t = 1923 ) {
-    S4CircleDir = -S4CircleDir;
-    scrRedCreateSlicedCircle( 400, 300, S4CircleDir );
+    oRedS5SourceBullet.AngleDelta = -oRedS5SourceBullet.AngleDelta;
+    scrRedCreateSlicedCircle( oRedS5SourceBullet.x, oRedS5SourceBullet.y, oRedS5SourceBullet.AngleDelta );
 } else if( t == 1465 || t == 1639 || t == 1815 || t == 1990 ) {
-    S4CircleDir = -S4CircleDir;
-    scrRedCreateSlicedCircle( 400, 300, S4CircleDir );
+    oRedS5SourceBullet.AngleDelta = -oRedS5SourceBullet.AngleDelta;
+    scrRedCreateSlicedCircle( oRedS5SourceBullet.x, oRedS5SourceBullet.y, oRedS5SourceBullet.AngleDelta );
 } else if( t == 1530 || t == 1705 || t == 1878 ) {
-    S4CircleDir = -S4CircleDir;
-    scrRedCreateSlicedCircle( 400, 300, S4CircleDir );
+    oRedS5SourceBullet.AngleDelta = -oRedS5SourceBullet.AngleDelta;
+    scrRedCreateSlicedCircle( oRedS5SourceBullet.x, oRedS5SourceBullet.y, oRedS5SourceBullet.AngleDelta );
 } else if( t == 1447 ) {
-    scrRedCreateCustomSpawner( 400, 300, 86, oRedS4LeheeSpawner );
+    scrRedAttachCustomSpawner( oRedS5SourceBullet.id, 86, oRedS4LeheeSpawner );
+}
+
+if( t &gt;= 1447 &amp;&amp; t &lt; 2049 ) {
+    var deltaT = ( t - 1447 ) % 172;
+    var wallDuration = 24;
+    if( deltaT = 0 ) {
+        // Right spike wall.
+        for( var blockIndex = 0; blockIndex &lt; 18; blockIndex++ ) {
+            var spikeY = blockIndex * 32;
+            if( blockIndex % 2 == 1 ) {
+                scrRedCreateSlidingSpike( 768, spikeY, 180, 1, wallDuration, sprRedAbyssSpikeLeft );
+            } else {
+                scrRedCreateSlidingSpike( 768, spikeY, 180, 0.5, wallDuration, sprRedAbyssSpikeLeft );
+                scrRedCreateSlidingSpike( 768, spikeY + 16, 180, 0.5, wallDuration, sprRedAbyssSpikeLeft );            
+            }
+        }
+        scrRedShakeViewAngle( 3, wallDuration );
+    } else if( deltaT == 86 ) {
+        // Left spike wall.
+        for( var blockIndex = 0; blockIndex &lt; 18; blockIndex++ ) {
+            var spikeY = blockIndex * 32;
+            if( blockIndex % 2 == 1 ) {
+                scrRedCreateSlidingSpike( 0, spikeY, 0, 1, wallDuration, sprRedAbyssSpikeRight );
+            } else {
+                scrRedCreateSlidingSpike( 16, spikeY, 0, 0.5, wallDuration, sprRedAbyssSpikeRight );
+                scrRedCreateSlidingSpike( 16, spikeY + 16, 0, 0.5, wallDuration, sprRedAbyssSpikeRight );            
+            }
+        }
+        scrRedShakeViewAngle( -3, wallDuration );
+    }   
+}
+if( t == 2049 ) {
+    var floorDuration = 38;
+    // Bottom spike wall.
+    for( var blockIndex = 0; blockIndex &lt; 23; blockIndex++ ) {
+        var spikeX = 32 + blockIndex * 32;
+        if( blockIndex % 2 == 0 ) {
+            scrRedCreateSlidingSpike( spikeX, 576, 90, 1, floorDuration, sprRedAbyssSpikeUp );
+        } else {
+            scrRedCreateSlidingSpike( spikeX, 576, 90, 0.5, floorDuration, sprRedAbyssSpikeUp );
+            scrRedCreateSlidingSpike( spikeX + 16, 576, 90, 0.5, floorDuration, sprRedAbyssSpikeUp );            
+        }
+    }
+    scrRedShakeViewY( -32, floorDuration );
 }
 </string>
           </argument>

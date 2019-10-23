@@ -3,9 +3,9 @@
   <spriteName>sprRedAbyssFruit</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>1</depth>
+  <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>oRedProjectile</parentName>
+  <parentName>oRedBoundProjectile</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,10 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>PolarRadius = 0;
-RadiusDelta = 0;
-DirectionDelta = 0;
-
+            <string>scrRedSetScale( 2 );
+image_speed = 0;
+image_index = 5;
+BaseAlpha = 0.4;
+AngleDelta = 2;
 </string>
           </argument>
         </arguments>
@@ -51,15 +52,9 @@ DirectionDelta = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>PolarRadius += RadiusDelta;
-PolarDirection += DirectionDelta;
+            <string>image_alpha = BaseAlpha + random_range( -0.1, 0.1 );
 
-x = xstart + lengthdir_x( PolarRadius, PolarDirection );
-y = ystart + lengthdir_y( PolarRadius, PolarDirection );
-
-if( PolarRadius &gt; 1010 ) {
-    instance_destroy();
-}
+image_angle += 2 * AngleDelta;
 </string>
           </argument>
         </arguments>
