@@ -25,22 +25,26 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with( oRedAbyssAvoidanceController ) {
-    var inactiveCount = ds_list_size( DeactivatedIdList );
-    for( var i = 0; i &lt; inactiveCount; i++ ) {
-        var targetId = DeactivatedIdList[|i];
-        if( targetId == other.id ) {
+            <string>with( oRedInstanceActivationCommand ) {
+    if( TargetId == other.id ) {
+        if( IsActive ) {
+            break;
+        } else {
             exit;
         }
-        // Check the inheritance chain to see if ids match.
-        var checkId = other.object_index;
-        do {
-            if( targetId == checkId ) {
-                exit;
-            }
-            checkId = object_get_parent( checkId );
-        } until( checkId == -100 );
     }
+    // Check the inheritance chain to see if ids match.
+    var checkId = other.object_index;
+    do {
+        if( TargetId == checkId ) {
+            if( IsActive ) {
+               break;
+            } else {
+               exit;
+            }
+        }
+        checkId = object_get_parent( checkId );
+    } until( checkId == -100 );
 }
 
 // Checked that the object isn't deactivated, kill the player.

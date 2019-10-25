@@ -7,9 +7,8 @@ if( argument_count >= 2 ) {
     fadeDelta = 0.05;
 }
 
-with( oRedAbyssAvoidanceController ) {
-    ds_list_add( FadeIdList, targetId );
-    ds_list_add( FadeValueList, 1.0 );
-    ds_list_add( FadeDeltaList, fadeDelta );
-}
+var newCommand = instance_create( 0, 0, oRedInstanceFadeCommand );
+newCommand.TargetId = targetId;
+newCommand.AlphaDelta = fadeDelta;
+newCommand.CurrentAlpha = 1;
 

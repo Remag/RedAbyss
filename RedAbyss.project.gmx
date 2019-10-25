@@ -118,11 +118,11 @@
       <sprite>sprites\sprBossItem</sprite>
     </sprites>
     <sprites name="Redire">
+      <sprite>sprites\sprRedSpikeBullet</sprite>
       <sprite>sprites\sprRedAbyssSpikeUp</sprite>
       <sprite>sprites\sprRedAbyssSpikeDown</sprite>
       <sprite>sprites\sprRedAbyssSpikeLeft</sprite>
       <sprite>sprites\sprRedAbyssSpikeRight</sprite>
-      <sprite>sprites\sprRedSpikeBullet</sprite>
       <sprite>sprites\sprRedAbyssBackground</sprite>
       <sprite>sprites\sprRedAbyssRedBackground</sprite>
       <sprite>sprites\sprRedAbyssGrad</sprite>
@@ -130,6 +130,8 @@
       <sprite>sprites\sprRedAbyssDagger</sprite>
       <sprite>sprites\sprRedAbyssFruit</sprite>
       <sprite>sprites\sprRedAbyssLeheeFruit</sprite>
+      <sprite>sprites\sprRedLightParticle</sprite>
+      <sprite>sprites\sprRedAbyssSpawner</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -366,6 +368,10 @@
         <object>objects\oRedS5Spike</object>
         <object>objects\oRedS5TempBackdrop</object>
       </objects>
+      <objects name="S6_WelcomeToAbyss">
+        <object>objects\oRedS6AbyssSpawner</object>
+        <object>objects\oRedS6AbyssRay</object>
+      </objects>
       <object>objects\oRedAbyssAvoidanceController</object>
       <object>objects\oRedBaseSpawner</object>
       <object>objects\oRedProjectileSpawner</object>
@@ -379,6 +385,8 @@
       <object>objects\oRedViewAngleShaker</object>
       <object>objects\oRedViewXShaker</object>
       <object>objects\oRedViewYShaker</object>
+      <object>objects\oRedInstanceActivationCommand</object>
+      <object>objects\oRedInstanceFadeCommand</object>
     </objects>
   </objects>
   <rooms name="rooms">

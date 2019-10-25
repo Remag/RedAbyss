@@ -47,13 +47,6 @@ if( global.debugMode ) {
 // View operation variables.
 ViewAngle = 0;
 
-// Data structures for projectile operations.
-FadeIdList = ds_list_create();
-FadeValueList = ds_list_create();
-FadeDeltaList = ds_list_create();
-
-DeactivatedIdList = ds_list_create();
-
 S2TrailFruitMode = 0;
 </string>
           </argument>
@@ -380,7 +373,7 @@ if( t == 2094 ) {
 }
 if( t &gt;= 2094 &amp;&amp; t &lt;= 2443 ) {
     with( oRedS5SourceBullet ) {
-        y = scrRedTweenSine( 300, -240, t - 2094, 2443 - 2094 );
+        y = scrRedTweenSine( 300, -200, t - 2094, 2443 - 2094 );
         BarrageSpawner.SpawnPeriod *= 0.996;
     }
 }
@@ -439,6 +432,7 @@ if( t == 2702 ) {
         speed = 0;
     }
     with( oRedS5SourceBullet ) {
+        instance_create( x, y, oRedS6AbyssSpawner );
         instance_destroy();
     }
     instance_create( 0, 0, oRedS5TempBackdrop );
@@ -494,29 +488,8 @@ if( t == 2765 ) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Projectile manipulation
+            <string>/// Welcome to Abyss
 
-// Fade out operations.
-var fadeCount = ds_list_size( FadeIdList );
-for( var i = fadeCount - 1; i &gt;= 0; i-- ) {
-    var targetId = FadeIdList[|i];
-    var targetValue = FadeValueList[|i];
-    var targetDelta = FadeDeltaList[|i];
-    var newFadeValue = targetValue - targetDelta;
-    if( newFadeValue &lt;= 0 ) {
-        with( targetId ) {
-            instance_destroy();
-        }
-        ds_list_delete( FadeIdList, i );
-        ds_list_delete( FadeValueList, i );
-        ds_list_delete( FadeDeltaList, i );
-    } else {
-        with( targetId ) {
-            image_alpha = newFadeValue;
-        }
-        ds_list_replace( FadeValueList, i, newFadeValue );
-    }
-}
 </string>
           </argument>
         </arguments>
@@ -586,10 +559,6 @@ RealStep += 50 * delta_time / 1000000;
             <kind>1</kind>
             <string>/// Cleanup
 audio_stop_sound( MusicId );
-ds_list_destroy( FadeIdList );
-ds_list_destroy( FadeValueList );
-ds_list_destroy( FadeDeltaList );
-ds_list_destroy( DeactivatedIdList );
 </string>
           </argument>
         </arguments>
