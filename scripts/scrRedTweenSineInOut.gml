@@ -1,4 +1,4 @@
-/// scrRedTweenSine( begin, totalDelta, step, duration )
+/// scrRedTweenSineInOut( begin, totalDelta, step, duration )
 var beginValue = argument0;
 var totalDelta = argument1;
 var step = argument2;

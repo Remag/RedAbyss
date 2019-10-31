@@ -54,7 +54,7 @@ if( Step &gt;= Duration ) {
     instance_destroy();
 }
 
-view_xview[0] = scrRedTweenBackForth( 0, MaxY, Step, Duration );
+view_xview[0] = scrRedTweenBackForth( 0, MaxX, Step, Duration );
 
 </string>
           </argument>

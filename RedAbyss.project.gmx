@@ -186,8 +186,6 @@
       <scripts name="General">
         <script>scripts\scrRedCreateSpawner.gml</script>
         <script>scripts\scrRedAttachSpawner.gml</script>
-        <script>scripts\scrRedCreateTimedSpawner.gml</script>
-        <script>scripts\scrRedAttachTimedSpawner.gml</script>
         <script>scripts\scrRedCreateCustomSpawner.gml</script>
         <script>scripts\scrRedAttachCustomSpawner.gml</script>
         <script>scripts\scrRedCreateCircleAdditionalParams.gml</script>
@@ -204,13 +202,25 @@
         <script>scripts\scrRedShakeViewAngle.gml</script>
         <script>scripts\scrRedShakeViewX.gml</script>
         <script>scripts\scrRedShakeViewY.gml</script>
-        <script>scripts\scrRedTweenBackForth.gml</script>
-        <script>scripts\scrRedTweenSine.gml</script>
         <script>scripts\scrRedSetPolarCoordinates.gml</script>
+        <script>scripts\scrRedMoveInstance.gml</script>
       </scripts>
       <script>scripts\scrRedCreateBloomCircle.gml</script>
       <script>scripts\scrRedCreateSlicedCircle.gml</script>
       <script>scripts\scrRedCreateSlidingSpike.gml</script>
+      <scripts name="SpawnerScripts">
+        <script>scripts\scrRedS3SpawnJitterBullets.gml</script>
+        <script>scripts\scrRedS4SpawnLeheeCircle.gml</script>
+        <script>scripts\scrRedS6SpawnAntitargetCircle.gml</script>
+        <script>scripts\scrRedS6SpawnSpiralBullet.gml</script>
+        <script>scripts\scrRedS6SpawnWaveSpike.gml</script>
+      </scripts>
+      <scripts name="TweenScripts">
+        <script>scripts\scrRedTweenSineIn.gml</script>
+        <script>scripts\scrRedTweenSineOut.gml</script>
+        <script>scripts\scrRedTweenSineInOut.gml</script>
+        <script>scripts\scrRedTweenBackForth.gml</script>
+      </scripts>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -351,12 +361,10 @@
       </objects>
       <objects name="S3_Jitter">
         <object>objects\oRedS3JitterSpawnerBullet</object>
-        <object>objects\oRedS3JitterSpawner</object>
         <object>objects\oRedS3JitterBullet</object>
       </objects>
       <objects name="S4_SlicedCirlces">
         <object>objects\oRedS4CircleBullet</object>
-        <object>objects\oRedS4LeheeSpawner</object>
         <object>objects\oRedS4LeheeBullet</object>
         <object>objects\oRedS4SlidingSpike</object>
       </objects>
@@ -369,13 +377,18 @@
         <object>objects\oRedS5TempBackdrop</object>
       </objects>
       <objects name="S6_WelcomeToAbyss">
-        <object>objects\oRedS6AbyssSpawner</object>
+        <object>objects\oRedS6AbyssSource</object>
         <object>objects\oRedS6AbyssRay</object>
+        <object>objects\oRedS6TargetBullet</object>
+        <object>objects\oRedS6SpiralBullet</object>
+        <object>objects\oRedS6WaveSpike</object>
       </objects>
       <object>objects\oRedAbyssAvoidanceController</object>
       <object>objects\oRedBaseSpawner</object>
       <object>objects\oRedProjectileSpawner</object>
       <object>objects\oRedAttachedSpawner</object>
+      <object>objects\oRedScriptSpawner</object>
+      <object>objects\oRedAttachedScriptSpawner</object>
       <object>objects\oRedBoundProjectile</object>
       <object>objects\oRedProjectile</object>
       <object>objects\oRedDebugInfo</object>
@@ -387,6 +400,7 @@
       <object>objects\oRedViewYShaker</object>
       <object>objects\oRedInstanceActivationCommand</object>
       <object>objects\oRedInstanceFadeCommand</object>
+      <object>objects\oRedMoveCommand</object>
     </objects>
   </objects>
   <rooms name="rooms">

@@ -53,7 +53,7 @@ DirectionDelta = 0;
             <kind>1</kind>
             <string>PolarRadius += RadiusDelta;
 PolarDirection += DirectionDelta;
-scrRedSetPolarCoordinates( PolarRadius, PolarDirection );
+scrRedSetPolarCoordinates( xstart, ystart, PolarRadius, PolarDirection );
 
 if( PolarRadius &gt; 1010 ) {
     instance_destroy();

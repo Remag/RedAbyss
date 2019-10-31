@@ -65,7 +65,7 @@ if( image_alpha &lt;= 0 ) {
 
 image_angle = StartDirection + Spawner.RayAngle;
 CurrentRadius += RadiusDelta;
-scrRedSetPolarCoordinates( CurrentRadius, image_angle );
+scrRedSetPolarCoordinates( Spawner.x, Spawner.y, CurrentRadius, image_angle );
 </string>
           </argument>
         </arguments>

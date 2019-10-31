@@ -60,7 +60,7 @@ PolarDirection = StartDirection;
 RadiusDelta += RadiusAccel;
 PolarRadius += RadiusDelta;
 PolarDirection += Circle.DirDelta;
-scrRedSetPolarCoordinates( PolarRadius, PolarDirection );
+scrRedSetPolarCoordinates( xstart, ystart, PolarRadius, PolarDirection );
 image_angle = PolarDirection;
 </string>
           </argument>

@@ -30,7 +30,7 @@ image_index = Circle.ImageIndex;
 scrRedSetScale( 1 );
 Step = 0;
 
-Spawner = scrRedAttachSpawner( id, Circle.SpawnPeriod, oRedS2TrailBullet );
+scrRedAttachSpawner( id, Circle.SpawnPeriod, oRedS2TrailBullet );
 Spawner.SeedBullet = id;
 Spawner.Circle = Circle;
 
