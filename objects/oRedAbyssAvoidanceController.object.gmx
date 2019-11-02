@@ -523,6 +523,8 @@ if( t == 2791 + 20 ) {
         scrRedAttachCustomSpawner( id, 8, scrRedS6SpawnSpiralBullet );
         Spawner.direction = random( 360 );
         Spawner.DirDelta = 10;
+        Spawner.SpiralSpeed = 10;
+        instance_change( oRedS6SpiralSource, false );
     }
 }
 
@@ -534,6 +536,7 @@ if( t == 2845 ) {
     spawner.direction = 180;
     spawner.speed = 30;
 } else if( t == 2858 ) {
+    // Actual music timing, spawning moved 8 frames earlier.
 } else if( t == 2889 ) {
 
 } else if( t == 2895 ) {
@@ -543,17 +546,49 @@ if( t == 2845 ) {
     spawner.speed = 30;
 
 } else if( t == 2901 ) {
-
+    // Actual music timing, spawning moved 8 frames earlier.
 } else if( t == 2934 ) {
-
+    
+} else if( t == 2938 ) {
+    var duration = 22;
+    var nextFullIndex = irandom_range( 0, 2 );
+    for( var blockIndex = 0; blockIndex &lt; 23; blockIndex++ ) {
+        var spikeX = 32 + blockIndex * 32;
+        if( blockIndex == nextFullIndex ) {
+            nextFullIndex += irandom_range( 3, 4 );
+            var spike = instance_create( spikeX, 576, oRedS6FloorSpike );
+            spike.Duration = duration / 2;
+        } else {
+            scrRedCreateSlidingSpike( spikeX, 576, 90, 0.5, duration, sprRedAbyssSpikeUp );
+            scrRedCreateSlidingSpike( spikeX + 16, 576, 90, 0.5, duration, sprRedAbyssSpikeUp );
+        }
+    }
+    scrRedShakeViewY( -32, 24 );
+    var newSpiralSpeed = 4;
+    with( oRedS6SpiralSource ) {
+        Spawner.SpiralSpeed = newSpiralSpeed;
+    }
+    with( oRedS6SpiralBullet ) {
+        speed = newSpiralSpeed;
+    }
 } else if( t == 2946 ) {
-
+    // Actual music timing, spawning moved 8 frames earlier.
 } else if( t == 2967 ) {
-
-} else if( t == 3117 ) {
-
-} else if( t == 3139 ) {
-
+    with( oRedS6SpiralSource ) {
+        scrRedCreateSpawner( x, y, 10, oRedS6TargetSpike, 100 );
+    }
+} else if( t == 3115 ) {
+    with( oRedS6FloorSpike ) {
+        scrRedMoveInstance( id, x, y + 16, 3137 - 3115 );
+    }
+} else if( t == 3137 ) {
+    with( oRedS6FloorSpike ) {
+        scrRedMoveInstance( id, x, -48, 15, scrRedTweenSineIn );
+        var trail = scrRedAttachTrail( id, 10 );
+        trail.TailScale = 1;
+        trail.image_alpha = 0.75;
+        trail.TailAlpha = 0.5;
+    }
 }
 </string>
           </argument>

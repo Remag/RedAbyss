@@ -204,6 +204,7 @@
         <script>scripts\scrRedShakeViewY.gml</script>
         <script>scripts\scrRedSetPolarCoordinates.gml</script>
         <script>scripts\scrRedMoveInstance.gml</script>
+        <script>scripts\scrRedAttachTrail.gml</script>
       </scripts>
       <script>scripts\scrRedCreateBloomCircle.gml</script>
       <script>scripts\scrRedCreateSlicedCircle.gml</script>
@@ -378,10 +379,13 @@
       </objects>
       <objects name="S6_WelcomeToAbyss">
         <object>objects\oRedS6AbyssSource</object>
+        <object>objects\oRedS6SpiralSource</object>
         <object>objects\oRedS6AbyssRay</object>
         <object>objects\oRedS6TargetBullet</object>
         <object>objects\oRedS6SpiralBullet</object>
         <object>objects\oRedS6WaveSpike</object>
+        <object>objects\oRedS6FloorSpike</object>
+        <object>objects\oRedS6TargetSpike</object>
       </objects>
       <object>objects\oRedAbyssAvoidanceController</object>
       <object>objects\oRedBaseSpawner</object>
@@ -401,6 +405,7 @@
       <object>objects\oRedInstanceActivationCommand</object>
       <object>objects\oRedInstanceFadeCommand</object>
       <object>objects\oRedMoveCommand</object>
+      <object>objects\oRedBulletTrail</object>
     </objects>
   </objects>
   <rooms name="rooms">
