@@ -5,7 +5,7 @@ var spawnPeriod = argument[1];
 var spawnObject = argument[2];
 var spawnDuration = -1;
 if( argument_count > 3 ) {
-    spawnDuration = argument[4];
+    spawnDuration = argument[3];
 }
 
 with( ownerId ) {
@@ -14,6 +14,7 @@ with( ownerId ) {
     spawner.SpawnPeriod = spawnPeriod;
     spawner.CurrentPeriod = 0;
     spawner.OwnerInstance = id;
-    spawner.alarm[11] = spawnDuration;
+    spawner.Lifetime = 0;
+    spawner.SpawnDuration = spawnDuration;
     Spawner = spawner;
 }

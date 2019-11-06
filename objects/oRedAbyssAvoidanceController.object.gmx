@@ -502,9 +502,9 @@ if( t == 2765 ) {
             <kind>1</kind>
             <string>/// Welcome to Abyss
 if( t == 2791 &amp;&amp; !instance_exists( oRedS6AbyssSource ) ) {
-    var left = instance_create( 100, 100, oRedS6AbyssSource );
+    var left = instance_create( 100, 100, oRedS6TargetSource );
     left.AngleDelta = 1;
-    var right = instance_create( 700, 100, oRedS6AbyssSource );
+    var right = instance_create( 700, 100, oRedS6TargetSource );
     right.AngleDelta = -1;
     with( oRedAbyssBackground ) {
         sprite_index = sprRedAbyssRedBackground;
@@ -514,9 +514,12 @@ if( t == 2791 &amp;&amp; !instance_exists( oRedS6AbyssSource ) ) {
 if( t == 2791 ) {
     scrRedMoveInstance( oRedS6AbyssSource, 400, 200, 20, scrRedTweenSineOut );
     scrRedAttachCustomSpawner( oRedS6AbyssSource, 4, scrRedS6SpawnAntitargetCircle );
+    with( oRedS6AbyssSource ) {
+        Spawner.SpriteIndex = sprRedAbyssGrad;
+    }
 }
 if( t == 2791 + 20 ) {
-    with( instance_find( oRedS6AbyssSource, 0 ) ) {
+    with( instance_find( oRedS6TargetSource, 0 ) ) {
         with( Spawner ) {
             instance_destroy();
         }
@@ -575,8 +578,19 @@ if( t == 2845 ) {
     // Actual music timing, spawning moved 8 frames earlier.
 } else if( t == 2967 ) {
     with( oRedS6SpiralSource ) {
-        scrRedCreateSpawner( x, y, 10, oRedS6TargetSpike, 100 );
+        scrRedCreateCustomSpawner( x, y, 10, scrRedS6CreateTargetSpike, 100 );
     }
+} else if( t == 3010 ) {
+    with( oRedS6SpiralSource ) {
+        with( Spawner ) {
+            instance_destroy();
+        }
+    }
+} else if( t == 3080 ) {
+    var spawner = scrRedAttachCustomSpawner( oRedS6SpiralSource, 1.5, scrRedS6SpawnSpiralBullet, 20 );
+    spawner.direction = scrRedDirToPlayer( spawner.x, spawner.y );
+    spawner.DirDelta = -10;
+    spawner.SpiralSpeed = 10;
 } else if( t == 3115 ) {
     with( oRedS6FloorSpike ) {
         scrRedMoveInstance( id, x, y + 16, 3137 - 3115 );
@@ -589,6 +603,47 @@ if( t == 2845 ) {
         trail.image_alpha = 0.75;
         trail.TailAlpha = 0.5;
     }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Claustrophobia
+
+if( t == 3147 &amp;&amp; !instance_exists( oRedS6AbyssSource ) ) {
+    var targetSrc = instance_create( 400, 200, oRedS6TargetSource );
+    targetSrc.AngleDelta = 1;
+    var spawner = scrRedAttachCustomSpawner( targetSrc, 4, scrRedS6SpawnAntitargetCircle );
+    spawner.SpriteIndex = sprRedAbyssGrad;
+    var spiralSrc = instance_create( 400, 200, oRedS6SpiralSource );
+    spiralSrc.AngleDelta = -1;
+    with( oRedAbyssBackground ) {
+        sprite_index = sprRedAbyssRedBackground;
+    }
+}
+
+if( t == 3158 || t == 3201 || t == 3244 ) {
+    oRedS6TargetSource.Spawner.SpriteIndex = sprRedSpikeBullet;
+    var spawner = scrRedCreateCustomSpawner( oRedS6TargetSource.x, oRedS6TargetSource.y, 1.5, scrRedS7SpawnSpikeFan, 12 );
+    spawner.TotalDirDelta = 360 / 10;
+} else if( t == 3170 || t == 3213 || t == 3256 ) {
+    oRedS6TargetSource.Spawner.SpriteIndex = sprRedAbyssGrad;
 }
 </string>
           </argument>

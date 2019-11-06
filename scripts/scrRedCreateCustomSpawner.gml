@@ -17,6 +17,7 @@ if( script_exists( spawnerId ) ) {
 }
 spawner.SpawnPeriod = spawnPeriod;
 spawner.CurrentPeriod = 0;
-spawner.alarm[11] = spawnDuration;
+spawner.Lifetime = 0;
+spawner.SpawnDuration = spawnDuration;
 
 return spawner;

@@ -1,9 +1,6 @@
-var playerDir;
-if( !instance_exists( objPlayer ) ) {
-    playerDir = random( 360 );   
-} else {
-    playerDir = point_direction( x, y, objPlayer.x, objPlayer.y + 9 );
-}
+var playerDir = scrRedDirToPlayerFeet( x, y );
 var bulletCount = 10;
 var dirDelta = 360 / ( 2 * bulletCount );
-scrRedCreateCircle( x, y, playerDir + dirDelta, bulletCount, oRedS6TargetBullet );
+var circle = scrRedCreateCircleAdditionalParams();
+circle.Spawner = id;
+scrRedInitializeCircle( x, y, playerDir + dirDelta, bulletCount, oRedS6TargetBullet, circle );

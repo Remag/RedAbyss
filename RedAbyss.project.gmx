@@ -197,6 +197,7 @@
         <script>scripts\scrRedActivateBullets.gml</script>
         <script>scripts\scrRedSetBulletsActivation.gml</script>
         <script>scripts\scrRedDirToPlayer.gml</script>
+        <script>scripts\scrRedDirToPlayerFeet.gml</script>
         <script>scripts\scrRedGetPlayerX.gml</script>
         <script>scripts\scrRedGetPlayerY.gml</script>
         <script>scripts\scrRedShakeViewAngle.gml</script>
@@ -205,6 +206,12 @@
         <script>scripts\scrRedSetPolarCoordinates.gml</script>
         <script>scripts\scrRedMoveInstance.gml</script>
         <script>scripts\scrRedAttachTrail.gml</script>
+      </scripts>
+      <scripts name="TweenScripts">
+        <script>scripts\scrRedTweenSineIn.gml</script>
+        <script>scripts\scrRedTweenSineOut.gml</script>
+        <script>scripts\scrRedTweenSineInOut.gml</script>
+        <script>scripts\scrRedTweenBackForth.gml</script>
       </scripts>
       <script>scripts\scrRedCreateBloomCircle.gml</script>
       <script>scripts\scrRedCreateSlicedCircle.gml</script>
@@ -215,12 +222,8 @@
         <script>scripts\scrRedS6SpawnAntitargetCircle.gml</script>
         <script>scripts\scrRedS6SpawnSpiralBullet.gml</script>
         <script>scripts\scrRedS6SpawnWaveSpike.gml</script>
-      </scripts>
-      <scripts name="TweenScripts">
-        <script>scripts\scrRedTweenSineIn.gml</script>
-        <script>scripts\scrRedTweenSineOut.gml</script>
-        <script>scripts\scrRedTweenSineInOut.gml</script>
-        <script>scripts\scrRedTweenBackForth.gml</script>
+        <script>scripts\scrRedS6CreateTargetSpike.gml</script>
+        <script>scripts\scrRedS7SpawnSpikeFan.gml</script>
       </scripts>
     </scripts>
   </scripts>
@@ -379,6 +382,7 @@
       </objects>
       <objects name="S6_WelcomeToAbyss">
         <object>objects\oRedS6AbyssSource</object>
+        <object>objects\oRedS6TargetSource</object>
         <object>objects\oRedS6SpiralSource</object>
         <object>objects\oRedS6AbyssRay</object>
         <object>objects\oRedS6TargetBullet</object>
@@ -386,6 +390,10 @@
         <object>objects\oRedS6WaveSpike</object>
         <object>objects\oRedS6FloorSpike</object>
         <object>objects\oRedS6TargetSpike</object>
+        <object>objects\oRedS6RandomBullet</object>
+      </objects>
+      <objects name="S7_Claustrophobia">
+        <object>objects\oRedS7FanSpike</object>
       </objects>
       <object>objects\oRedAbyssAvoidanceController</object>
       <object>objects\oRedBaseSpawner</object>

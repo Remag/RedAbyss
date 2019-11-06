@@ -3,7 +3,7 @@
   <spriteName>sprRedSpikeBullet</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>1</depth>
   <persistent>0</persistent>
   <parentName>oRedBoundProjectile</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -26,13 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>image_angle = direction;
-speed = 14;
-image_xscale = 0.9;
-image_yscale = 0.8;
-var trail = scrRedAttachTrail( id, 4 );
-trail.TailScale = 0.75;
-trail.TailAlpha = 0.5;
-trail.image_alpha = 0.5;
+speed = random_range( 4, 10 );
+scrRedSetScale( 0.75 );
 </string>
           </argument>
         </arguments>
