@@ -224,6 +224,9 @@
         <script>scripts\scrRedS6SpawnWaveSpike.gml</script>
         <script>scripts\scrRedS6CreateTargetSpike.gml</script>
         <script>scripts\scrRedS7SpawnSpikeFan.gml</script>
+        <script>scripts\scrRedS7SpawnSpikeCircle.gml</script>
+        <script>scripts\scrRedS7SpawnSpikeSpiral.gml</script>
+        <script>scripts\scrRedS7SpawnTargetCircle.gml</script>
       </scripts>
     </scripts>
   </scripts>
@@ -394,6 +397,10 @@
       </objects>
       <objects name="S7_Claustrophobia">
         <object>objects\oRedS7FanSpike</object>
+        <object>objects\oRedS7SpiralSpike</object>
+        <object>objects\oRedS7FastCircleSpike</object>
+        <object>objects\oRedS7SlowCircleSpike</object>
+        <object>objects\oRedS7TargetCircleSpike</object>
       </objects>
       <object>objects\oRedAbyssAvoidanceController</object>
       <object>objects\oRedBaseSpawner</object>
