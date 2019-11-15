@@ -132,6 +132,11 @@
       <sprite>sprites\sprRedAbyssLeheeFruit</sprite>
       <sprite>sprites\sprRedLightParticle</sprite>
       <sprite>sprites\sprRedAbyssSpawner</sprite>
+      <sprite>sprites\sprRedBrCornerBlock</sprite>
+      <sprite>sprites\sprRedBlCornerBlock</sprite>
+      <sprite>sprites\sprRedRightBlock</sprite>
+      <sprite>sprites\sprRedLeftBlock</sprite>
+      <sprite>sprites\sprRedFloorBlock</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -213,20 +218,14 @@
         <script>scripts\scrRedTweenSineInOut.gml</script>
         <script>scripts\scrRedTweenBackForth.gml</script>
       </scripts>
-      <script>scripts\scrRedCreateBloomCircle.gml</script>
-      <script>scripts\scrRedCreateSlicedCircle.gml</script>
-      <script>scripts\scrRedCreateSlidingSpike.gml</script>
-      <scripts name="SpawnerScripts">
-        <script>scripts\scrRedS3SpawnJitterBullets.gml</script>
-        <script>scripts\scrRedS4SpawnLeheeCircle.gml</script>
-        <script>scripts\scrRedS6SpawnAntitargetCircle.gml</script>
-        <script>scripts\scrRedS6SpawnSpiralBullet.gml</script>
-        <script>scripts\scrRedS6SpawnWaveSpike.gml</script>
-        <script>scripts\scrRedS6CreateTargetSpike.gml</script>
-        <script>scripts\scrRedS7SpawnSpikeFan.gml</script>
-        <script>scripts\scrRedS7SpawnSpikeCircle.gml</script>
-        <script>scripts\scrRedS7SpawnSpikeSpiral.gml</script>
-        <script>scripts\scrRedS7SpawnTargetCircle.gml</script>
+      <scripts name="StepScripts">
+        <script>scripts\scrRedS1IntroStep.gml</script>
+        <script>scripts\scrRedS2BloomStep.gml</script>
+        <script>scripts\scrRedS3JitterStep.gml</script>
+        <script>scripts\scrRedS4SlicedCirclesStep.gml</script>
+        <script>scripts\scrRedS5TwinDownpourStep.gml</script>
+        <script>scripts\scrRedS6WelcomeToAbyssStep.gml</script>
+        <script>scripts\scrRedS7ClaustrophobiaStep.gml</script>
       </scripts>
     </scripts>
   </scripts>
@@ -379,7 +378,6 @@
         <object>objects\oRedS5SourceBullet</object>
         <object>objects\oRedS5BarrageBullet</object>
         <object>objects\oRedS5BurstBullet</object>
-        <object>objects\oRedS5BurstBulletSpawner</object>
         <object>objects\oRedS5Spike</object>
         <object>objects\oRedS5TempBackdrop</object>
       </objects>
@@ -398,9 +396,12 @@
       <objects name="S7_Claustrophobia">
         <object>objects\oRedS7FanSpike</object>
         <object>objects\oRedS7SpiralSpike</object>
-        <object>objects\oRedS7FastCircleSpike</object>
-        <object>objects\oRedS7SlowCircleSpike</object>
         <object>objects\oRedS7TargetCircleSpike</object>
+        <object>objects\oRedS7FuzzySpike</object>
+        <object>objects\oRedS7CircleSpike</object>
+        <object>objects\oRedS7TargetBullet</object>
+        <object>objects\oRedS7LeftWallSpike</object>
+        <object>objects\oRedS7RightWallSpike</object>
       </objects>
       <object>objects\oRedAbyssAvoidanceController</object>
       <object>objects\oRedBaseSpawner</object>
@@ -421,6 +422,12 @@
       <object>objects\oRedInstanceFadeCommand</object>
       <object>objects\oRedMoveCommand</object>
       <object>objects\oRedBulletTrail</object>
+      <object>objects\oRedAbyssBlock</object>
+      <object>objects\oRedLeftBlock</object>
+      <object>objects\oRedRightBlock</object>
+      <object>objects\oRedFloorBlock</object>
+      <object>objects\oRedBlCornerBlock</object>
+      <object>objects\oRedBrCornerBlock</object>
     </objects>
   </objects>
   <rooms name="rooms">
