@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>image_angle = direction;
 speed = 10;
-scrRedSetScale( 0.6 );
+scrRedSetScale( 0.5 );
 </string>
           </argument>
         </arguments>

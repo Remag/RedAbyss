@@ -157,7 +157,7 @@ event_user( 0 );
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>StartStep = 0;
+            <string>StartStep = 3488;
 event_user( 0 );
 </string>
           </argument>

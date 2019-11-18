@@ -47,8 +47,8 @@ if( t == 3158 ) {
 } else if( t == 3337 ) {
     var circleDir = random( 360 );
     scrRedS7SpawnCircle( circleDir, 35, 10, oRedS7CircleSpike );
-    scrRedS7SpawnCircle( circleDir, 40, 7, oRedS7FuzzySpike );
-    scrRedS7SpawnCircle( circleDir, 40, 5, oRedS7FuzzySpike );
+    scrRedS7SpawnCircle( circleDir, 30, 7, oRedS7OuterFuzzySpike );
+    scrRedS7SpawnCircle( circleDir, 30, 5, oRedS7InnerFuzzySpike );
 } else if( t == 3356 ) {
     scrRedCreateCustomSpawner( oRedS6TargetSource.x, oRedS6TargetSource.y, 5, scrRedS7SpawnTargetBullets, 20 );
 } else if( t == 3380 ) {
@@ -56,31 +56,38 @@ if( t == 3158 ) {
         friction = 0.5;
     }
 } else if( t == 3400 ) {
-    with( oRedS7FuzzySpike ) {
-        DirDelta = choose( random_range( -0.75, -0.5 ), random_range( 0.5, 0.75 ) );
+    var outerDir = choose( -1, 1 );
+    with( oRedS7OuterFuzzySpike ) {
+        DirDelta = outerDir * 1;
+        alarm[0] = 30;
+        friction = 0;
+        speed = 2;
+    }
+    with( oRedS7InnerFuzzySpike ) {
+        DirDelta = -outerDir * 1;
         alarm[0] = 30;
         friction = 0;
         speed = 2;
     }
 } else if( t == 3424 ) {
-    S7StartFromRight = scrRedGetPlayerX() < 400;
-    scrRedS7MoveWall( S7StartFromRight, 20 );
-    if( S7StartFromRight ) {
+    S7StartPlayerPosX = scrRedGetPlayerX();
+    scrRedS7MoveWall( S7StartPlayerPosX < 400, 20, S7StartPlayerPosX + 32 );
+    if( S7StartPlayerPosX < 400 ) {
         scrRedShakeViewX( -100, 40 );
     } else {
         scrRedShakeViewX( 100, 40 );
     }
 } else if( t == 3444 ) {
-    scrRedS7MoveWallBack( S7StartFromRight, 20 );
+    scrRedS7MoveWallBack( S7StartPlayerPosX < 400, 20 );
 } else if( t == 3465 ) {
-    scrRedS7MoveWall( !S7StartFromRight, 20 );
-    if( S7StartFromRight ) {
+    scrRedS7MoveWall( S7StartPlayerPosX >= 400, 20, S7StartPlayerPosX + 32 );
+    if( S7StartPlayerPosX < 400 ) {
         scrRedShakeViewX( 100, 40 );
     } else {
         scrRedShakeViewX( -100, 40 );
     }
 } else if( t == 3485 ) {
-    scrRedS7MoveWallBack( !S7StartFromRight, 20 );
+    scrRedS7MoveWallBack( S7StartPlayerPosX >= 400, 20 );
 }
 
 
@@ -115,11 +122,13 @@ scrRedInitializeCircle( oRedS6TargetSource.x, oRedS6TargetSource.y, circleDir, b
 
 #define scrRedS7SpawnTargetBullets
 var dir = scrRedDirToPlayer( oRedS6TargetSource.x, oRedS6TargetSource.y );
-scrRedCreateCircle( oRedS6TargetSource.x, oRedS6TargetSource.y, dir + 360 / 36, 18, oRedS7TargetBullet );
+scrRedCreateCircle( oRedS6TargetSource.x, oRedS6TargetSource.y, dir, 18, oRedS7TargetBullet );
 
 #define scrRedS7MoveWall
 var moveLeft = argument0;
 var duration = argument1;
+var distance = argument2;
+distance = min( distance, 320 );
 
 var targetWall;
 var destWallX;
@@ -128,13 +137,13 @@ var spikeX;
 var destSpikeX;
 if( moveLeft ) {
     targetWall = oRedRightBlock;
-    destWallX = 650 - 32;
+    destWallX = 800 - 32 - distance;
     spikeObj = oRedS7LeftWallSpike;
     spikeX = 800 - 32;
     destSpikeX = destWallX - 32;
 } else {
     targetWall = oRedLeftBlock;
-    destWallX = 250;
+    destWallX = distance;
     spikeObj = oRedS7RightWallSpike;
     spikeX = 0;
     destSpikeX = destWallX + 32;
@@ -179,4 +188,3 @@ with( spikeObj ) {
 with( targetWall ) {
     scrRedMoveInstance( id, destX, y, duration, scrRedTweenSineIn );
 }
-

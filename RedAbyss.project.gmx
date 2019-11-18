@@ -210,6 +210,7 @@
         <script>scripts\scrRedShakeViewY.gml</script>
         <script>scripts\scrRedSetPolarCoordinates.gml</script>
         <script>scripts\scrRedMoveInstance.gml</script>
+        <script>scripts\scrRedRotateInstance.gml</script>
         <script>scripts\scrRedAttachTrail.gml</script>
       </scripts>
       <scripts name="TweenScripts">
@@ -226,6 +227,7 @@
         <script>scripts\scrRedS5TwinDownpourStep.gml</script>
         <script>scripts\scrRedS6WelcomeToAbyssStep.gml</script>
         <script>scripts\scrRedS7ClaustrophobiaStep.gml</script>
+        <script>scripts\scrRedS8RedMarchStep.gml</script>
       </scripts>
     </scripts>
   </scripts>
@@ -398,10 +400,17 @@
         <object>objects\oRedS7SpiralSpike</object>
         <object>objects\oRedS7TargetCircleSpike</object>
         <object>objects\oRedS7FuzzySpike</object>
+        <object>objects\oRedS7InnerFuzzySpike</object>
+        <object>objects\oRedS7OuterFuzzySpike</object>
         <object>objects\oRedS7CircleSpike</object>
         <object>objects\oRedS7TargetBullet</object>
         <object>objects\oRedS7LeftWallSpike</object>
         <object>objects\oRedS7RightWallSpike</object>
+      </objects>
+      <objects name="S8_RedMarch">
+        <object>objects\oRedS8WallSpike</object>
+        <object>objects\oRedS8TargetBullet</object>
+        <object>objects\oRedS8CircleBullet</object>
       </objects>
       <object>objects\oRedAbyssAvoidanceController</object>
       <object>objects\oRedBaseSpawner</object>
@@ -421,6 +430,7 @@
       <object>objects\oRedInstanceActivationCommand</object>
       <object>objects\oRedInstanceFadeCommand</object>
       <object>objects\oRedMoveCommand</object>
+      <object>objects\oRedRotateCommand</object>
       <object>objects\oRedBulletTrail</object>
       <object>objects\oRedAbyssBlock</object>
       <object>objects\oRedLeftBlock</object>

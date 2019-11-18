@@ -63,7 +63,7 @@ if( t == 2845 ) {
             blockIndex = maxBlockedIndex;
             nextFullIndex = maxBlockedIndex + 1;
         } else if( blockIndex == nextFullIndex ) {
-            nextFullIndex += irandom_range( 2, 2 );
+            nextFullIndex += irandom_range( 2, 3 );
             var spikeX = 32 + blockIndex * 32;
             var spike = instance_create( spikeX, 576, oRedS6FloorSpike );
             spike.Duration = duration / 2;

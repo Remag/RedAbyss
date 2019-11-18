@@ -2,13 +2,13 @@
 <object>
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
-  <visible>-1</visible>
+  <visible>0</visible>
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="3" enumb="2">
+    <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -25,18 +25,22 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>Lifetime++;
-if( SpawnDuration &gt; 0 &amp;&amp; Lifetime &gt;= SpawnDuration ) {
+            <string>if( !instance_exists( TargetId ) || TargetId.CurrentRotateCommand != id ) {
     instance_destroy();
     exit;
 }
 
-CurrentPeriod = min( CurrentPeriod, SpawnPeriod );
-CurrentPeriod--;
-while( CurrentPeriod &lt;= 0 ) {
-    CurrentPeriod += SpawnPeriod;
-    event_user( 0 );
+Step++;
+if( Step &gt;= Duration ) {
+    TargetId.direction = StartDirection + DeltaDirection;
+    TargetId.image_angle = TargetId.direction;
+    instance_destroy();
+    exit;
 }
+
+var tweenPos = script_execute( Smoother, 0, 1, Step, Duration );
+TargetId.direction = StartDirection + tweenPos * DeltaDirection;
+TargetId.image_angle = TargetId.direction;
 </string>
           </argument>
         </arguments>

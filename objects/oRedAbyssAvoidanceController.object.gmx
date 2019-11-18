@@ -48,7 +48,7 @@ if( global.debugMode ) {
 ViewAngle = 0;
 
 S2TrailFruitMode = 0;
-S7StartFromRight = true;
+S7StartPlayerPosX = 400;
 </string>
           </argument>
         </arguments>
@@ -103,6 +103,7 @@ scrRedS4SlicedCirclesStep( Step );
 scrRedS5TwinDownpourStep( Step );
 scrRedS6WelcomeToAbyssStep( Step );
 scrRedS7ClaustrophobiaStep( Step );
+scrRedS8RedMarchStep( Step );
 
 </string>
           </argument>
