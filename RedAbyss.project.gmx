@@ -212,12 +212,18 @@
         <script>scripts\scrRedMoveInstance.gml</script>
         <script>scripts\scrRedRotateInstance.gml</script>
         <script>scripts\scrRedAttachTrail.gml</script>
+        <script>scripts\scrRedFlashScreen.gml</script>
+        <script>scripts\scrRedDestroy.gml</script>
       </scripts>
       <scripts name="TweenScripts">
+        <script>scripts\scrRedTweenLinear.gml</script>
         <script>scripts\scrRedTweenSineIn.gml</script>
         <script>scripts\scrRedTweenSineOut.gml</script>
         <script>scripts\scrRedTweenSineInOut.gml</script>
         <script>scripts\scrRedTweenBackForth.gml</script>
+        <script>scripts\scrRedTweenExpIn.gml</script>
+        <script>scripts\scrRedTweenExpOut.gml</script>
+        <script>scripts\scrRedTweenExpInOut.gml</script>
       </scripts>
       <scripts name="StepScripts">
         <script>scripts\scrRedS1IntroStep.gml</script>
@@ -411,6 +417,10 @@
         <object>objects\oRedS8WallSpike</object>
         <object>objects\oRedS8TargetBullet</object>
         <object>objects\oRedS8CircleBullet</object>
+        <object>objects\oRedS8GravitySpike</object>
+        <object>objects\oRedS8FloorSpike</object>
+        <object>objects\oRedS8CircleSpike</object>
+        <object>objects\oRedS8CeilingSpike</object>
       </objects>
       <object>objects\oRedAbyssAvoidanceController</object>
       <object>objects\oRedBaseSpawner</object>
@@ -438,6 +448,7 @@
       <object>objects\oRedFloorBlock</object>
       <object>objects\oRedBlCornerBlock</object>
       <object>objects\oRedBrCornerBlock</object>
+      <object>objects\oRedScreenFlash</object>
     </objects>
   </objects>
   <rooms name="rooms">

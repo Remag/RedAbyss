@@ -84,8 +84,7 @@ if( t == 3488 ) {
         Acceleration = -1;
         MinSpeed = 4;
     }
-}
-else if( t == 3946 ) {
+} else if( t == 3946 ) {
     var wallAngle = 45;
     with( oRedS8WallSpike ) {
         var angle;
@@ -107,6 +106,71 @@ else if( t == 3946 ) {
     with( oRedS8WallSpike ) {
         Acceleration = 0.75;
         MaxSpeed = 7;
+    }
+} else if( t == 4011 ) {
+    scrRedS8SendSpikesAway( 300 );
+} else if( t == 4023 ) {
+    scrRedS8SendSpikesAway( 500 );
+} else if( t == 4035 ) {
+    scrRedS8SendSpikesAway( 10000 );
+} else if( t == 4076 ) {
+    var spikeCount = 3;
+    var spikeOffsetX = floor( spikeCount / 2 ) * 32 + 16;
+    for( var spikeX = 400 - spikeOffsetX; spikeX < 400 + spikeOffsetX; spikeX += 32 ) {
+        var floorSpike = instance_create( spikeX, 608 - 32, oRedS8FloorSpike );
+        scrRedMoveInstance( floorSpike, spikeX, 608 - 64, 15 );
+    }
+} else if( t == 4098 ) {
+    var spikeCount = 7;
+    var circleCenterX = 400;
+    var circleCenterY = 608 - 72;
+    var circleRadius = 120;
+    var dirDelta = 10;
+    var spikeDir = 90 - dirDelta * floor( spikeCount / 2 )
+    for( var i = 0; i < spikeCount; i++ ) {
+        var circleSpike = instance_create( 400, 608 - 48, oRedS8CircleSpike );
+        circleSpike.image_angle = 90;
+        circleSpike.direction = 90;
+        circleSpike.speed = 0.5;
+        var posX = circleCenterX + lengthdir_x( circleRadius, spikeDir );
+        var posY = circleCenterY + lengthdir_y( circleRadius, spikeDir );
+        scrRedMoveInstance( circleSpike, posX, posY, 15 );
+        scrRedRotateInstance( circleSpike, spikeDir, 15 );
+        spikeDir += dirDelta;
+    }
+} else if( t == 4120 ) {
+    var spikeY = 608 - 132;
+    var spikeOffsetX = 48;
+    var leftSpawner = scrRedCreateSpawner( 400 - spikeOffsetX, spikeY, 1, oRedS8CeilingSpike, 4162 - 4120 );
+    leftSpawner.direction = 180;
+    leftSpawner.speed = 22;
+    var rightSpawner = scrRedCreateSpawner( 400 + spikeOffsetX, spikeY, 1, oRedS8CeilingSpike, 4162 - 4120 );
+    rightSpawner.direction = 0;
+    rightSpawner.speed = 22;
+} else if( t == 4158 ) {
+    with( oRedS8CeilingSpike ) {
+        DirDelta = choose( -90, 90 );
+        scrRedRotateInstance( id, direction + DirDelta, 10 );
+        scrRedMoveInstance( id, x, y - random_range( 16, 20 ), 10 );
+        scrRedAttachTrail( id, 10 );
+        speed = 0;
+    }   
+} else if( t == 4168 ) {
+    with( oRedS8CeilingSpike ) {
+        scrRedRotateInstance( id, direction + sign( DirDelta ) * 10, 10 )
+        scrRedMoveInstance( id, x, 608 + 32, 20, scrRedTweenExpIn );
+    }
+} else if( t == 4173 ) {
+    with( oRedS8CeilingSpike ) {
+    }
+} else if( t == 4186 ) {
+    scrRedFlashScreen( c_white, 5, 50 );
+} else if( t == 4189 ) {
+    scrRedDestroy( oRedS8CircleSpike );
+    scrRedDestroy( oRedS8FloorSpike );
+    scrRedDestroy( oRedS6AbyssSource );
+    with( oRedAbyssBackground ) {
+        sprite_index = sprRedAbyssBackground;
     }
 }
 
@@ -168,3 +232,21 @@ var params = scrRedCreateCircleAdditionalParams();
 params.Speed = 14;
 params.Scale = 0.9;
 scrRedInitializeCircle( x, y, dir, bulletCount, oRedS8TargetBullet, params );
+#define scrRedS8SendSpikesAway
+var radius = argument0;
+
+var playerX = scrRedGetPlayerX();
+var playerY = scrRedGetPlayerY();
+with( oRedS8WallSpike ) {
+    if( point_distance( x, y, playerX, playerY ) < radius ) {
+        var spike = instance_create( x, y, oRedS8GravitySpike );
+        var dir = point_direction( playerX, playerY, x, y );
+        spike.direction = dir;
+        spike.image_angle = spike.direction;
+        spike.speed = 6;
+        spike.gravity = 0.3;
+        spike.image_xscale = image_xscale;
+        spike.image_yscale = image_yscale;
+        instance_destroy();
+    }
+}
