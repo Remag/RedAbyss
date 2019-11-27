@@ -130,6 +130,7 @@
       <sprite>sprites\sprRedAbyssDagger</sprite>
       <sprite>sprites\sprRedAbyssFruit</sprite>
       <sprite>sprites\sprRedAbyssLeheeFruit</sprite>
+      <sprite>sprites\sprRedDualityHitbox</sprite>
       <sprite>sprites\sprRedLightParticle</sprite>
       <sprite>sprites\sprRedAbyssSpawner</sprite>
       <sprite>sprites\sprRedBrCornerBlock</sprite>
@@ -214,6 +215,7 @@
         <script>scripts\scrRedAttachTrail.gml</script>
         <script>scripts\scrRedFlashScreen.gml</script>
         <script>scripts\scrRedDestroy.gml</script>
+        <script>scripts\scrRedCheckSurface.gml</script>
       </scripts>
       <scripts name="TweenScripts">
         <script>scripts\scrRedTweenLinear.gml</script>
@@ -234,6 +236,9 @@
         <script>scripts\scrRedS6WelcomeToAbyssStep.gml</script>
         <script>scripts\scrRedS7ClaustrophobiaStep.gml</script>
         <script>scripts\scrRedS8RedMarchStep.gml</script>
+        <script>scripts\scrRedS9DualityStep.gml</script>
+        <script>scripts\scrRedS10WaterfallStep.gml</script>
+        <script>scripts\scrRedS11TideStep.gml</script>
       </scripts>
     </scripts>
   </scripts>
@@ -421,6 +426,17 @@
         <object>objects\oRedS8FloorSpike</object>
         <object>objects\oRedS8CircleSpike</object>
         <object>objects\oRedS8CeilingSpike</object>
+      </objects>
+      <objects name="S9_Duality">
+        <object>objects\oRedS9SurfaceDrawInitiator</object>
+        <object>objects\oRedS9DualBullet</object>
+        <object>objects\oRedS9DualSource</object>
+        <object>objects\oRedS9DualRay</object>
+        <object>objects\oRedS9SurfaceDrawFinalizer</object>
+        <object>objects\oRedS9ScreenSeparator</object>
+      </objects>
+      <objects name="S10_Waterfall">
+        <object>objects\oRedS10DiagonalBullet</object>
       </objects>
       <object>objects\oRedAbyssAvoidanceController</object>
       <object>objects\oRedBaseSpawner</object>

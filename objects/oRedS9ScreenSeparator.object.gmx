@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>1100000</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,30 +25,16 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>MusicStartStep = 0;
-Step = 0;
-RealStep = 0;
-Duration = 0;
+            <string>SeparationX = 450;
+TargetSeparationX = SeparationX;
+DriftStartX = SeparationX;
+SeparationDrift = 0;
+MoveStartSeparationX = SeparationX;
+SeparationMoveStep = -1;
+SeparationMoveDuration = 25;
 
-MusicId = 0;
-
-if( global.debugMode ) {
-    if( !instance_exists( oRedDebugInfo ) ) {
-        instance_create( 0, 0, oRedDebugInfo );
-    }
-    Step = oRedDebugInfo.StartStep;
-    if( Step &gt; MusicStartStep ) {
-        // Start the music.
-        MusicId = audio_play_sound( musRedLunarAbyss, 0, false );
-        Duration = audio_sound_length( MusicId ) * 50;   
-    }
-}
-
-// View operation variables.
-ViewAngle = 0;
-
-S2TrailFruitMode = 0;
-S7StartPlayerPosX = 400;
+BlueSurface = noone;
+RedSurface = noone;
 </string>
           </argument>
         </arguments>
@@ -94,65 +80,23 @@ S7StartPlayerPosX = 400;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Steps
-
-scrRedS1IntroStep( Step );
-scrRedS2BloomStep( Step );
-scrRedS3JitterStep( Step );
-scrRedS4SlicedCirclesStep( Step );
-scrRedS5TwinDownpourStep( Step );
-scrRedS6WelcomeToAbyssStep( Step );
-scrRedS7ClaustrophobiaStep( Step );
-scrRedS8RedMarchStep( Step );
-scrRedS9DualityStep( Step );
-scrRedS10WaterfallStep( Step );
-scrRedS11TideStep( Step );
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Advance &amp; Music Sync
-
-if( Step == MusicStartStep ) {
-    // Start the music.
-    MusicId = audio_play_sound( musRedLunarAbyss, 0, false );
-    Duration = audio_sound_length( MusicId ) * 50;    
-} else if( Step &gt; MusicStartStep ) {
-    // Stop the music if necessary.
-    if( !instance_exists( objPlayer ) || ( Step - MusicStartStep ) &gt;= Duration ) {
-        audio_stop_sound( MusicId );
-        exit;
+            <string>if( DriftStartX != TargetSeparationX ) {
+    SeparationDrift = sign( TargetSeparationX - SeparationX );
+    SeparationMoveStep++;
+    if( SeparationMoveStep &gt;= SeparationMoveDuration ) {
+        SeparationX = TargetSeparationX;
+        DriftStartX = TargetSeparationX;
+        MoveStartSeparationX = TargetSeparationX;
+        SeparationMoveStep = 0;
+    } else {
+        SeparationX = scrRedTweenSineInOut( MoveStartSeparationX, TargetSeparationX - MoveStartSeparationX, SeparationMoveStep, SeparationMoveDuration );
     }
-    
-    // Correct the game time if it desyncs from real time.
-    var deltaStep = RealStep - Step;
-    if( abs( deltaStep ) &gt; 5 ) {
-        // A big lag spike, adjust music to game time.
-       audio_sound_set_track_position( MusicId, ( Step - MusicStartStep ) / 50 );
-       //show_debug_message( "Music sync" );
-       RealStep = Step;
-    }
+} else {
+    SeparationX = clamp( SeparationX + SeparationDrift, 0, 800 );
+    MoveStartSeparationX = SeparationX;
 }
 
-Step++;
-RealStep += 50 * delta_time / 1000000;
+
 </string>
           </argument>
         </arguments>
@@ -176,7 +120,9 @@ RealStep += 50 * delta_time / 1000000;
           <argument>
             <kind>1</kind>
             <string>/// Cleanup
-audio_stop_sound( MusicId );
+surface_free( BlueSurface );
+surface_free( RedSurface );
+surface_free( noone );
 </string>
           </argument>
         </arguments>
@@ -245,25 +191,8 @@ audio_stop_sound( MusicId );
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if( global.debugMode ) {
-    var panelX = 635;
-    var panelY = 24;
-    var lineHeight = 16;
-    
-    draw_set_font( fDefault12 );
-    draw_set_halign( fa_left );
-    draw_set_valign( fa_top );
-    scrDrawTextOutline( panelX, panelY, "Frame: " + string( Step ), c_white, c_black );
-    var secondsCount = floor( Step / 50 mod 60 );
-    var secondsStr;
-    if( secondsCount &lt; 10 ) {
-        secondsStr = '0' + string( secondsCount );
-    } else {
-        secondsStr = string( secondsCount );
-    }
-    scrDrawTextOutline( panelX, panelY + lineHeight, "Time: " + string( floor( Step / 50 / 60 ) ) + ":" + string( secondsStr ), c_white, c_black );
-    scrDrawTextOutline( panelX, panelY + 2 * lineHeight, "Count: " + string( instance_count ), c_white, c_black );
-}
+            <string>draw_surface( BlueSurface, 0, 0 );
+draw_surface( RedSurface, SeparationX, 0 );
 </string>
           </argument>
         </arguments>

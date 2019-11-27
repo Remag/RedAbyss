@@ -3,7 +3,7 @@
   <spriteName>sprRedRightBlock</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>1000000</depth>
+  <depth>1000002</depth>
   <persistent>0</persistent>
   <parentName>oRedAbyssBlock</parentName>
   <maskName>&lt;undefined&gt;</maskName>

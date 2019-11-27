@@ -113,14 +113,14 @@ if( t == 3488 ) {
     scrRedS8SendSpikesAway( 500 );
 } else if( t == 4035 ) {
     scrRedS8SendSpikesAway( 10000 );
-} else if( t == 4076 ) {
+} else if( t == 4073 ) {
     var spikeCount = 3;
     var spikeOffsetX = floor( spikeCount / 2 ) * 32 + 16;
     for( var spikeX = 400 - spikeOffsetX; spikeX < 400 + spikeOffsetX; spikeX += 32 ) {
         var floorSpike = instance_create( spikeX, 608 - 32, oRedS8FloorSpike );
         scrRedMoveInstance( floorSpike, spikeX, 608 - 64, 15 );
     }
-} else if( t == 4098 ) {
+} else if( t == 4095 ) {
     var spikeCount = 7;
     var circleCenterX = 400;
     var circleCenterY = 608 - 72;
@@ -141,37 +141,34 @@ if( t == 3488 ) {
 } else if( t == 4120 ) {
     var spikeY = 608 - 132;
     var spikeOffsetX = 48;
-    var leftSpawner = scrRedCreateSpawner( 400 - spikeOffsetX, spikeY, 1, oRedS8CeilingSpike, 4162 - 4120 );
+    var leftSpawner = scrRedCreateSpawner( 400 - spikeOffsetX, spikeY, 1, oRedS8CeilingSpike, 4155 - 4120 );
     leftSpawner.direction = 180;
     leftSpawner.speed = 22;
-    var rightSpawner = scrRedCreateSpawner( 400 + spikeOffsetX, spikeY, 1, oRedS8CeilingSpike, 4162 - 4120 );
+    var rightSpawner = scrRedCreateSpawner( 400 + spikeOffsetX, spikeY, 1, oRedS8CeilingSpike, 4155 - 4120 );
     rightSpawner.direction = 0;
     rightSpawner.speed = 22;
-} else if( t == 4158 ) {
+} else if( t == 4155 ) {
     with( oRedS8CeilingSpike ) {
-        DirDelta = choose( -90, 90 );
+        DirDelta = choose( -60, 60 );
         scrRedRotateInstance( id, direction + DirDelta, 10 );
         scrRedMoveInstance( id, x, y - random_range( 16, 20 ), 10 );
         scrRedAttachTrail( id, 10 );
         speed = 0;
     }   
-} else if( t == 4168 ) {
+} else if( t == 4165 ) {
     with( oRedS8CeilingSpike ) {
         scrRedRotateInstance( id, direction + sign( DirDelta ) * 10, 10 )
         scrRedMoveInstance( id, x, 608 + 32, 20, scrRedTweenExpIn );
     }
-} else if( t == 4173 ) {
+} else if( t == 4170 ) {
     with( oRedS8CeilingSpike ) {
     }
-} else if( t == 4186 ) {
+} else if( t == 4183 ) {
     scrRedFlashScreen( c_white, 5, 50 );
-} else if( t == 4189 ) {
+} else if( t == 4186 ) {
     scrRedDestroy( oRedS8CircleSpike );
     scrRedDestroy( oRedS8FloorSpike );
     scrRedDestroy( oRedS6AbyssSource );
-    with( oRedAbyssBackground ) {
-        sprite_index = sprRedAbyssBackground;
-    }
 }
 
 #define scrRedS8SpawnSpikeTopWall
