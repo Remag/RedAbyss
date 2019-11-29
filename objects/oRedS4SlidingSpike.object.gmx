@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>1000001</depth>
+  <depth>1000003</depth>
   <persistent>0</persistent>
   <parentName>oRedProjectile</parentName>
   <maskName>&lt;undefined&gt;</maskName>

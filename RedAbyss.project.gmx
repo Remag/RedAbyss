@@ -438,6 +438,9 @@
       <objects name="S10_Waterfall">
         <object>objects\oRedS10DiagonalBullet</object>
       </objects>
+      <objects name="S11_Tide">
+        <object>objects\oRedS11TideBullet</object>
+      </objects>
       <object>objects\oRedAbyssAvoidanceController</object>
       <object>objects\oRedBaseSpawner</object>
       <object>objects\oRedProjectileSpawner</object>

@@ -25,8 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>speed = 8;
-AngleDelta = choose( -4, 4 );
+            <string>BounceCount = 0;
+AngleDelta = choose( -2, 2 );
 image_speed = 0;
 </string>
           </argument>
@@ -50,40 +50,25 @@ image_speed = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if( bbox_left &lt;= 32 || bbox_right &gt;= 768 ) {
-    hspeed = -hspeed;
-    AngleDelta = -AngleDelta;
+            <string>if( bbox_bottom &gt;= 576 ) {
+    BounceCount++;
+    if( BounceCount == 1 ) {
+        direction = 360 - direction;
+        direction += ( 90 - direction ) * 0.5;
+        AngleDelta = -AngleDelta;
+        speed *= 1.9;
+    } else if( direction &gt; 180 &amp;&amp; direction &lt; 360 &amp;&amp; BounceCount == 2 ) {
+        direction = 90;
+        AngleDelta /= 2;
+        AngleDelta = -AngleDelta;
+        speed *= 0.8;
+    } else if( y &gt; 608 + 24 ) {
+        instance_destroy();
+    }
 }
-image_angle += AngleDelta;
 
-if( y &gt; 625 ) {
-    instance_destroy();
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>draw_set_blend_mode( bm_add );
-draw_self();
-draw_set_blend_mode( bm_normal );
+
+image_angle += AngleDelta;
 </string>
           </argument>
         </arguments>
