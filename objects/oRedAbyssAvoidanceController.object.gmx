@@ -107,7 +107,7 @@ scrRedS8RedMarchStep( Step );
 scrRedS9DualityStep( Step );
 scrRedS10WaterfallStep( Step );
 scrRedS11TideStep( Step );
-
+scrRedS12RelapseStep( Step );
 </string>
           </argument>
         </arguments>

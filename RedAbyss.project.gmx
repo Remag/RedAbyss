@@ -239,6 +239,7 @@
         <script>scripts\scrRedS9DualityStep.gml</script>
         <script>scripts\scrRedS10WaterfallStep.gml</script>
         <script>scripts\scrRedS11TideStep.gml</script>
+        <script>scripts\scrRedS12RelapseStep.gml</script>
       </scripts>
     </scripts>
   </scripts>
@@ -441,6 +442,18 @@
       <objects name="S11_Tide">
         <object>objects\oRedS11TideBullet</object>
       </objects>
+      <objects name="S12_Relapse">
+        <object>objects\oRedS12Source</object>
+        <object>objects\oRedS12Bullet</object>
+        <object>objects\oRedS12BurstBullet</object>
+        <object>objects\oRedS12Spike</object>
+        <object>objects\oRedS12LeftSpike</object>
+        <object>objects\oRedS12RightSpike</object>
+        <object>objects\oRedS12BottomSpike</object>
+      </objects>
+      <objects name="S13_CorruptedInfinity">
+        <object>objects\oRedS13Source</object>
+      </objects>
       <object>objects\oRedAbyssAvoidanceController</object>
       <object>objects\oRedBaseSpawner</object>
       <object>objects\oRedProjectileSpawner</object>
@@ -468,6 +481,7 @@
       <object>objects\oRedBlCornerBlock</object>
       <object>objects\oRedBrCornerBlock</object>
       <object>objects\oRedScreenFlash</object>
+      <object>objects\oRedInfiniteJump</object>
     </objects>
   </objects>
   <rooms name="rooms">

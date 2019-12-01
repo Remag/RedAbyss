@@ -8,8 +8,9 @@ if( argument_count > 3 ) {
     spawnDuration = argument[3];
 }
 
+var spawner = noone;
 with( ownerId ) {
-    var spawner = instance_create( x, y, oRedAttachedSpawner );
+    spawner = instance_create( x, y, oRedAttachedSpawner );
     spawner.SpawnObject = spawnObject;
     spawner.SpawnPeriod = spawnPeriod;
     spawner.CurrentPeriod = 0;
@@ -18,3 +19,4 @@ with( ownerId ) {
     spawner.SpawnDuration = spawnDuration;
     Spawner = spawner;
 }
+return spawner;
