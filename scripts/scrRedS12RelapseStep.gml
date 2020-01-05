@@ -71,9 +71,7 @@ if( t == 6269 ) {
     }
     scrRedDeactivateBullets( oRedS12Spike );
 } else if( t == 6895 ) {
-    with( oRedAbyssBackground ) {
-        sprite_index = sprRedAbyssRedBackground;
-    }
+    oRedAbyssBackground.sprite_index = sprRedAbyssRedBackground; 
     scrRedBulletFadeOut( oRedS5TempBackdrop );
     scrRedActivateBullets( oRedS12Spike );
 } else if( t == 6940 ) {

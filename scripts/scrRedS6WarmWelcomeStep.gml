@@ -1,4 +1,3 @@
-#define scrRedS6WelcomeToAbyssStep
 var t = argument0;
 
 if( t == 2791 && !instance_exists( oRedS6AbyssSource ) ) {
@@ -111,26 +110,3 @@ if( t == 2845 ) {
         trail.TailAlpha = 0.5;
     }
 }
-
-#define scrRedS6SpawnAntitargetCircle
-var playerDir = scrRedDirToPlayerFeet( x, y );
-var bulletCount = 10;
-var dirDelta = 360 / ( 2 * bulletCount );
-var circle = scrRedCreateCircleAdditionalParams();
-circle.Spawner = id;
-scrRedInitializeCircle( x, y, playerDir + dirDelta, bulletCount, oRedS6TargetBullet, circle );
-
-#define scrRedS6SpawnSpiralBullet
-scrRedCreateCircle( x, y, direction, 9, oRedS6SpiralBullet );
-direction += DirDelta + random_range( -1, 1 );
-
-#define scrRedS6SpawnWaveSpike
-if( x < 32 || x > 800 - 48 ) {
-    instance_destroy();
-} else {
-    instance_create( x, y, oRedS6WaveSpike );
-}
-
-
-#define scrRedS6CreateTargetSpike
-scrRedCreateCircle( x, y, scrRedDirToPlayer( x, y ), 12, oRedS6TargetSpike );

@@ -1,4 +1,3 @@
-#define scrRedS5TwinDownpourStep
 var t = argument0;
 
 if( t == 2094 ) {
@@ -125,16 +124,3 @@ if( t == 2765 ) {
     scrRedBulletFadeOut( oRedS5Spike, 0.03 );
 }
 
-
-#define scrRedS5SpawnBurstBullet
-var hCount = round( SpawnCount / 2 );
-repeat( hCount ) {
-    var bullet = instance_create( x, y, oRedS5BurstBullet );
-    bullet.speed = random_range( SpeedMin, SpeedMax );
-    bullet.direction = random_range( 0, 180 );
-}
-repeat( hCount ) {
-    var bullet = instance_create( x, y, oRedS5BurstBullet );
-    bullet.speed = random_range( SpeedMin, SpeedMax );
-    bullet.direction = random_range( 180, 360 );
-}

@@ -1,4 +1,3 @@
-#define scrRedS4SlicedCirclesStep
 var t = argument0;
 
 if( t == 1400 ) {
@@ -67,47 +66,3 @@ if( t == 2049 ) {
     scrRedDeactivateBullets( oRedS4CircleBullet );
 }
 
-
-#define scrRedCreateSlicedCircle
-var spawnX = argument0;
-var spawnY = argument1;
-var directionDelta = argument2;
-
-var slicesCount = 5;
-var sliceBulletCount = 5;
-var sliceDegLength = 25;
-
-var sliceDegDelta = sliceDegLength / sliceBulletCount;
-var gapDegLength = ( 360 - ( sliceDegLength * slicesCount ) ) / slicesCount;
-var sectorDegLength = gapDegLength + sliceDegLength;
-
-var startDir = random( 360 );
-for( var i = 0; i < 360; i += sectorDegLength ) {
-    var currentDir = startDir + i;
-    for( var j = 0; j < sliceBulletCount; j++ ) {
-        var bullet = instance_create( spawnX, spawnY, oRedS4CircleBullet );
-        bullet.PolarDirection = currentDir;
-        bullet.DirectionDelta = directionDelta;
-        bullet.RadiusDelta = 3;
-        currentDir += sliceDegDelta;
-    }
-}
-
-#define scrRedCreateSlidingSpike
-/// scrRedCreateSlidingSpike( x, y, direction, scale, duration, sprite )
-var spikeX = argument0;
-var spikeY = argument1;
-var spikeDirection = argument2;
-var spikeScale = argument3;
-var duration = argument4;
-var sprite = argument5;
-
-var spike = instance_create( spikeX, spikeY, oRedS4SlidingSpike );
-spike.Duration = duration;
-spike.direction = spikeDirection;
-spike.sprite_index = sprite;
-spike.image_xscale = spikeScale;
-spike.image_yscale = spikeScale;
-
-#define scrRedS4SpawnLeheeCircle
-scrRedCreateCircle( x, y, random( 360 ), 10, oRedS4LeheeBullet );

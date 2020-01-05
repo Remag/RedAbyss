@@ -101,13 +101,14 @@ scrRedS2BloomStep( Step );
 scrRedS3JitterStep( Step );
 scrRedS4SlicedCirclesStep( Step );
 scrRedS5TwinDownpourStep( Step );
-scrRedS6WelcomeToAbyssStep( Step );
+scrRedS6WarmWelcomeStep( Step );
 scrRedS7ClaustrophobiaStep( Step );
 scrRedS8RedMarchStep( Step );
 scrRedS9DualityStep( Step );
 scrRedS10WaterfallStep( Step );
 scrRedS11TideStep( Step );
 scrRedS12RelapseStep( Step );
+scrRedS13CorruptedInfinityStep( Step );
 </string>
           </argument>
         </arguments>

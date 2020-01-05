@@ -1,4 +1,3 @@
-#define scrRedS3JitterStep
 var t = argument0;
 
 if( t == 702 || t == 790 || t == 886 ) {
@@ -60,10 +59,3 @@ if( t == 702 || t == 790 || t == 886 ) {
         PrevPositionsIndex = 0;
     }
 }
-
-#define scrRedS3SpawnJitterBullets
-var circleParams = scrRedCreateCircleAdditionalParams();
-circleParams.CurveDir = OwnerInstance.CurveDir;
-circleParams.SpawnImageMin = OwnerInstance.SpawnImageMin;
-circleParams.SpawnImageMax = OwnerInstance.SpawnImageMax;
-scrRedInitializeCircle( x, y, random( 360 ), 8, oRedS3JitterBullet, circleParams );

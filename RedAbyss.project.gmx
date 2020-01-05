@@ -3,7 +3,219 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <NewExtensions/>
+  <datafiles number="12" name="datafiles">
+    <datafile>
+      <name>netlog.gmez</name>
+      <exists>-1</exists>
+      <size>1614</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>netlog.gmez</filename>
+    </datafile>
+    <datafile>
+      <name>GMLiveHelper.gmez</name>
+      <exists>-1</exists>
+      <size>33494</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>GMLiveHelper.gmez</filename>
+    </datafile>
+    <datafile>
+      <name>std.ndll</name>
+      <exists>-1</exists>
+      <size>116224</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>std.ndll</filename>
+    </datafile>
+    <datafile>
+      <name>regexp.ndll</name>
+      <exists>-1</exists>
+      <size>111616</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>regexp.ndll</filename>
+    </datafile>
+    <datafile>
+      <name>neko.dll</name>
+      <exists>-1</exists>
+      <size>101888</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>neko.dll</filename>
+    </datafile>
+    <datafile>
+      <name>gmlive-server.n</name>
+      <exists>-1</exists>
+      <size>140364</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>gmlive-server.n</filename>
+    </datafile>
+    <datafile>
+      <name>gmlive.html</name>
+      <exists>-1</exists>
+      <size>46102</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>gmlive.html</filename>
+    </datafile>
+    <datafile>
+      <name>gc.dll</name>
+      <exists>-1</exists>
+      <size>81920</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>gc.dll</filename>
+    </datafile>
+    <datafile>
+      <name>gmlive-server.exe</name>
+      <exists>-1</exists>
+      <size>152148</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>gmlive-server.exe</filename>
+    </datafile>
+    <datafile>
+      <name>netlog.exe</name>
+      <exists>-1</exists>
+      <size>54272</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>netlog.exe</filename>
+    </datafile>
+    <datafiles number="12" name="netlog">
+      <datafile>
+        <name>netlog.exe</name>
+        <exists>0</exists>
+        <size>0</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>netlog.exe</filename>
+      </datafile>
+      <datafile>
+        <name>netlog.n</name>
+        <exists>0</exists>
+        <size>0</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>netlog.n</filename>
+      </datafile>
+    </datafiles>
+  </datafiles>
+  <NewExtensions>
+    <extension index="0">extensions\GMLive</extension>
+    <extension index="1">extensions\GMLiveHelper</extension>
+    <extension index="2">extensions\netlog</extension>
+  </NewExtensions>
   <sounds name="sound">
     <sounds name="sfx">
       <sound>sound\sndJump</sound>
@@ -228,18 +440,79 @@
         <script>scripts\scrRedTweenExpInOut.gml</script>
       </scripts>
       <scripts name="StepScripts">
-        <script>scripts\scrRedS1IntroStep.gml</script>
-        <script>scripts\scrRedS2BloomStep.gml</script>
-        <script>scripts\scrRedS3JitterStep.gml</script>
-        <script>scripts\scrRedS4SlicedCirclesStep.gml</script>
-        <script>scripts\scrRedS5TwinDownpourStep.gml</script>
-        <script>scripts\scrRedS6WelcomeToAbyssStep.gml</script>
-        <script>scripts\scrRedS7ClaustrophobiaStep.gml</script>
-        <script>scripts\scrRedS8RedMarchStep.gml</script>
-        <script>scripts\scrRedS9DualityStep.gml</script>
-        <script>scripts\scrRedS10WaterfallStep.gml</script>
-        <script>scripts\scrRedS11TideStep.gml</script>
-        <script>scripts\scrRedS12RelapseStep.gml</script>
+        <scripts name="S1_Intro">
+          <script>scripts\scrRedS1IntroStep.gml</script>
+        </scripts>
+        <scripts name="S2_Bloom">
+          <script>scripts\scrRedS2BloomStep.gml</script>
+          <script>scripts\scrRedCreateBloomCircle.gml</script>
+        </scripts>
+        <scripts name="S3_Jitter">
+          <script>scripts\scrRedS3JitterStep.gml</script>
+          <script>scripts\scrRedS3SpawnJitterBullets.gml</script>
+        </scripts>
+        <scripts name="S4_SlicedCircles">
+          <script>scripts\scrRedS4SlicedCirclesStep.gml</script>
+          <script>scripts\scrRedCreateSlicedCircle.gml</script>
+          <script>scripts\scrRedCreateSlidingSpike.gml</script>
+          <script>scripts\scrRedS4SpawnLeheeCircle.gml</script>
+        </scripts>
+        <scripts name="S5_TwinDownpour">
+          <script>scripts\scrRedS5TwinDownpourStep.gml</script>
+          <script>scripts\scrRedS5SpawnBurstBullet.gml</script>
+        </scripts>
+        <scripts name="S6_WarmWelcome">
+          <script>scripts\scrRedS6WarmWelcomeStep.gml</script>
+          <script>scripts\scrRedS6SpawnAntitargetCircle.gml</script>
+          <script>scripts\scrRedS6SpawnSpiralBullet.gml</script>
+          <script>scripts\scrRedS6SpawnWaveSpike.gml</script>
+          <script>scripts\scrRedS6CreateTargetSpike.gml</script>
+        </scripts>
+        <scripts name="S7_Claustrophobia">
+          <script>scripts\scrRedS7SpawnSpikeFan.gml</script>
+          <script>scripts\scrRedS7ClaustrophobiaStep.gml</script>
+          <script>scripts\scrRedS7SpawnSpikeSpiral.gml</script>
+          <script>scripts\scrRedS7SpawnTargetCircle.gml</script>
+          <script>scripts\scrRedS7SpawnCircle.gml</script>
+          <script>scripts\scrRedS7SpawnTargetBullets.gml</script>
+          <script>scripts\scrRedS7MoveWall.gml</script>
+          <script>scripts\scrRedS7MoveWallBack.gml</script>
+        </scripts>
+        <scripts name="S8_RedMarch">
+          <script>scripts\scrRedS8RedMarchStep.gml</script>
+          <script>scripts\scrRedS8SpawnSpikeTopWall.gml</script>
+          <script>scripts\scrRedS8SlowSpikeWall.gml</script>
+          <script>scripts\scrRedS8SpawnTargetCircle.gml</script>
+          <script>scripts\scrRedS8SpawnAntitargetCircle.gml</script>
+          <script>scripts\scrRedS8SpawnFastTargetCircle.gml</script>
+          <script>scripts\scrRedS8SpawnFastAntitargetCircle.gml</script>
+          <script>scripts\scrRedS8SendSpikesAway.gml</script>
+        </scripts>
+        <scripts name="S9_Duality">
+          <script>scripts\scrRedS9DualityStep.gml</script>
+          <script>scripts\scrRedS9SwitchMovePointsX.gml</script>
+          <script>scripts\scrRedS9SwitchMovePointsY.gml</script>
+          <script>scripts\scrRedS9Shake.gml</script>
+        </scripts>
+        <scripts name="S10_Waterfall">
+          <script>scripts\scrRedS10WaterfallStep.gml</script>
+          <script>scripts\scrRedS10StartSpawn.gml</script>
+          <script>scripts\scrRedS10SpawnDiagonal.gml</script>
+        </scripts>
+        <scripts name="S11_Tide">
+          <script>scripts\scrRedS11TideStep.gml</script>
+          <script>scripts\scrRedS11CreateTideSpawner.gml</script>
+          <script>scripts\scrRedS11SpawnTideBullet.gml</script>
+        </scripts>
+        <scripts name="S12_Relapse">
+          <script>scripts\scrRedS12RelapseStep.gml</script>
+        </scripts>
+        <scripts name="S13_CorruptedInfinity">
+          <script>scripts\scrRedS13CorruptedInfinityStep.gml</script>
+          <script>scripts\scrRedS13SpawnCornerCircle.gml</script>
+          <script>scripts\scrRedS13SpawnTargetSpike.gml</script>
+          <script>scripts\scrRedS13MoveInstanceCircle.gml</script>
+        </scripts>
       </scripts>
     </scripts>
   </scripts>
@@ -250,6 +523,7 @@
     <font>fonts\fDefault12</font>
   </fonts>
   <objects name="objects">
+    <object>objects\obj_gmlive</object>
     <objects name="world">
       <object>objects\objWorld</object>
       <object>objects\objCamera</object>
@@ -395,7 +669,7 @@
         <object>objects\oRedS5Spike</object>
         <object>objects\oRedS5TempBackdrop</object>
       </objects>
-      <objects name="S6_WelcomeToAbyss">
+      <objects name="S6_WarmWelcome">
         <object>objects\oRedS6AbyssSource</object>
         <object>objects\oRedS6TargetSource</object>
         <object>objects\oRedS6SpiralSource</object>
@@ -453,6 +727,11 @@
       </objects>
       <objects name="S13_CorruptedInfinity">
         <object>objects\oRedS13Source</object>
+        <object>objects\oRedS13CircleSpike</object>
+        <object>objects\oRedS13Bullet</object>
+        <object>objects\oRedS13BurstBullet</object>
+        <object>objects\oRedS13TargetSpike</object>
+        <object>objects\oRedS13CircleController</object>
       </objects>
       <object>objects\oRedAbyssAvoidanceController</object>
       <object>objects\oRedBaseSpawner</object>
@@ -505,6 +784,9 @@
     <room>rooms\rTemplate</room>
     <room>rooms\rRedLunarAbyss</room>
   </rooms>
+  <constants number="1">
+    <constant name="live_enabled">1</constant>
+  </constants>
   <help>
     <rtf>help.rtf</rtf>
   </help>

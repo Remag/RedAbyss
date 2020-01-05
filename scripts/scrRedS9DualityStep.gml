@@ -1,4 +1,3 @@
-#define scrRedS9DualityStep
 var t = argument0;
 
 if( t == 4189 ) {
@@ -69,22 +68,3 @@ if( t == 4220 ) {
     scrRedDestroy( oRedS9SurfaceDrawFinalizer );
 }
 
-
-#define scrRedS9SwitchMovePointsX
-var targetId = argument0;
-
-var endX = targetId.XEnd;
-targetId.XEnd = targetId.XStart;
-targetId.XStart = endX;
-
-#define scrRedS9SwitchMovePointsY
-var targetId = argument0;
-
-var endY = targetId.YEnd;
-targetId.YEnd = targetId.YStart;
-targetId.YStart = endY;
-
-#define scrRedS9Shake
-var side = argument0;
-
-scrRedShakeViewAngle( side, 25 );

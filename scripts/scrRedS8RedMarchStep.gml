@@ -1,4 +1,3 @@
-#define scrRedS8RedMarchStep
 var t = argument0;
 
 if( t == 3488 ) {
@@ -169,81 +168,4 @@ if( t == 3488 ) {
     scrRedDestroy( oRedS8CircleSpike );
     scrRedDestroy( oRedS8FloorSpike );
     scrRedDestroy( oRedS6AbyssSource );
-}
-
-#define scrRedS8SpawnSpikeTopWall
-var deltaX = 144;
-var spikeY = -20;
-for( var i = 0; i < 6 ; i++ ) {
-    var spikeX = XOffset + i * deltaX;
-    if( spikeX > 832 ) {
-        spikeX -= 864;
-    }
-    var spike = instance_create( spikeX, spikeY, oRedS8WallSpike );
-    spike.direction = -90;
-    spike.image_angle = spike.direction;
-    spike.WallId = WallId;
-}
-WallId++;
-XOffset += deltaX / 2;
-while( XOffset > deltaX ) {
-    XOffset -= deltaX;
-}
-
-with( oRedS8WallSpike ) {
-    Acceleration = 0;
-    speed = 10;
-}
-
-#define scrRedS8SlowSpikeWall
-with( oRedS8WallSpike ) {
-    Acceleration = -1.5;
-}
-
-#define scrRedS8SpawnTargetCircle
-var dir = scrRedDirToPlayer( x, y );
-var params = scrRedCreateCircleAdditionalParams();
-params.Speed = 7;
-params.Scale = 1;
-scrRedInitializeCircle( x, y, dir, 10, oRedS8TargetBullet, params );
-
-#define scrRedS8SpawnAntitargetCircle
-var bulletCount = 10;
-var dir = scrRedDirToPlayer( x, y ) + 360 / ( 2 * bulletCount );
-var params = scrRedCreateCircleAdditionalParams();
-params.Speed = 7;
-params.Scale = 1;
-scrRedInitializeCircle( x, y, dir, bulletCount, oRedS8TargetBullet, params );
-
-#define scrRedS8SpawnFastTargetCircle
-var dir = scrRedDirToPlayer( x, y );
-var params = scrRedCreateCircleAdditionalParams();
-params.Speed = 14;
-params.Scale = 1;
-scrRedInitializeCircle( x, y, dir, 16, oRedS8TargetBullet, params );
-
-#define scrRedS8SpawnFastAntitargetCircle
-var bulletCount = 16;
-var dir = scrRedDirToPlayer( x, y ) + 360 / ( 2 * bulletCount );
-var params = scrRedCreateCircleAdditionalParams();
-params.Speed = 14;
-params.Scale = 0.9;
-scrRedInitializeCircle( x, y, dir, bulletCount, oRedS8TargetBullet, params );
-#define scrRedS8SendSpikesAway
-var radius = argument0;
-
-var playerX = scrRedGetPlayerX();
-var playerY = scrRedGetPlayerY();
-with( oRedS8WallSpike ) {
-    if( point_distance( x, y, playerX, playerY ) < radius ) {
-        var spike = instance_create( x, y, oRedS8GravitySpike );
-        var dir = point_direction( playerX, playerY, x, y );
-        spike.direction = dir;
-        spike.image_angle = spike.direction;
-        spike.speed = 6;
-        spike.gravity = 0.3;
-        spike.image_xscale = image_xscale;
-        spike.image_yscale = image_yscale;
-        instance_destroy();
-    }
 }
