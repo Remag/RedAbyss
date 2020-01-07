@@ -512,6 +512,8 @@
           <script>scripts\scrRedS13SpawnCornerCircle.gml</script>
           <script>scripts\scrRedS13SpawnTargetSpike.gml</script>
           <script>scripts\scrRedS13MoveInstanceCircle.gml</script>
+          <script>scripts\scrRedS13CreateHSpikeWall.gml</script>
+          <script>scripts\scrRedS13CreateVSpikeWall.gml</script>
         </scripts>
       </scripts>
     </scripts>
@@ -732,6 +734,9 @@
         <object>objects\oRedS13BurstBullet</object>
         <object>objects\oRedS13TargetSpike</object>
         <object>objects\oRedS13CircleController</object>
+        <object>objects\oS13WallSpike</object>
+        <object>objects\oRedS13SphincterSpike</object>
+        <object>objects\oRedS13SphincterController</object>
       </objects>
       <object>objects\oRedAbyssAvoidanceController</object>
       <object>objects\oRedBaseSpawner</object>

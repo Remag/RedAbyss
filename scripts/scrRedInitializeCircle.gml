@@ -18,6 +18,8 @@ if( circle.Internal_BulletCount != 0 ) {
     show_error( "Same circle parameters cannot be used for multiple circles.", true );
 }
 
+circle.x = spawnX;
+circle.y = spawnY;
 circle.Internal_BulletCount = spawnNum;
 for( var i = 0; i < spawnNum; i++ ) {
     var bullet = instance_create( spawnX, spawnY, oRedDummyObj );

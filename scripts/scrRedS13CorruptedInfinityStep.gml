@@ -44,14 +44,21 @@ if( t == 6966 ) {
     }
 } else if( t == 7212 ) {
     scrRedS13MoveInstanceCircle( oRedS13Source, 400, 303, 8 );
+    var circle = scrRedCreateCircleAdditionalParams();
+    circle.Radius = 286;
+    circle.CurrentDirection = 0;
+    scrRedInitializeCircle( 400, 303, 0, 40, oRedS13SphincterSpike, circle );
+    var controller = instance_create( 0, 0, oRedS13SphincterController );
+    controller.Circle = circle;
 } else if( t == 7270 ) {
     scrRedAttachSpawner( oRedS13Source, 1, oRedS13Bullet, 20 );
 } else if( t == 7338 ) { 
-    
+    scrRedS13CreateHSpikeWall( 0, -90 );
 } else if( t == 7380 ) {
-    
+    scrRedS13CreateHSpikeWall( 608, 90 );
 } else if( t == 7425 ) {
-    
+    scrRedS13CreateVSpikeWall( 0, 0 );
+    scrRedS13CreateVSpikeWall( 800, 180 );
 } else if( t == 7465 ) {
     
 } else if( t == 7510 ) {
