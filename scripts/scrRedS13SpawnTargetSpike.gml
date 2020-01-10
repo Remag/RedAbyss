@@ -1,7 +1,3 @@
-if( live_call() ) {
-    return live_result;
-}
-
 var playerY = scrRedGetPlayerY();
 
 var lSpike = instance_create( 0, playerY, oRedS13TargetSpike );

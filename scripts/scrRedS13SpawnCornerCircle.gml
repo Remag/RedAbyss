@@ -1,10 +1,6 @@
 var circleX = argument0;
 var circleY = argument1;
 
-if( live_call( circleX, circleY ) ) {
-    return live_result;
-}
-
 var circle = scrRedCreateCircleAdditionalParams();
 circle.Speed = 30;
 circle.SlowDelay = 12;

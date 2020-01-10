@@ -25,24 +25,34 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>Circle.CurrentDirection += 1;
+            <string>
+Circle.CurrentDirection += 1;
 
 var t = oRedAbyssAvoidanceController.Step;
-var squeeze1Start = 7598;
-var squeeze1End = squeeze1Start + 20;
-var squeeze2Start = 7639;
-var squeeze2End = squeeze2Start + 20;
+var preparationStart = 7510;
+var preparationEnd = preparationStart + 20;
+var squeeze1Start = 7595;
+var squeeze1End = squeeze1Start + 23;
+var squeeze2Start = 7636;
+var squeeze2End = squeeze2Start + 23;
 var circleEnd = squeeze2End + 35;
 
-if( t &gt;= squeeze1Start &amp;&amp; t &lt; squeeze1End ) {
-    Circle.Radius = scrRedTweenSineInOut( 286, -200, t - squeeze1Start, squeeze1End - squeeze1Start );
+if( t &gt;= preparationStart &amp;&amp; t &lt; preparationEnd ) {
+    Circle.Radius = scrRedTweenSineInOut( 286, -75, t - preparationStart, preparationEnd - preparationStart );
+} else if( t &gt;= squeeze1Start &amp;&amp; t &lt; squeeze1End ) {
+    Circle.Radius = scrRedTweenSineInOut( 211, -125, t - squeeze1Start, squeeze1End - squeeze1Start );
+    scrRedSetZoom( min( 1, Circle.Radius / 211 ) );
 } else if( t &gt;= squeeze1End &amp;&amp; t &lt; squeeze2Start ) {
     Circle.Radius = scrRedTweenSineInOut( 86, 150, t - squeeze1End, squeeze2Start - squeeze1End );
+    scrRedSetZoom( min( 1, Circle.Radius / 211 ) );
 } else if( t &gt;= squeeze2Start &amp;&amp; t &lt; squeeze2End ) {
     Circle.Radius = scrRedTweenSineInOut( 236, -195, t - squeeze2Start, squeeze2End - squeeze2Start );
+    scrRedSetZoom( min( 1, Circle.Radius / 211 ) );
 } else if( t &gt;= squeeze2End &amp;&amp; t &lt; circleEnd ) {
     Circle.Radius = scrRedTweenSineInOut( 46, 450, t - squeeze2End, circleEnd - squeeze2End );
+    scrRedSetZoom( min( 1, Circle.Radius / 211 ) );
 } else if( t &gt;= circleEnd ) {
+    scrRedSetZoom( 1 );
     scrRedDestroy( oRedS13SphincterSpike );
     instance_destroy();
 }

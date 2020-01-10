@@ -1,9 +1,5 @@
 var t = argument0;
 
-if( live_call( t ) ) {
-    return live_result;
-}
-
 if( t == 6966 ) {
     if( !instance_exists( oRedS13Source ) ) {
         var src1 = instance_create( 400, 300, oRedS13Source );
@@ -27,7 +23,7 @@ if( t == 6966 ) {
     scrRedS13SpawnCornerCircle( 800, 0 );
 } else if( t == 7075 ) {
     scrRedS13SpawnCornerCircle( 800, 608 );
-} else if( t == 7086 ) {
+} else if( t == 7083 ) {
     scrRedS13SpawnCornerCircle( 0, 608 );
 } else if( t == 7141 ) {
     scrRedCreateCustomSpawner( 0, 0, 4, scrRedS13SpawnTargetSpike, 20 );
@@ -35,11 +31,7 @@ if( t == 6966 ) {
 
 } else if( t == 7178 ) {
     with( oRedS13Source ) {
-        repeat( 50 ) {
-            var bullet = instance_create( x, y, oRedS13BurstBullet );       
-            bullet.speed = random_range( 5, 10 );
-            bullet.direction = random( 360 ); 
-        }
+        scrRedCreateCircle( x, y, random( 360 ), 45, oRedS13BurstBullet );
         scrRedMoveInstance( id, x + sign( 400 - x ) * 50, 304, 34 );
     }
 } else if( t == 7212 ) {
@@ -51,7 +43,7 @@ if( t == 6966 ) {
     var controller = instance_create( 0, 0, oRedS13SphincterController );
     controller.Circle = circle;
 } else if( t == 7270 ) {
-    scrRedAttachSpawner( oRedS13Source, 1, oRedS13Bullet, 20 );
+    scrRedAttachCustomSpawner( oRedS13Source, 1.2, scrRedS13SpawnBulletCircle, 25 );
 } else if( t == 7338 ) { 
     scrRedS13CreateHSpikeWall( 0, -90 );
 } else if( t == 7380 ) {
@@ -67,4 +59,7 @@ if( t == 6966 ) {
     
 } else if( t == 7639 ) {
     
-} 
+} else if( t == 7442 ) {
+} else if( t == 7525 ) {
+    scrRedAttachCustomSpawner( oRedS13Source, 2, scrRedS13SpawnBulletCircle, 25 );
+}

@@ -59,7 +59,7 @@ image_angle = angle + 90;
         scrRedActivateBullets( id );
     }
 }
-a
+
 var angle = StartDirection + Circle.CurrentDirection;
 scrRedSetPolarCoordinates( Circle.x, Circle.y, Circle.Radius, angle );
 image_angle = angle + 90;

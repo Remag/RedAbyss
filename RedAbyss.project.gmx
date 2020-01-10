@@ -428,6 +428,7 @@
         <script>scripts\scrRedFlashScreen.gml</script>
         <script>scripts\scrRedDestroy.gml</script>
         <script>scripts\scrRedCheckSurface.gml</script>
+        <script>scripts\scrRedSetZoom.gml</script>
       </scripts>
       <scripts name="TweenScripts">
         <script>scripts\scrRedTweenLinear.gml</script>
@@ -514,6 +515,7 @@
           <script>scripts\scrRedS13MoveInstanceCircle.gml</script>
           <script>scripts\scrRedS13CreateHSpikeWall.gml</script>
           <script>scripts\scrRedS13CreateVSpikeWall.gml</script>
+          <script>scripts\scrRedS13SpawnBulletCircle.gml</script>
         </scripts>
       </scripts>
     </scripts>
@@ -731,6 +733,7 @@
         <object>objects\oRedS13Source</object>
         <object>objects\oRedS13CircleSpike</object>
         <object>objects\oRedS13Bullet</object>
+        <object>objects\oRedS13CircleBullet</object>
         <object>objects\oRedS13BurstBullet</object>
         <object>objects\oRedS13TargetSpike</object>
         <object>objects\oRedS13CircleController</object>
