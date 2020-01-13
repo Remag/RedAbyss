@@ -517,6 +517,10 @@
           <script>scripts\scrRedS13CreateVSpikeWall.gml</script>
           <script>scripts\scrRedS13SpawnBulletCircle.gml</script>
         </scripts>
+        <scripts name="S14_IrrevocableDamage">
+          <script>scripts\scrRedS14IrrevocableDamageStep.gml</script>
+          <script>scripts\scrRedS14SpawnBurstBullets.gml</script>
+        </scripts>
       </scripts>
     </scripts>
   </scripts>
@@ -740,6 +744,11 @@
         <object>objects\oS13WallSpike</object>
         <object>objects\oRedS13SphincterSpike</object>
         <object>objects\oRedS13SphincterController</object>
+      </objects>
+      <objects name="S14_IrrevocableDamage">
+        <object>objects\oRedS14Source</object>
+        <object>objects\oRedS14Bullet</object>
+        <object>objects\oRedS14BurstBullet</object>
       </objects>
       <object>objects\oRedAbyssAvoidanceController</object>
       <object>objects\oRedBaseSpawner</object>

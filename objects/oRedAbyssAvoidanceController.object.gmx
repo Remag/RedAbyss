@@ -109,6 +109,7 @@ scrRedS10WaterfallStep( Step );
 scrRedS11TideStep( Step );
 scrRedS12RelapseStep( Step );
 scrRedS13CorruptedInfinityStep( Step );
+scrRedS14IrrevocableDamageStep( Step );
 </string>
           </argument>
         </arguments>

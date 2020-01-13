@@ -51,15 +51,19 @@ if( t == 6966 ) {
 } else if( t == 7425 ) {
     scrRedS13CreateVSpikeWall( 0, 0 );
     scrRedS13CreateVSpikeWall( 800, 180 );
+}  else if( t == 7442 ) {
 } else if( t == 7465 ) {
     
 } else if( t == 7510 ) {
     
+} else if( t == 7525 ) {
+    scrRedAttachCustomSpawner( oRedS13Source, 2, scrRedS13SpawnBulletCircle, 25 );
 } else if( t == 7598 ) {
     
 } else if( t == 7639 ) {
-    
-} else if( t == 7442 ) {
-} else if( t == 7525 ) {
-    scrRedAttachCustomSpawner( oRedS13Source, 2, scrRedS13SpawnBulletCircle, 25 );
+    var src1 = instance_find( oRedS13Source, 0 );
+    var src2 = instance_find( oRedS13Source, 1 );
+    scrRedMoveInstance( src1, 700, 100, 20 );
+    scrRedMoveInstance( src2, 700, 508, 20 );
+    scrRedDestroy( oRedS13CircleController );
 }
