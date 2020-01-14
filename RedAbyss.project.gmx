@@ -520,6 +520,12 @@
         <scripts name="S14_IrrevocableDamage">
           <script>scripts\scrRedS14IrrevocableDamageStep.gml</script>
           <script>scripts\scrRedS14SpawnBurstBullets.gml</script>
+          <script>scripts\scrRedS14SpawnPolygon.gml</script>
+          <script>scripts\scrRedS14SpawnTargetSpikes.gml</script>
+          <script>scripts\scrRedS14MoveSources.gml</script>
+          <script>scripts\scrRedS14StopTimedSpikes.gml</script>
+          <script>scripts\scrRedS14CreateSpikeLine.gml</script>
+          <script>scripts\scrRedS14SpawnCircleBullets.gml</script>
         </scripts>
       </scripts>
     </scripts>
@@ -748,7 +754,15 @@
       <objects name="S14_IrrevocableDamage">
         <object>objects\oRedS14Source</object>
         <object>objects\oRedS14Bullet</object>
+        <object>objects\oRedS14BarrageBullet</object>
         <object>objects\oRedS14BurstBullet</object>
+        <object>objects\oRedS14PolygonBullet</object>
+        <object>objects\oRedS14BarrageSpike</object>
+        <object>objects\oRedS14FastCircleSpike</object>
+        <object>objects\oRedS14SlowCircleSpike</object>
+        <object>objects\oRedS14TargetSpike</object>
+        <object>objects\oRedS14LineSpike</object>
+        <object>objects\oRedS14TimedSpike</object>
       </objects>
       <object>objects\oRedAbyssAvoidanceController</object>
       <object>objects\oRedBaseSpawner</object>

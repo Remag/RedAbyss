@@ -43,7 +43,7 @@ if( t == 6966 ) {
     var controller = instance_create( 0, 0, oRedS13SphincterController );
     controller.Circle = circle;
 } else if( t == 7270 ) {
-    scrRedAttachCustomSpawner( oRedS13Source, 1.2, scrRedS13SpawnBulletCircle, 25 );
+    scrRedAttachCustomSpawner( oRedS13Source, 1.4, scrRedS13SpawnBulletCircle, 25 );
 } else if( t == 7338 ) { 
     scrRedS13CreateHSpikeWall( 0, -90 );
 } else if( t == 7380 ) {
