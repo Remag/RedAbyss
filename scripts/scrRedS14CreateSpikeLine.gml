@@ -1,10 +1,6 @@
 var spikeCount = argument0;
 var angleOffset = argument1;
 
-if( live_call( argument0, argument1 ) ) {
-    return live_result;
-}
-
 with( oRedS14Source ) {
     var baseDir = point_direction( x, y, 400, 303 );
     var minSpeed = 5;

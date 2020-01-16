@@ -25,11 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if( live_call() ) {
-    return live_result;
-} 
-
-speed = 7;
+            <string>speed = 7;
 image_angle = direction;
 scrRedSetScale( random_range( 0.5, 1 ) );
 </string>

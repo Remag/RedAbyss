@@ -25,11 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if( live_call() ) {
-    return live_result;
-}
-
-direction = random_range( 180 - 45, 180 + 45 );
+            <string>direction = random_range( 180 - 45, 180 + 45 );
 speed = random_range( 5, 12 );
 scrRedSetScale( random_range( 0.5, 0.7 ) );
 
@@ -59,11 +55,7 @@ ChangeDuration = 22;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if( live_call() ) {
-    return live_result;
-}
-
-if( x &gt; 800 || x &lt; -140 || y &gt; 615 || y &lt; -140 ) {
+            <string>if( x &gt; 800 || x &lt; -140 || y &gt; 615 || y &lt; -140 ) {
     instance_destroy();
 }
 

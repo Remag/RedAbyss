@@ -26,8 +26,13 @@
           <argument>
             <kind>1</kind>
             <string>image_speed = 0;
+image_index = Circle.ImageIndex;
 scrRedSetScale( 1 );
 Step = 0;
+
+scrRedAttachSpawner( id, Circle.SpawnPeriod, oRedS2CircleTrailBullet );
+Spawner.SeedBullet = id;
+Spawner.Circle = Circle;
 
 EnableSineMovement = true;
 </string>
@@ -53,10 +58,8 @@ EnableSineMovement = true;
           <argument>
             <kind>1</kind>
             <string>if( EnableSineMovement ) {
-    var frequency = 0.024;
-
-    Step += StepDelta;
-    var vDelta = Amplitude * sin( frequency * Step );
+    Step += Circle.StepDelta;
+    var vDelta = Circle.Amplitude * sin( Circle.Frequency * Step );
 
     var xHDelta = lengthdir_x( Step, StartDirection );
     var yHDelta = lengthdir_y( Step, StartDirection );

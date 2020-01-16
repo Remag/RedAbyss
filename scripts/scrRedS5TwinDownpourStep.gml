@@ -34,13 +34,14 @@ if( t == 2443 ) {
     newBullet.direction = 0;
     newBullet.BurstSpawner = scrRedAttachCustomSpawner( newBullet, 43.5, scrRedS5SpawnBurstBullet );
     
-    scrRedAttachSpawner( newBullet, 1.3, oRedS5BarrageBullet );
+    scrRedAttachSpawner( newBullet, 1.5, oRedS5BarrageBullet );
     newBullet.BarrageSpawner = newBullet.Spawner;
     newBullet.StartTopX = newBullet.x;
     originalBullet.StartTopX = originalBullet.x;
-    originalBullet.BarrageSpawner.SpawnPeriod = 1.3;
+    originalBullet.BarrageSpawner.SpawnPeriod = 1.5;
     
     with( oRedS5SourceBullet ) {
+        BarrageSpawner.SpawnPeriod = 1.75;
         BurstSpawner.SpawnPeriod /= 2;
         BurstSpawner.SpawnCount = 10;
         BurstSpawner.SpeedMin = 10;
@@ -49,6 +50,7 @@ if( t == 2443 ) {
 }
 if( t == 2616 ) {
     with( oRedS5SourceBullet ) {
+        BarrageSpawner.SpawnPeriod = 2;
         BurstSpawner.SpawnPeriod /= 2;
         BurstSpawner.SpawnCount = 8;
         BurstSpawner.SpeedMin = 12;
@@ -56,6 +58,7 @@ if( t == 2616 ) {
     }
 } else if( t == 2658 ) {
     with( oRedS5SourceBullet ) {
+        BarrageSpawner.SpawnPeriod = 2;
         BurstSpawner.SpawnPeriod /= 2;
         BurstSpawner.SpawnCount = 6;
         BurstSpawner.SpeedMin = 14;

@@ -26,10 +26,42 @@
           <argument>
             <kind>1</kind>
             <string>image_speed = 0;
-scrRedSetScale( 1 );
-Step = 0;
+scrRedSetScale( 0.6 );
+var mainDir = scrRedDirToPlayer( x, y );
+if( random_range( 0, 1 ) &lt; 0.2 ) {
+    direction = mainDir + random_range( -45, 45 );
+} else {
+    direction = mainDir + random_range( 45, 315 );
+}
+speed = 1;
+MaxSpeed = 3;
 
-EnableSineMovement = true;
+alarm[0] = 30;
+
+image_index = Spawner.Circle.ImageIndex;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>friction = -0.5;
 </string>
           </argument>
         </arguments>
@@ -52,27 +84,7 @@ EnableSineMovement = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if( EnableSineMovement ) {
-    var frequency = 0.024;
-
-    Step += StepDelta;
-    var vDelta = Amplitude * sin( frequency * Step );
-
-    var xHDelta = lengthdir_x( Step, StartDirection );
-    var yHDelta = lengthdir_y( Step, StartDirection );
-
-    var xVDelta = lengthdir_x( vDelta, StartDirection + 90 );
-    var yVDelta = lengthdir_y( vDelta, StartDirection + 90 );
-
-    x = xstart + xHDelta + xVDelta;
-    y = ystart + yHDelta + yVDelta;
-}
-
-if( instance_exists( Spawner ) ) {
-    Spawner.SpawnPeriod += 0.05;
-}
-
-
+            <string>speed = min( speed, MaxSpeed );
 </string>
           </argument>
         </arguments>

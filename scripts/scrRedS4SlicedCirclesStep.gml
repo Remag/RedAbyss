@@ -62,6 +62,7 @@ if( t == 2049 ) {
     }
     scrRedShakeViewY( -32, floorDuration );
 } else if( t == 2074 ) {
+    scrRedDestroy( oRedS4SectorController );
     scrRedBulletFadeOut( oRedS4CircleBullet );
     scrRedDeactivateBullets( oRedS4CircleBullet );
 }

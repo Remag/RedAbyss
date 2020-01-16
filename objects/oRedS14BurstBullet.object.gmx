@@ -25,11 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if( live_call() ) {
-    return live_result;
-}
-
-speed = 10;
+            <string>speed = 10;
 scrRedSetScale( random_range( 0.7, 1 ) );
 
 Gravity = 0;

@@ -25,11 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if( live_call() ) {
-    return live_result;
-}
-
-var dir = point_direction( x, y, 400, 303 );
+            <string>var dir = point_direction( x, y, 400, 303 );
 var dirDelta = 30;
 direction = random_range( dir - dirDelta, dir + dirDelta );
 image_angle = direction;
@@ -60,11 +56,7 @@ alarm[0] = Spawner.SpawnDuration - Spawner.Lifetime;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if( live_call() ) {
-    return live_result;
-}
-
-speed = random_range( 0.5, 1 );
+            <string>speed = random_range( 0.5, 1 );
 </string>
           </argument>
         </arguments>

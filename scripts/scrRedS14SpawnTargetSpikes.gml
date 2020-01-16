@@ -1,7 +1,3 @@
-if( live_call() ) {
-    return live_result;
-} 
-
 var dir = point_direction( x, y, scrRedGetPlayerX(), scrRedGetPlayerY() );
 var spikeSpeed = 10;
 

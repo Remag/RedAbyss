@@ -25,11 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if( live_call() ) {
-    return live_result;
-}
-
-YStart = 100;
+            <string>YStart = 100;
 YEnd = 508;
 YDuration = 50;
 YStep = YDuration / 2;

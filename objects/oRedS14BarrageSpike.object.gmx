@@ -25,11 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if( live_call() ) {
-    return live_result;
-} 
-
-var dir = point_direction( x, y, 400, 303 );
+            <string>var dir = point_direction( x, y, 400, 303 );
 direction = random_range( dir - 90, dir + 90 );
 image_angle = direction;
 speed = random_range( 6, 8 );

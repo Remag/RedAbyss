@@ -1,9 +1,5 @@
 var t = argument0;
 
-if( live_call( t ) ) {
-    return live_result;
-}
-
 if( t == 7660 ) {
     if( !instance_exists( oRedS13Source ) ) {
         oRedAbyssBackground.sprite_index = sprRedAbyssRedBackground; 

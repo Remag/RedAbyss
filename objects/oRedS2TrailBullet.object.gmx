@@ -25,20 +25,21 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed = 0;
-scrRedSetScale( 0.6 );
-var mainDir = scrRedDirToPlayer( x, y );
-if( random_range( 0, 1 ) &lt; 0.2 ) {
-    direction = mainDir + random_range( -45, 45 );
-} else {
-    direction = mainDir + random_range( 45, 315 );
+            <string>if( live_call() ) {
+    return live_result;
 }
+
+image_speed = 0;
+scrRedSetScale( 0.6 );
+var ownerDir = Spawner.OwnerInstance.StartDirection;
+var baseDir = choose( ownerDir + 90, ownerDir + 270, ownerDir + 180 );
+direction = baseDir + random_range( -50, 50 );
 speed = 1;
 MaxSpeed = 3;
 
 alarm[0] = 30;
 
-image_index = Spawner.Circle.ImageIndex;
+image_index = Spawner.OwnerInstance.image_index;
 </string>
           </argument>
         </arguments>

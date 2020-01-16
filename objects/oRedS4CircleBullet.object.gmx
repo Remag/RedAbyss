@@ -28,7 +28,7 @@
             <string>PolarRadius = 0;
 RadiusDelta = 0;
 DirectionDelta = 0;
-
+IsOutOfBounds = false;
 </string>
           </argument>
         </arguments>
@@ -55,9 +55,7 @@ DirectionDelta = 0;
 PolarDirection += DirectionDelta;
 scrRedSetPolarCoordinates( xstart, ystart, PolarRadius, PolarDirection );
 
-if( PolarRadius &gt; 1010 ) {
-    instance_destroy();
-}
+IsOutOfBounds = x &lt;= -10 || x &gt;= 810 || y &lt;= -12 || y &gt;= 620;
 </string>
           </argument>
         </arguments>

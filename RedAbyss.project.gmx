@@ -447,6 +447,7 @@
         <scripts name="S2_Bloom">
           <script>scripts\scrRedS2BloomStep.gml</script>
           <script>scripts\scrRedCreateBloomCircle.gml</script>
+          <script>scripts\scrRedCreateBloomLine.gml</script>
         </scripts>
         <scripts name="S3_Jitter">
           <script>scripts\scrRedS3JitterStep.gml</script>
@@ -526,6 +527,9 @@
           <script>scripts\scrRedS14StopTimedSpikes.gml</script>
           <script>scripts\scrRedS14CreateSpikeLine.gml</script>
           <script>scripts\scrRedS14SpawnCircleBullets.gml</script>
+        </scripts>
+        <scripts name="S15_TwistedMaze">
+          <script>scripts\scrRedS15TwistedMazeStep.gml</script>
         </scripts>
       </scripts>
     </scripts>
@@ -665,7 +669,9 @@
       <objects name="S2_Bloom">
         <object>objects\oRedS2Bullet</object>
         <object>objects\oRedS2SeedBullet</object>
+        <object>objects\oRedS2CircleSeedBullet</object>
         <object>objects\oRedS2TrailBullet</object>
+        <object>objects\oRedS2CircleTrailBullet</object>
       </objects>
       <objects name="S3_Jitter">
         <object>objects\oRedS3JitterSpawnerBullet</object>
@@ -675,6 +681,7 @@
         <object>objects\oRedS4CircleBullet</object>
         <object>objects\oRedS4LeheeBullet</object>
         <object>objects\oRedS4SlidingSpike</object>
+        <object>objects\oRedS4SectorController</object>
       </objects>
       <objects name="S5_TwinDownpour">
         <object>objects\oRedS5SourceBullet</object>
@@ -763,6 +770,9 @@
         <object>objects\oRedS14TargetSpike</object>
         <object>objects\oRedS14LineSpike</object>
         <object>objects\oRedS14TimedSpike</object>
+      </objects>
+      <objects name="S15_TwistedMaze">
+        <object>objects\oRedS15Source</object>
       </objects>
       <object>objects\oRedAbyssAvoidanceController</object>
       <object>objects\oRedBaseSpawner</object>
