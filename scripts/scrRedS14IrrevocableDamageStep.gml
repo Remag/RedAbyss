@@ -67,26 +67,7 @@ if( t == 7660 ) {
     }
     
 } else if( t == 8041 ) {
-    // TEMP
-    if( !instance_exists( oRedS14Source ) ) {
-        oRedAbyssBackground.sprite_index = sprRedAbyssRedBackground; 
-        instance_create( 0, 0, oRedInfiniteJump );
-        scrRedDestroy( objBlock );
-        scrRedDestroy( oRedAbyssBlock );
-        
-        var src1 = instance_create( 780, 20, oRedS14Source );
-        src1.x = 780;
-        src1.y = 20;
-        src1.Oscillate = false;
-        src1.AngleDelta = 1;
-        var src2 = instance_create( 20, 586, oRedS14Source );
-        src2.Oscillate = false;
-        src2.x = 20;
-        src2.y = 586;
-        src2.AngleDelta = -1;
-    }
-    // END TEMP
-    
+   
 } else if( t == 8096 ) {
     scrRedS14CreateSpikeLine( 8, 35 );
     scrRedS14CreateSpikeLine( 8, -35 );

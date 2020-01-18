@@ -529,6 +529,9 @@
         </scripts>
         <scripts name="S15_TwistedMaze">
           <script>scripts\scrRedS15TwistedMazeStep.gml</script>
+          <script>scripts\scrRedS15SpawnSpikeRandomWall.gml</script>
+          <script>scripts\scrRedS15CreateSpikeWall.gml</script>
+          <script>scripts\scrRedS15SpawnSpiralBullet.gml</script>
         </scripts>
       </scripts>
     </scripts>
@@ -770,6 +773,13 @@
       </objects>
       <objects name="S15_TwistedMaze">
         <object>objects\oRedS15Source</object>
+        <object>objects\oRedS15RandomWallSpike</object>
+        <object>objects\oRedS15VerticalSpike</object>
+        <object>objects\oRedS15BurstBullet</object>
+        <object>objects\oRedS15FinalBurstBullet</object>
+        <object>objects\oRedS15SpiralBullet</object>
+        <object>objects\oRedS15WallSpike</object>
+        <object>objects\oRedS15DoomSpike</object>
       </objects>
       <object>objects\oRedAbyssAvoidanceController</object>
       <object>objects\oRedBaseSpawner</object>
