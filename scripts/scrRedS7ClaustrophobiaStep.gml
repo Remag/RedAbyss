@@ -1,5 +1,9 @@
 var t = argument0;
 
+if( live_call( t ) ) {
+    return live_result;
+}
+
 if( t == 3147 && !instance_exists( oRedS6AbyssSource ) ) {
     var targetSrc = instance_create( 400, 200, oRedS6TargetSource );
     targetSrc.AngleDelta = 1;
@@ -15,7 +19,7 @@ if( t == 3147 && !instance_exists( oRedS6AbyssSource ) ) {
 if( t == 3158 ) {
     oRedS6TargetSource.Spawner.SpriteIndex = sprRedSpikeBullet;
     var spawner = scrRedCreateCustomSpawner( oRedS6TargetSource.x, oRedS6TargetSource.y, 2, scrRedS7SpawnSpikeSpiral, 12 );
-    spawner.TotalDirDelta = 360 / 9;
+    spawner.TotalDirDelta = 360 / 8;
 } else if( t == 3201 ) {
     oRedS6TargetSource.Spawner.SpriteIndex = sprRedSpikeBullet;
     var spawner = scrRedCreateCustomSpawner( oRedS6TargetSource.x, oRedS6TargetSource.y, 1.75, scrRedS7SpawnSpikeFan, 12 );

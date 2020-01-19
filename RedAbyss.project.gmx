@@ -470,8 +470,8 @@
           <script>scripts\scrRedS6CreateTargetSpike.gml</script>
         </scripts>
         <scripts name="S7_Claustrophobia">
-          <script>scripts\scrRedS7SpawnSpikeFan.gml</script>
           <script>scripts\scrRedS7ClaustrophobiaStep.gml</script>
+          <script>scripts\scrRedS7SpawnSpikeFan.gml</script>
           <script>scripts\scrRedS7SpawnSpikeSpiral.gml</script>
           <script>scripts\scrRedS7SpawnTargetCircle.gml</script>
           <script>scripts\scrRedS7SpawnCircle.gml</script>
@@ -532,6 +532,9 @@
           <script>scripts\scrRedS15SpawnSpikeRandomWall.gml</script>
           <script>scripts\scrRedS15CreateSpikeWall.gml</script>
           <script>scripts\scrRedS15SpawnSpiralBullet.gml</script>
+        </scripts>
+        <scripts name="S16_Agony">
+          <script>scripts\scrRedS16AgonyStep.gml</script>
         </scripts>
       </scripts>
     </scripts>
@@ -780,6 +783,12 @@
         <object>objects\oRedS15SpiralBullet</object>
         <object>objects\oRedS15WallSpike</object>
         <object>objects\oRedS15DoomSpike</object>
+      </objects>
+      <objects name="S16_Agony">
+        <object>objects\oRedS16Source</object>
+        <object>objects\oRedS16AbyssRay</object>
+        <object>objects\oRedS16AbyssLRay</object>
+        <object>objects\oRedS16AbyssRRay</object>
       </objects>
       <object>objects\oRedAbyssAvoidanceController</object>
       <object>objects\oRedBaseSpawner</object>

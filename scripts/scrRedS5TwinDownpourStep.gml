@@ -1,5 +1,9 @@
 var t = argument0;
 
+if( live_call( t ) ) {
+    return live_result;
+}
+
 if( t == 2094 ) {
     if( !instance_exists( oRedS5SourceBullet ) ) {
         instance_create( 400, 300, oRedS5SourceBullet );
@@ -9,6 +13,7 @@ if( t == 2094 ) {
         BurstSpawner.SpawnCount = 12;
         BurstSpawner.SpeedMin = 6;
         BurstSpawner.SpeedMax = 8;
+        BurstSpawner.TrailLength = 0;
         scrRedAttachSpawner( id, 1.5, oRedS5BarrageBullet );
         BarrageSpawner = Spawner;
     }
@@ -21,9 +26,13 @@ if( t == 2094 ) {
 if( t == 2094 ) {
     scrRedMoveInstance( oRedS5SourceBullet, 400, 100, 2443 - 2094 );
 }
-if( t >= 2094 && t <= 2443 ) {
+if( t >= 2094 && t < 2435 ) {
     with( oRedS5SourceBullet ) {
         BarrageSpawner.SpawnPeriod *= 0.996;
+    }
+} else if( t == 2435 ) {
+    with( oRedS5SourceBullet ) {
+        BarrageSpawner.SpawnPeriod = 1.75;
     }
 }
 if( t == 2443 ) {
@@ -46,23 +55,25 @@ if( t == 2443 ) {
         BurstSpawner.SpawnCount = 10;
         BurstSpawner.SpeedMin = 10;
         BurstSpawner.SpeedMax = 12;
+        BurstSpawner.TrailLength = 4;
     }
 }
 if( t == 2616 ) {
     with( oRedS5SourceBullet ) {
-        BarrageSpawner.SpawnPeriod = 2;
+        BarrageSpawner.SpawnPeriod = 3;
         BurstSpawner.SpawnPeriod /= 2;
-        BurstSpawner.SpawnCount = 8;
+        BurstSpawner.SpawnCount = 9;
         BurstSpawner.SpeedMin = 12;
         BurstSpawner.SpeedMax = 14;
     }
 } else if( t == 2658 ) {
     with( oRedS5SourceBullet ) {
-        BarrageSpawner.SpawnPeriod = 2;
+        BarrageSpawner.SpawnPeriod = 10;
         BurstSpawner.SpawnPeriod /= 2;
         BurstSpawner.SpawnCount = 6;
         BurstSpawner.SpeedMin = 14;
         BurstSpawner.SpeedMax = 16;
+        BurstSpawner.TrailLength = 5;
     }
 }
 
@@ -89,6 +100,7 @@ if( t == 2702 ) {
     with( oRedS5BurstBullet ) {
         speed = 0;
     }
+    scrRedDestroy( oRedBulletTrail );
     with( oRedS5SourceBullet ) {
         var newSrc = instance_create( x, y, oRedS6TargetSource );
         newSrc.AngleDelta = sign( AngleDelta );

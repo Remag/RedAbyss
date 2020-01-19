@@ -11,7 +11,7 @@ if( argument_count > 4 ) {
 var spawner = instance_create( spawnX, spawnY, oRedProjectileSpawner );
 spawner.SpawnObject = spawnObject;
 spawner.SpawnPeriod = spawnPeriod;
-spawner.CurrentPeriod = 0;
+spawner.CurrentPeriod = spawnPeriod;
 spawner.Lifetime = 0;
 spawner.SpawnDuration = spawnDuration;
 

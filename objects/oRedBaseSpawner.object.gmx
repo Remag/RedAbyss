@@ -31,11 +31,15 @@ if( SpawnDuration &gt; 0 &amp;&amp; Lifetime &gt;= SpawnDuration ) {
     exit;
 }
 
-CurrentPeriod = min( CurrentPeriod, SpawnPeriod );
-CurrentPeriod--;
-while( CurrentPeriod &lt;= 0 ) {
-    CurrentPeriod += SpawnPeriod;
+if( Lifetime == 1 ) {
     event_user( 0 );
+} else {
+    CurrentPeriod = min( CurrentPeriod, SpawnPeriod );
+    CurrentPeriod--;
+    while( CurrentPeriod &lt;= 0 ) {
+        CurrentPeriod += SpawnPeriod;
+        event_user( 0 );
+    }
 }
 </string>
           </argument>

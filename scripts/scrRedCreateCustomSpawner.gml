@@ -12,7 +12,7 @@ var spawner;
 spawner = instance_create( spawnX, spawnY, oRedScriptSpawner );
 spawner.SpawnScript = spawnScript;
 spawner.SpawnPeriod = spawnPeriod;
-spawner.CurrentPeriod = 0;
+spawner.CurrentPeriod = spawnPeriod;
 spawner.Lifetime = 0;
 spawner.SpawnDuration = spawnDuration;
 

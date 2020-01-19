@@ -12,7 +12,7 @@ with( ownerId ) {
     spawner = instance_create( x, y, oRedAttachedScriptSpawner );
     spawner.SpawnScript = spawnScript;
     spawner.SpawnPeriod = spawnPeriod;
-    spawner.CurrentPeriod = 0;
+    spawner.CurrentPeriod = spawnPeriod;
     spawner.OwnerInstance = id;
     spawner.Lifetime = 0;
     spawner.SpawnDuration = spawnDuration;

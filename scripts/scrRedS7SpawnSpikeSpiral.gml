@@ -1,5 +1,5 @@
 var relPos = Lifetime / SpawnDuration;
-var bulletCount = 10;
+var bulletCount = 8;
 var startDir = scrRedDirToPlayerFeet( x, y ) + 360 / ( 2 * bulletCount );
 var endDir = startDir + TotalDirDelta;
 var currentDir = lerp( startDir, endDir, relPos );
