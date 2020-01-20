@@ -12,6 +12,7 @@ var trail;
 with( targetId ) {
     trail = instance_create( 0, 0, oRedBulletTrail );
     trail.Owner = id;
+    trail.Fade = false;
     trail.PrevPositionsIndex = 0;
     trail.TrailCount = imageCount;
     trail.TailScale = 1 / ( imageCount + 1 );

@@ -16,6 +16,7 @@ with( ownerId ) {
     spawner.CurrentPeriod = spawnPeriod;
     spawner.OwnerInstance = id;
     spawner.Lifetime = 0;
+    spawner.SpawnCount = 0;
     spawner.SpawnDuration = spawnDuration;
     Spawner = spawner;
 }

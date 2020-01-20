@@ -14,6 +14,7 @@ spawner.SpawnScript = spawnScript;
 spawner.SpawnPeriod = spawnPeriod;
 spawner.CurrentPeriod = spawnPeriod;
 spawner.Lifetime = 0;
+spawner.SpawnCount = 0;
 spawner.SpawnDuration = spawnDuration;
 
 return spawner;

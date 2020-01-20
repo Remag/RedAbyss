@@ -63,7 +63,7 @@ if( t == 8357 ) {
     scrRedDestroy( oRedAttachedScriptSpawner );    
     var src1 = instance_find( oRedS15Source, 0 );
     scrRedAttachSpawner( src1, 0.75, oRedS15FinalBurstBullet );
-} else if( t == 9056 ) {
+} else if( t == 9050 ) {
     scrRedDestroy( oRedAttachedSpawner );
     with( oRedS15DoomSpike ) {
         direction += random_range( 165, 195 );

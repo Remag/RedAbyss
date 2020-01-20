@@ -360,7 +360,16 @@
     <background>background\bStars</background>
     <background>background\tRedAbyssTileset</background>
   </backgrounds>
-  <paths name="paths"/>
+  <paths name="paths">
+    <path>paths\pRedS16TL</path>
+    <path>paths\pRedS16T</path>
+    <path>paths\pRedS16TR</path>
+    <path>paths\pRedS16R</path>
+    <path>paths\pRedS16BR</path>
+    <path>paths\pRedS16B</path>
+    <path>paths\pRedS16BL</path>
+    <path>paths\pRedS16L</path>
+  </paths>
   <scripts name="scripts">
     <scripts name="player">
       <script>scripts\scrPlayerJump.gml</script>
@@ -535,6 +544,13 @@
         </scripts>
         <scripts name="S16_Agony">
           <script>scripts\scrRedS16AgonyStep.gml</script>
+          <script>scripts\scrRedS16OscillateSpawner.gml</script>
+          <script>scripts\scrRedS16SpawnTargetLine.gml</script>
+          <script>scripts\scrRedS16SpawnCircle.gml</script>
+          <script>scripts\scrRedS16SpawnTargetSpike.gml</script>
+          <script>scripts\scrRedS16SpawnTrailBullet.gml</script>
+          <script>scripts\scrRedS16SpawnBarrageSpike.gml</script>
+          <script>scripts\scrRedS16CreatePathSpawner.gml</script>
         </scripts>
       </scripts>
     </scripts>
@@ -789,6 +805,16 @@
         <object>objects\oRedS16AbyssRay</object>
         <object>objects\oRedS16AbyssLRay</object>
         <object>objects\oRedS16AbyssRRay</object>
+        <object>objects\oRedS16LineBullet</object>
+        <object>objects\oRedS16BarrageBullet</object>
+        <object>objects\oRedS16TrailBullet</object>
+        <object>objects\oRedS16CircleBullet</object>
+        <object>objects\oRedS16TargetSpike</object>
+        <object>objects\oRedS16ExplosionBullet</object>
+        <object>objects\oRedS16BarrageSpike</object>
+        <object>objects\oRedS16PathSpawner</object>
+        <object>objects\oRedS16PathSpike</object>
+        <object>objects\oRedS16PlayerDummy</object>
       </objects>
       <object>objects\oRedAbyssAvoidanceController</object>
       <object>objects\oRedBaseSpawner</object>
