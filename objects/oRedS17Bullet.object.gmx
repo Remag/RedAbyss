@@ -3,9 +3,9 @@
   <spriteName>sprRedAbyssFruit</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>1</depth>
+  <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>oRedProjectile</parentName>
+  <parentName>oRedBoundProjectile</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,45 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>PolarRadius = 0;
-RadiusDelta = 0;
-DirectionDelta = 0;
-DirectionAccelDelay = 100;
-DirectionAccel = 0.1;
-Step = 0;
-IsOutOfBounds = false;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="3" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>Step++;
-if( Step &gt; DirectionAccelDelay ) {
-    DirectionDelta += sign( DirectionDelta ) * DirectionAccel;
-}
-
-PolarRadius += RadiusDelta;
-PolarDirection += DirectionDelta;
-scrRedSetPolarCoordinates( xstart, ystart, PolarRadius, PolarDirection );
-
-IsOutOfBounds = x &lt;= -10 || x &gt;= 810 || y &lt;= -12 || y &gt;= 620;
+            <string>image_speed = 0;
+image_index = choose( 0, 1 );
+speed = random_range( 3, 9 );
+scrRedSetScale( random_range( 0.5, 1 ) );
 </string>
           </argument>
         </arguments>

@@ -3,9 +3,9 @@
   <spriteName>sprRedAbyssFruit</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>1</depth>
+  <depth>-1</depth>
   <persistent>0</persistent>
-  <parentName>oRedProjectile</parentName>
+  <parentName>oRedS17FinalBullet</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,13 +25,16 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>PolarRadius = 0;
-RadiusDelta = 0;
-DirectionDelta = 0;
-DirectionAccelDelay = 100;
-DirectionAccel = 0.1;
-Step = 0;
-IsOutOfBounds = false;
+            <string>if( live_call() ) {
+    return live_result;
+}
+speed = random_range( 7, 9 );
+direction = Spawner.MainDir + random_range( -45, 45 );
+CurveDir = Spawner.Curve;
+Wrap = false;
+
+image_speed = 0;
+image_index = choose( Spawner.ImageMin, Spawner.ImageMax );
 </string>
           </argument>
         </arguments>
@@ -54,16 +57,20 @@ IsOutOfBounds = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>Step++;
-if( Step &gt; DirectionAccelDelay ) {
-    DirectionDelta += sign( DirectionDelta ) * DirectionAccel;
+            <string>direction += CurveDir;
+
+if( Wrap ) {
+    scrRedWrapInstance();
+} else if( bbox_right &lt; 0 || bbox_left &gt;= room_width || bbox_top &gt;= room_height || bbox_bottom &lt;= 0 ) {
+    instance_destroy();
 }
 
-PolarRadius += RadiusDelta;
-PolarDirection += DirectionDelta;
-scrRedSetPolarCoordinates( xstart, ystart, PolarRadius, PolarDirection );
-
-IsOutOfBounds = x &lt;= -10 || x &gt;= 810 || y &lt;= -12 || y &gt;= 620;
+if( instance_exists( oRedS17SweepLine ) &amp;&amp; y &lt;= oRedS17SweepLine.y ) {
+    repeat( 10 ) {
+        instance_create( x, y, oRedS17FinalParticle );
+    }
+    instance_destroy();
+}
 </string>
           </argument>
         </arguments>

@@ -438,6 +438,7 @@
         <script>scripts\scrRedDestroy.gml</script>
         <script>scripts\scrRedCheckSurface.gml</script>
         <script>scripts\scrRedSetZoom.gml</script>
+        <script>scripts\scrRedWrapInstance.gml</script>
       </scripts>
       <scripts name="TweenScripts">
         <script>scripts\scrRedTweenLinear.gml</script>
@@ -551,6 +552,12 @@
           <script>scripts\scrRedS16SpawnTrailBullet.gml</script>
           <script>scripts\scrRedS16SpawnBarrageSpike.gml</script>
           <script>scripts\scrRedS16CreatePathSpawner.gml</script>
+        </scripts>
+        <scripts name="S17_Bottom">
+          <script>scripts\scrRedS17BottomStep.gml</script>
+          <script>scripts\scrRedS17SpawnTeardrops.gml</script>
+          <script>scripts\scrRedS17CreateExplosion.gml</script>
+          <script>scripts\scrRedS17SpawnBarrageBullet.gml</script>
         </scripts>
       </scripts>
     </scripts>
@@ -815,6 +822,16 @@
         <object>objects\oRedS16PathSpawner</object>
         <object>objects\oRedS16PathSpike</object>
         <object>objects\oRedS16PlayerDummy</object>
+      </objects>
+      <objects name="S17_Bottom">
+        <object>objects\oRedS17Teardrop</object>
+        <object>objects\oRedS17Bullet</object>
+        <object>objects\oRedS17FinalBullet</object>
+        <object>objects\oRedS17OrbitBullet</object>
+        <object>objects\oRedS17BarrageBullet</object>
+        <object>objects\oRedS17SweepLine</object>
+        <object>objects\oRedS17FinalParticle</object>
+        <object>objects\oRedS17FinalFade</object>
       </objects>
       <object>objects\oRedAbyssAvoidanceController</object>
       <object>objects\oRedBaseSpawner</object>

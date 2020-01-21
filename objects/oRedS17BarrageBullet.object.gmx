@@ -3,9 +3,9 @@
   <spriteName>sprRedAbyssFruit</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>1</depth>
+  <depth>-1</depth>
   <persistent>0</persistent>
-  <parentName>oRedProjectile</parentName>
+  <parentName>oRedS17FinalBullet</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,13 +25,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>PolarRadius = 0;
-RadiusDelta = 0;
-DirectionDelta = 0;
-DirectionAccelDelay = 100;
-DirectionAccel = 0.1;
-Step = 0;
-IsOutOfBounds = false;
+            <string>if( live_call() ) {
+    return live_result;
+}
+speed = random_range( 2, 6 );
+direction = -90 + random_range( -45, 45 );
+
+image_speed = 0;
+image_index = choose( irandom_range( 3, 4 ), irandom_range( 6, 8 ) );
+scrRedSetScale( 0.6 );
 </string>
           </argument>
         </arguments>
@@ -54,16 +56,13 @@ IsOutOfBounds = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>Step++;
-if( Step &gt; DirectionAccelDelay ) {
-    DirectionDelta += sign( DirectionDelta ) * DirectionAccel;
+            <string>scrRedWrapInstance();
+if( instance_exists( oRedS17SweepLine ) &amp;&amp; y &lt;= oRedS17SweepLine.y ) {
+    repeat( 5 ) {
+        instance_create( x, y, oRedS17FinalParticle );
+    }
+    instance_destroy();
 }
-
-PolarRadius += RadiusDelta;
-PolarDirection += DirectionDelta;
-scrRedSetPolarCoordinates( xstart, ystart, PolarRadius, PolarDirection );
-
-IsOutOfBounds = x &lt;= -10 || x &gt;= 810 || y &lt;= -12 || y &gt;= 620;
 </string>
           </argument>
         </arguments>

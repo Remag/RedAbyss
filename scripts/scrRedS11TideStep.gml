@@ -3,8 +3,9 @@ var t = argument0;
 if( t == 5575 ) {
     scrRedS11CreateTideSpawner( 820, 180, 7, 6, 8 );
 } else if( t == 5661 ) {
-} else if( t == 5748 ) {
+} else if( t == 5720 ) {
     scrRedDestroy( oRedScriptSpawner );
+} else if( t == 5748 ) {
     scrRedS11CreateTideSpawner( -20, 0, 7, 1, 3 );
 } else if( t == 5835 ) {
 

@@ -112,6 +112,7 @@ scrRedS13CorruptedInfinityStep( Step );
 scrRedS14IrrevocableDamageStep( Step );
 scrRedS15TwistedMazeStep( Step );
 scrRedS16AgonyStep( Step );
+scrRedS17BottomStep( Step );
 </string>
           </argument>
         </arguments>

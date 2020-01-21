@@ -3,9 +3,9 @@
   <spriteName>sprRedAbyssFruit</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>1</depth>
+  <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>oRedProjectile</parentName>
+  <parentName>oRedBoundProjectile</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,13 +25,19 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>PolarRadius = 0;
-RadiusDelta = 0;
-DirectionDelta = 0;
-DirectionAccelDelay = 100;
-DirectionAccel = 0.1;
+            <string>if( live_call() ) {
+    return live_result;
+}
+StartSpeed = random_range( 5, 8 );
+speed = StartSpeed;
+var trail = scrRedAttachTrail( id, 7 );
+trail.TailScale = 1;
+image_speed = 0;
+image_index = 0;
+direction = -90;
 Step = 0;
-IsOutOfBounds = false;
+SlowdownPace = random_range( 20, 30 );
+SlowdownDelay = random_range( 20, 60 );
 </string>
           </argument>
         </arguments>
@@ -54,16 +60,19 @@ IsOutOfBounds = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>Step++;
-if( Step &gt; DirectionAccelDelay ) {
-    DirectionDelta += sign( DirectionDelta ) * DirectionAccel;
+            <string>if( live_call() ) {
+    return live_result;
 }
 
-PolarRadius += RadiusDelta;
-PolarDirection += DirectionDelta;
-scrRedSetPolarCoordinates( xstart, ystart, PolarRadius, PolarDirection );
+Step++;
 
-IsOutOfBounds = x &lt;= -10 || x &gt;= 810 || y &lt;= -12 || y &gt;= 620;
+var slowdownEnd = SlowdownDelay + SlowdownPace;
+var speedupPace = 0.75 * SlowdownPace;
+if( Step &gt;= SlowdownDelay &amp;&amp; Step &lt; slowdownEnd ) {
+    speed = lerp( StartSpeed, 1, ( Step - SlowdownDelay ) / SlowdownPace );
+} else if( Step &gt;= slowdownEnd &amp;&amp; Step &lt; slowdownEnd + speedupPace ) {
+    speed = lerp( 1, StartSpeed, ( Step - slowdownEnd ) / speedupPace );
+}
 </string>
           </argument>
         </arguments>

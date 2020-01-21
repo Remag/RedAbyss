@@ -83,4 +83,29 @@ if( t == 9050 ) {
     lBlock.image_yscale = ( 608 - 32 ) / 32;
     var rBlock = instance_create( 800 - 32, 0, objBlock );
     rBlock.image_yscale = lBlock.image_yscale;
+    scrRedFlashScreen( c_black, 75, 25 );
+} else if( t == 9735 ) {
+    oRedAbyssBackground.sprite_index = sprRedAbyssBackground;
+    scrRedDestroy( oRedS16PathSpike );
+    scrRedDestroy( oRedInfiniteJump );
+    scrRedDestroy( oRedS16PlayerDummy );
+    with( objPlayer ) {
+        visible = true;
+        frozen = false;
+        x = clamp( x, 48, 800 - 48 );
+        xprevious = x;
+        y = 608 - ( bbox_bottom - y ) - 32 - 1;
+        yprevious = y;
+    }
+    var bottomY = 608 - 32;
+    var rightX = 800 - 32;
+    for( var blockY = 0; blockY < bottomY; blockY += 32 ) {
+        instance_create( 0, blockY, oRedLeftBlock );
+        instance_create( rightX, blockY, oRedRightBlock );
+    }
+    instance_create( 0, bottomY, oRedBlCornerBlock );
+    for( var bottomX = 0; bottomX < rightX; bottomX += 32 ) {
+        instance_create( bottomX, bottomY, oRedFloorBlock );
+    }
+    instance_create( rightX, bottomY, oRedBrCornerBlock );
 }
