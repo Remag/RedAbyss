@@ -1,22 +1,30 @@
 var t = argument0;
 
 if( t == 355 ) {
-    scrRedCreateBloomLine( 100, 0, -90, 3.0, 6, 7, 8 );
-    scrRedCreateBloomLine( 400, 0, -90, 3.0, 6, 7, 8 );
-    scrRedCreateBloomLine( 700, 0, -90, 3.0, 6, 7, 8 );
+    var period = 2.5;
+    scrRedCreateBloomLine( 100, 0, -90, period, 6, 7, 8 );
+    scrRedCreateBloomLine( 400, 0, -90, period, 6, 7, 8 );
+    scrRedCreateBloomLine( 700, 0, -90, period, 6, 7, 8 );
 } else if( t == 397 ) {
 } else if( t == 441 ) {
-    scrRedCreateBloomLine( 250, 0, -90, 3.0, 6, 1, 2 );
-    scrRedCreateBloomLine( 650, 0, -90, 3.0, 6, 1, 2 );
+    var period = 3.0;
+    scrRedCreateBloomLine( 250, 0, -90, period, 6, 1, 2 );
+    scrRedCreateBloomLine( 650, 0, -90, period, 6, 1, 2 );
 } else if( t == 484 ) {
 } else if( t == 528 ) {
-    scrRedCreateBloomLine( 0, 225, 0, 4.0, 6, 3, 4 );
-    scrRedCreateBloomLine( 800, 325, 180, 4.0, 6, 3, 4 );
-    scrRedCreateBloomLine( 0, 425, 0, 4.0, 6, 3, 4 );
+    var period = 4.0;
+    scrRedCreateBloomLine( 0, 225, 0, period, 6, 3, 4 );
+    scrRedCreateBloomLine( 800, 325, 180, period, 6, 3, 4 );
+    scrRedCreateBloomLine( 0, 425, 0, period, 6, 3, 4 );
 } else if( t == 572 ) {
 } else if( t == 615 ) {
-    scrRedCreateBloomLine( 0, 560, 0, 3.5, 7, 5, 6 );
-    scrRedCreateBloomLine( 800, 560, 180, 3.5, 7, 5, 6 );
+    var period = 3.0;
+    scrRedCreateBloomLine( 0, 560, 0, period, 7, 5, 6 );
+    scrRedCreateBloomLine( 800, 560, 180, period, 7, 5, 6 );
+    scrRedCreateBloomLine( 0, 460, 0, period, 7, 5, 6 );
+    scrRedCreateBloomLine( 800, 460, 180, period, 7, 5, 6 );
+    scrRedCreateBloomLine( 0, 360, 0, period, 7, 5, 6 );
+    scrRedCreateBloomLine( 800, 360, 180, period, 7, 5, 6 );
 } else if( t == 659 ) {
     with( oRedS2Bullet ) {
         MaxSpeed = 100;

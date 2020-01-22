@@ -29,7 +29,7 @@
 image_index = choose( 5, 6 );
 speed = random_range( 4, 9 );
 scrRedSetScale( random_range( 0.5, 1 ) );
-alarm[0] = 30;
+alarm[0] = 20;
 </string>
           </argument>
         </arguments>
@@ -52,7 +52,7 @@ alarm[0] = 30;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>Curve = 0;
+            <string>Circle.CurveDir = 0;
 </string>
           </argument>
         </arguments>
@@ -75,7 +75,7 @@ alarm[0] = 30;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>direction += Curve;
+            <string>direction += Circle.CurveDir;
 </string>
           </argument>
         </arguments>

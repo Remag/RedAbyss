@@ -22,13 +22,13 @@ if( t == 2094 ) {
 if( t == 2094 ) {
     scrRedMoveInstance( oRedS5SourceBullet, 400, 100, 2443 - 2094 );
 }
-if( t >= 2094 && t < 2435 ) {
+if( t >= 2094 && t < 2430 ) {
     with( oRedS5SourceBullet ) {
         BarrageSpawner.SpawnPeriod *= 0.996;
     }
-} else if( t == 2435 ) {
+} else if( t == 2430 ) {
     with( oRedS5SourceBullet ) {
-        BarrageSpawner.SpawnPeriod = 1.75;
+        BarrageSpawner.SpawnPeriod = 2;
     }
 }
 if( t == 2443 ) {
@@ -51,25 +51,28 @@ if( t == 2443 ) {
         BurstSpawner.SpawnCount = 10;
         BurstSpawner.SpeedMin = 10;
         BurstSpawner.SpeedMax = 12;
-        BurstSpawner.TrailLength = 4;
+        BurstSpawner.TrailLength = 0;
+    }
+}
+if( t == 2565 ) {
+    with( oRedS5SourceBullet ) {
+        scrRedDestroy( BarrageSpawner );
     }
 }
 if( t == 2616 ) {
     with( oRedS5SourceBullet ) {
-        BarrageSpawner.SpawnPeriod = 3;
         BurstSpawner.SpawnPeriod /= 2;
         BurstSpawner.SpawnCount = 9;
         BurstSpawner.SpeedMin = 12;
-        BurstSpawner.SpeedMax = 14;
+        BurstSpawner.SpeedMax = 15;
     }
 } else if( t == 2658 ) {
     with( oRedS5SourceBullet ) {
-        BarrageSpawner.SpawnPeriod = 10;
         BurstSpawner.SpawnPeriod /= 2;
         BurstSpawner.SpawnCount = 6;
-        BurstSpawner.SpeedMin = 14;
-        BurstSpawner.SpeedMax = 16;
-        BurstSpawner.TrailLength = 5;
+        BurstSpawner.SpeedMin = 15;
+        BurstSpawner.SpeedMax = 17;
+        BurstSpawner.TrailLength = 4;
     }
 }
 

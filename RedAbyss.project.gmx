@@ -342,7 +342,6 @@
       <sprite>sprites\sprRedAbyssDagger</sprite>
       <sprite>sprites\sprRedAbyssFruit</sprite>
       <sprite>sprites\sprRedAbyssLeheeFruit</sprite>
-      <sprite>sprites\sprRedDualityHitbox</sprite>
       <sprite>sprites\sprRedLightParticle</sprite>
       <sprite>sprites\sprRedAbyssSpawner</sprite>
       <sprite>sprites\sprRedBrCornerBlock</sprite>
@@ -427,6 +426,8 @@
         <script>scripts\scrRedDirToPlayerFeet.gml</script>
         <script>scripts\scrRedGetPlayerX.gml</script>
         <script>scripts\scrRedGetPlayerY.gml</script>
+        <script>scripts\scrRedGetPlayerLeft.gml</script>
+        <script>scripts\scrRedGetPlayerRight.gml</script>
         <script>scripts\scrRedShakeViewAngle.gml</script>
         <script>scripts\scrRedShakeViewX.gml</script>
         <script>scripts\scrRedShakeViewY.gml</script>
@@ -691,8 +692,6 @@
       <objects name="S1_Intro">
         <object>objects\oRedS1Bullet</object>
         <object>objects\oRedS1CurvedBullet</object>
-        <object>objects\oRedS1LCurvedBullet</object>
-        <object>objects\oRedS1RCurvedBullet</object>
       </objects>
       <objects name="S2_Bloom">
         <object>objects\oRedS2Bullet</object>
@@ -752,6 +751,7 @@
       <objects name="S9_Duality">
         <object>objects\oRedS9SurfaceDrawInitiator</object>
         <object>objects\oRedS9DualBullet</object>
+        <object>objects\oRedS9SpikeHitbox</object>
         <object>objects\oRedS9DualSource</object>
         <object>objects\oRedS9DualRay</object>
         <object>objects\oRedS9SurfaceDrawFinalizer</object>

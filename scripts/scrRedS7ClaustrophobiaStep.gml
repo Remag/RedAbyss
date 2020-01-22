@@ -1,5 +1,9 @@
 var t = argument0;
 
+if( live_call( t ) ) {
+    return live_result;
+}
+
 if( t == 3147 && !instance_exists( oRedS6AbyssSource ) ) {
     var targetSrc = instance_create( 400, 200, oRedS6TargetSource );
     targetSrc.AngleDelta = 1;
@@ -14,8 +18,8 @@ if( t == 3147 && !instance_exists( oRedS6AbyssSource ) ) {
 
 if( t == 3158 ) {
     oRedS6TargetSource.Spawner.SpriteIndex = sprRedSpikeBullet;
-    var spawner = scrRedCreateCustomSpawner( oRedS6TargetSource.x, oRedS6TargetSource.y, 2, scrRedS7SpawnSpikeSpiral, 12 );
-    spawner.TotalDirDelta = 360 / 8;
+    var spawner = scrRedCreateCustomSpawner( oRedS6TargetSource.x, oRedS6TargetSource.y, 2, scrRedS7SpawnSpikeSpiral, 14 );
+    spawner.TotalDirDelta = 360 / 7;
 } else if( t == 3201 ) {
     oRedS6TargetSource.Spawner.SpriteIndex = sprRedSpikeBullet;
     var spawner = scrRedCreateCustomSpawner( oRedS6TargetSource.x, oRedS6TargetSource.y, 1.75, scrRedS7SpawnSpikeFan, 12 );
@@ -23,9 +27,9 @@ if( t == 3158 ) {
 } else if( t == 3244 ) {
     oRedS6TargetSource.Spawner.SpriteIndex = sprRedSpikeBullet;
     var circleDir = random( 360 );
-    var bulletCount = 30;
+    var bulletCount = 25;
     scrRedS7SpawnCircle( circleDir, bulletCount, 10, oRedS7CircleSpike );
-    scrRedS7SpawnCircle( circleDir + bulletCount / 720, bulletCount, 7, oRedS7CircleSpike );
+    scrRedS7SpawnCircle( circleDir + 180 / bulletCount, bulletCount, 7, oRedS7CircleSpike );
 } else if( t == 3170 || t == 3213 || t == 3256 ) {
     oRedS6TargetSource.Spawner.SpriteIndex = sprRedAbyssGrad;
 } else if( t == 3280 ) {

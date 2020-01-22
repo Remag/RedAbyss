@@ -1,6 +1,6 @@
 var t = argument0;
 
-if( t == 702 || t == 790 || t == 886 ) {
+if( t == 702 || t == 790 || t == 878 ) {
     var vlSpawner = instance_create( 200, 0, oRedS3JitterSpawnerBullet );
     vlSpawner.speed = 15;
     vlSpawner.direction = -90;
@@ -18,7 +18,7 @@ if( t == 702 || t == 790 || t == 886 ) {
     vrSpawner.CurveDir = -1;
     vrSpawner.SpawnImageMin = 5;
     vrSpawner.SpawnImageMax = 7;
-} else if( t == 1047 || t == 1132 || t == 1221 ) {
+} else if( t == 1047 || t == 1135 || t == 1223 ) {
     var hlSpawner = instance_create( 0, 200, oRedS3JitterSpawnerBullet );
     hlSpawner.Spawner.SpawnPeriod = 16;
     hlSpawner.speed = 14;

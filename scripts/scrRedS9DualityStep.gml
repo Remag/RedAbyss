@@ -1,5 +1,9 @@
 var t = argument0;
 
+if( live_call( t ) ) {
+    return live_result;
+}
+
 if( t == 4189 ) {
     instance_create( 0, 0, oRedS9SurfaceDrawInitiator );
     instance_create( 0, 0, oRedS9SurfaceDrawFinalizer );
@@ -14,8 +18,8 @@ if( t == 4189 ) {
     rightSrc.FruitIndex = 7;
     scrRedS9SwitchMovePointsX( rightSrc );
     scrRedS9SwitchMovePointsY( rightSrc );
-    scrRedAttachSpawner( leftSrc, 2, oRedS9DualBullet );
-    scrRedAttachSpawner( rightSrc, 2, oRedS9DualBullet );
+    scrRedAttachSpawner( leftSrc, 4, oRedS9DualBullet );
+    scrRedAttachSpawner( rightSrc, 4, oRedS9DualBullet );
 }
 
 if( t == 4220 ) {

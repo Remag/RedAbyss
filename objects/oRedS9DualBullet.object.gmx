@@ -6,7 +6,7 @@
   <depth>1100003</depth>
   <persistent>0</persistent>
   <parentName>oRedBoundProjectile</parentName>
-  <maskName>sprRedDualityHitbox</maskName>
+  <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
       <action>
@@ -26,10 +26,62 @@
           <argument>
             <kind>1</kind>
             <string>speed = random_range( 10, 15 );
-direction = random( 360 );
+direction = random_range( 180, 360 );
 
 FruitIndex = irandom_range( 0, 8 );
 image_angle = direction;
+
+SpikeHitbox = instance_create( x, y, oRedS9SpikeHitbox );
+SpikeHitbox.OwnerId = id;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>scrRedDestroy( SpikeHitbox );
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objPlayer">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>var separationX = oRedS9ScreenSeparator.SeparationX;
+if( other.x &lt;= separationX ) {
+    event_inherited();
+}
 </string>
           </argument>
         </arguments>

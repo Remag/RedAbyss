@@ -48,6 +48,7 @@ if( t == 10442 - 50 ) {
     var line = instance_create( 0, 0, oRedS17SweepLine );
     scrRedMoveInstance( line, 0, 608, 30, scrRedTweenExpIn );
 } else if( t == 11135 ) {
+    scrRedDestroy( oRedBaseSpawner );   
     scrRedDeactivateBullets( oRedProjectile );
     var fade = instance_create( 0, 0, oRedS17FinalFade );
     fade.depth = -2;

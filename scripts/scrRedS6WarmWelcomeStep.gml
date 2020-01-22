@@ -53,25 +53,56 @@ if( t == 2845 ) {
     
 } else if( t == 2938 ) {
     var duration = 22;
-    var nextFullIndex = 0;
-    var playerBlockIndex = ( scrRedGetPlayerX() - 32 ) / 32; 
-    var minBlockedIndex = floor( playerBlockIndex ) - 1;
-    var maxBlockedIndex = ceil( playerBlockIndex ) + 1;
-    for( var blockIndex = 0; blockIndex < 23; blockIndex++ ) {
-        if( blockIndex >= minBlockedIndex && blockIndex <= maxBlockedIndex ) {
-            blockIndex = maxBlockedIndex;
-            nextFullIndex = maxBlockedIndex + 1;
-        } else if( blockIndex == nextFullIndex ) {
-            nextFullIndex += irandom_range( 2, 3 );
-            var spikeX = 32 + blockIndex * 32;
+    
+    var playerLBlockIndex = floor( ( scrRedGetPlayerLeft() - 32 ) / 32 );  
+    var playerRBlockIndex = ceil( ( scrRedGetPlayerRight() - 32 ) / 32 ); 
+    
+    var minBlockedIndex = playerLBlockIndex - 1;
+    var maxBlockedIndex = playerRBlockIndex;
+    if( playerRBlockIndex - playerLBlockIndex <= 1 ) {
+        minBlockedIndex--;
+        maxBlockedIndex++;
+    }
+    var smallGapPos = choose( 2, 3 );
+    var nextFullIndex = minBlockedIndex;
+    var gapPos = 0;
+    for( var lBlockIndex = minBlockedIndex; lBlockIndex >= 0; lBlockIndex-- ) {
+        if( lBlockIndex == nextFullIndex ) {
+            var spikeX = 32 + lBlockIndex * 32;
             var spike = instance_create( spikeX, 576, oRedS6FloorSpike );
             spike.Duration = duration / 2;
+            gapPos++;
+            if( gapPos == smallGapPos ) {
+                nextFullIndex -= 2;
+            } else {
+                nextFullIndex -= 3;
+            }
         } else {
-            var spikeX = 32 + blockIndex * 32;
+            var spikeX = 32 + lBlockIndex * 32;
             scrRedCreateSlidingSpike( spikeX, 576, 90, 0.5, duration, sprRedAbyssSpikeUp );
             scrRedCreateSlidingSpike( spikeX + 16, 576, 90, 0.5, duration, sprRedAbyssSpikeUp );
         }
     }
+    gapPos = 0;
+    nextFullIndex = maxBlockedIndex;
+    for( var rBlockIndex = maxBlockedIndex; rBlockIndex < 23; rBlockIndex++ ) {
+        if( rBlockIndex == nextFullIndex ) {
+            var spikeX = 32 + rBlockIndex * 32;
+            var spike = instance_create( spikeX, 576, oRedS6FloorSpike );
+            spike.Duration = duration / 2;
+            gapPos++;
+            if( gapPos == smallGapPos ) {
+                nextFullIndex += 2;
+            } else {
+                nextFullIndex += 3;
+            }
+        } else {
+            var spikeX = 32 + rBlockIndex * 32;
+            scrRedCreateSlidingSpike( spikeX, 576, 90, 0.5, duration, sprRedAbyssSpikeUp );
+            scrRedCreateSlidingSpike( spikeX + 16, 576, 90, 0.5, duration, sprRedAbyssSpikeUp );
+        }
+    }
+    
     scrRedShakeViewY( -32, 24 );
     var newSpiralSpeed = 4;
     with( oRedS6SpiralSource ) {

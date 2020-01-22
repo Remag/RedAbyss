@@ -28,8 +28,11 @@
             <string>image_speed = 0;
 scrRedSetScale( 0.6 );
 var ownerDir = Spawner.OwnerInstance.StartDirection;
-var baseDir = choose( ownerDir + 90, ownerDir + 270, ownerDir + 180 );
-direction = baseDir + random_range( -50, 50 );
+
+var dirType = Spawner.SpawnCount % 3;
+var baseDir = ownerDir + 90 * ( dirType + 1 );
+
+direction = baseDir + random_range( -45, 45 );
 speed = 1;
 MaxSpeed = 3;
 
