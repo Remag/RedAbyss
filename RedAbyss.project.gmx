@@ -344,11 +344,11 @@
       <sprite>sprites\sprRedAbyssLeheeFruit</sprite>
       <sprite>sprites\sprRedLightParticle</sprite>
       <sprite>sprites\sprRedAbyssSpawner</sprite>
-      <sprite>sprites\sprRedBrCornerBlock</sprite>
-      <sprite>sprites\sprRedBlCornerBlock</sprite>
-      <sprite>sprites\sprRedRightBlock</sprite>
-      <sprite>sprites\sprRedLeftBlock</sprite>
-      <sprite>sprites\sprRedFloorBlock</sprite>
+      <sprite>sprites\sprRedLightLine</sprite>
+      <sprite>sprites\sprRedCornerBlock</sprite>
+      <sprite>sprites\sprRedHorizontalBlock</sprite>
+      <sprite>sprites\sprRedVerticalBlock</sprite>
+      <sprite>sprites\sprRedLightArea</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -357,7 +357,6 @@
     <background>background\bJumpThrough</background>
     <background>background\bTree</background>
     <background>background\bStars</background>
-    <background>background\tRedAbyssTileset</background>
   </backgrounds>
   <paths name="paths">
     <path>paths\pRedS16TL</path>
@@ -440,6 +439,8 @@
         <script>scripts\scrRedCheckSurface.gml</script>
         <script>scripts\scrRedSetZoom.gml</script>
         <script>scripts\scrRedWrapInstance.gml</script>
+        <script>scripts\scrRedCreateLineSurface.gml</script>
+        <script>scripts\scrRedCheckShader.gml</script>
       </scripts>
       <scripts name="TweenScripts">
         <script>scripts\scrRedTweenLinear.gml</script>
@@ -561,8 +562,16 @@
           <script>scripts\scrRedS17SpawnBarrageBullet.gml</script>
         </scripts>
       </scripts>
+      <scripts name="BlockLight">
+        <script>scripts\scrRedCreateActiveImpulse.gml</script>
+        <script>scripts\scrRedCreateFadingImpulse.gml</script>
+        <script>scripts\scrRedCreateMovingImpulse.gml</script>
+      </scripts>
     </scripts>
   </scripts>
+  <shaders name="shaders">
+    <shader type="GLSLES">shaders\sdrBulbShader.shader</shader>
+  </shaders>
   <fonts name="fonts">
     <font>fonts\fDefault30</font>
     <font>fonts\fDefault24</font>
@@ -861,6 +870,14 @@
       <object>objects\oRedBrCornerBlock</object>
       <object>objects\oRedScreenFlash</object>
       <object>objects\oRedInfiniteJump</object>
+      <objects name="BlockLight">
+        <object>objects\oRedLightLine</object>
+        <object>objects\oRedLightLineDrawMechanism</object>
+        <object>objects\oRedLineImpulseTester</object>
+        <object>objects\oRedLineImpulse</object>
+        <object>objects\oRedMovingImpulse</object>
+        <object>objects\oRedFadingImpulse</object>
+      </objects>
     </objects>
   </objects>
   <rooms name="rooms">
