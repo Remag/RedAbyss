@@ -1,3 +1,4 @@
+/// scrRedS14IrrevocableDamageStep(t)
 var t = argument0;
 
 if( t == 7660 ) {
@@ -6,6 +7,8 @@ if( t == 7660 ) {
         instance_create( 0, 0, oRedInfiniteJump );
         scrRedDestroy( objBlock );
         scrRedDestroy( oRedAbyssBlock );
+        scrRedDestroy( oRedLightLine );
+        scrRedCreateEdgeWalls( 24, 24 );
     }
     scrRedDestroy( oRedS13Source );
     var src1 = instance_create( 700, 100, oRedS14Source );
@@ -57,17 +60,22 @@ if( t == 7660 ) {
     scrRedS14SpawnPolygon( oRedS14Source, 5, 2 );
 } else if( t == 8012 ) {
     scrRedS14MoveSources( 20, 586, 780, 20, 50 );
-    scrRedAttachSpawner( oRedS14Source, 1.75, oRedS14BarrageSpike, 20 );
+    scrRedAttachSpawner( oRedS14Source, 2, oRedS14BarrageSpike, 20 );
 } else if( t == 8040 ) {
     with( oRedS14Source ) {
         var dir = random( 360 );
-        var count = 10;
+        var count = 8;
         scrRedCreateCircle( x, y, dir, count, oRedS14FastCircleSpike );
         scrRedCreateCircle( x, y, dir + count / 720, count, oRedS14SlowCircleSpike );
     }
-    
-} else if( t == 8041 ) {
-   
+} else if( t == 8062 ) {
+    with( oRedS14Source ) {
+        scrRedS14SpawnTargetSpikes();
+    }   
+} else if( t == 8072 ) {
+    with( oRedS14Source ) {
+        scrRedS14SpawnTargetSpikes();
+    }   
 } else if( t == 8096 ) {
     scrRedS14CreateSpikeLine( 8, 35 );
     scrRedS14CreateSpikeLine( 8, -35 );
@@ -77,21 +85,19 @@ if( t == 7660 ) {
 } else if( t == 8118 ) {
     scrRedS14CreateSpikeLine( 8, 15 );
     scrRedS14CreateSpikeLine( 8, -15 );
-} else if( t == 8062 ) {
-    scrRedAttachCustomSpawner( oRedS14Source, 4, scrRedS14SpawnTargetSpikes, 8 );    
-} else if( t == 8072 ) {
-    scrRedAttachCustomSpawner( oRedS14Source, 4, scrRedS14SpawnTargetSpikes, 8 ); 
 } else if( t == 8138 ) {
     scrRedAttachCustomSpawner( oRedS14Source, 4, scrRedS14SpawnCircleBullets, 20 );
 } else if( t == 8206 ) {
     scrRedAttachSpawner( oRedS14Source, 1, oRedS14TimedSpike, 25 );
     with( oRedS14Source ) {
         Spawner.MinSpeed = 11;
-        Spawner.MaxSpeed = 19.5;
+        Spawner.MaxSpeed = 18.5;
     }
     scrRedS14MoveSources( 780, 586, 20, 20, 25 );
 } else if( t == 8237 ) {
-    scrRedAttachCustomSpawner( oRedS14Source, 4, scrRedS14SpawnTargetSpikes, 8 ); 
+    with( oRedS14Source ) {
+        scrRedS14SpawnTargetSpikes();
+    }
 } else if( t == 8252 ) {
     scrRedAttachSpawner( oRedS14Source, 1.5, oRedS14TimedSpike, 25 );
     with( oRedS14Source ) {
@@ -100,7 +106,9 @@ if( t == 7660 ) {
     }
     scrRedS14MoveSources( 780, 20, 20, 586, 25 );
 } else if( t == 8291 ) {
-    scrRedAttachCustomSpawner( oRedS14Source, 4, scrRedS14SpawnTargetSpikes, 8 ); 
+    with( oRedS14Source ) {
+        scrRedS14SpawnTargetSpikes();
+    }
 } else if( t == 8305 ) {
     scrRedAttachSpawner( oRedS14Source, 2, oRedS14TimedSpike, 15 );
     with( oRedS14Source ) {

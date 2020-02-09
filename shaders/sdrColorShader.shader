@@ -2,7 +2,7 @@
 // Simple passthrough vertex shader
 //
 attribute vec3 in_Position;                  // (x,y,z)
-//attribute vec3 in_Normal;                  // (x,y,z)     unused in this shader.
+//attribute vec3 in_Normal;                  // (x,y,z)     unused in this shader.	
 attribute vec4 in_Colour;                    // (r,g,b,a)
 attribute vec2 in_TextureCoord;              // (u,v)
 
@@ -19,26 +19,17 @@ void main()
 }
 
 //######################_==_YOYO_SHADER_MARKER_==_######################@~//
-// Shader used for light lines inside blocks.
+// Shader used for light-sensitive coloring of sprites based on their red component.
 //
-uniform vec4 uUvs;
-uniform sampler2D uIntensitySampler;
-
 varying vec2 v_vTexcoord;
 varying vec4 v_vColour;
 
 void main() 
 {
-    vec2 uv = ( v_vTexcoord - uUvs.xy ) * uUvs.zw;
-    vec3 posColor = texture2D( uIntensitySampler, uv ).rgb;
-    
-    vec3 colorVal = v_vColour.rgb * posColor;
-    float baseVal = max( colorVal.r, max( colorVal.g, colorVal.b ) );
-    baseVal *= 0.5;
-    colorVal += vec3( baseVal );
-    colorVal = clamp( colorVal, vec3( 0.0 ), vec3( 1.0 ) );
-    
-    gl_FragColor = vec4( colorVal, v_vColour.a );
+     lowp vec4 texture = texture2D( gm_BaseTexture, v_vTexcoord );
+     float minColor = min( texture.g, texture.b );
+     float mixValue = texture.r - minColor;
+     gl_FragColor = vec4( v_vColour.rgb * mixValue + vec3( minColor ), texture.a * v_vColour.a );
 }
 
 

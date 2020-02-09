@@ -51,11 +51,11 @@
             <string>Step++;
 
 if( Step % 25 == 0 ) {
-    with( oRedLightLine ) {
-        var impulse = scrRedCreateMovingImpulse( id, -31, 10 );
-        impulse.image_blend = c_lime;
-        impulse.image_xscale = 2;
-    }
+    //with( oRedLightLine ) {
+     //   var impulse = scrRedCreateMovingImpulse( id, -31, 10 );
+    //    impulse.image_blend = c_lime;
+    //    impulse.image_xscale = 2;
+   // }
 }
 </string>
           </argument>

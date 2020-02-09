@@ -1,9 +1,15 @@
-var spikeY = argument0;
-var spikeDir = argument1;
+/// scrRedS13CreateVSpikeWall(spikeY, spikeDir, spikeStartIndex)
+var spikeY = argument0, spikeDir = argument1, spikeStartIndex = argument2;
 
-for( var spikeX = 0; spikeX < 800; spikeX += random_range( 48, 56 ) ) {
+var spikeIndex = spikeStartIndex;
+for( var spikeX = 0; spikeX < 800; spikeX += random_range( 42, 50 ) ) {
     var spike = instance_create( spikeX, spikeY, oS13WallSpike );
     spike.direction = spikeDir;
-    spike.speed = random_range( 2, 10 );
+    if( spikeIndex % 2 == 0 ) {
+        spike.speed = random_range( 3, 7 );
+    } else {
+        spike.speed = random_range( 7, 9 );
+    }
     spike.image_angle = spike.direction;
+    spikeIndex++;
 }

@@ -441,6 +441,8 @@
         <script>scripts\scrRedWrapInstance.gml</script>
         <script>scripts\scrRedCreateLineSurface.gml</script>
         <script>scripts\scrRedCheckShader.gml</script>
+        <script>scripts\scrRedCreateEdgeWalls.gml</script>
+        <script>scripts\scrRedFindSpikeWaveOffset.gml</script>
       </scripts>
       <scripts name="TweenScripts">
         <script>scripts\scrRedTweenLinear.gml</script>
@@ -571,6 +573,7 @@
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\sdrBulbShader.shader</shader>
+    <shader type="GLSLES">shaders\sdrColorShader.shader</shader>
   </shaders>
   <fonts name="fonts">
     <font>fonts\fDefault30</font>
@@ -780,6 +783,8 @@
         <object>objects\oRedS12LeftSpike</object>
         <object>objects\oRedS12RightSpike</object>
         <object>objects\oRedS12BottomSpike</object>
+        <object>objects\oRedS12TopSpike</object>
+        <object>objects\oRedS12EdgeSpikeMover</object>
       </objects>
       <objects name="S13_CorruptedInfinity">
         <object>objects\oRedS13Source</object>
@@ -799,6 +804,7 @@
         <object>objects\oRedS14BarrageBullet</object>
         <object>objects\oRedS14BurstBullet</object>
         <object>objects\oRedS14PolygonBullet</object>
+        <object>objects\oRedS14Spike</object>
         <object>objects\oRedS14BarrageSpike</object>
         <object>objects\oRedS14FastCircleSpike</object>
         <object>objects\oRedS14SlowCircleSpike</object>
@@ -842,6 +848,14 @@
         <object>objects\oRedS17FinalParticle</object>
         <object>objects\oRedS17FinalFade</object>
       </objects>
+      <objects name="BlockLight">
+        <object>objects\oRedLightLine</object>
+        <object>objects\oRedLightLineDrawMechanism</object>
+        <object>objects\oRedLineImpulseTester</object>
+        <object>objects\oRedLineImpulse</object>
+        <object>objects\oRedMovingImpulse</object>
+        <object>objects\oRedFadingImpulse</object>
+      </objects>
       <object>objects\oRedAbyssAvoidanceController</object>
       <object>objects\oRedBaseSpawner</object>
       <object>objects\oRedProjectileSpawner</object>
@@ -870,14 +884,7 @@
       <object>objects\oRedBrCornerBlock</object>
       <object>objects\oRedScreenFlash</object>
       <object>objects\oRedInfiniteJump</object>
-      <objects name="BlockLight">
-        <object>objects\oRedLightLine</object>
-        <object>objects\oRedLightLineDrawMechanism</object>
-        <object>objects\oRedLineImpulseTester</object>
-        <object>objects\oRedLineImpulse</object>
-        <object>objects\oRedMovingImpulse</object>
-        <object>objects\oRedFadingImpulse</object>
-      </objects>
+      <object>objects\oRedAbyssEdgeSpike</object>
     </objects>
   </objects>
   <rooms name="rooms">

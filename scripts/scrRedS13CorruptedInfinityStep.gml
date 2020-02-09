@@ -1,3 +1,4 @@
+/// scrRedS13CorruptedInfinityStep(t)
 var t = argument0;
 
 if( t == 6966 ) {
@@ -10,6 +11,8 @@ if( t == 6966 ) {
         instance_create( 0, 0, oRedInfiniteJump );
         scrRedDestroy( objBlock );
         scrRedDestroy( oRedAbyssBlock );
+        scrRedDestroy( oRedLightLine );
+        scrRedCreateEdgeWalls( 24, 24 );
     }
     var src1 = instance_find( oRedS13Source, 0 );
     var src2 = instance_find( oRedS13Source, 1 );
@@ -45,12 +48,13 @@ if( t == 6966 ) {
 } else if( t == 7270 ) {
     scrRedAttachCustomSpawner( oRedS13Source, 1.4, scrRedS13SpawnBulletCircle, 25 );
 } else if( t == 7338 ) { 
-    scrRedS13CreateHSpikeWall( 0, -90 );
+    scrRedS13CreateHSpikeWall( 0, -90, choose( 1, 2 ) );
 } else if( t == 7380 ) {
-    scrRedS13CreateHSpikeWall( 608, 90 );
+    scrRedS13CreateHSpikeWall( 608, 90, choose( 1, 2 ) );
 } else if( t == 7425 ) {
-    scrRedS13CreateVSpikeWall( 0, 0 );
-    scrRedS13CreateVSpikeWall( 800, 180 );
+    var startIndex = choose( 1, 2 );
+    scrRedS13CreateVSpikeWall( 0, 0, startIndex );
+    scrRedS13CreateVSpikeWall( 800, 180, startIndex + 1 );
 }  else if( t == 7442 ) {
 } else if( t == 7465 ) {
     

@@ -1,3 +1,4 @@
+/// scrRedS5TwinDownpourStep(t)
 var t = argument0;
 
 if( t == 2094 ) {
@@ -11,6 +12,8 @@ if( t == 2094 ) {
         BurstSpawner.SpeedMax = 8;
         BurstSpawner.TrailLength = 0;
         scrRedAttachSpawner( id, 1.5, oRedS5BarrageBullet );
+        Spawner.SpeedMin = 5;
+        Spawner.SpeedMax = 7;
         BarrageSpawner = Spawner;
     }
 } else if( t == 2100 ) {
@@ -21,6 +24,10 @@ if( t == 2094 ) {
 }
 if( t == 2094 ) {
     scrRedMoveInstance( oRedS5SourceBullet, 400, 100, 2443 - 2094 );
+    with( oRedS5SourceBullet ) {
+        BarrageSpawner.SpeedMin = 6;
+        BarrageSpawner.SpeedMax = 8;
+    }
 }
 if( t >= 2094 && t < 2430 ) {
     with( oRedS5SourceBullet ) {
@@ -40,6 +47,8 @@ if( t == 2443 ) {
     newBullet.BurstSpawner = scrRedAttachCustomSpawner( newBullet, 43.5, scrRedS5SpawnBurstBullet );
     
     scrRedAttachSpawner( newBullet, 1.5, oRedS5BarrageBullet );
+    newBullet.Spawner.SpeedMin = originalBullet.BarrageSpawner.SpeedMin;
+    newBullet.Spawner.SpeedMax = originalBullet.BarrageSpawner.SpeedMax;
     newBullet.BarrageSpawner = newBullet.Spawner;
     newBullet.StartTopX = newBullet.x;
     originalBullet.StartTopX = originalBullet.x;
@@ -47,6 +56,8 @@ if( t == 2443 ) {
     
     with( oRedS5SourceBullet ) {
         BarrageSpawner.SpawnPeriod = 1.75;
+        BarrageSpawner.SpeedMin = 7;
+        BarrageSpawner.SpeedMax = 9;
         BurstSpawner.SpawnPeriod /= 2;
         BurstSpawner.SpawnCount = 10;
         BurstSpawner.SpeedMin = 10;

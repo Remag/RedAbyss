@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>direction = random( 360 );
-speed = random_range( 5, 7 );
+speed = random_range( Spawner.SpeedMin, Spawner.SpeedMax );
 image_speed = 0;
 image_index = choose( random_range( 0, 4 ), random_range( 6, 8 ) );
 scrRedSetScale( random_range( 0.5, 0.7 ) );

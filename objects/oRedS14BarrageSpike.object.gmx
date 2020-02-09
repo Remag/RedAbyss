@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>oRedBoundProjectile</parentName>
+  <parentName>oRedS14Spike</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -30,7 +30,7 @@ direction = random_range( dir - 90, dir + 90 );
 image_angle = direction;
 speed = random_range( 6, 8 );
 
-scrRedSetScale( random_range( 0.5, 1 ) );
+scrRedSetScale( random_range( 0.5, 0.75 ) );
 </string>
           </argument>
         </arguments>

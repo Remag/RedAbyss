@@ -1,4 +1,9 @@
+/// scrRedS12RelapseStep(t)
 var t = argument0;
+
+if( live_call( t ) ) {
+    return live_result;
+}
 
 if( t == 6269 ) {
     var leftSrc = instance_create( -20, 100, oRedS12Source );
@@ -58,49 +63,50 @@ if( t == 6269 ) {
     instance_create( 0, 0, oRedS5TempBackdrop );
     instance_create( 0, 0, oRedInfiniteJump );
 } else if( t == 6890 ) {
-    var moveDuration = 25;
-    for( var spikeY = 0; spikeY < 608; spikeY += 32 ) {
-        var lSpike = instance_create( 0, spikeY, oRedS12LeftSpike );
-        scrRedMoveInstance( lSpike, 32, spikeY, moveDuration, scrRedTweenExpIn );
-        var rSpike = instance_create( 800 - 32, spikeY, oRedS12RightSpike );
-        scrRedMoveInstance( rSpike, 800 - 64, spikeY, moveDuration, scrRedTweenExpIn );
-    }
-    for( var spikeX = 64; spikeX < 800 - 64; spikeX += 32 ) {
-        var bSpike = instance_create( spikeX, 608 - 32, oRedS12BottomSpike );
-        scrRedMoveInstance( bSpike, spikeX, 608 - 64, moveDuration, scrRedTweenExpIn );
-    }
-    scrRedDeactivateBullets( oRedS12Spike );
+    scrRedCreateEdgeWalls( 24, 56 );
+    var mover = instance_create( 0, 0, oRedS12EdgeSpikeMover );
+    mover.Duration = 35;
+    scrRedDeactivateBullets( oRedAbyssEdgeSpike );
 } else if( t == 6895 ) {
     oRedAbyssBackground.sprite_index = sprRedAbyssRedBackground; 
     scrRedBulletFadeOut( oRedS5TempBackdrop );
-    scrRedActivateBullets( oRedS12Spike );
+    scrRedActivateBullets( oRedAbyssEdgeSpike );
 } else if( t == 6940 ) {
     var moveDuration = 23;
     scrRedBulletFadeOut( oRedS12BurstBullet );
     scrRedDeactivateBullets( oRedS12BurstBullet );
-    with( oRedS12LeftSpike ) {
-        scrRedMoveInstance( id, -32, y, moveDuration, scrRedTweenSineIn );
+    with( oRedS12EdgeSpikeMover ) {
+        StepDelta = -1;
+    }
+    with( oRedAbyssEdgeSpike ) {
+        if( image_angle == -90 ) {
+            FoundationY = -24;
+            TargetBaseDelta = 0;
+        }
     }
     with( oRedLeftBlock ) {
-        scrRedMoveInstance( id, -32, y, moveDuration, scrRedTweenSineIn );
+        scrRedMoveInstance( id, -32, y, moveDuration, scrRedTweenSineOut );
     }
     with( oRedBlCornerBlock ) {
-        scrRedMoveInstance( id, -32, y, moveDuration, scrRedTweenSineIn );   
-    }
-    with( oRedS12RightSpike ) {
-        scrRedMoveInstance( id, 832, y, moveDuration, scrRedTweenSineIn );
+        scrRedMoveInstance( id, -32, y, moveDuration, scrRedTweenSineOut );   
     }
     with( oRedRightBlock ) {
-        scrRedMoveInstance( id, 832, y, moveDuration, scrRedTweenSineIn );   
+        scrRedMoveInstance( id, 832, y, moveDuration, scrRedTweenSineOut );   
     }
     with( oRedBrCornerBlock ) {
-        scrRedMoveInstance( id, 832, y, moveDuration, scrRedTweenSineIn );
-    }    
-    with( oRedS12BottomSpike ) {
-        scrRedMoveInstance( id, x, 608 + 32, moveDuration, scrRedTweenSineIn );
+        scrRedMoveInstance( id, 832, y, moveDuration, scrRedTweenSineOut );
     }
     with( oRedFloorBlock ) {
-        scrRedMoveInstance( id, x, 608 + 32, moveDuration, scrRedTweenSineIn );   
+        scrRedMoveInstance( id, x, 608 + 32, moveDuration, scrRedTweenSineOut );   
+    }
+    with( oRedLightLine ) {
+        if( WallId == -1 ) {
+            scrRedMoveInstance( id, -32, y, moveDuration, scrRedTweenSineOut );
+        } else if( WallId == 0 ) {
+            scrRedMoveInstance( id, x, 608 + 24, moveDuration, scrRedTweenSineOut );
+        } else if( WallId == 1 ) {
+            scrRedMoveInstance( id, 832, y, moveDuration, scrRedTweenSineOut );  
+        }
     }
     scrRedDestroy( objBlock );
 } else if( t == 6976 ) {
@@ -108,4 +114,6 @@ if( t == 6269 ) {
     scrRedDestroy( oRedS12LeftSpike );
     scrRedDestroy( oRedS12RightSpike );
     scrRedDestroy( oRedS12BottomSpike );
+    scrRedDestroy( oRedS12TopSpike );
+    scrRedDestroy( oRedS12EdgeSpikeMover );
 }

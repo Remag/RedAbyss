@@ -1,3 +1,4 @@
+/// scrRedS15TwistedMazeStep(t)
 var t = argument0;
 
 if( t == 8357 ) {
@@ -6,6 +7,8 @@ if( t == 8357 ) {
         instance_create( 0, 0, oRedInfiniteJump );
         scrRedDestroy( objBlock );
         scrRedDestroy( oRedAbyssBlock );
+        scrRedDestroy( oRedLightLine );
+        scrRedCreateEdgeWalls( 24, 24 );
     }
     scrRedDestroy( oRedS14Source );
     var src1 = instance_create( 400, 20, oRedS15Source );

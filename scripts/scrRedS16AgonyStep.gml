@@ -1,3 +1,4 @@
+/// scrRedS16AgonyStep(t)
 var t = argument0;
 
 if( t == 9050 ) {
@@ -6,6 +7,8 @@ if( t == 9050 ) {
         instance_create( 0, 0, oRedInfiniteJump );
         scrRedDestroy( objBlock );
         scrRedDestroy( oRedAbyssBlock );
+        scrRedDestroy( oRedLightLine );
+        scrRedCreateEdgeWalls( 24, 24 );
     }
     scrRedDestroy( oRedS15Source );
     var src1 = instance_create( 400, 100, oRedS16Source );
@@ -89,6 +92,7 @@ if( t == 9050 ) {
     scrRedDestroy( oRedS16PathSpike );
     scrRedDestroy( oRedInfiniteJump );
     scrRedDestroy( oRedS16PlayerDummy );
+    scrRedDestroy( oRedAbyssEdgeSpike );
     with( objPlayer ) {
         visible = true;
         frozen = false;
