@@ -28,11 +28,17 @@
             <string>oRedS9ScreenSeparator.BlueSurface = scrRedCheckSurface( oRedS9ScreenSeparator.BlueSurface, 800, 608 );
 oRedS9ScreenSeparator.RedSurface = scrRedCheckSurface( oRedS9ScreenSeparator.RedSurface, 800, 608 );
 
+var separationX = oRedS9ScreenSeparator.SeparationX;
+var overlapHWidth = oRedS9ScreenSeparator.OverlapWidth / 2;
 surface_set_target( oRedS9ScreenSeparator.BlueSurface );
 draw_sprite( sprRedAbyssBackground, 0, 0, 0 );
 surface_reset_target();
 surface_set_target( oRedS9ScreenSeparator.RedSurface );
-draw_sprite( sprRedAbyssRedBackground, 0, -oRedS9ScreenSeparator.SeparationX, y );
+var redOffset = separationX - overlapHWidth
+draw_sprite( sprRedAbyssRedBackground, 0, -redOffset, y );
+draw_set_blend_mode_ext( bm_zero, bm_src_color );
+draw_sprite_ext( sprRedOverlapMask, 0, 0, 0, 1, 1, 0, c_white, 1 );
+draw_set_blend_mode( bm_normal );
 surface_reset_target();
 </string>
           </argument>

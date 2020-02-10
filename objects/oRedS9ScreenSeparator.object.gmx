@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>SeparationX = 450;
+OverlapWidth = 100;
 TargetSeparationX = SeparationX;
 DriftStartX = SeparationX;
 SeparationDrift = 0;
@@ -84,19 +85,18 @@ RedSurface = noone;
     SeparationDrift = sign( TargetSeparationX - SeparationX );
     SeparationMoveStep++;
     if( SeparationMoveStep &gt;= SeparationMoveDuration ) {
-        SeparationX = TargetSeparationX;
+        SeparationX = clamp( TargetSeparationX, OverlapWidth / 2, 800 );
         DriftStartX = TargetSeparationX;
         MoveStartSeparationX = TargetSeparationX;
         SeparationMoveStep = 0;
     } else {
-        SeparationX = scrRedTweenSineInOut( MoveStartSeparationX, TargetSeparationX - MoveStartSeparationX, SeparationMoveStep, SeparationMoveDuration );
+        var newSeparationX = scrRedTweenSineInOut( MoveStartSeparationX, TargetSeparationX - MoveStartSeparationX, SeparationMoveStep, SeparationMoveDuration );
+        SeparationX = clamp( newSeparationX, OverlapWidth / 2, 800 );
     }
 } else {
-    SeparationX = clamp( SeparationX + SeparationDrift, 0, 800 );
+    SeparationX = clamp( SeparationX + SeparationDrift, OverlapWidth / 2, 800 );
     MoveStartSeparationX = SeparationX;
 }
-
-
 </string>
           </argument>
         </arguments>
@@ -122,7 +122,6 @@ RedSurface = noone;
             <string>/// Cleanup
 surface_free( BlueSurface );
 surface_free( RedSurface );
-surface_free( noone );
 </string>
           </argument>
         </arguments>
@@ -192,7 +191,7 @@ surface_free( noone );
           <argument>
             <kind>1</kind>
             <string>draw_surface( BlueSurface, 0, 0 );
-draw_surface( RedSurface, SeparationX, 0 );
+draw_surface( RedSurface, SeparationX - OverlapWidth / 2, 0 );
 </string>
           </argument>
         </arguments>

@@ -6,7 +6,7 @@ for( var spikeX = 0; spikeX < 800; spikeX += random_range( 42, 50 ) ) {
     var spike = instance_create( spikeX, spikeY, oS13WallSpike );
     spike.direction = spikeDir;
     if( spikeIndex % 2 == 0 ) {
-        spike.speed = random_range( 3, 7 );
+        spike.speed = random_range( 4, 7 );
     } else {
         spike.speed = random_range( 7, 9 );
     }

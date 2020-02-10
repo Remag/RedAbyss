@@ -56,7 +56,7 @@ alarm[0] = Spawner.SpawnDuration - Spawner.Lifetime;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>speed = random_range( 1, 1.5 );
+            <string>speed = random_range( 1, 1.4 );
 </string>
           </argument>
         </arguments>

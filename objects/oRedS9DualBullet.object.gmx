@@ -26,13 +26,17 @@
           <argument>
             <kind>1</kind>
             <string>speed = random_range( 10, 15 );
-direction = random_range( 180, 360 );
+direction = random_range( Spawner.MinDirection, Spawner.MaxDirection );
 
 FruitIndex = irandom_range( 0, 8 );
 image_angle = direction;
 
 SpikeHitbox = instance_create( x, y, oRedS9SpikeHitbox );
 SpikeHitbox.OwnerId = id;
+
+var scale = random_range( 0.75, 1 );
+SpikeHitbox.image_xscale = scale - 0.05;
+SpikeHitbox.image_yscale = scale - 0.1;
 </string>
           </argument>
         </arguments>
@@ -105,17 +109,24 @@ if( other.x &lt;= separationX ) {
           <argument>
             <kind>1</kind>
             <string>var separationX = oRedS9ScreenSeparator.SeparationX;
-
-if( x - 11 &lt;= separationX ) {
+var overlapWidth = oRedS9ScreenSeparator.OverlapWidth;
+var overlapHWidth = overlapWidth / 2;
+var separationLeft = separationX - overlapHWidth;
+var separationRight = separationX + overlapHWidth;
+draw_set_blend_mode( bm_add );
+if( x - 11 &lt;= separationRight ) {
     surface_set_target( oRedS9ScreenSeparator.BlueSurface );
-    draw_sprite( sprRedAbyssFruit, FruitIndex, x, y );
+    var alpha = 1 - max( 0, x - separationLeft ) / overlapWidth;
+    draw_sprite_ext( sprRedAbyssFruit, FruitIndex, x, y, image_xscale, image_yscale, 0, image_blend, alpha );
     surface_reset_target();
 }
-if( x + 16 &gt;= separationX ) {
+if( x + 16 &gt;= separationLeft ) {
     surface_set_target( oRedS9ScreenSeparator.RedSurface );
-    draw_sprite_ext( sprRedSpikeBullet, 0, x - separationX, y, 0.9, 0.87, image_angle, c_white, 1 );
+    var alpha = 1 - max( 0, separationRight - x ) / overlapWidth;
+    draw_sprite_ext( sprRedSpikeBullet, 0, x - separationX + overlapHWidth, y, SpikeHitbox.image_xscale, SpikeHitbox.image_yscale, image_angle, c_white, alpha );
     surface_reset_target();
 }
+draw_set_blend_mode( bm_normal );
 </string>
           </argument>
         </arguments>

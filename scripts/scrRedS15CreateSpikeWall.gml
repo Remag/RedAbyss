@@ -1,6 +1,9 @@
+if( live_call() ) {
+    return live_result;
+}
 
-var gapOffset = 225;
-var gapHWidth = 60;
+var gapOffset = 375;
+var gapHWidth = 45;
 var gapY = random_range( gapOffset, 600 - gapHWidth );
 
 for( var wallY = 0; wallY < gapY - gapHWidth; wallY += 32 ) {

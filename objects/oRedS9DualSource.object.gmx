@@ -129,16 +129,22 @@ repeat( 1 ) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var separationX = oRedS9ScreenSeparator.SeparationX;
-
-if( x - 22 &lt;= separationX ) {
+            <string>
+var separationX = oRedS9ScreenSeparator.SeparationX;
+var overlapWidth = oRedS9ScreenSeparator.OverlapWidth;
+var overlapHWidth = overlapWidth / 2;
+var separationLeft = separationX - overlapHWidth;
+var separationRight = separationX + overlapHWidth;
+if( x - 22 &lt;= separationRight ) {
     surface_set_target( oRedS9ScreenSeparator.BlueSurface );
-    draw_sprite_ext( sprRedAbyssFruit, FruitIndex, x, y, 2, 2, 0, c_white, 1 );
+    var alpha = 1 - max( 0, x - separationLeft ) / overlapWidth;
+    draw_sprite_ext( sprRedAbyssFruit, FruitIndex, x, y, 2, 2, 0, c_white, alpha );
     surface_reset_target();
 }
-if( x + 64 &gt;= separationX ) {
+if( x + 64 &gt;= separationLeft ) {
     surface_set_target( oRedS9ScreenSeparator.RedSurface );
-    draw_sprite_ext( sprRedAbyssSpawner, 0, x - separationX, y, 1, 1, image_angle, c_red, 0.6 );
+    var alpha = 1 - max( 0, separationRight - x ) / overlapWidth;
+    draw_sprite_ext( sprRedAbyssSpawner, 0, x - separationX + overlapHWidth, y, 1, 1, image_angle, c_red, 0.6 * alpha );
     surface_reset_target();
 }
 </string>

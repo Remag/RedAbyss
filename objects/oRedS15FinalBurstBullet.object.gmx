@@ -26,8 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>direction = random( 360 );
-speed = random_range( 6, 10 );
-scrRedSetScale( random_range( 0.75, 0.9 ) );
+scrRedSetScale( random_range( 0.5, 0.75 ) );
 </string>
           </argument>
         </arguments>

@@ -57,15 +57,31 @@ if( t == 8357 ) {
         var spike = instance_create( wallX, wallY, oRedS15DoomSpike );
         spike.direction = wallDir;
         spike.image_angle = wallDir;
-        spike.speed = 1.35;
+        spike.speed = 1.25;
     }
-} else if( t == 8715 ) {
+} else if( t == 8575 ) {  
+    var src1 = instance_find( oRedS15Source, 0 );
+    scrRedAttachCustomSpawner( src1, 1, scrRedS15SpawnMiddleBarrage, 25 );
+    src1.Spawner.MinSpeed = 8;
+    src1.Spawner.MaxSpeed = 10;
+} else if( t == 8660 ) {  
+    var src1 = instance_find( oRedS15Source, 0 );
+    scrRedAttachCustomSpawner( src1, 1, scrRedS15SpawnMiddleBarrage, 35 );
+    src1.Spawner.MinSpeed = 8;
+    src1.Spawner.MaxSpeed = 10;
 } else if( t == 8815 ) {
     scrRedDestroy( oRedScriptSpawner );
+} else if( t == 8830 ) {  
+    var src1 = instance_find( oRedS15Source, 0 );
+    scrRedAttachCustomSpawner( src1, 1, scrRedS15SpawnMiddleBarrage, 25 );
+    src1.Spawner.MinSpeed = 8;
+    src1.Spawner.MaxSpeed = 10;
 } else if( t == 8920 ) {
     scrRedDestroy( oRedAttachedScriptSpawner );    
     var src1 = instance_find( oRedS15Source, 0 );
-    scrRedAttachSpawner( src1, 0.75, oRedS15FinalBurstBullet );
+    scrRedAttachCustomSpawner( src1, 0.75, scrRedS15SpawnFinalBarrage );
+    src1.Spawner.MinSpeed = 5;
+    src1.Spawner.MaxSpeed = 7;
 } else if( t == 9050 ) {
     scrRedDestroy( oRedAttachedSpawner );
     with( oRedS15DoomSpike ) {

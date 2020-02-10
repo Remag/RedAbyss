@@ -69,7 +69,7 @@ EnableSineMovement = true;
 }
 
 if( instance_exists( Spawner ) ) {
-    Spawner.SpawnPeriod += 0.05;
+    Spawner.SpawnPeriod += 0.045;
 }
 
 

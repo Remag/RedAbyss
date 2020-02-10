@@ -349,6 +349,7 @@
       <sprite>sprites\sprRedHorizontalBlock</sprite>
       <sprite>sprites\sprRedVerticalBlock</sprite>
       <sprite>sprites\sprRedLightArea</sprite>
+      <sprite>sprites\sprRedOverlapMask</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -546,6 +547,8 @@
           <script>scripts\scrRedS15SpawnSpikeRandomWall.gml</script>
           <script>scripts\scrRedS15CreateSpikeWall.gml</script>
           <script>scripts\scrRedS15SpawnSpiralBullet.gml</script>
+          <script>scripts\scrRedS15SpawnMiddleBarrage.gml</script>
+          <script>scripts\scrRedS15SpawnFinalBarrage.gml</script>
         </scripts>
         <scripts name="S16_Agony">
           <script>scripts\scrRedS16AgonyStep.gml</script>
@@ -779,11 +782,6 @@
         <object>objects\oRedS12Source</object>
         <object>objects\oRedS12Bullet</object>
         <object>objects\oRedS12BurstBullet</object>
-        <object>objects\oRedS12Spike</object>
-        <object>objects\oRedS12LeftSpike</object>
-        <object>objects\oRedS12RightSpike</object>
-        <object>objects\oRedS12BottomSpike</object>
-        <object>objects\oRedS12TopSpike</object>
         <object>objects\oRedS12EdgeSpikeMover</object>
       </objects>
       <objects name="S13_CorruptedInfinity">

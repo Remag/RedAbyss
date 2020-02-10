@@ -27,7 +27,13 @@
             <kind>1</kind>
             <string>surface_set_target( oRedS9ScreenSeparator.RedSurface );
 draw_set_blend_mode( bm_add );
-draw_sprite_ext( sprite_index, image_index, x - oRedS9ScreenSeparator.SeparationX, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha );
+
+var separationX = oRedS9ScreenSeparator.SeparationX;
+var overlapWidth = oRedS9ScreenSeparator.OverlapWidth;
+var overlapHWidth = overlapWidth / 2;
+var separationRight = separationX + overlapHWidth;
+var alpha = max( 0, 1 - max( 0, separationRight - x ) / overlapWidth );
+draw_sprite_ext( sprite_index, image_index, x - separationX + overlapHWidth, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha * alpha );
 draw_set_blend_mode( bm_normal );
 surface_reset_target();
 

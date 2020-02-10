@@ -1,3 +1,4 @@
+/// scrRedS9DualityStep(t)
 var t = argument0;
 
 if( live_call( t ) ) {
@@ -18,8 +19,20 @@ if( t == 4189 ) {
     rightSrc.FruitIndex = 7;
     scrRedS9SwitchMovePointsX( rightSrc );
     scrRedS9SwitchMovePointsY( rightSrc );
-    scrRedAttachSpawner( leftSrc, 4, oRedS9DualBullet );
-    scrRedAttachSpawner( rightSrc, 4, oRedS9DualBullet );
+    
+    var bSpawner1 = scrRedAttachSpawner( leftSrc, 4, oRedS9DualBullet );
+    bSpawner1.MinDirection = 180;
+    bSpawner1.MaxDirection = 360;
+    var bSpawner2 = scrRedAttachSpawner( rightSrc, 4, oRedS9DualBullet );
+    bSpawner2.MinDirection = 180;
+    bSpawner2.MaxDirection = 360;
+    
+    var tSpawner1 = scrRedAttachSpawner( leftSrc, 4, oRedS9DualBullet );
+    tSpawner1.MinDirection = 0;
+    tSpawner1.MaxDirection = 180;
+    var tSpawner2 = scrRedAttachSpawner( rightSrc, 4, oRedS9DualBullet );
+    tSpawner2.MinDirection = 0;
+    tSpawner2.MaxDirection = 180;
 }
 
 if( t == 4220 ) {
@@ -64,6 +77,8 @@ if( t == 4220 ) {
     scrRedShakeViewAngle( 6, 40 );
 } else if( t == 4875 ) {
     scrRedFlashScreen( c_white, 10, 100 );
+    scrRedDeactivateBullets( oRedS9DualBullet );
+    scrRedDeactivateBullets( oRedS9SpikeHitbox );
 } else if( t == 4885 ) {
     scrRedDestroy( oRedS9ScreenSeparator );
     scrRedDestroy( oRedS9DualBullet );
