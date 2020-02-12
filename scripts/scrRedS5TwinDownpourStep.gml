@@ -1,6 +1,10 @@
 /// scrRedS5TwinDownpourStep(t)
 var t = argument0;
 
+if( live_call( t ) ) {
+    return live_result;
+}
+
 if( t == 2094 ) {
     if( !instance_exists( oRedS5SourceBullet ) ) {
         instance_create( 400, 300, oRedS5SourceBullet );
@@ -59,9 +63,9 @@ if( t == 2443 ) {
         BarrageSpawner.SpeedMin = 7;
         BarrageSpawner.SpeedMax = 9;
         BurstSpawner.SpawnPeriod /= 2;
-        BurstSpawner.SpawnCount = 10;
-        BurstSpawner.SpeedMin = 10;
-        BurstSpawner.SpeedMax = 12;
+        BurstSpawner.SpawnCount = 8;
+        BurstSpawner.SpeedMin = 12;
+        BurstSpawner.SpeedMax = 14;
         BurstSpawner.TrailLength = 0;
     }
 }
@@ -73,16 +77,16 @@ if( t == 2565 ) {
 if( t == 2616 ) {
     with( oRedS5SourceBullet ) {
         BurstSpawner.SpawnPeriod /= 2;
-        BurstSpawner.SpawnCount = 9;
-        BurstSpawner.SpeedMin = 12;
-        BurstSpawner.SpeedMax = 15;
+        BurstSpawner.SpawnCount = 7;
+        BurstSpawner.SpeedMin = 14;
+        BurstSpawner.SpeedMax = 16;
     }
 } else if( t == 2658 ) {
     with( oRedS5SourceBullet ) {
         BurstSpawner.SpawnPeriod /= 2;
         BurstSpawner.SpawnCount = 6;
-        BurstSpawner.SpeedMin = 15;
-        BurstSpawner.SpeedMax = 17;
+        BurstSpawner.SpeedMin = 18;
+        BurstSpawner.SpeedMax = 20;
         BurstSpawner.TrailLength = 4;
     }
 }

@@ -1,4 +1,3 @@
-
-var circleCount = 20;
+var circleCount = 17;
 scrRedCreateCircle( x, y, CircleDir, circleCount, oRedS16CircleBullet );
-CircleDir += 10;
+CircleDir += 360 / ( 2 * circleCount );

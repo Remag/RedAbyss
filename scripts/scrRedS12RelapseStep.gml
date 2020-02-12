@@ -111,9 +111,5 @@ if( t == 6269 ) {
     scrRedDestroy( objBlock );
 } else if( t == 6976 ) {
     scrRedDestroy( oRedAbyssBlock );
-    scrRedDestroy( oRedS12LeftSpike );
-    scrRedDestroy( oRedS12RightSpike );
-    scrRedDestroy( oRedS12BottomSpike );
-    scrRedDestroy( oRedS12TopSpike );
     scrRedDestroy( oRedS12EdgeSpikeMover );
 }

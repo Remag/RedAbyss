@@ -50,7 +50,7 @@ image_angle = direction;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>speed = 1;
+            <string>speed = 1.5;
 </string>
           </argument>
         </arguments>

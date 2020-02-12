@@ -341,6 +341,7 @@
       <sprite>sprites\sprRedAbyssSphere</sprite>
       <sprite>sprites\sprRedAbyssDagger</sprite>
       <sprite>sprites\sprRedAbyssFruit</sprite>
+      <sprite>sprites\sprRedAbyssColoredFruit</sprite>
       <sprite>sprites\sprRedAbyssLeheeFruit</sprite>
       <sprite>sprites\sprRedLightParticle</sprite>
       <sprite>sprites\sprRedAbyssSpawner</sprite>
@@ -444,6 +445,7 @@
         <script>scripts\scrRedCheckShader.gml</script>
         <script>scripts\scrRedCreateEdgeWalls.gml</script>
         <script>scripts\scrRedFindSpikeWaveOffset.gml</script>
+        <script>scripts\scrRedSetColor.gml</script>
       </scripts>
       <scripts name="TweenScripts">
         <script>scripts\scrRedTweenLinear.gml</script>
@@ -462,6 +464,8 @@
         <scripts name="S2_Bloom">
           <script>scripts\scrRedS2BloomStep.gml</script>
           <script>scripts\scrRedCreateBloomLine.gml</script>
+          <script>scripts\scrRedS2SpawnFloorLines.gml</script>
+          <script>scripts\scrRedS2CreateCenterImpulse.gml</script>
         </scripts>
         <scripts name="S3_Jitter">
           <script>scripts\scrRedS3JitterStep.gml</script>
@@ -571,12 +575,18 @@
         <script>scripts\scrRedCreateActiveImpulse.gml</script>
         <script>scripts\scrRedCreateFadingImpulse.gml</script>
         <script>scripts\scrRedCreateMovingImpulse.gml</script>
+        <script>scripts\scrRedGetBCLine.gml</script>
+        <script>scripts\scrRedGetBFLine.gml</script>
+        <script>scripts\scrRedGetLCLine.gml</script>
+        <script>scripts\scrRedGetLFLine.gml</script>
+        <script>scripts\scrRedGetRCLine.gml</script>
+        <script>scripts\scrRedGetRFLine.gml</script>
       </scripts>
     </scripts>
   </scripts>
   <shaders name="shaders">
-    <shader type="GLSLES">shaders\sdrBulbShader.shader</shader>
-    <shader type="GLSLES">shaders\sdrColorShader.shader</shader>
+    <shader type="GLSLES">shaders\sdrRedBulbShader.shader</shader>
+    <shader type="GLSLES">shaders\sdrRedColorShader.shader</shader>
   </shaders>
   <fonts name="fonts">
     <font>fonts\fDefault30</font>
@@ -707,11 +717,13 @@
       <objects name="S1_Intro">
         <object>objects\oRedS1Bullet</object>
         <object>objects\oRedS1CurvedBullet</object>
+        <object>objects\oRedS1Backdrop</object>
       </objects>
       <objects name="S2_Bloom">
         <object>objects\oRedS2Bullet</object>
         <object>objects\oRedS2SeedBullet</object>
         <object>objects\oRedS2TrailBullet</object>
+        <object>objects\oRedS2Impulse</object>
       </objects>
       <objects name="S3_Jitter">
         <object>objects\oRedS3JitterSpawnerBullet</object>
@@ -849,7 +861,6 @@
       <objects name="BlockLight">
         <object>objects\oRedLightLine</object>
         <object>objects\oRedLightLineDrawMechanism</object>
-        <object>objects\oRedLineImpulseTester</object>
         <object>objects\oRedLineImpulse</object>
         <object>objects\oRedMovingImpulse</object>
         <object>objects\oRedFadingImpulse</object>
@@ -862,6 +873,8 @@
       <object>objects\oRedAttachedScriptSpawner</object>
       <object>objects\oRedBoundProjectile</object>
       <object>objects\oRedProjectile</object>
+      <object>objects\oRedColoredFruit</object>
+      <object>objects\oRedBoundColoredFruit</object>
       <object>objects\oRedDebugInfo</object>
       <object>objects\oRedAbyssBackground</object>
       <object>objects\oRedBulletCircle</object>
@@ -883,6 +896,7 @@
       <object>objects\oRedScreenFlash</object>
       <object>objects\oRedInfiniteJump</object>
       <object>objects\oRedAbyssEdgeSpike</object>
+      <object>objects\oRedColoredFruitDrawMechanism</object>
     </objects>
   </objects>
   <rooms name="rooms">
