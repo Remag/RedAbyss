@@ -20,12 +20,18 @@ if( t == 4189 ) {
     scrRedS9SwitchMovePointsX( rightSrc );
     scrRedS9SwitchMovePointsY( rightSrc );
     
-    var bSpawner1 = scrRedAttachSpawner( leftSrc, 4, oRedS9DualBullet );
-    bSpawner1.MinDirection = 180;
-    bSpawner1.MaxDirection = 360;
-    var bSpawner2 = scrRedAttachSpawner( rightSrc, 4, oRedS9DualBullet );
-    bSpawner2.MinDirection = 180;
-    bSpawner2.MaxDirection = 360;
+    var blSpawner1 = scrRedAttachSpawner( leftSrc, 8, oRedS9DualBullet );
+    blSpawner1.MinDirection = 180;
+    blSpawner1.MaxDirection = 270;
+    var blSpawner2 = scrRedAttachSpawner( rightSrc, 8, oRedS9DualBullet );
+    blSpawner2.MinDirection = 180;
+    blSpawner2.MaxDirection = 270;
+    var brSpawner1 = scrRedAttachSpawner( leftSrc, 8, oRedS9DualBullet );
+    brSpawner1.MinDirection = 270;
+    brSpawner1.MaxDirection = 360;
+    var brSpawner2 = scrRedAttachSpawner( rightSrc, 8, oRedS9DualBullet );
+    brSpawner2.MinDirection = 270;
+    brSpawner2.MaxDirection = 360;
     
     var tSpawner1 = scrRedAttachSpawner( leftSrc, 4, oRedS9DualBullet );
     tSpawner1.MinDirection = 0;

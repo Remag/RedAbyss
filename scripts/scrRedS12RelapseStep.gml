@@ -69,6 +69,9 @@ if( t == 6269 ) {
     scrRedDeactivateBullets( oRedAbyssEdgeSpike );
 } else if( t == 6895 ) {
     oRedAbyssBackground.sprite_index = sprRedAbyssRedBackground; 
+    with( oRedAbyssBlock ) {
+        image_alpha = 0;
+    }
     scrRedBulletFadeOut( oRedS5TempBackdrop );
     scrRedActivateBullets( oRedAbyssEdgeSpike );
 } else if( t == 6940 ) {

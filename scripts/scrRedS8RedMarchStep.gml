@@ -9,6 +9,9 @@ if( t == 3488 ) {
         with( oRedAbyssBackground ) {
             sprite_index = sprRedAbyssRedBackground;
         }
+        with( oRedAbyssBlock ) {
+            image_alpha = 0;
+        }
     }
     var spawner = scrRedAttachCustomSpawner( oRedS6SpiralSource, 1.5, scrRedS6SpawnSpiralBullet, 20 );
     spawner.direction = scrRedDirToPlayer( spawner.x, spawner.y );

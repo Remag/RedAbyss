@@ -1,5 +1,5 @@
 var circleParams = scrRedCreateCircleAdditionalParams();
 circleParams.CurveDir = OwnerInstance.CurveDir;
-circleParams.SpawnImageMin = OwnerInstance.SpawnImageMin;
-circleParams.SpawnImageMax = OwnerInstance.SpawnImageMax;
+circleParams.SpawnHueMin = OwnerInstance.SpawnHueMin;
+circleParams.SpawnHueMax = OwnerInstance.SpawnHueMax;
 scrRedInitializeCircle( x, y, random( 360 ), 8, oRedS3JitterBullet, circleParams );

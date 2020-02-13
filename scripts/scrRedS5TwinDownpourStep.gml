@@ -6,8 +6,12 @@ if( live_call( t ) ) {
 }
 
 if( t == 2094 ) {
-    if( !instance_exists( oRedS5SourceBullet ) ) {
+    if( !instance_exists( oRedS4SourceBullet ) ) {
         instance_create( 400, 300, oRedS5SourceBullet );
+    } else {
+        with( oRedS4SourceBullet ) {
+            instance_change( oRedS5SourceBullet, false );
+        }
     }
     with( oRedS5SourceBullet ) {
         BurstSpawner = scrRedAttachCustomSpawner( id, 43.5, scrRedS5SpawnBurstBullet );
@@ -64,8 +68,8 @@ if( t == 2443 ) {
         BarrageSpawner.SpeedMax = 9;
         BurstSpawner.SpawnPeriod /= 2;
         BurstSpawner.SpawnCount = 8;
-        BurstSpawner.SpeedMin = 12;
-        BurstSpawner.SpeedMax = 14;
+        BurstSpawner.SpeedMin = 10;
+        BurstSpawner.SpeedMax = 12;
         BurstSpawner.TrailLength = 0;
     }
 }
@@ -85,8 +89,8 @@ if( t == 2616 ) {
     with( oRedS5SourceBullet ) {
         BurstSpawner.SpawnPeriod /= 2;
         BurstSpawner.SpawnCount = 6;
-        BurstSpawner.SpeedMin = 18;
-        BurstSpawner.SpeedMax = 20;
+        BurstSpawner.SpeedMin = 17;
+        BurstSpawner.SpeedMax = 19;
         BurstSpawner.TrailLength = 4;
     }
 }
@@ -134,6 +138,9 @@ if( t == 2720 ) {
     scrRedBulletFadeOut( oRedS5TempBackdrop );
     with( oRedAbyssBackground ) {
         sprite_index = sprRedAbyssRedBackground;
+    }
+    with( oRedAbyssBlock ) {
+        image_alpha = 0;
     }
 }
 if( t >= 2720 && t <= 2765 ) {

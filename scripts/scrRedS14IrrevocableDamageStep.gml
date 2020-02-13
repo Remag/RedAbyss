@@ -3,7 +3,10 @@ var t = argument0;
 
 if( t == 7660 ) {
     if( !instance_exists( oRedS13Source ) ) {
-        oRedAbyssBackground.sprite_index = sprRedAbyssRedBackground; 
+        oRedAbyssBackground.sprite_index = sprRedAbyssRedBackground;
+        with( oRedAbyssBlock ) {
+            image_alpha = 0;
+        } 
         instance_create( 0, 0, oRedInfiniteJump );
         scrRedDestroy( objBlock );
         scrRedDestroy( oRedAbyssBlock );
@@ -64,7 +67,7 @@ if( t == 7660 ) {
 } else if( t == 8040 ) {
     with( oRedS14Source ) {
         var dir = random( 360 );
-        var count = 9;
+        var count = 8;
         scrRedCreateCircle( x, y, dir, count, oRedS14FastCircleSpike );
         scrRedCreateCircle( x, y, dir + count / 720, count, oRedS14SlowCircleSpike );
     }

@@ -14,6 +14,9 @@ if( t == 3147 && !instance_exists( oRedS6AbyssSource ) ) {
     with( oRedAbyssBackground ) {
         sprite_index = sprRedAbyssRedBackground;
     }
+    with( oRedAbyssBlock ) {
+        image_alpha = 0;
+    }
 }
 
 if( t == 3158 ) {

@@ -1,8 +1,8 @@
 var centerDir = point_direction( 400, 303, x, y );
-for( var dir = centerDir - 60; dir <= centerDir + 60; dir += 20 ) {
+for( var dir = centerDir - 90; dir <= centerDir + 90; dir += 25 ) {
     var bullet = instance_create( x, y, oRedS13CircleBullet );
     bullet.direction = dir;
-    bullet.speed = 7.5;
+    bullet.speed = 7;
 }
 
 var rngDir = centerDir + 180 + random_range( -90, 90 );

@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scrRedSetColor( random_range( 0, 30 ), 242, 255 );
+            <string>scrRedSetFruitColor( random_range( 0, 30 ), 242, 255 );
 speed = random_range( 4, 9 );
 scrRedSetScale( random_range( 0.5, 1 ) );
 alarm[0] = 20;

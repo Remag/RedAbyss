@@ -8,6 +8,9 @@ if( t == 6966 ) {
         var src2 = instance_create( 400, 300, oRedS13Source );
         src2.AngleDelta = -1;
         oRedAbyssBackground.sprite_index = sprRedAbyssRedBackground; 
+        with( oRedAbyssBlock ) {
+            image_alpha = 0;
+        }
         instance_create( 0, 0, oRedInfiniteJump );
         scrRedDestroy( objBlock );
         scrRedDestroy( oRedAbyssBlock );

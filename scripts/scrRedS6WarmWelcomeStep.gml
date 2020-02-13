@@ -8,6 +8,9 @@ if( t == 2791 && !instance_exists( oRedS6AbyssSource ) ) {
     with( oRedAbyssBackground ) {
         sprite_index = sprRedAbyssRedBackground;
     }
+    with( oRedAbyssBlock ) {
+        image_alpha = 0;
+    }
 }
 
 if( t == 2791 ) {
@@ -79,8 +82,8 @@ if( t == 2845 ) {
             }
         } else {
             var spikeX = 32 + lBlockIndex * 32;
-            scrRedCreateSlidingSpike( spikeX, 576, 90, 0.5, duration, sprRedAbyssSpikeUp );
-            scrRedCreateSlidingSpike( spikeX + 16, 576, 90, 0.5, duration, sprRedAbyssSpikeUp );
+            scrRedS4CreateSlidingSpike( spikeX, 576, 90, 0.5, duration, sprRedAbyssSpikeUp );
+            scrRedS4CreateSlidingSpike( spikeX + 16, 576, 90, 0.5, duration, sprRedAbyssSpikeUp );
         }
     }
     gapPos = 0;
@@ -98,8 +101,8 @@ if( t == 2845 ) {
             }
         } else {
             var spikeX = 32 + rBlockIndex * 32;
-            scrRedCreateSlidingSpike( spikeX, 576, 90, 0.5, duration, sprRedAbyssSpikeUp );
-            scrRedCreateSlidingSpike( spikeX + 16, 576, 90, 0.5, duration, sprRedAbyssSpikeUp );
+            scrRedS4CreateSlidingSpike( spikeX, 576, 90, 0.5, duration, sprRedAbyssSpikeUp );
+            scrRedS4CreateSlidingSpike( spikeX + 16, 576, 90, 0.5, duration, sprRedAbyssSpikeUp );
         }
     }
     

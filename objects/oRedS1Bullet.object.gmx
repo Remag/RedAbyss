@@ -27,8 +27,7 @@
             <kind>1</kind>
             <string>var step = oRedAbyssAvoidanceController.Step;
 var sat = min( 255, ( step + 75 ) * 255 / 300 );
-var val = min( 255, sat + 150 );
-scrRedSetColor( random_range( 128, 180 ), sat, val );
+scrRedSetFruitColor( random_range( 130, 170 ), sat, 255 );
 speed = random_range( 3, 9 );
 scrRedSetScale( random_range( 0.5, 1 ) );
 </string>

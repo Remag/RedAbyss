@@ -341,6 +341,7 @@
       <sprite>sprites\sprRedAbyssSphere</sprite>
       <sprite>sprites\sprRedAbyssDagger</sprite>
       <sprite>sprites\sprRedAbyssFruit</sprite>
+      <sprite>sprites\sprRedTrailFruit</sprite>
       <sprite>sprites\sprRedAbyssColoredFruit</sprite>
       <sprite>sprites\sprRedAbyssLeheeFruit</sprite>
       <sprite>sprites\sprRedLightParticle</sprite>
@@ -445,7 +446,9 @@
         <script>scripts\scrRedCheckShader.gml</script>
         <script>scripts\scrRedCreateEdgeWalls.gml</script>
         <script>scripts\scrRedFindSpikeWaveOffset.gml</script>
-        <script>scripts\scrRedSetColor.gml</script>
+        <script>scripts\scrRedSetFruitColor.gml</script>
+        <script>scripts\scrRedChangeInstanceAlpha.gml</script>
+        <script>scripts\scrRedChangeInstanceColor.gml</script>
       </scripts>
       <scripts name="TweenScripts">
         <script>scripts\scrRedTweenLinear.gml</script>
@@ -473,9 +476,14 @@
         </scripts>
         <scripts name="S4_SlicedCircles">
           <script>scripts\scrRedS4SlicedCirclesStep.gml</script>
-          <script>scripts\scrRedCreateSlicedCircle.gml</script>
-          <script>scripts\scrRedCreateSlidingSpike.gml</script>
+          <script>scripts\scrRedS4SpawnCirlce.gml</script>
+          <script>scripts\scrRedS4CreateSlicedCircle.gml</script>
+          <script>scripts\scrRedS4CreateSlidingSpike.gml</script>
           <script>scripts\scrRedS4SpawnLeheeCircle.gml</script>
+          <script>scripts\scrRedS4GetWallImpulsePos.gml</script>
+          <script>scripts\scrRedS4ClearWallImpulses.gml</script>
+          <script>scripts\scrRedS4CreateWallImpulse.gml</script>
+          <script>scripts\scrRedS4CreateFloorImpulse.gml</script>
         </scripts>
         <scripts name="S5_TwinDownpour">
           <script>scripts\scrRedS5TwinDownpourStep.gml</script>
@@ -553,6 +561,7 @@
           <script>scripts\scrRedS15SpawnSpiralBullet.gml</script>
           <script>scripts\scrRedS15SpawnMiddleBarrage.gml</script>
           <script>scripts\scrRedS15SpawnFinalBarrage.gml</script>
+          <script>scripts\scrRedS15CreateCircleSpike.gml</script>
         </scripts>
         <scripts name="S16_Agony">
           <script>scripts\scrRedS16AgonyStep.gml</script>
@@ -730,10 +739,13 @@
         <object>objects\oRedS3JitterBullet</object>
       </objects>
       <objects name="S4_SlicedCirlces">
+        <object>objects\oRedS4SourceBullet</object>
         <object>objects\oRedS4CircleBullet</object>
         <object>objects\oRedS4LeheeBullet</object>
         <object>objects\oRedS4SlidingSpike</object>
         <object>objects\oRedS4SectorController</object>
+        <object>objects\oRedS4WallImpulseController</object>
+        <object>objects\oRedS4LineImpulse</object>
       </objects>
       <objects name="S5_TwinDownpour">
         <object>objects\oRedS5SourceBullet</object>
@@ -897,6 +909,8 @@
       <object>objects\oRedInfiniteJump</object>
       <object>objects\oRedAbyssEdgeSpike</object>
       <object>objects\oRedColoredFruitDrawMechanism</object>
+      <object>objects\oRedInstanceChangeAlphaCommand</object>
+      <object>objects\oRedInstanceChangeColorCommand</object>
     </objects>
   </objects>
   <rooms name="rooms">

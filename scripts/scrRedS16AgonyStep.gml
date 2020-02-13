@@ -4,6 +4,9 @@ var t = argument0;
 if( t == 9050 ) {
     if( !instance_exists( oRedS15Source ) ) {
         oRedAbyssBackground.sprite_index = sprRedAbyssRedBackground; 
+        with( oRedAbyssBlock ) {
+            image_alpha = 0;
+        }
         instance_create( 0, 0, oRedInfiniteJump );
         scrRedDestroy( objBlock );
         scrRedDestroy( oRedAbyssBlock );

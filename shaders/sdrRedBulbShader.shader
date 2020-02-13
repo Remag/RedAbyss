@@ -34,7 +34,7 @@ void main()
     
     vec3 colorVal = v_vColour.rgb * posColor;
     float baseVal = max( colorVal.r, max( colorVal.g, colorVal.b ) );
-    baseVal *= 0.8;
+    baseVal = clamp( 2.0 * clamp( baseVal - 0.5, 0.0, 1.0 ), 0.0, 1.0 );
     colorVal += vec3( baseVal );
     colorVal = clamp( colorVal, vec3( 0.0 ), vec3( 1.0 ) );
     

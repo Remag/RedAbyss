@@ -1,3 +1,4 @@
+/// scrRedBulletFadeOut( targetId, opt_fadeDelta )
 var targetId = argument[0];
 
 var fadeDelta;

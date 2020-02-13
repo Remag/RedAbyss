@@ -4,6 +4,9 @@ var t = argument0;
 if( t == 8357 ) {
     if( !instance_exists( oRedS14Source ) ) {
         oRedAbyssBackground.sprite_index = sprRedAbyssRedBackground; 
+        with( oRedAbyssBlock ) {
+            image_alpha = 0;
+        }
         instance_create( 0, 0, oRedInfiniteJump );
         scrRedDestroy( objBlock );
         scrRedDestroy( oRedAbyssBlock );
@@ -17,16 +20,22 @@ if( t == 8357 ) {
     src2.AngleDelta = -1;
 
 } else if( t == 8381 ) {
-    scrRedS15SpawnSpikeRandomWall( -16, 0 );
-    scrRedS15SpawnSpikeRandomWall( 816, 180 );
+    scrRedS15SpawnSpikeRandomWall( -200 );
+    scrRedS15SpawnSpikeRandomWall( 1000 );
    
 } else if( t == 8443 ) {
     var src1 = instance_find( oRedS15Source, 0 );
     var src2 = instance_find( oRedS15Source, 1 );
-    scrRedMoveInstance( src1, 150, 32, 35 );
-    scrRedMoveInstance( src2, 800 - 150, 608 - 32, 35 );     
+    src1.FollowPlayer = true;
+    src1.hspeed = -7;
+    src2.FollowPlayer = true;
+    src2.hspeed = 7;   
     scrRedAttachSpawner( oRedS15Source, 4, oRedS15VerticalSpike, 35 );
 } else if( t == 8487 ) {
+    with( oRedS15Source ) {
+        FollowPlayer = false;
+        speed = 0;
+    }
     scrRedMoveInstance( oRedS15Source, 400, 303, 22, scrRedTweenSineIn );
 } else if( t == 8509 ) {
     repeat( 70 ) {

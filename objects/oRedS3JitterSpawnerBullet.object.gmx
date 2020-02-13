@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_index = 3;
+            <string>image_speed = 0;
+image_index = 5;
 scrRedSetScale( 2 );
 Spawner = scrRedAttachCustomSpawner( id, 13, scrRedS3SpawnJitterBullets );
 </string>

@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>speed = 5;
 image_angle = direction;
-scrRedSetScale( random_range( 0.5, 1 ) );
+scrRedSetScale( random_range( 0.5, 0.6 ) );
 </string>
           </argument>
         </arguments>
