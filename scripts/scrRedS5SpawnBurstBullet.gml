@@ -4,8 +4,8 @@ if( live_call() ) {
 
 var sectorCount = 4;
 var count = SpawnCount / sectorCount;
-var sectorDirDelta = 360 / ( 2 * count );
-var currentDir = sectorDirDelta;
+var sectorDirDelta = 360 / ( 2 * sectorCount );
+var currentDir = scrRedDirToPlayer( x, y );
 for( var i = 0; i < sectorCount; i++ ) {
     repeat( count ) {
         var bullet = instance_create( x, y, oRedS5BurstBullet );
@@ -15,3 +15,5 @@ for( var i = 0; i < sectorCount; i++ ) {
         currentDir += 2 * sectorDirDelta;
     }
 }
+
+scrRedChangeInstanceAlpha( oRedS5SourceBullet, 1, 15, scrRedTweenBackForth );

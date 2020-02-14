@@ -124,7 +124,7 @@ if( t == 2702 ) {
         newSrc.AngleDelta = sign( AngleDelta );
         instance_destroy();
     }
-    instance_create( 0, 0, oRedS5TempBackdrop );
+    instance_create( 0, 0, oRedS5Backdrop );
 }
 
 if( t == 2720 ) {
@@ -135,22 +135,21 @@ if( t == 2720 ) {
         DirDelta = circle.DirDelta;
     }
 } else if( t == 2726 ) {
-    scrRedBulletFadeOut( oRedS5TempBackdrop );
-    with( oRedAbyssBackground ) {
-        sprite_index = sprRedAbyssRedBackground;
-    }
+    scrRedBulletFadeOut( oRedS5Backdrop );
+    oRedAbyssBackground.sprite_index = sprRedAbyssRedBackground;
     with( oRedAbyssBlock ) {
         image_alpha = 0;
     }
 }
-if( t >= 2720 && t <= 2765 ) {
+if( t == 2720 ) {
     with( oRedS5BurstBullet ) {
-        image_angle += DirDelta;
+        scrRedRotateInstanceImage( id, DirDelta * 45, 45, scrRedTweenLinear );
+        scrRedBulletFadeOut( id, 0.02 );
+        scrRedAttachSpawner( id, 0.75, oRedS5BulletFadeParticle, 25 );
     }
 }
 
 if( t == 2765 ) {
-    scrRedBulletFadeOut( oRedS5BurstBullet );
     with( oRedS5Spike ) {
         DirectionDelta = 0;
         RadiusAccel = 1.5;

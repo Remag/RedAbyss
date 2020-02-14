@@ -1,3 +1,4 @@
+/// scrRedS6WarmWelcomeStep(t)
 var t = argument0;
 
 if( t == 2791 && !instance_exists( oRedS6AbyssSource ) ) {
@@ -36,8 +37,9 @@ if( t == 2791 + 20 ) {
 if( t == 2845 ) {
 
 } else if( t == 2850 ) {
-    var spawner = scrRedCreateCustomSpawner( 800 - 48, 576, 1, scrRedS6SpawnWaveSpike );
     scrRedShakeViewAngle( 8, 40 );
+    scrRedS6CreateMovingImpulse( 1000, -30 );
+    var spawner = scrRedCreateCustomSpawner( 800 - 48, 576, 1, scrRedS6SpawnWaveSpike );
     spawner.direction = 180;
     spawner.speed = 30;
 } else if( t == 2858 ) {
@@ -45,8 +47,9 @@ if( t == 2845 ) {
 } else if( t == 2889 ) {
 
 } else if( t == 2895 ) {
-    var spawner = scrRedCreateCustomSpawner( 32, 576, 1, scrRedS6SpawnWaveSpike );
     scrRedShakeViewAngle( -8, 40 );
+    scrRedS6CreateMovingImpulse( -232, 30 );
+    var spawner = scrRedCreateCustomSpawner( 32, 576, 1, scrRedS6SpawnWaveSpike );
     spawner.direction = 0;
     spawner.speed = 30;
 
@@ -134,6 +137,7 @@ if( t == 2845 ) {
 } else if( t == 3115 ) {
     with( oRedS6FloorSpike ) {
         scrRedMoveInstance( id, x, y + 16, 3137 - 3115 );
+        scrRedS6CreateLaunchImpulse( x - 16 );
     }
 } else if( t == 3137 ) {
     with( oRedS6FloorSpike ) {
@@ -143,4 +147,7 @@ if( t == 2845 ) {
         trail.image_alpha = 0.75;
         trail.TailAlpha = 0.5;
     }
+    scrRedChangeInstanceAlpha( oRedLineImpulse, 1, 8 );
+} else if( t == 3152 ) {
+    scrRedBulletFadeOut( oRedLineImpulse );
 }

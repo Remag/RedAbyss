@@ -60,7 +60,7 @@ if( t == 6269 ) {
         newSrc.AngleDelta = sign( AngleDelta );
         instance_destroy();
     }
-    instance_create( 0, 0, oRedS5TempBackdrop );
+    instance_create( 0, 0, oRedS5Backdrop );
     instance_create( 0, 0, oRedInfiniteJump );
 } else if( t == 6890 ) {
     scrRedCreateEdgeWalls( 24, 56 );
@@ -72,7 +72,7 @@ if( t == 6269 ) {
     with( oRedAbyssBlock ) {
         image_alpha = 0;
     }
-    scrRedBulletFadeOut( oRedS5TempBackdrop );
+    scrRedBulletFadeOut( oRedS5Backdrop );
     scrRedActivateBullets( oRedAbyssEdgeSpike );
 } else if( t == 6940 ) {
     var moveDuration = 23;

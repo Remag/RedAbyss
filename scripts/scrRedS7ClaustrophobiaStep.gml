@@ -1,3 +1,4 @@
+/// scrRedS7ClaustrophobiaStep(t)
 var t = argument0;
 
 if( live_call( t ) ) {
@@ -40,12 +41,17 @@ if( t == 3158 ) {
     var spawner = scrRedCreateCustomSpawner( oRedS6TargetSource.x, oRedS6TargetSource.y, 1.75, scrRedS7SpawnSpikeFan, 10 );
     spawner.TotalDirDelta = 360 / 5;
     spawner = scrRedCreateCustomSpawner( oRedS6TargetSource.x, oRedS6TargetSource.y, 4, scrRedS7SpawnTargetCircle, 10 );
+    scrRedShakeViewAngle( 4, 15, scrRedTweenSineInOut );
     spawner.Speed = 18;
+} else if( t == 3295 ) {
+    scrRedShakeViewAngle( 12, 15, scrRedTweenSineInOut );
 } else if( t == 3299 ) {
     spawner = scrRedCreateCustomSpawner( 0, 0, 4, scrRedS7SpawnTargetCircle, 14 );
     spawner.Speed = 20;
     spawner = scrRedCreateCustomSpawner( 800, 0, 4, scrRedS7SpawnTargetCircle, 14 );
     spawner.Speed = 20;
+} else if( t == 3310 ) {
+    scrRedShakeViewAngle( 0, 15, scrRedTweenSineInOut );
 } else if( t == 3320 ) {
     with( oRedS6TargetSource.Spawner ) {
         instance_destroy();
@@ -75,8 +81,9 @@ if( t == 3158 ) {
         friction = 0;
         speed = 2;
     }
-} else if( t == 3424 ) {
     S7StartPlayerPosX = scrRedGetPlayerX();
+    scrRedS7InitWallImpulses( S7StartPlayerPosX );
+} else if( t == 3424 ) {
     scrRedS7MoveWall( S7StartPlayerPosX < 400, 20, S7StartPlayerPosX + 32 );
     if( S7StartPlayerPosX < 400 ) {
         scrRedShakeViewX( -100, 40 );
@@ -94,5 +101,6 @@ if( t == 3158 ) {
     }
 } else if( t == 3485 ) {
     scrRedS7MoveWallBack( S7StartPlayerPosX >= 400, 20 );
+    scrRedChangeInstanceAlpha( oRedLineImpulse, 0, 25 );
 }
 

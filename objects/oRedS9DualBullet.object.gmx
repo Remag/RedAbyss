@@ -26,10 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>speed = random_range( 10, 15 );
-direction = random_range( Spawner.MinDirection, Spawner.MaxDirection );
 
 FruitIndex = irandom_range( 0, 8 );
-image_angle = direction;
 
 SpikeHitbox = instance_create( x, y, oRedS9SpikeHitbox );
 SpikeHitbox.OwnerId = id;

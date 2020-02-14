@@ -1,10 +1,6 @@
 /// scrRedS9DualityStep(t)
 var t = argument0;
 
-if( live_call( t ) ) {
-    return live_result;
-}
-
 if( t == 4189 ) {
     instance_create( 0, 0, oRedS9SurfaceDrawInitiator );
     instance_create( 0, 0, oRedS9SurfaceDrawFinalizer );
@@ -20,25 +16,10 @@ if( t == 4189 ) {
     scrRedS9SwitchMovePointsX( rightSrc );
     scrRedS9SwitchMovePointsY( rightSrc );
     
-    var blSpawner1 = scrRedAttachSpawner( leftSrc, 8, oRedS9DualBullet );
-    blSpawner1.MinDirection = 180;
-    blSpawner1.MaxDirection = 270;
-    var blSpawner2 = scrRedAttachSpawner( rightSrc, 8, oRedS9DualBullet );
-    blSpawner2.MinDirection = 180;
-    blSpawner2.MaxDirection = 270;
-    var brSpawner1 = scrRedAttachSpawner( leftSrc, 8, oRedS9DualBullet );
-    brSpawner1.MinDirection = 270;
-    brSpawner1.MaxDirection = 360;
-    var brSpawner2 = scrRedAttachSpawner( rightSrc, 8, oRedS9DualBullet );
-    brSpawner2.MinDirection = 270;
-    brSpawner2.MaxDirection = 360;
-    
-    var tSpawner1 = scrRedAttachSpawner( leftSrc, 4, oRedS9DualBullet );
-    tSpawner1.MinDirection = 0;
-    tSpawner1.MaxDirection = 180;
-    var tSpawner2 = scrRedAttachSpawner( rightSrc, 4, oRedS9DualBullet );
-    tSpawner2.MinDirection = 0;
-    tSpawner2.MaxDirection = 180;
+    scrRedAttachCustomSpawner( oRedS9DualSource, 2, scrRedS9SpawnDualBullet );
+    with( oRedAttachedScriptSpawner ) {
+        DirIndex = 0;
+    }
 }
 
 if( t == 4220 ) {

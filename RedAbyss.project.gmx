@@ -436,6 +436,7 @@
         <script>scripts\scrRedSetPolarCoordinates.gml</script>
         <script>scripts\scrRedMoveInstance.gml</script>
         <script>scripts\scrRedRotateInstance.gml</script>
+        <script>scripts\scrRedRotateInstanceImage.gml</script>
         <script>scripts\scrRedAttachTrail.gml</script>
         <script>scripts\scrRedFlashScreen.gml</script>
         <script>scripts\scrRedDestroy.gml</script>
@@ -495,6 +496,8 @@
           <script>scripts\scrRedS6SpawnSpiralBullet.gml</script>
           <script>scripts\scrRedS6SpawnWaveSpike.gml</script>
           <script>scripts\scrRedS6CreateTargetSpike.gml</script>
+          <script>scripts\scrRedS6CreateMovingImpulse.gml</script>
+          <script>scripts\scrRedS6CreateLaunchImpulse.gml</script>
         </scripts>
         <scripts name="S7_Claustrophobia">
           <script>scripts\scrRedS7ClaustrophobiaStep.gml</script>
@@ -505,6 +508,7 @@
           <script>scripts\scrRedS7SpawnTargetBullets.gml</script>
           <script>scripts\scrRedS7MoveWall.gml</script>
           <script>scripts\scrRedS7MoveWallBack.gml</script>
+          <script>scripts\scrRedS7InitWallImpulses.gml</script>
         </scripts>
         <scripts name="S8_RedMarch">
           <script>scripts\scrRedS8RedMarchStep.gml</script>
@@ -521,6 +525,7 @@
           <script>scripts\scrRedS9SwitchMovePointsX.gml</script>
           <script>scripts\scrRedS9SwitchMovePointsY.gml</script>
           <script>scripts\scrRedS9Shake.gml</script>
+          <script>scripts\scrRedS9SpawnDualBullet.gml</script>
         </scripts>
         <scripts name="S10_Waterfall">
           <script>scripts\scrRedS10WaterfallStep.gml</script>
@@ -752,7 +757,8 @@
         <object>objects\oRedS5BarrageBullet</object>
         <object>objects\oRedS5BurstBullet</object>
         <object>objects\oRedS5Spike</object>
-        <object>objects\oRedS5TempBackdrop</object>
+        <object>objects\oRedS5Backdrop</object>
+        <object>objects\oRedS5BulletFadeParticle</object>
       </objects>
       <objects name="S6_WarmWelcome">
         <object>objects\oRedS6AbyssSource</object>
@@ -898,6 +904,7 @@
       <object>objects\oRedInstanceFadeCommand</object>
       <object>objects\oRedMoveCommand</object>
       <object>objects\oRedRotateCommand</object>
+      <object>objects\oRedImageRotateCommand</object>
       <object>objects\oRedBulletTrail</object>
       <object>objects\oRedAbyssBlock</object>
       <object>objects\oRedLeftBlock</object>
