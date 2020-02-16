@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>1000001</depth>
   <persistent>0</persistent>
-  <parentName>oRedBoundProjectile</parentName>
+  <parentName>oRedAbyssBoundSpikeBullet</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">

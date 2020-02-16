@@ -1,4 +1,4 @@
-var sectorCount = 4;
+var sectorCount = 6;
 var sectorDirDelta = 360 / ( 2 * sectorCount );
 var playerDir = scrRedDirToPlayer( x, y );
 var currentDir = playerDir + sectorDirDelta * 2 * DirIndex;

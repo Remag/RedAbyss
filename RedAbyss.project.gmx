@@ -352,6 +352,7 @@
       <sprite>sprites\sprRedVerticalBlock</sprite>
       <sprite>sprites\sprRedLightArea</sprite>
       <sprite>sprites\sprRedOverlapMask</sprite>
+      <sprite>sprites\sprRedBgIntensityMask</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -450,6 +451,8 @@
         <script>scripts\scrRedSetFruitColor.gml</script>
         <script>scripts\scrRedChangeInstanceAlpha.gml</script>
         <script>scripts\scrRedChangeInstanceColor.gml</script>
+        <script>scripts\scrRedChangeInstanceXScale.gml</script>
+        <script>scripts\scrRedChangeInstanceYScale.gml</script>
       </scripts>
       <scripts name="TweenScripts">
         <script>scripts\scrRedTweenLinear.gml</script>
@@ -497,7 +500,6 @@
           <script>scripts\scrRedS6SpawnWaveSpike.gml</script>
           <script>scripts\scrRedS6CreateTargetSpike.gml</script>
           <script>scripts\scrRedS6CreateMovingImpulse.gml</script>
-          <script>scripts\scrRedS6CreateLaunchImpulse.gml</script>
         </scripts>
         <scripts name="S7_Claustrophobia">
           <script>scripts\scrRedS7ClaustrophobiaStep.gml</script>
@@ -587,6 +589,7 @@
       </scripts>
       <scripts name="BlockLight">
         <script>scripts\scrRedCreateActiveImpulse.gml</script>
+        <script>scripts\scrRedCreateFloorIndicator.gml</script>
         <script>scripts\scrRedCreateFadingImpulse.gml</script>
         <script>scripts\scrRedCreateMovingImpulse.gml</script>
         <script>scripts\scrRedGetBCLine.gml</script>
@@ -804,6 +807,7 @@
       </objects>
       <objects name="S10_Waterfall">
         <object>objects\oRedS10DiagonalBullet</object>
+        <object>objects\oRedS10VerticalBullet</object>
       </objects>
       <objects name="S11_Tide">
         <object>objects\oRedS11TideBullet</object>
@@ -813,6 +817,7 @@
         <object>objects\oRedS12Bullet</object>
         <object>objects\oRedS12BurstBullet</object>
         <object>objects\oRedS12EdgeSpikeMover</object>
+        <object>objects\oRedS12BgDrawMechanism</object>
       </objects>
       <objects name="S13_CorruptedInfinity">
         <object>objects\oRedS13Source</object>
@@ -893,6 +898,9 @@
       <object>objects\oRedProjectile</object>
       <object>objects\oRedColoredFruit</object>
       <object>objects\oRedBoundColoredFruit</object>
+      <object>objects\oRedAbyssSpikeBullet</object>
+      <object>objects\oRedAbyssBoundSpikeBullet</object>
+      <object>objects\oRedAbyssEdgeSpike</object>
       <object>objects\oRedDebugInfo</object>
       <object>objects\oRedAbyssBackground</object>
       <object>objects\oRedBulletCircle</object>
@@ -914,9 +922,10 @@
       <object>objects\oRedBrCornerBlock</object>
       <object>objects\oRedScreenFlash</object>
       <object>objects\oRedInfiniteJump</object>
-      <object>objects\oRedAbyssEdgeSpike</object>
       <object>objects\oRedColoredFruitDrawMechanism</object>
       <object>objects\oRedInstanceChangeAlphaCommand</object>
+      <object>objects\oRedInstanceChangeXScaleCommand</object>
+      <object>objects\oRedInstanceChangeYScaleCommand</object>
       <object>objects\oRedInstanceChangeColorCommand</object>
     </objects>
   </objects>

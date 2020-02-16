@@ -55,9 +55,9 @@ if( Step &gt; InDuration ) {
         instance_destroy();
         exit;
     }
-    image_alpha = script_execute( OutEasing, 1, -1, Step - InDuration, TotalDuration - InDuration );
+    image_alpha = script_execute( OutEasing, MaxAlpha, -MaxAlpha, Step - InDuration, TotalDuration - InDuration );
 } else {
-    image_alpha = script_execute( InEasing, 0, 1, Step, InDuration );
+    image_alpha = script_execute( InEasing, 0, MaxAlpha, Step, InDuration );
 }
 </string>
           </argument>

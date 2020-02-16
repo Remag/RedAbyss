@@ -1,11 +1,8 @@
-var spawnX = argument0;
-var mainDir = argument1;
-var spawnPeriod = argument2;
-var imageMin = argument3;
-var imageMax = argument4;
+/// scrRedS11CreateTideSpawner(spawnX, mainDir, spawnPeriod, hueMin, hueMax)
+var spawnX = argument0, mainDir = argument1, spawnPeriod = argument2, hueMin = argument3, hueMax = argument4;
 
 var spawner = scrRedCreateCustomSpawner( spawnX, 0, spawnPeriod, scrRedS11SpawnTideBullet );
 spawner.MainSpawnDir = mainDir;
-spawner.ImageMin = imageMin;
-spawner.ImageMax = imageMax;
+spawner.HueMin = hueMin;
+spawner.HueMax = hueMax;
 

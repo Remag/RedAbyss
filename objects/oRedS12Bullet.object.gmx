@@ -29,7 +29,7 @@
 direction = random( 360 );
 scrRedSetScale( random_range( 0.75, 0.9 ) );
 
-image_index = irandom_range( 0, 8 );
+image_index = 5;
 image_speed = 0;
 </string>
           </argument>

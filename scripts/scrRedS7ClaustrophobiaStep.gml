@@ -101,6 +101,6 @@ if( t == 3158 ) {
     }
 } else if( t == 3485 ) {
     scrRedS7MoveWallBack( S7StartPlayerPosX >= 400, 20 );
-    scrRedChangeInstanceAlpha( oRedLineImpulse, 0, 25 );
+    scrRedBulletFadeOut( oRedLineImpulse, 0.04 );
 }
 

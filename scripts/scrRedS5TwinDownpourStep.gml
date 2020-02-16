@@ -81,9 +81,9 @@ if( t == 2565 ) {
 if( t == 2616 ) {
     with( oRedS5SourceBullet ) {
         BurstSpawner.SpawnPeriod /= 2;
-        BurstSpawner.SpawnCount = 7;
+        BurstSpawner.SpawnCount = 6;
         BurstSpawner.SpeedMin = 14;
-        BurstSpawner.SpeedMax = 16;
+        BurstSpawner.SpeedMax = 15;
     }
 } else if( t == 2658 ) {
     with( oRedS5SourceBullet ) {

@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>AlphaDelta = 0.1;
 FadeDelta = 0.03;
+image_alpha = 0;
 </string>
           </argument>
         </arguments>
@@ -51,7 +52,7 @@ FadeDelta = 0.03;
             <kind>1</kind>
             <string>image_alpha += AlphaDelta;
 if( image_alpha &gt;= 1 ) {
-    AlphaDelta = FadeDelta;
+    AlphaDelta = -FadeDelta;
     image_alpha = 1;
 } else if( image_alpha &lt;= 0 ) {
     instance_destroy();

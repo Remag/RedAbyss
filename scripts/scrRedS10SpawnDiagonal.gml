@@ -3,4 +3,6 @@ var spawnY = -150;
 
 var bullet = instance_create( spawnX, spawnY, oRedS10DiagonalBullet );
 bullet.direction = SpawnDir;
-bullet.image_index = irandom_range( ImageMin, ImageMax );
+var hue = random_range( HueMin, HueMax );
+bullet.Hue = hue;
+bullet.image_blend = make_color_hsv( hue, 242, 255 );

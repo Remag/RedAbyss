@@ -1,3 +1,4 @@
+/// scrRedS8SendSpikesAway(radius)
 var radius = argument0;
 
 var playerX = scrRedGetPlayerX();

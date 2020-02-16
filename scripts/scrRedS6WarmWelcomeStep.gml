@@ -137,7 +137,7 @@ if( t == 2845 ) {
 } else if( t == 3115 ) {
     with( oRedS6FloorSpike ) {
         scrRedMoveInstance( id, x, y + 16, 3137 - 3115 );
-        scrRedS6CreateLaunchImpulse( x - 16 );
+        scrRedCreateFloorIndicator( x + 16, 3 );
     }
 } else if( t == 3137 ) {
     with( oRedS6FloorSpike ) {

@@ -1,3 +1,4 @@
+/// scrRedS8RedMarchStep(t)
 var t = argument0;
 
 if( t == 3488 ) {
@@ -102,6 +103,9 @@ if( t == 3488 ) {
     with( oRedS8WallSpike ) {
         var dir = choose( random_range( -180, -120 ), random_range( 120, 180 ) );
         scrRedRotateInstance( id, direction + dir, 20 );
+        var trail = scrRedAttachTrail( id, 10 );
+        trail.TailScale = 1;
+        trail.TailAlpha = 0.5;
         MinSpeed = 2;
     }    
 } else if( t == 3990 ) {
@@ -109,12 +113,18 @@ if( t == 3488 ) {
         Acceleration = 0.75;
         MaxSpeed = 7;
     }
+    var flash = scrRedFlashScreen( c_red, 10 );
+    flash.MaxAlpha = 0.75;
 } else if( t == 4011 ) {
     scrRedS8SendSpikesAway( 300 );
+    scrRedShakeViewX( 10, 10 );
 } else if( t == 4023 ) {
     scrRedS8SendSpikesAway( 500 );
+    scrRedShakeViewX( -10, 10 );
 } else if( t == 4035 ) {
     scrRedS8SendSpikesAway( 10000 );
+    scrRedShakeViewX( 10, 10 );
+    scrRedCreateFloorIndicator( 400, 5 );
 } else if( t == 4073 ) {
     var spikeCount = 3;
     var spikeOffsetX = floor( spikeCount / 2 ) * 32 + 16;
@@ -122,6 +132,7 @@ if( t == 3488 ) {
         var floorSpike = instance_create( spikeX, 608 - 32, oRedS8FloorSpike );
         scrRedMoveInstance( floorSpike, spikeX, 608 - 64, 15 );
     }
+    scrRedChangeInstanceAlpha( oRedLineImpulse, 1, 20 );
 } else if( t == 4095 ) {
     var spikeCount = 7;
     var circleCenterX = 400;
@@ -141,6 +152,7 @@ if( t == 3488 ) {
         spikeDir += dirDelta;
     }
 } else if( t == 4120 ) {
+    scrRedChangeInstanceXScale( oRedLineImpulse, 30, 25, scrRedTweenLinear );
     var spikeY = 608 - 132;
     var spikeOffsetX = 48;
     var leftSpawner = scrRedCreateSpawner( 400 - spikeOffsetX, spikeY, 1, oRedS8CeilingSpike, 4155 - 4120 );
@@ -168,7 +180,14 @@ if( t == 3488 ) {
 } else if( t == 4183 ) {
     scrRedFlashScreen( c_white, 5, 50 );
 } else if( t == 4186 ) {
+    scrRedDestroy( oRedLineImpulse );
     scrRedDestroy( oRedS8CircleSpike );
     scrRedDestroy( oRedS8FloorSpike );
     scrRedDestroy( oRedS6AbyssSource );
+    with( oRedLeftBlock ) {
+        image_alpha = 1;
+    }
+    with( oRedBlCornerBlock ) {
+        image_alpha = 1;
+    }
 }

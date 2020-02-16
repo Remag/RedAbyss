@@ -16,7 +16,10 @@ if( argument_count > 4 ) {
 
 var flash = instance_create( 0, 0, oRedScreenFlash );
 flash.image_blend = color;
+flash.MaxAlpha = 1;
 flash.InDuration = inDuration;
 flash.TotalDuration = inDuration + outDuration;
 flash.InEasing = inEasing;
 flash.OutEasing = outEasing;
+
+return flash;
