@@ -21,82 +21,28 @@ if( t == 6269 ) {
     scrRedMoveInstance( oRedS12Source, 400, 100, 6619 - 6269 );
     instance_create( 0, 0, oRedS12BgDrawMechanism );
     
-} else if( t == 6269 ) {
-    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 0.1, 14);
-} else if( t == 6283 ) {
-    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 0.2, 15 );
-} else if( t == 6298 ) {
-    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 0.3, 14 );
-} else if( t == 6312 ) {
-    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 0.9, 18 );
-} else if( t == 6330 ) {
-    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 0.2, 20 );
-} 
-else if( t == 6355 ) {
-    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 0.1, 14 );
-} else if( t == 6369 ) {
-    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 0.2, 15 );
-} else if( t == 6384 ) {
-    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 0.3, 14 );
-} else if( t == 6398 ) {
-    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 0.9, 18 );
-} else if( t == 6416 ) {
-    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 0.2, 20 );
-} 
-else if( t == 6443 ) {
-    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 0.1, 14 );
-} else if( t == 6457 ) {
-    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 0.2, 15 );
-} else if( t == 6472 ) {
-    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 0.3, 14 );
-} else if( t == 6486 ) {
-    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 0.9, 18 );
-} else if( t == 6505 ) {
-    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 0.2, 20 );
+} else if( t == 6270 || t == 6355 ||  t == 6443 || t == 6529 ) {
+    scrRedS12CreateRedCircle();
+    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 0.25, 14, scrRedTweenSineIn );
+} else if( t == 6283 || t == 6369 || t == 6472 || t == 6543 ) {
+    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 0.3, 15, scrRedTweenSineIn );
+} else if( t == 6298 || t == 6384 || t == 6472 || t == 6558 ) {
+    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 0.5, 14, scrRedTweenSineIn );
+} else if( t == 6312 || t == 6398 || t == 6486 || t == 6572 ) {
+    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 1.0, 18, scrRedTweenSineIn );
+} else if( t == 6330 || t == 6416 || t == 6504 || t == 6590 ) {
+    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 0.0, 25, scrRedTweenSineInOut );
 }
-else if( t == 6529 ) {
-    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 0.1, 14 );
-} else if( t == 6543 ) {
-    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 0.2, 15 );
-} else if( t == 6558 ) {
-    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 0.3, 14 );
-} else if( t == 6572 ) {
-    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 0.9, 18 );
-} else if( t == 6590 ) {
-    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 0.2, 20 );
-} 
-else if( t == 6617 ) {
-    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 0.1, 14 );
-} else if( t == 6631 ) {
-    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 0.2, 15 );
-} else if( t == 6646 ) {
-    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 0.3, 14 );
-} else if( t == 6660 ) {
-    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 0.9, 18 );
-} else if( t == 6678 ) {
-    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 0.2, 20 );
-} 
-else if( t == 6704 ) {
-    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 0.1, 14 );
-} else if( t == 6718 ) {
-    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 0.2, 15 );
-} else if( t == 6733 ) {
-    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 0.3, 14 );
-} else if( t == 6747 ) {
-    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 0.9, 18 );
-} else if( t == 6765 ) {
-    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 0.2, 20 );
-} 
-else if( t == 6791 ) {
-    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 0.1, 14 );
-} else if( t == 6805 ) {
-    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 0.2, 15 );
-} else if( t == 6819 ) {
-    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 0.3, 14 );
-} else if( t == 6834 ) {
-    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 0.9, 18 );
-} else if( t == 6852 ) {
-    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 0.2, 20 );
+else if( t == 6617 || t == 6704 || t == 6791 ) {
+    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 0.4, 14, scrRedTweenSineIn );
+} else if( t == 6631 || t == 6718 || t == 6805 ) {
+    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 0.5, 15, scrRedTweenSineIn );
+} else if( t == 6646 || t == 6733 || t == 6819 ) {
+    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 0.6, 14, scrRedTweenSineIn );
+} else if( t == 6660 || t == 6747 || t == 6834 ) {
+    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 1.0, 18, scrRedTweenSineIn );
+} else if( t == 6678 || t == 6765 || t == 6852 ) {
+    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 0.25, 25, scrRedTweenSineInOut );
 } 
 else if( t == 6619 ) {
     scrRedMoveInstance( oRedS12Source, 400, 300, 6879 - 6619 );
@@ -116,14 +62,11 @@ else if( t == 6619 ) {
         SpeedMax = 14;
     }
 } else if( t == 6837 ) {
-    with( oRedBaseSpawner ) {
-        SpawnPeriod = 5;
-    }
+    scrRedDestroy( oRedBaseSpawner );
     scrRedAttachSpawner( oRedS12Source, 2, oRedS12BurstBullet );
 } else if( t == 6879 ) {
-    with( oRedS12Bullet ) {
-        instance_destroy();
-    }
+    scrRedDestroy( oRedS12Bullet );
+    scrRedDestroy( oRedBulletTrail );
     with( oRedS12BurstBullet ) {
         speed = 0;
     }

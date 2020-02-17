@@ -25,34 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_index = 5;
+            <string>speed = 3;
+image_index = 5;
 image_speed = 0;
-scrRedSetScale( 2 );
-RayAngle = 0;
-image_alpha = 0.6;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="1" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>scrRedDestroy( oRedS6AbyssRay );
 </string>
           </argument>
         </arguments>
@@ -75,17 +50,13 @@ image_alpha = 0.6;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_angle += AngleDelta;
-AngleDelta *= 1.01;
-RayAngle += sign( AngleDelta );
-repeat( 1 ) {
-    var ray = instance_create( x, y, oRedS6AbyssRay );
-    ray.StartDirection = random( 360 );
-    ray.image_angle = ray.StartDirection + RayAngle;
-    ray.RadiusDelta = random_range( 1, 3 );
-    ray.Spawner = id;
-    ray.visible = false;
+            <string>if( ( bbox_right &lt; -200 &amp;&amp; hspeed &lt;= 0 ) || ( bbox_left &gt; 1000 &amp;&amp; hspeed &gt;= 0 ) ) {
+    instance_destroy();
 }
+if( ( bbox_top &gt; 808 &amp;&amp; vspeed &gt;= 0 ) || ( bbox_bottom &lt; -200 &amp;&amp; vspeed &lt;= 0 ) ) {
+    instance_destroy();
+}
+image_angle += Circle.AngleDelta;
 </string>
           </argument>
         </arguments>

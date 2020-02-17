@@ -1,1 +1,1 @@
-return instance_find( oRedLightLine, 5 );
+return instance_find( oRedLightLine, 4 );

@@ -112,9 +112,7 @@ if( t >= 2443 && t <= 2702 ) {
 }
 
 if( t == 2702 ) {
-    with( oRedS5BarrageBullet ) {
-        instance_destroy();
-    }
+    scrRedDestroy( oRedS5BarrageBullet );
     with( oRedS5BurstBullet ) {
         speed = 0;
     }

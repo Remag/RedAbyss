@@ -29,6 +29,9 @@
 image_speed = 0;
 direction = random( 360 );
 speed = random_range( 12, 16 );
+scrRedAttachTrail( id, 4 );
+image_alpha = 0;
+scrRedChangeInstanceAlpha( id, 1, 10 );
 </string>
           </argument>
         </arguments>

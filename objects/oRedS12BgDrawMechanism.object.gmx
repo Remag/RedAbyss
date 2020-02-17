@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-1</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -145,12 +145,12 @@ surface_free( MaskSurface );
             <kind>1</kind>
             <string>BgSurface = scrRedCheckSurface( BgSurface, 800, 608 );
 MaskSurface = scrRedCheckSurface( MaskSurface, 800, 608 );
-var intensity = 4 * image_alpha;
+var intensity = 8 * image_alpha;
 var srcIntensity = 2 * intensity;
 
 surface_set_target( MaskSurface );
 draw_clear_alpha( c_black, 0.0 );
-with( oRedS12Bullet ) {
+with( oRedS12CircleBullet ) {
     draw_sprite_ext( sprRedBgIntensityMask, 0, x, y, intensity, intensity, 0, c_white, 1 );
 }
 with( oRedS12Source ) {
@@ -161,11 +161,22 @@ surface_reset_target();
 surface_set_target( BgSurface );
 draw_clear_alpha( c_black, 1.0 );
 draw_sprite( sprRedAbyssRedBackground, 0, 0, 0 );
+with( oRedS12BurstBullet ) {
+    draw_sprite_ext( sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha );
+}
 with( oRedS12Bullet ) {
+    draw_sprite_ext( sprite_index, 5, x, y, image_xscale, image_yscale, image_angle, c_white, image_alpha );
+}
+with( oRedS12CircleBullet ) {
     draw_sprite_ext( sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha );
 }
 with( oRedS12Source ) {
-    
+    draw_set_color_write_enable( true, true, true, false );
+    draw_sprite_ext( sprRedAbyssSpawner, 0, x, y, 1, 1, 0, c_red, 0.6 );
+    draw_set_color_write_enable( true, true, true, true );
+}
+with( oRedS6AbyssRay ) {
+    draw_self();
 }
 draw_set_blend_mode_ext( bm_zero, bm_src_color );
 draw_surface( MaskSurface, 0, 0 );

@@ -541,6 +541,7 @@
         </scripts>
         <scripts name="S12_Relapse">
           <script>scripts\scrRedS12RelapseStep.gml</script>
+          <script>scripts\scrRedS12CreateRedCircle.gml</script>
         </scripts>
         <scripts name="S13_CorruptedInfinity">
           <script>scripts\scrRedS13CorruptedInfinityStep.gml</script>
@@ -818,6 +819,7 @@
         <object>objects\oRedS12BurstBullet</object>
         <object>objects\oRedS12EdgeSpikeMover</object>
         <object>objects\oRedS12BgDrawMechanism</object>
+        <object>objects\oRedS12CircleBullet</object>
       </objects>
       <objects name="S13_CorruptedInfinity">
         <object>objects\oRedS13Source</object>
