@@ -124,7 +124,7 @@ if( t == 3488 ) {
 } else if( t == 4035 ) {
     scrRedS8SendSpikesAway( 10000 );
     scrRedShakeViewX( 10, 10 );
-    scrRedCreateFloorIndicator( 400, 5 );
+    scrRedCreateFloorIndicator( 400, 5, 0.5 );
 } else if( t == 4073 ) {
     var spikeCount = 3;
     var spikeOffsetX = floor( spikeCount / 2 ) * 32 + 16;

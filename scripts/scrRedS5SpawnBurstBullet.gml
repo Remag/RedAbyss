@@ -16,4 +16,4 @@ for( var i = 0; i < sectorCount; i++ ) {
     }
 }
 
-scrRedChangeInstanceAlpha( oRedS5SourceBullet, 1, 15, scrRedTweenBackForth );
+scrRedChangeInstanceAlpha( oRedS5SourceBullet, 1, 12, scrRedTweenBackForth );

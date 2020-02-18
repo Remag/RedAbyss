@@ -2,7 +2,7 @@
 var spikeY = argument0, spikeDir = argument1, spikeStartIndex = argument2;
 
 var spikeIndex = spikeStartIndex;
-for( var spikeX = 0; spikeX < 800; spikeX += random_range( 42, 50 ) ) {
+for( var spikeX = 0; spikeX < 800; spikeX += random_range( 48, 52 ) ) {
     var spike = instance_create( spikeX, spikeY, oS13WallSpike );
     spike.direction = spikeDir;
     if( spikeIndex % 2 == 0 ) {
@@ -13,3 +13,4 @@ for( var spikeX = 0; spikeX < 800; spikeX += random_range( 42, 50 ) ) {
     spike.image_angle = spike.direction;
     spikeIndex++;
 }
+

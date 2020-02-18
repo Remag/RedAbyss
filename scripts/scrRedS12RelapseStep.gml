@@ -23,26 +23,26 @@ if( t == 6269 ) {
     
 } else if( t == 6270 || t == 6355 ||  t == 6443 || t == 6529 ) {
     scrRedS12CreateRedCircle();
-    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 0.25, 14, scrRedTweenSineIn );
+    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 0.25, 14, scrRedTweenLinear );
 } else if( t == 6283 || t == 6369 || t == 6472 || t == 6543 ) {
-    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 0.3, 15, scrRedTweenSineIn );
+    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 0.3, 15, scrRedTweenLinear );
 } else if( t == 6298 || t == 6384 || t == 6472 || t == 6558 ) {
-    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 0.5, 14, scrRedTweenSineIn );
+    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 0.5, 14, scrRedTweenLinear );
 } else if( t == 6312 || t == 6398 || t == 6486 || t == 6572 ) {
-    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 1.0, 18, scrRedTweenSineIn );
+    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 1.0, 18, scrRedTweenLinear );
 } else if( t == 6330 || t == 6416 || t == 6504 || t == 6590 ) {
-    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 0.0, 25, scrRedTweenSineInOut );
+    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 0.0, 25, scrRedTweenLinear );
 }
 else if( t == 6617 || t == 6704 || t == 6791 ) {
-    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 0.4, 14, scrRedTweenSineIn );
+    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 0.4, 14, scrRedTweenLinear );
 } else if( t == 6631 || t == 6718 || t == 6805 ) {
-    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 0.5, 15, scrRedTweenSineIn );
+    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 0.5, 15, scrRedTweenLinear );
 } else if( t == 6646 || t == 6733 || t == 6819 ) {
-    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 0.6, 14, scrRedTweenSineIn );
+    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 0.6, 14, scrRedTweenLinear );
 } else if( t == 6660 || t == 6747 || t == 6834 ) {
-    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 1.0, 18, scrRedTweenSineIn );
+    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 1.0, 18, scrRedTweenLinear );
 } else if( t == 6678 || t == 6765 || t == 6852 ) {
-    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 0.25, 25, scrRedTweenSineInOut );
+    scrRedChangeInstanceAlpha( oRedS12BgDrawMechanism, 0.25, 25, scrRedTweenLinear );
 } 
 else if( t == 6619 ) {
     scrRedMoveInstance( oRedS12Source, 400, 300, 6879 - 6619 );
@@ -77,6 +77,14 @@ else if( t == 6619 ) {
     }
     instance_create( 0, 0, oRedS5Backdrop );
     instance_create( 0, 0, oRedInfiniteJump );
+    for( var floorX = 100; floorX < 800; floorX += 200 ) {
+        scrRedCreateFloorIndicator( floorX, 6, 0.25 );
+        scrRedCreateRWallIndicator( floorX, 6, 0.25 );
+        scrRedCreateLWallIndicator( floorX, 6, 0.25 );
+    }
+    with( oRedLightLineDrawMechanism ) {
+        depth = 0;
+    }
 } else if( t == 6890 ) {
     scrRedCreateEdgeWalls( 24, 56 );
     var mover = instance_create( 0, 0, oRedS12EdgeSpikeMover );
@@ -89,6 +97,7 @@ else if( t == 6619 ) {
     }
     scrRedBulletFadeOut( oRedS5Backdrop );
     scrRedActivateBullets( oRedAbyssEdgeSpike );
+    scrRedChangeInstanceAlpha( oRedLineImpulse, 1, 20 );
 } else if( t == 6940 ) {
     var moveDuration = 23;
     scrRedBulletFadeOut( oRedS12BurstBullet );
@@ -129,5 +138,6 @@ else if( t == 6619 ) {
     scrRedDestroy( objBlock );
 } else if( t == 6976 ) {
     scrRedDestroy( oRedAbyssBlock );
+    scrRedDestroy( oRedLineImpulse );
     scrRedDestroy( oRedS12EdgeSpikeMover );
 }

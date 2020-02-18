@@ -28,7 +28,12 @@ if( t == 7660 ) {
     with( oRedS14Source ) {
         Spawner.SpawnPeriod = 3;
     }
-    scrRedAttachCustomSpawner( oRedS14Source, 3, scrRedS14SpawnBurstBullets, 20 );
+    scrRedAttachCustomSpawner( oRedS14Source, 2, scrRedS14SpawnBurstBullets, 20 );
+    with( oRedS14Source ) {
+        Spawner.DirIndex = 0;
+    }
+} else if( t == 7780 ) {
+    scrRedShakeViewX( -48, 7803 - 7780, scrRedTweenSineInOut );
 } else if( t == 7790 ) {
     scrRedDestroy( oRedBaseSpawner );
     with( oRedS14Bullet ) {
@@ -36,6 +41,7 @@ if( t == 7660 ) {
         ChangeDuration = 13;
     }
 } else if( t == 7803 ) {
+    scrRedShakeViewX( 0, 25, scrRedTweenSineInOut );
     with( oRedS14Bullet ) {
         TargetSpeed = StartSpeed * 1.3;
         direction = 0;
@@ -44,6 +50,9 @@ if( t == 7660 ) {
     }
 } else if( t == 7830 ) {
     scrRedAttachCustomSpawner( oRedS14Source, 3, scrRedS14SpawnBurstBullets, 10 );
+    with( oRedS14Source ) {
+        Spawner.DirIndex = 0;
+    }
     scrRedAttachSpawner( oRedS14Source, 3, oRedS14Bullet, 60 );
 } else if( t == 7900 ) {
     with( oRedS14Source ) {
@@ -63,7 +72,7 @@ if( t == 7660 ) {
     scrRedS14SpawnPolygon( oRedS14Source, 5, 2 );
 } else if( t == 8012 ) {
     scrRedS14MoveSources( 20, 586, 780, 20, 50 );
-    scrRedAttachSpawner( oRedS14Source, 1.5, oRedS14BarrageSpike, 20 );
+    scrRedAttachSpawner( oRedS14Source, 1.75, oRedS14BarrageSpike, 20 );
 } else if( t == 8040 ) {
     with( oRedS14Source ) {
         var dir = random( 360 );

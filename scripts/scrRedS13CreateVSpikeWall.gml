@@ -2,7 +2,7 @@
 var spikeX = argument0, spikeDir = argument1, spikeStartIndex = argument2;
 
 var spikeIndex = spikeStartIndex;
-for( var spikeY = 0; spikeY < 608; spikeY += random_range( 48, 56 ) ) {
+for( var spikeY = 0; spikeY < 608; spikeY += random_range( 56, 64 ) ) {
     var spike = instance_create( spikeX, spikeY, oS13WallSpike );
     spike.direction = spikeDir;
     if( spikeIndex % 2 == 0 ) {

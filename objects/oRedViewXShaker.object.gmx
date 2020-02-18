@@ -50,11 +50,11 @@
             <kind>1</kind>
             <string>Step++;
 if( Step &gt;= Duration ) {
-    view_xview[0] = 0;
+    view_xview[0] = script_execute( Smoother, StartX, MaxX, Duration, Duration );
     instance_destroy();
 }
 
-view_xview[0] = scrRedTweenBackForth( 0, MaxX, Step, Duration );
+view_xview[0] = script_execute( Smoother, StartX, MaxX, Step, Duration );
 
 </string>
           </argument>

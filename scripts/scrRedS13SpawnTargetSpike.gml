@@ -8,3 +8,5 @@ var rSpike = instance_create( 800, playerY, oRedS13TargetSpike );
 rSpike.direction = 180;
 rSpike.image_angle = rSpike.direction;
 rSpike.speed = 30;
+
+scrRedShakeViewX( 3, 4 );

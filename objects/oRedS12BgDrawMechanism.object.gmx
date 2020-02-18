@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-1</depth>
+  <depth>-10000001</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -126,7 +126,7 @@ surface_free( MaskSurface );
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="73">
+    <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -168,7 +168,7 @@ with( oRedS12Bullet ) {
     draw_sprite_ext( sprite_index, 5, x, y, image_xscale, image_yscale, image_angle, c_white, image_alpha );
 }
 with( oRedS12CircleBullet ) {
-    draw_sprite_ext( sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha );
+    draw_sprite_ext( sprRedAbyssFruit, 5, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha );
 }
 with( oRedS12Source ) {
     draw_set_color_write_enable( true, true, true, false );

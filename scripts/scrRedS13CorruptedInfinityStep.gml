@@ -21,16 +21,23 @@ if( t == 6966 ) {
     var src2 = instance_find( oRedS13Source, 1 );
     scrRedMoveInstance( src1, 64, 64, 20 );
     scrRedMoveInstance( src2, 736, 64, 20 );
-    scrRedAttachSpawner( src1, 1, oRedS13Bullet, 80 );
-    scrRedAttachSpawner( src2, 1, oRedS13Bullet, 80 );
+    var spawner1 = scrRedAttachCustomSpawner( src1, 0.9, scrRedS13SpawnBarrageBullet, 80 );
+    spawner1.DirIndex = 0;
+    var spawner2 = scrRedAttachCustomSpawner( src2, 0.9, scrRedS13SpawnBarrageBullet, 80 );
+    spawner2.DirIndex = 0;
 } else if( t == 7053 ) {
     scrRedS13SpawnCornerCircle( 0, 0 );
+    scrRedShakeViewAngle( 1, 11 );
 } else if( t == 7064 ) {
     scrRedS13SpawnCornerCircle( 800, 0 );
+    scrRedShakeViewAngle( 1, 11 );
 } else if( t == 7075 ) {
     scrRedS13SpawnCornerCircle( 800, 608 );
+    scrRedShakeViewAngle( -1, 11 );
 } else if( t == 7083 ) {
     scrRedS13SpawnCornerCircle( 0, 608 );
+} else if( t == 7086 ) {
+    scrRedShakeViewAngle( -1, 11 );
 } else if( t == 7141 ) {
     scrRedCreateCustomSpawner( 0, 0, 4, scrRedS13SpawnTargetSpike, 20 );
 } else if( t == 7162 ) {
@@ -51,16 +58,19 @@ if( t == 6966 ) {
 } else if( t == 7270 ) {
     scrRedAttachCustomSpawner( oRedS13Source, 1.4, scrRedS13SpawnBulletCircle, 25 );
 } else if( t == 7338 ) { 
-    scrRedS13CreateHSpikeWall( 0, -90, choose( 1, 2 ) );
+    S13WallStartIndex = choose( 1, 2 );
+    scrRedS13CreateHSpikeWall( 0, -90, S13WallStartIndex );
+    scrRedShakeViewY( 24, 25 );
 } else if( t == 7380 ) {
-    scrRedS13CreateHSpikeWall( 608, 90, choose( 1, 2 ) );
+    scrRedS13CreateHSpikeWall( 608, 90, S13WallStartIndex + 1 );
+    scrRedShakeViewY( -24, 25 );
 } else if( t == 7425 ) {
     var startIndex = choose( 1, 2 );
     scrRedS13CreateVSpikeWall( 0, 0, startIndex );
     scrRedS13CreateVSpikeWall( 800, 180, startIndex + 1 );
-}  else if( t == 7442 ) {
+    scrRedShakeViewX( 24, 30 );
+} else if( t == 7442 ) {
 } else if( t == 7465 ) {
-    
 } else if( t == 7510 ) {
     
 } else if( t == 7525 ) {

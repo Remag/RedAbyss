@@ -551,6 +551,7 @@
           <script>scripts\scrRedS13CreateHSpikeWall.gml</script>
           <script>scripts\scrRedS13CreateVSpikeWall.gml</script>
           <script>scripts\scrRedS13SpawnBulletCircle.gml</script>
+          <script>scripts\scrRedS13SpawnBarrageBullet.gml</script>
         </scripts>
         <scripts name="S14_IrrevocableDamage">
           <script>scripts\scrRedS14IrrevocableDamageStep.gml</script>
@@ -591,6 +592,8 @@
       <scripts name="BlockLight">
         <script>scripts\scrRedCreateActiveImpulse.gml</script>
         <script>scripts\scrRedCreateFloorIndicator.gml</script>
+        <script>scripts\scrRedCreateLWallIndicator.gml</script>
+        <script>scripts\scrRedCreateRWallIndicator.gml</script>
         <script>scripts\scrRedCreateFadingImpulse.gml</script>
         <script>scripts\scrRedCreateMovingImpulse.gml</script>
         <script>scripts\scrRedGetBCLine.gml</script>
@@ -903,6 +906,7 @@
       <object>objects\oRedAbyssSpikeBullet</object>
       <object>objects\oRedAbyssBoundSpikeBullet</object>
       <object>objects\oRedAbyssEdgeSpike</object>
+      <object>objects\oRedAbyssEdgeTwin</object>
       <object>objects\oRedDebugInfo</object>
       <object>objects\oRedAbyssBackground</object>
       <object>objects\oRedBulletCircle</object>
