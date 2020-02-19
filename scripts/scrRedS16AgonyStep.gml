@@ -16,8 +16,10 @@ if( t == 9050 ) {
     scrRedDestroy( oRedS15Source );
     var src1 = instance_create( 400, 100, oRedS16Source );
     scrRedMoveInstance( src1, 100, 100, 40 );
-    scrRedAttachCustomSpawner( src1, 25, scrRedS16SpawnTargetLine );
-    scrRedAttachSpawner( src1, 1, oRedS16BarrageBullet );
+    var spawner = scrRedAttachCustomSpawner( src1, 25, scrRedS16SpawnTargetLineCircle );
+    spawner.StartDir = 0;
+    spawner.SectorCount = 4;
+    scrRedAttachSpawner( src1, 2, oRedS16BarrageBullet );
 } else if( t == 9090 ) {
     scrRedAttachCustomSpawner( oRedS16Source, 60, scrRedS16OscillateSpawner, 9191 - 9090 );
 } else if( t == 9117 ) {
@@ -27,34 +29,49 @@ if( t == 9050 ) {
 } else if( t == 9291 ) {
     scrRedDestroy( oRedBaseSpawner );
     var spawner = scrRedAttachCustomSpawner( oRedS16Source, 5, scrRedS16SpawnCircle, 15 );
-    spawner.CircleDir = random( 360 );
+    spawner.CircleDir = scrRedDirToPlayer( spawner.x, spawner.y );
 } else if( t == 9313 ) {
     scrRedAttachCustomSpawner( oRedS16Source, 4, scrRedS16SpawnTargetSpike, 20 );
     var fallDuration = 9398 - 9313;
-    scrRedMoveInstance( oRedS16Source, 400, 650, 9398 - 9313, scrRedTweenExpIn );
     scrRedAttachCustomSpawner( oRedS16Source, 10, scrRedS16SpawnTrailBullet, fallDuration );
-} else if( t == 9335 ) {
+} else if( t == 9330 ) {
+    var fallDuration = 9400 - 9330;
+    scrRedMoveInstance( oRedS16Source, 400, 750, fallDuration, scrRedTweenBackIn );
 } else if( t == 9398 ) {
     scrRedDestroy( oRedS16Source );
-    repeat( 30 ) {
+    with( oRedS16TrailBullet ) {
+        if( y > 400 || vspeed > 0 ) {
+            gravity = 0.4;
+        }
+    }
+    scrRedFlashScreen( c_white, 10 );
+    repeat( 75 ) {
         var bullet = instance_create( 400, 610, oRedS16ExplosionBullet );
-        bullet.speed = random_range( 3, 10 );
+        bullet.speed = random_range( 3, 17 );
         bullet.direction = random_range( 0, 180 );
         bullet.image_angle = bullet.direction;
+        bullet.gravity = 0.4;
     }
-    var spawner = scrRedCreateCustomSpawner( 0, 0, 2.25, scrRedS16SpawnBarrageSpike );
+    var spawner = scrRedCreateCustomSpawner( 0, 0, 1.5, scrRedS16SpawnBarrageSpike );
     spawner.Curve = false;
 } else if( t == 9464 ) {
     with( oRedS16BarrageSpike ) {
         var trail = scrRedAttachTrail( id, 7 );
         trail.TailScale = 1;
+        trail.TailAlpha = 0.5;
+        speed = 4;
     }
     with( oRedBaseSpawner ) {
         Curve = true;
     }
+    var flash = scrRedFlashScreen( c_red, 20, 10 );
+    flash.MaxAlpha = 0.75;
 } else if( t == 9489 ) {
     with( oRedBaseSpawner ) {
         Curve = false;
+    }
+    with( oRedS16BarrageSpike ) {
+        speed = 5.5;
     }
     with( oRedBulletTrail ) {
         Fade = true;

@@ -1,5 +1,7 @@
+/// scrRedS16SpawnTargetLine(deltaDir)
+var deltaDir = argument0;
 
-var playerDir = scrRedDirToPlayer( x, y ) + random_range( -30, 30 );
+var playerDir = scrRedDirToPlayer( x, y ) + deltaDir;
 
 var lineCount = 6;
 var speedDelta = 1;

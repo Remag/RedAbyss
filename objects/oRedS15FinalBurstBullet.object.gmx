@@ -25,8 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>direction = random( 360 );
-scrRedSetScale( random_range( 0.5, 0.75 ) );
+            <string>scrRedSetScale( random_range( 0.5, 0.75 ) );
 </string>
           </argument>
         </arguments>

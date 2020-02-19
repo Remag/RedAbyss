@@ -28,6 +28,7 @@
             <string>direction = random( 360 );
 speed = random_range( 8, 10 );
 scrRedSetScale( random_range( 0.5, 0.9 ) );
+scrRedAttachTrail( id, 5 );
 </string>
           </argument>
         </arguments>

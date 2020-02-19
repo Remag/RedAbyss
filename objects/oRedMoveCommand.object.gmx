@@ -32,15 +32,14 @@
 
 Step++;
 if( Step &gt;= Duration ) {
-    TargetId.x = StartX + DeltaX;
-    TargetId.y = StartY + DeltaY;
+    TargetId.x = script_execute( SmootherX, StartX, DeltaX, Duration, Duration );
+    TargetId.y = script_execute( SmootherY, StartY, DeltaY, Duration, Duration );
     instance_destroy();
     exit;
 }
 
-var tweenPos = script_execute( Smoother, 0, 1, Step, Duration );
-TargetId.x = StartX + tweenPos * DeltaX;
-TargetId.y = StartY + tweenPos * DeltaY;
+TargetId.x = script_execute( SmootherX, StartX, DeltaX, Step, Duration );
+TargetId.y = script_execute( SmootherY, StartY, DeltaY, Step, Duration );
 </string>
           </argument>
         </arguments>

@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>speed = 10;
 scrRedSetScale( random_range( 0.7, 1 ) );
+scrRedAttachTrail( id, 7 );
 
 Gravity = 0;
 StartSpeed = speed;

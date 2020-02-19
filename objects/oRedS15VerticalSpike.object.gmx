@@ -28,6 +28,7 @@
             <string>direction = point_direction( x, y, x, 300 );
 image_angle = direction;
 speed = 25;
+scrRedShakeViewX( 4, 4 );
 </string>
           </argument>
         </arguments>

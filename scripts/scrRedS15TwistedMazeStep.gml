@@ -31,12 +31,12 @@ if( t == 8357 ) {
     src2.FollowPlayer = true;
     src2.hspeed = 7;   
     scrRedAttachSpawner( oRedS15Source, 4, oRedS15VerticalSpike, 35 );
-} else if( t == 8487 ) {
+} else if( t == 8477 ) {
     with( oRedS15Source ) {
         FollowPlayer = false;
         speed = 0;
     }
-    scrRedMoveInstance( oRedS15Source, 400, 303, 22, scrRedTweenSineIn );
+    scrRedMoveInstance( oRedS15Source, 400, 303, 31, scrRedTweenBackIn, scrRedTweenSineIn );
 } else if( t == 8509 ) {
     repeat( 70 ) {
         var bullet = instance_create( 400, 303, oRedS15BurstBullet );
@@ -46,6 +46,8 @@ if( t == 8357 ) {
             scrRedSetScale( random_range( 0.5, 1 ) );
         }
     }
+    var flash = scrRedFlashScreen( c_white, 5 );
+    flash.MaxAlpha = 0.5;
     var spawner = scrRedCreateCustomSpawner( 0, 0, 50, scrRedS15CreateSpikeWall );
     if( scrRedGetPlayerX() <= 400 ) {
         spawner.WallX = 800;
@@ -62,40 +64,48 @@ if( t == 8357 ) {
     var bullet = instance_find( oRedS15WallSpike, 0 );
     var wallX = 800 - bullet.Spawner.WallX;
     var wallDir = bullet.Spawner.WallDir + 180;
-    for( var wallY = 0; wallY < 608; wallY += 32 ) {
-        var spike = instance_create( wallX, wallY, oRedS15DoomSpike );
+    for( var wallY = 32; wallY < 576; wallY += 32 ) {
+        var spike = instance_create( wallX, wallY + 16, oRedS15DoomSpike );
         spike.direction = wallDir;
         spike.image_angle = wallDir;
         spike.speed = 1.25;
     }
 } else if( t == 8575 ) {  
     var src1 = instance_find( oRedS15Source, 0 );
-    scrRedAttachCustomSpawner( src1, 1, scrRedS15SpawnMiddleBarrage, 25 );
-    src1.Spawner.MinSpeed = 8;
-    src1.Spawner.MaxSpeed = 10;
+    var spawner = scrRedAttachCustomSpawner( src1, 5, scrRedS15SpawnMiddleBarrage, 20 );
+    spawner.MinSpeed = 10;
+    spawner.MaxSpeed = 12;
 } else if( t == 8660 ) {  
     var src1 = instance_find( oRedS15Source, 0 );
-    scrRedAttachCustomSpawner( src1, 1, scrRedS15SpawnMiddleBarrage, 35 );
-    src1.Spawner.MinSpeed = 8;
-    src1.Spawner.MaxSpeed = 10;
-} else if( t == 8815 ) {
+    var spawner = scrRedAttachCustomSpawner( src1, 5, scrRedS15SpawnMiddleBarrage, 30 );
+    spawner.MinSpeed = 10;
+    spawner.MaxSpeed = 12;
+} else if( t == 8860 ) {
     scrRedDestroy( oRedScriptSpawner );
 } else if( t == 8830 ) {  
     var src1 = instance_find( oRedS15Source, 0 );
-    scrRedAttachCustomSpawner( src1, 1, scrRedS15SpawnMiddleBarrage, 25 );
-    src1.Spawner.MinSpeed = 8;
-    src1.Spawner.MaxSpeed = 10;
+    var spawner = scrRedAttachCustomSpawner( src1, 5, scrRedS15SpawnMiddleBarrage, 25 );
+    spawner.MinSpeed = 10;
+    spawner.MaxSpeed = 12;
 } else if( t == 8920 ) {
     scrRedDestroy( oRedAttachedScriptSpawner );    
     var src1 = instance_find( oRedS15Source, 0 );
-    scrRedAttachCustomSpawner( src1, 0.75, scrRedS15SpawnFinalBarrage );
-    src1.Spawner.MinSpeed = 5;
-    src1.Spawner.MaxSpeed = 7;
+    var spawner = scrRedAttachCustomSpawner( src1, 0.9, scrRedS15SpawnFinalBarrage );
+    spawner.MinSpeed = 8;
+    spawner.MaxSpeed = 10;
+    spawner.TrailCount = 3;
+    spawner.DirIndex = 0;
 } else if( t == 9050 ) {
     scrRedDestroy( oRedAttachedSpawner );
     with( oRedS15DoomSpike ) {
         direction += random_range( 165, 195 );
         speed = random_range( 8, 12 );
         AngleDelta = choose( -5, 5 );
+    }
+    var playerX = scrRedGetPlayerX();
+    if( playerX > 400 ) {
+        scrRedShakeViewX( -10, 10 );
+    } else {
+        scrRedShakeViewX( 10, 10 );
     }
 }

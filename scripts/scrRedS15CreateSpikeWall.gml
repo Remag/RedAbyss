@@ -1,21 +1,18 @@
-if( live_call() ) {
-    return live_result;
-}
+var gapWidth = 2;
+var gapPos = irandom_range( 11, 15 );
 
-var gapOffset = 375;
-var gapHWidth = 45;
-var gapY = random_range( gapOffset, 600 - gapHWidth );
-
-for( var wallY = 0; wallY < gapY - gapHWidth; wallY += 32 ) {
-    var spike = instance_create( WallX, wallY, oRedS15WallSpike );
+for( var i = 1; i < gapPos; i++ ) {
+    var wallY = i * 32;
+    var spike = instance_create( WallX, wallY + 16, oRedS15WallSpike );
     spike.direction = WallDir;
     spike.image_angle = WallDir;
     spike.speed = 4;
     spike.Spawner = id;
 }
 
-for( var wallY = gapY + gapHWidth; wallY < 608; wallY += 32 ) {
-    var spike = instance_create( WallX, wallY, oRedS15WallSpike );
+for( var i = gapPos + gapWidth; i < 18; i++ ) {
+    var wallY = i * 32;
+    var spike = instance_create( WallX, wallY + 16, oRedS15WallSpike );
     spike.direction = WallDir;
     spike.image_angle = WallDir;
     spike.speed = 4;

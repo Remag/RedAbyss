@@ -26,7 +26,13 @@ switch( side ) {
 }
 
 var spike = instance_create( spikeX, spikeY, oRedS16BarrageSpike );
-spike.speed = 5;
+spike.speed = 5.5;
 spike.direction = spikeDir + random_range( -45, 45 );
 spike.image_angle = spike.direction;
 spike.Spawner = id;
+
+if( Curve ) {
+    var trail = scrRedAttachTrail( spike, 7 );
+    trail.TailScale = 1;
+    trail.TailAlpha = 0.5;
+}

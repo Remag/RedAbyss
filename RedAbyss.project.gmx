@@ -436,6 +436,8 @@
         <script>scripts\scrRedShakeViewY.gml</script>
         <script>scripts\scrRedSetPolarCoordinates.gml</script>
         <script>scripts\scrRedMoveInstance.gml</script>
+        <script>scripts\scrRedMoveInstanceX.gml</script>
+        <script>scripts\scrRedMoveInstanceY.gml</script>
         <script>scripts\scrRedRotateInstance.gml</script>
         <script>scripts\scrRedRotateInstanceImage.gml</script>
         <script>scripts\scrRedAttachTrail.gml</script>
@@ -463,6 +465,7 @@
         <script>scripts\scrRedTweenExpIn.gml</script>
         <script>scripts\scrRedTweenExpOut.gml</script>
         <script>scripts\scrRedTweenExpInOut.gml</script>
+        <script>scripts\scrRedTweenBackIn.gml</script>
       </scripts>
       <scripts name="StepScripts">
         <scripts name="S1_Intro">
@@ -575,6 +578,7 @@
         <scripts name="S16_Agony">
           <script>scripts\scrRedS16AgonyStep.gml</script>
           <script>scripts\scrRedS16OscillateSpawner.gml</script>
+          <script>scripts\scrRedS16SpawnTargetLineCircle.gml</script>
           <script>scripts\scrRedS16SpawnTargetLine.gml</script>
           <script>scripts\scrRedS16SpawnCircle.gml</script>
           <script>scripts\scrRedS16SpawnTargetSpike.gml</script>
@@ -916,7 +920,8 @@
       <object>objects\oRedViewYShaker</object>
       <object>objects\oRedInstanceActivationCommand</object>
       <object>objects\oRedInstanceFadeCommand</object>
-      <object>objects\oRedMoveCommand</object>
+      <object>objects\oRedMoveXCommand</object>
+      <object>objects\oRedMoveYCommand</object>
       <object>objects\oRedRotateCommand</object>
       <object>objects\oRedImageRotateCommand</object>
       <object>objects\oRedBulletTrail</object>

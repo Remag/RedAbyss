@@ -29,7 +29,7 @@
     exit;
 }
 
-if( !instance_exists( Owner ) || Fade ) {
+if( !instance_exists( Owner ) ) {
     if( PrevPositionsX[PrevPositionsIndex] = -10000 ) {
         instance_destroy();
     } else {
@@ -43,11 +43,14 @@ if( !instance_exists( Owner ) || Fade ) {
     PrevImageAngles[PrevPositionsIndex] = Owner.image_angle;
 }
 
+if( Fade ) {
+    TrailCount = max( 0, TrailCount - 1 );
+} 
+
 PrevPositionsIndex++;
 if( PrevPositionsIndex &gt;= TrailCount ) {
     PrevPositionsIndex = 0;
 }
-
 </string>
           </argument>
         </arguments>
