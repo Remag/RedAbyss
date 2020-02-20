@@ -1,10 +1,6 @@
 /// scrRedCreateEdgeWalls(wallDelta, topWallDelta)
 var wallDelta = argument0, topWallDelta = argument1;
 
-if( live_call( wallDelta, topWallDelta ) ) {
-    return live_result;
-}
-
 for( var spikeX = 0; spikeX < 800; spikeX += 32 ) {
     var tSpike = instance_create( spikeX + 32, -topWallDelta, oRedAbyssEdgeSpike );
     tSpike.image_angle = -90;

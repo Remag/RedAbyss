@@ -25,10 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if( live_call() ) {
-    return live_result;
-}
-scrRedSetScale( 0.05 );
+            <string>scrRedSetScale( 0.05 );
 direction = random( 360 );
 speed = random_range( 0.5, 2 );
 CurveDir = choose( -1, 1 );

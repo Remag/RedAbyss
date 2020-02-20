@@ -80,7 +80,7 @@ if( t == 9050 ) {
         speed = 5.5;
     }
     with( oRedBulletTrail ) {
-        Fade = true;
+        FadeDelta = 1;
     }
     
 } else if( t == 9525 ) {

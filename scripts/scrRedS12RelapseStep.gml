@@ -1,10 +1,6 @@
 /// scrRedS12RelapseStep(t)
 var t = argument0;
 
-if( live_call( t ) ) {
-    return live_result;
-}
-
 if( t == 6269 ) {
     var leftSrc = instance_create( -20, 100, oRedS12Source );
     leftSrc.AngleDelta = -1;

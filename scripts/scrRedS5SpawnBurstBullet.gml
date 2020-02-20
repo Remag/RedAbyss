@@ -1,7 +1,3 @@
-if( live_call() ) {
-    return live_result;
-}
-
 var sectorCount = 4;
 var count = SpawnCount / sectorCount;
 var sectorDirDelta = 360 / ( 2 * sectorCount );

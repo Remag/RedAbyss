@@ -1,11 +1,12 @@
 /// scrRedS17BottomStep(t)
 var t = argument0;
 
-if( live_call( t ) ) {
-    return live_result;
-}
-
 if( t == 9746 ) {
+    with( oRedLightLine ) {
+        x = xstart;
+        y = ystart;
+    }
+    instance_create( 0, 0, oRedS17ColorController );
     scrRedCreateCustomSpawner( 0, 0, 8, scrRedS17SpawnTeardrops );
     scrRedS17CreateExplosion( 40 );
 } else if( t == 9810 || t == 9832 || t == 9897 || t == 9919 || 
@@ -23,13 +24,15 @@ if( t == 10442 - 50 ) {
     var spawner1 = scrRedCreateSpawner( 0, 0, 6, oRedS17OrbitBullet );
     spawner1.MainDir = 315;
     spawner1.Curve = -1;
-    spawner1.ImageMin = 3;
-    spawner1.ImageMax = 4;
+    spawner1.HueMin = 182;
+    spawner1.HueMax = 220;
     var spawner2 = scrRedCreateSpawner( 800, 0, 6, oRedS17OrbitBullet );
     spawner2.MainDir = 225;
     spawner2.Curve = 1;
-    spawner2.ImageMin = 7;
-    spawner2.ImageMax = 8;
+    spawner2.HueMin = 18;
+    spawner2.HueMax = 71;
+    scrRedChangeInstanceAlpha( oRedS17ColorController, 0.1, 11110 - 10442 ); 
+    
 } else if( t == 10789 ) {
     scrRedDestroy( oRedBaseSpawner );
     with( oRedS17OrbitBullet ) {
@@ -37,18 +40,34 @@ if( t == 10442 - 50 ) {
         Wrap = true;
         speed *= 0.75;
     }
+    var fade = instance_create( 0, 0, oRedS17FinalFade );
+    fade.Duration = 300;
+    fade.depth = 0;
     scrRedCreateCustomSpawner( 0, 0, 2, scrRedS17SpawnBarrageBullet );
 } else if( t == 10968 ) {
     with( oRedS17FinalBullet ) {
         speed *= 0.75;
     }
-    var fade = instance_create( 0, 0, oRedS17FinalFade );
-    fade.Duration = 200;
-    fade.depth = 0;
+    scrRedChangeInstanceAlpha( oRedBulletTrail, 0, 25 );
+} else if( t == 11060 ) {
+    with( oRedLightLineDrawMechanism ) {
+        depth = -3;
+    }
+    var vPos = 303 - 32;
+    var hPos = 400 - 32;
+    scrRedS17CreateFinalImpulse( scrRedGetLCLine(), vPos, 17 );
+    scrRedS17CreateFinalImpulse( scrRedGetLFLine(), vPos, 17 );
+    scrRedS17CreateFinalImpulse( scrRedGetRCLine(), vPos, 17 );
+    scrRedS17CreateFinalImpulse( scrRedGetRFLine(), vPos, 17 );
+    scrRedS17CreateFinalImpulse( scrRedGetBCLine(), hPos, 21 );
+    scrRedS17CreateFinalImpulse( scrRedGetBFLine(), hPos, 21 );
+    scrRedChangeInstanceAlpha( oRedLineImpulse, 0.3, 75, scrRedTweenLinear );
 } else if( t == 11110 ) {
     var line = instance_create( 0, 0, oRedS17SweepLine );
     scrRedMoveInstance( line, 0, 608, 30, scrRedTweenExpIn );
+} else if( t == 11120 ) {
 } else if( t == 11135 ) {
+    scrRedChangeInstanceAlpha( oRedLineImpulse, 1, 15, scrRedTweenLinear );
     scrRedDestroy( oRedBaseSpawner );   
     scrRedDeactivateBullets( oRedProjectile );
     var fade = instance_create( 0, 0, oRedS17FinalFade );
@@ -58,6 +77,9 @@ if( t == 10442 - 50 ) {
         visible = false;
         frozen = true;
     }    
+} else if( t == 11150 ) {
+    scrRedChangeInstanceAlpha( oRedLineImpulse, 0, 300, scrRedTweenSineOut );
     // Clear.
+
 }
 

@@ -594,6 +594,7 @@
           <script>scripts\scrRedS17SpawnTeardrops.gml</script>
           <script>scripts\scrRedS17CreateExplosion.gml</script>
           <script>scripts\scrRedS17SpawnBarrageBullet.gml</script>
+          <script>scripts\scrRedS17CreateFinalImpulse.gml</script>
         </scripts>
       </scripts>
       <scripts name="BlockLight">
@@ -896,6 +897,7 @@
         <object>objects\oRedS17SweepLine</object>
         <object>objects\oRedS17FinalParticle</object>
         <object>objects\oRedS17FinalFade</object>
+        <object>objects\oRedS17ColorController</object>
       </objects>
       <objects name="BlockLight">
         <object>objects\oRedLightLine</object>

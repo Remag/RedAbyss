@@ -1,10 +1,6 @@
 /// scrRedS5TwinDownpourStep(t)
 var t = argument0;
 
-if( live_call( t ) ) {
-    return live_result;
-}
-
 if( t == 2094 ) {
     if( !instance_exists( oRedS4SourceBullet ) ) {
         instance_create( 400, 300, oRedS5SourceBullet );

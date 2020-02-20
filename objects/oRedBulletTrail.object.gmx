@@ -43,8 +43,8 @@ if( !instance_exists( Owner ) ) {
     PrevImageAngles[PrevPositionsIndex] = Owner.image_angle;
 }
 
-if( Fade ) {
-    TrailCount = max( 0, TrailCount - 1 );
+if( FadeDelta &gt; 0 ) {
+    TrailCount = max( 0, TrailCount - FadeDelta );
 } 
 
 PrevPositionsIndex++;

@@ -38,15 +38,8 @@ if( t == 8357 ) {
     }
     scrRedMoveInstance( oRedS15Source, 400, 303, 31, scrRedTweenBackIn, scrRedTweenSineIn );
 } else if( t == 8509 ) {
-    repeat( 70 ) {
-        var bullet = instance_create( 400, 303, oRedS15BurstBullet );
-        with( bullet ) {
-            speed = random_range( 6, 12 );
-            direction = random( 360 );
-            scrRedSetScale( random_range( 0.5, 1 ) );
-        }
-    }
-    var flash = scrRedFlashScreen( c_white, 5 );
+    scrRedCreateCircle( 400, 303, random( 360 ), 50, oRedS15BurstBullet );
+    var flash = scrRedFlashScreen( c_white, 5, 10 );
     flash.MaxAlpha = 0.5;
     var spawner = scrRedCreateCustomSpawner( 0, 0, 50, scrRedS15CreateSpikeWall );
     if( scrRedGetPlayerX() <= 400 ) {

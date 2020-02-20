@@ -1,10 +1,6 @@
 /// scrRedS7ClaustrophobiaStep(t)
 var t = argument0;
 
-if( live_call( t ) ) {
-    return live_result;
-}
-
 if( t == 3147 && !instance_exists( oRedS6AbyssSource ) ) {
     var targetSrc = instance_create( 400, 200, oRedS6TargetSource );
     targetSrc.AngleDelta = 1;
