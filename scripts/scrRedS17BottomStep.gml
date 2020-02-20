@@ -1,3 +1,4 @@
+/// scrRedS17BottomStep(t)
 var t = argument0;
 
 if( live_call( t ) ) {
@@ -19,12 +20,12 @@ if( t == 9746 ) {
 if( t == 10442 - 50 ) {
     scrRedDestroy( oRedBaseSpawner );
 } else if( t == 10442 ) {
-    var spawner1 = scrRedCreateSpawner( 0, 0, 5, oRedS17OrbitBullet );
+    var spawner1 = scrRedCreateSpawner( 0, 0, 6, oRedS17OrbitBullet );
     spawner1.MainDir = 315;
     spawner1.Curve = -1;
     spawner1.ImageMin = 3;
     spawner1.ImageMax = 4;
-    var spawner2 = scrRedCreateSpawner( 800, 0, 5, oRedS17OrbitBullet );
+    var spawner2 = scrRedCreateSpawner( 800, 0, 6, oRedS17OrbitBullet );
     spawner2.MainDir = 225;
     spawner2.Curve = 1;
     spawner2.ImageMin = 7;

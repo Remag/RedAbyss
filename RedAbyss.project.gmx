@@ -555,6 +555,7 @@
           <script>scripts\scrRedS13CreateVSpikeWall.gml</script>
           <script>scripts\scrRedS13SpawnBulletCircle.gml</script>
           <script>scripts\scrRedS13SpawnBarrageBullet.gml</script>
+          <script>scripts\scrRedS13SpawnAntiTargetBullet.gml</script>
         </scripts>
         <scripts name="S14_IrrevocableDamage">
           <script>scripts\scrRedS14IrrevocableDamageStep.gml</script>
@@ -585,6 +586,8 @@
           <script>scripts\scrRedS16SpawnTrailBullet.gml</script>
           <script>scripts\scrRedS16SpawnBarrageSpike.gml</script>
           <script>scripts\scrRedS16CreatePathSpawner.gml</script>
+          <script>scripts\scrRedS16SpawnBorderSpike.gml</script>
+          <script>scripts\scrRedS16CreateEdgeInstance.gml</script>
         </scripts>
         <scripts name="S17_Bottom">
           <script>scripts\scrRedS17BottomStep.gml</script>
@@ -612,6 +615,7 @@
   <shaders name="shaders">
     <shader type="GLSLES">shaders\sdrRedBulbShader.shader</shader>
     <shader type="GLSLES">shaders\sdrRedColorShader.shader</shader>
+    <shader type="GLSLES">shaders\sdrRedGreyscaleShader.shader</shader>
   </shaders>
   <fonts name="fonts">
     <font>fonts\fDefault30</font>
@@ -839,6 +843,7 @@
         <object>objects\oS13WallSpike</object>
         <object>objects\oRedS13SphincterSpike</object>
         <object>objects\oRedS13SphincterController</object>
+        <object>objects\oRedS13AntiTargetBullet</object>
       </objects>
       <objects name="S14_IrrevocableDamage">
         <object>objects\oRedS14Source</object>
@@ -879,6 +884,8 @@
         <object>objects\oRedS16PathSpawner</object>
         <object>objects\oRedS16PathSpike</object>
         <object>objects\oRedS16PlayerDummy</object>
+        <object>objects\oRedS16BorderSpike</object>
+        <object>objects\oRedS16GreyscaleDrawMechanism</object>
       </objects>
       <objects name="S17_Bottom">
         <object>objects\oRedS17Teardrop</object>

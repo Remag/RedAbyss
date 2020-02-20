@@ -29,7 +29,7 @@
     return live_result;
 }
 speed = random_range( 7, 9 );
-direction = Spawner.MainDir + random_range( -45, 45 );
+direction = Spawner.MainDir + random_range( -40, 40 );
 CurveDir = Spawner.Curve;
 Wrap = false;
 

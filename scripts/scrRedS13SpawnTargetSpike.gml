@@ -9,4 +9,4 @@ rSpike.direction = 180;
 rSpike.image_angle = rSpike.direction;
 rSpike.speed = 30;
 
-scrRedShakeViewX( 3, 4 );
+scrRedShakeViewX( 4, 4 );

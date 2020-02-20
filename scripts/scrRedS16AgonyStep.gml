@@ -44,15 +44,21 @@ if( t == 9050 ) {
             gravity = 0.4;
         }
     }
-    scrRedFlashScreen( c_white, 10 );
+    scrRedFlashScreen( c_white, 5, 15 );
     repeat( 75 ) {
         var bullet = instance_create( 400, 610, oRedS16ExplosionBullet );
-        bullet.speed = random_range( 3, 17 );
         bullet.direction = random_range( 0, 180 );
         bullet.image_angle = bullet.direction;
-        bullet.gravity = 0.4;
+        if( bullet.direction > 130 || bullet.direction < 50 ) {
+            bullet.speed = random_range( 3, 17 );
+        } else {
+            bullet.speed = random_range( 3, 10 );
+        }
+        bullet.gravity = 0.2;
     }
-    var spawner = scrRedCreateCustomSpawner( 0, 0, 1.5, scrRedS16SpawnBarrageSpike );
+    var borderSpawner = scrRedCreateCustomSpawner( 0, 0, 0.5, scrRedS16SpawnBorderSpike );
+    borderSpawner.ScaleDelta = 0.14;
+    var spawner = scrRedCreateCustomSpawner( 0, 0, 1.6, scrRedS16SpawnBarrageSpike, 9525 - 9398 );
     spawner.Curve = false;
 } else if( t == 9464 ) {
     with( oRedS16BarrageSpike ) {
@@ -78,7 +84,6 @@ if( t == 9050 ) {
     }
     
 } else if( t == 9525 ) {
-    scrRedDestroy( oRedBaseSpawner );
 } else if( t == 9596 ) {
     scrRedS16CreatePathSpawner( pRedS16TL );
     scrRedS16CreatePathSpawner( pRedS16TR );
@@ -90,29 +95,50 @@ if( t == 9050 ) {
     scrRedS16CreatePathSpawner( pRedS16B );
     scrRedS16CreatePathSpawner( pRedS16L );
 } else if( t == 9660 ) {
+    scrRedDestroy( oRedBaseSpawner );
     scrRedDestroy( oRedS16PathSpawner );
+    scrRedDeactivateBullets( oRedS16BorderSpike );
+    instance_create( 0, 0, oRedS16GreyscaleDrawMechanism );
+    with( oRedS16BorderSpike ) {
+        speed *= 0.1;
+        ScaleDelta *= 0.1;
+        CurveDelta *= 0.1;
+    }
     scrRedDeactivateBullets( oRedS16PathSpike );
     with( objPlayer ) {
         visible = false;
         frozen = true;
         var dummy = instance_create( x, y, oRedS16PlayerDummy );
+        dummy.vspeed = vspeed * 0.1;
         dummy.sprite_index = sprite_index;
         dummy.image_index = image_index;
         dummy.image_speed = image_speed / 5;
     }
+    with( oRedS16PathSpike ) {
+        var distance = point_distance( x, y, 400, 303 );
+        var pushDistance = random_range( 0.01, 0.02 ) * power( distance, 1.5 );
+        RotateDelta = pushDistance * random_range( -2.0, 2.0 );
+        scrRedRotateInstanceImage( id, image_angle + RotateDelta, 100, scrRedTweenSineOut );
+        var dir = point_direction( 400, 303, x, y );
+        scrRedMoveInstance( id, x + lengthdir_x( pushDistance, dir ), y + lengthdir_y( pushDistance, dir ), 100, scrRedTweenSineOut );
+    } 
+    
     var bBlock = instance_create( 0, 608 - 32, objBlock );
     bBlock.image_xscale = 800 / 32;
     var lBlock = instance_create( 0, 0, objBlock );
     lBlock.image_yscale = ( 608 - 32 ) / 32;
     var rBlock = instance_create( 800 - 32, 0, objBlock );
     rBlock.image_yscale = lBlock.image_yscale;
-    scrRedFlashScreen( c_black, 75, 25 );
+} else if( t == 9700 ) {
+    scrRedFlashScreen( c_black, 35, 25 );
 } else if( t == 9735 ) {
     oRedAbyssBackground.sprite_index = sprRedAbyssBackground;
+    scrRedDestroy( oRedS16BorderSpike );
     scrRedDestroy( oRedS16PathSpike );
     scrRedDestroy( oRedInfiniteJump );
     scrRedDestroy( oRedS16PlayerDummy );
     scrRedDestroy( oRedAbyssEdgeSpike );
+    scrRedDestroy( oRedS16GreyscaleDrawMechanism );
     with( objPlayer ) {
         visible = true;
         frozen = false;

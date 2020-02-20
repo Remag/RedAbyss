@@ -22,13 +22,13 @@ if( t == 7660 ) {
     src2.y = src2.YEnd;
     src2.YStep = src2.YDuration;
     src2.AngleDelta = -1;
-    scrRedAttachSpawner( oRedS14Source, 4, oRedS14Bullet );
+    scrRedAttachSpawner( oRedS14Source, 5.5, oRedS14Bullet );
     
 } else if( t == 7702 ) {
     with( oRedS14Source ) {
         Spawner.SpawnPeriod = 3;
     }
-    scrRedAttachCustomSpawner( oRedS14Source, 2, scrRedS14SpawnBurstBullets, 20 );
+    scrRedAttachCustomSpawner( oRedS14Source, 3, scrRedS14SpawnBurstBullets, 21 );
     with( oRedS14Source ) {
         Spawner.DirIndex = 0;
     }
@@ -113,8 +113,8 @@ if( t == 7660 ) {
 } else if( t == 8252 ) {
     scrRedAttachSpawner( oRedS14Source, 1.5, oRedS14TimedSpike, 25 );
     with( oRedS14Source ) {
-        Spawner.MinSpeed = 14;
-        Spawner.MaxSpeed = 18;
+        Spawner.MinSpeed = 13;
+        Spawner.MaxSpeed = 17;
     }
     scrRedS14MoveSources( 780, 20, 20, 586, 25 );
 } else if( t == 8291 ) {

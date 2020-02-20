@@ -11,7 +11,7 @@ with( targetId ) {
     var command = instance_create( 0, 0, oRedImageRotateCommand );
     command.TargetId = id;
     command.StartDirection = image_angle;
-    command.DeltaDirection = destDir - direction;
+    command.DeltaDirection = destDir - image_angle;
     command.Step = 0;
     command.Duration = duration;
     command.Smoother = smoother;
