@@ -5,6 +5,7 @@ if( t == 9746 ) {
     with( oRedLightLine ) {
         x = xstart;
         y = ystart;
+        visible = true;
     }
     instance_create( 0, 0, oRedS17ColorController );
     scrRedCreateCustomSpawner( 0, 0, 8, scrRedS17SpawnTeardrops );

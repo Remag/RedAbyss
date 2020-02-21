@@ -14,7 +14,9 @@ if( t == 6966 ) {
         instance_create( 0, 0, oRedInfiniteJump );
         scrRedDestroy( objBlock );
         scrRedDestroy( oRedAbyssBlock );
-        scrRedDestroy( oRedLightLine );
+        with( oRedLightLine ) {
+            visible = false;
+        }
         scrRedCreateEdgeWalls( 24, 24 );
     }
     var src1 = instance_find( oRedS13Source, 0 );

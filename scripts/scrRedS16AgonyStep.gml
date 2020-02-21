@@ -10,7 +10,9 @@ if( t == 9050 ) {
         instance_create( 0, 0, oRedInfiniteJump );
         scrRedDestroy( objBlock );
         scrRedDestroy( oRedAbyssBlock );
-        scrRedDestroy( oRedLightLine );
+        with( oRedLightLine ) {
+            visible = false;
+        }
         scrRedCreateEdgeWalls( 24, 24 );
     }
     scrRedDestroy( oRedS15Source );

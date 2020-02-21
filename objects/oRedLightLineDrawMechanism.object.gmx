@@ -58,10 +58,12 @@ UvH = 1 / ( uvs[3] - uvs[1] );
             <kind>1</kind>
             <string>shader_set( sdrRedBulbShader );
 with( oRedLightLine ) {
-    var lineId = surface_get_texture( LineSurface );
-    shader_set_uniform_f( other.UvUniform, other.UvX, other.UvY, other.UvW, other.UvH );
-    texture_set_stage( other.LightIntensitySampler, lineId );
-    draw_self();
+    if( visible ) {
+        var lineId = surface_get_texture( LineSurface );
+        shader_set_uniform_f( other.UvUniform, other.UvX, other.UvY, other.UvW, other.UvH );
+        texture_set_stage( other.LightIntensitySampler, lineId );
+        draw_self();
+    }
 }
 shader_reset();
 </string>
