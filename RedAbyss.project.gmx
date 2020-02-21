@@ -455,6 +455,7 @@
         <script>scripts\scrRedChangeInstanceColor.gml</script>
         <script>scripts\scrRedChangeInstanceXScale.gml</script>
         <script>scripts\scrRedChangeInstanceYScale.gml</script>
+        <script>scripts\scrRedSpawnSectorBullet.gml</script>
       </scripts>
       <scripts name="TweenScripts">
         <script>scripts\scrRedTweenLinear.gml</script>
@@ -545,6 +546,7 @@
         <scripts name="S12_Relapse">
           <script>scripts\scrRedS12RelapseStep.gml</script>
           <script>scripts\scrRedS12CreateRedCircle.gml</script>
+          <script>scripts\scrRedS12SpawnBurstBullet.gml</script>
         </scripts>
         <scripts name="S13_CorruptedInfinity">
           <script>scripts\scrRedS13CorruptedInfinityStep.gml</script>
@@ -849,8 +851,8 @@
       <objects name="S14_IrrevocableDamage">
         <object>objects\oRedS14Source</object>
         <object>objects\oRedS14Bullet</object>
-        <object>objects\oRedS14BarrageBullet</object>
         <object>objects\oRedS14BurstBullet</object>
+        <object>objects\oRedS14BarrageBullet</object>
         <object>objects\oRedS14PolygonBullet</object>
         <object>objects\oRedS14Spike</object>
         <object>objects\oRedS14BarrageSpike</object>
@@ -917,6 +919,8 @@
       <object>objects\oRedColoredFruit</object>
       <object>objects\oRedBoundColoredFruit</object>
       <object>objects\oRedAbyssSpikeBullet</object>
+      <object>objects\oRedGradBullet</object>
+      <object>objects\oRedBoundGradBullet</object>
       <object>objects\oRedAbyssBoundSpikeBullet</object>
       <object>objects\oRedAbyssEdgeSpike</object>
       <object>objects\oRedAbyssEdgeTwin</object>

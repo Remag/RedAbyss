@@ -2,6 +2,7 @@
 var targetX = argument0;
 
 var distance = min( targetX, 800 - targetX );
+distance = min( distance, 320 );
 var impulseScale = ( distance + 108 - 32 ) * 2 / sprite_get_width( sprRedLightArea );
 
 var lImpulse1 = instance_create( 0, 0, oRedLineImpulse );
@@ -26,4 +27,4 @@ rImpulse2.image_xscale = impulseScale;
 rImpulse2.image_blend = c_red;
 rImpulse2.image_alpha = 0;
 
-scrRedChangeInstanceAlpha( oRedLineImpulse, 1, 25 );
+scrRedChangeInstanceAlpha( oRedLineImpulse, 1, 20 );

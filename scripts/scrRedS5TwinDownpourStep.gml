@@ -139,7 +139,7 @@ if( t == 2720 ) {
     with( oRedS5BurstBullet ) {
         scrRedRotateInstanceImage( id, DirDelta * 45, 45, scrRedTweenLinear );
         scrRedBulletFadeOut( id, 0.02 );
-        scrRedAttachSpawner( id, 0.75, oRedS5BulletFadeParticle, 25 );
+        scrRedAttachSpawner( id, 1, oRedS5BulletFadeParticle, 25 );
     }
 }
 

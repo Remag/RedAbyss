@@ -59,7 +59,10 @@ else if( t == 6619 ) {
     }
 } else if( t == 6837 ) {
     scrRedDestroy( oRedBaseSpawner );
-    scrRedAttachSpawner( oRedS12Source, 2, oRedS12BurstBullet );
+    scrRedAttachCustomSpawner( oRedS12Source, 2, scrRedS12SpawnBurstBullet );
+    with( oRedS12Source ) {
+        Spawner.DirIndex = 0;
+    }
 } else if( t == 6879 ) {
     scrRedDestroy( oRedS12Bullet );
     scrRedDestroy( oRedBulletTrail );
@@ -133,6 +136,9 @@ else if( t == 6619 ) {
     }
     scrRedDestroy( objBlock );
 } else if( t == 6976 ) {
+    with( oRedLightLine ) {
+        visible = false;
+    }
     scrRedDestroy( oRedAbyssBlock );
     scrRedDestroy( oRedLineImpulse );
     scrRedDestroy( oRedS12EdgeSpikeMover );

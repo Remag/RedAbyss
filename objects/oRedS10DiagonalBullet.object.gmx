@@ -58,14 +58,14 @@ LightCreated = false;
 }
 if( y &gt;= 0 &amp;&amp; y &lt; 608 - 32 &amp;&amp; !LightCreated ) {
     if( bbox_left &lt;= 50 &amp;&amp; hspeed &lt; 0 ) {
-        var line1 = scrRedCreateFadingImpulse( scrRedGetLCLine(), 608 - y - 56, 5, 7 );
+        var line1 = scrRedCreateFadingImpulse( scrRedGetLCLine(), 608 - y - 56, 8, 8 );
         line1.image_blend = image_blend;
-        line1.image_xscale = 2.75;
+        line1.image_xscale = 3.0;
         LightCreated = true;
     } else if( bbox_right &gt;= 750 &amp;&amp; hspeed &gt; 0 ) {
-        var line1 = scrRedCreateFadingImpulse( scrRedGetRFLine(), 608 - y - 56, 5, 7 );
+        var line1 = scrRedCreateFadingImpulse( scrRedGetRFLine(), 608 - y - 56, 8, 8 );
         line1.image_blend = image_blend;
-        line1.image_xscale = 2.5;
+        line1.image_xscale = 2.75;
         LightCreated = true;
     }
 }

@@ -70,14 +70,14 @@ SecondLightCreated = false;
     }
 } else if( bbox_bottom &gt;= 558 &amp;&amp; vspeed &gt; 0 ) {
     if( !FirstLightCreated ) {
-        var line1 = scrRedCreateFadingImpulse( scrRedGetBCLine(), x - 32 + hspeed * 3, 5, 7 );
+        var line1 = scrRedCreateFadingImpulse( scrRedGetBCLine(), x - 32 + hspeed * 3, 8, 8 );
         line1.image_blend = image_blend;
-        line1.image_xscale = 2.75;
+        line1.image_xscale = 3.0;
         FirstLightCreated = true;
     } else if( SecondLightReady &amp;&amp; !SecondLightCreated ) {
-        var line1 = scrRedCreateFadingImpulse( scrRedGetBCLine(), x - 32 + hspeed * 3, 5, 7 );
+        var line1 = scrRedCreateFadingImpulse( scrRedGetBCLine(), x - 32 + hspeed * 3, 8, 8 );
         line1.image_blend = image_blend;
-        line1.image_xscale = 2.75;
+        line1.image_xscale = 3.0;
         SecondLightReady = false;
         SecondLightCreated = true;
     }

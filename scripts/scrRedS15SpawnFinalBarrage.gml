@@ -1,9 +1,4 @@
-var sectorCount = 6;
-var sectorDirDelta = 360 / ( 2 * sectorCount );
-var playerDir = scrRedDirToPlayer( x, y );
-var currentDir = playerDir + sectorDirDelta * 2 * DirIndex;
-var bullet = instance_create( x, y, oRedS15FinalBurstBullet );
-bullet.direction = random_range( currentDir - sectorDirDelta, currentDir + sectorDirDelta );
+var bullet = scrRedSpawnSectorBullet( DirIndex, 6, oRedS15FinalBurstBullet );
 bullet.speed = random_range( MinSpeed, MaxSpeed );
 scrRedAttachTrail( bullet, round( TrailCount ) );
 
