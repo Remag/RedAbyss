@@ -26,9 +26,8 @@ if( t == 4189 ) {
     scrRedS9SwitchMovePointsY( rightSrc );
     
     scrRedAttachCustomSpawner( oRedS9DualSource, 2, scrRedS9SpawnDualBullet );
-    with( oRedAttachedScriptSpawner ) {
-        DirIndex = 0;
-    }
+    leftSrc.Spawner.DirIndex = 1;
+    rightSrc.Spawner.DirIndex = 4;
 }
 
 if( t == 4220 ) {

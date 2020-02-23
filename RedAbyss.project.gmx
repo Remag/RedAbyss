@@ -919,9 +919,9 @@
       <object>objects\oRedColoredFruit</object>
       <object>objects\oRedBoundColoredFruit</object>
       <object>objects\oRedAbyssSpikeBullet</object>
+      <object>objects\oRedAbyssBoundSpikeBullet</object>
       <object>objects\oRedGradBullet</object>
       <object>objects\oRedBoundGradBullet</object>
-      <object>objects\oRedAbyssBoundSpikeBullet</object>
       <object>objects\oRedAbyssEdgeSpike</object>
       <object>objects\oRedAbyssEdgeTwin</object>
       <object>objects\oRedDebugInfo</object>

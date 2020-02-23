@@ -33,11 +33,11 @@ if( t == 2094 ) {
         BarrageSpawner.SpeedMax = 8;
     }
 }
-if( t >= 2094 && t < 2430 ) {
+if( t >= 2094 && t < 2425 ) {
     with( oRedS5SourceBullet ) {
         BarrageSpawner.SpawnPeriod *= 0.996;
     }
-} else if( t == 2430 ) {
+} else if( t == 2425 ) {
     with( oRedS5SourceBullet ) {
         BarrageSpawner.SpawnPeriod = 2;
     }

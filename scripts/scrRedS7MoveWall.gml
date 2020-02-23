@@ -28,18 +28,18 @@ if( moveLeft ) {
     targetFLine = scrRedGetLFLine();
 }
 
-var flash1 = scrRedCreateActiveImpulse( targetCLine, 150, c_red, 0 );
-flash1.image_xscale = 8;
-var flash2 = scrRedCreateActiveImpulse( targetFLine, 150, c_red, 0 );
-flash2.image_xscale = 8;
-var flash3 = scrRedCreateActiveImpulse( targetCLine, 608 - 32 - 150, c_red, 0 );
-flash3.image_xscale = 8;
-var flash4 = scrRedCreateActiveImpulse( targetFLine, 608 - 32 - 150, c_red, 0 );
-flash4.image_xscale = 8;
-scrRedChangeInstanceAlpha( flash1, 1, duration / 1.5 );
-scrRedChangeInstanceAlpha( flash2, 1, duration / 1.5 );
-scrRedChangeInstanceAlpha( flash3, 1, duration / 1.5 );
-scrRedChangeInstanceAlpha( flash4, 1, duration / 1.5 );
+var flashCount = 3;
+var flashWidth = ( 606 - 32 ) / flashCount;
+var currentFlashPos = flashWidth / 2;
+for( var i = 0; i < flashCount; i++ ) {
+    var flash1 = scrRedCreateActiveImpulse( targetCLine, currentFlashPos, c_red, 0 );
+    flash1.image_xscale = flashWidth / 32;
+    var flash2 = scrRedCreateActiveImpulse( targetFLine, currentFlashPos, c_red, 0 );
+    flash2.image_xscale = flashWidth / 32;
+    currentFlashPos += flashWidth;
+    scrRedChangeInstanceAlpha( flash1, 1, duration / 1.5 );
+    scrRedChangeInstanceAlpha( flash2, 1, duration / 1.5 );
+}
 
 for( var i = 0; i < 19; i++ ) {
     var spikeY = i * 32;
