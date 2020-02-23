@@ -211,11 +211,7 @@
       </datafile>
     </datafiles>
   </datafiles>
-  <NewExtensions>
-    <extension index="0">extensions\GMLive</extension>
-    <extension index="1">extensions\GMLiveHelper</extension>
-    <extension index="2">extensions\netlog</extension>
-  </NewExtensions>
+  <NewExtensions/>
   <sounds name="sound">
     <sounds name="sfx">
       <sound>sound\sndJump</sound>
@@ -627,7 +623,6 @@
     <font>fonts\fDefault12</font>
   </fonts>
   <objects name="objects">
-    <object>objects\obj_gmlive</object>
     <objects name="world">
       <object>objects\objWorld</object>
       <object>objects\objCamera</object>
