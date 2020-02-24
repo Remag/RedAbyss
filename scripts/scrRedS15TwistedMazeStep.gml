@@ -40,7 +40,7 @@ if( t == 8357 ) {
     }
     scrRedMoveInstance( oRedS15Source, 400, 303, 31, scrRedTweenBackIn, scrRedTweenSineIn );
 } else if( t == 8509 ) {
-    scrRedCreateCircle( 400, 303, random( 360 ), 50, oRedS15BurstBullet );
+    scrRedCreateCircle( 400, 303, random( 360 ), 45, oRedS15BurstBullet );
     var flash = scrRedFlashScreen( c_white, 5, 10 );
     flash.MaxAlpha = 0.5;
     var spawner = scrRedCreateCustomSpawner( 0, 0, 50, scrRedS15CreateSpikeWall );
@@ -85,7 +85,7 @@ if( t == 8357 ) {
 } else if( t == 8920 ) {
     scrRedDestroy( oRedAttachedScriptSpawner );    
     var src1 = instance_find( oRedS15Source, 0 );
-    var spawner = scrRedAttachCustomSpawner( src1, 0.9, scrRedS15SpawnFinalBarrage );
+    var spawner = scrRedAttachCustomSpawner( src1, 1, scrRedS15SpawnFinalBarrage );
     spawner.MinSpeed = 8;
     spawner.MaxSpeed = 10;
     spawner.TrailCount = 3;

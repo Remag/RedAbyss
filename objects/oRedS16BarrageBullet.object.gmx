@@ -25,10 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>direction = random( 360 );
-speed = random_range( 10, 12 );
+            <string>speed = 10;
 scrRedSetScale( random_range( 0.5, 0.9 ) );
-scrRedAttachTrail( id, 5 );
+scrRedAttachTrail( id, 4 );
 </string>
           </argument>
         </arguments>

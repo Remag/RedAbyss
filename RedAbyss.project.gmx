@@ -578,6 +578,7 @@
         <scripts name="S16_Agony">
           <script>scripts\scrRedS16AgonyStep.gml</script>
           <script>scripts\scrRedS16OscillateSpawner.gml</script>
+          <script>scripts\scrRedS16SpawnBarrageBullet.gml</script>
           <script>scripts\scrRedS16SpawnTargetLineCircle.gml</script>
           <script>scripts\scrRedS16SpawnTargetLine.gml</script>
           <script>scripts\scrRedS16SpawnCircle.gml</script>

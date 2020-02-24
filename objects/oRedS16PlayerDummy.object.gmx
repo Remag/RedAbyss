@@ -50,6 +50,12 @@ MaxSpeed = 0.3;
           <argument>
             <kind>1</kind>
             <string>speed = min( MaxSpeed, speed );
+
+if( vspeed &lt; 0 ) {
+    sprite_index = sprPlayerJump;
+} else {
+    sprite_index = sprPlayerFall;
+}
 </string>
           </argument>
         </arguments>
