@@ -20,7 +20,7 @@ if( t == 9050 ) {
     scrRedMoveInstance( src1, 100, 100, 40 );
     var spawner = scrRedAttachCustomSpawner( src1, 25, scrRedS16SpawnTargetLineCircle );
     spawner.StartDir = random( 360 );
-    spawner.SectorCount = 4;
+    spawner.SectorCount = 5;
     src1.LineSpawner = spawner;
     var spawner2 = scrRedAttachCustomSpawner( src1, 2, scrRedS16SpawnBarrageBullet );
     spawner2.DirIndex = 1;
@@ -39,6 +39,11 @@ if( t == 9050 ) {
 } else if( t == 9291 ) {
     var spawner = scrRedAttachCustomSpawner( oRedS16Source, 5, scrRedS16SpawnCircle, 15 );
     spawner.CircleDir = scrRedDirToPlayer( spawner.x, spawner.y );
+    if( instance_exists( objPlayer ) && objPlayer.hspeed != 0 ) {
+        spawner.CircleDelta = objPlayer.hspeed;
+    } else {
+        spawner.CircleDelta = -3;
+    }
 } else if( t == 9313 ) {
     scrRedAttachCustomSpawner( oRedS16Source, 4, scrRedS16SpawnTargetSpike, 20 );
     var fallDuration = 9398 - 9313;

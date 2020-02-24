@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>speed = 10;
+            <string>speed = 12;
 scrRedSetScale( random_range( 0.7, 1 ) );
 scrRedAttachTrail( id, 7 );
 

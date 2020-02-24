@@ -49,7 +49,7 @@ if( t == 6966 ) {
 } else if( t == 7178 ) {
     scrRedFlashScreen( c_white, 5, 15 );
     with( oRedS13Source ) {
-        scrRedCreateCircle( x, y, random( 360 ), 35, oRedS13BurstBullet );
+        scrRedCreateCircle( x, y, random( 360 ), 33, oRedS13BurstBullet );
         scrRedMoveInstance( id, x + sign( 400 - x ) * 50, 304, 34 );
     }
 } else if( t == 7212 ) {

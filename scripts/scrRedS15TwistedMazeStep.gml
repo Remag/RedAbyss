@@ -86,8 +86,8 @@ if( t == 8357 ) {
     scrRedDestroy( oRedAttachedScriptSpawner );    
     var src1 = instance_find( oRedS15Source, 0 );
     var spawner = scrRedAttachCustomSpawner( src1, 1, scrRedS15SpawnFinalBarrage );
-    spawner.MinSpeed = 8;
-    spawner.MaxSpeed = 10;
+    spawner.MinSpeed = 11;
+    spawner.MaxSpeed = 11;
     spawner.TrailCount = 3;
     spawner.DirIndex = 0;
 } else if( t == 9050 ) {

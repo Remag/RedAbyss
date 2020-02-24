@@ -35,7 +35,7 @@ if( t == 7660 ) {
         Spawner.DirIndex = 0;
     }
 } else if( t == 7780 ) {
-    scrRedShakeViewX( -56, 7803 - 7780, scrRedTweenSineInOut );
+    scrRedShakeViewX( -64, 7803 - 7780, scrRedTweenSineInOut );
 } else if( t == 7790 ) {
     scrRedDestroy( oRedBaseSpawner );
     with( oRedS14Bullet ) {
