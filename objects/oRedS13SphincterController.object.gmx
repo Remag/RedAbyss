@@ -31,10 +31,10 @@ Circle.CurrentDirection += 1;
 var t = oRedAbyssAvoidanceController.Step;
 var preparationStart = 7510;
 var preparationEnd = preparationStart + 20;
-var squeeze1Start = 7595;
-var squeeze1End = squeeze1Start + 23;
-var squeeze2Start = 7636;
-var squeeze2End = squeeze2Start + 23;
+var squeeze1Start = 7591;
+var squeeze1End = squeeze1Start + 25;
+var squeeze2Start = 7632;
+var squeeze2End = squeeze2Start + 25;
 var circleEnd = squeeze2End + 35;
 
 if( t &gt;= preparationStart &amp;&amp; t &lt; preparationEnd ) {

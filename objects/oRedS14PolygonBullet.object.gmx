@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scrRedSetScale( 0.9 );
+            <string>scrRedSetScale( 0.8 );
+scrRedAttachTrail( id, 4 );
 </string>
           </argument>
         </arguments>

@@ -1,8 +1,7 @@
-var sectorCount = 4;
-var count = SpawnCount / sectorCount;
-var sectorDirDelta = 360 / ( 2 * sectorCount );
+var count = SpawnCount / SectorCount;
+var sectorDirDelta = 360 / ( 2 * SectorCount );
 var currentDir = scrRedDirToPlayer( x, y );
-for( var i = 0; i < sectorCount; i++ ) {
+for( var i = 0; i < SectorCount; i++ ) {
     repeat( count ) {
         var bullet = instance_create( x, y, oRedS5BurstBullet );
         bullet.speed = random_range( SpeedMin, SpeedMax );
@@ -12,4 +11,3 @@ for( var i = 0; i < sectorCount; i++ ) {
     }
 }
 
-scrRedChangeInstanceAlpha( oRedS5SourceBullet, 1, 12, scrRedTweenBackForth );

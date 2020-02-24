@@ -80,7 +80,7 @@ if( t == 3158 ) {
     S7StartPlayerPosX = scrRedGetPlayerX();
     scrRedS7InitWallImpulses( S7StartPlayerPosX );
 } else if( t == 3424 ) {
-    scrRedS7MoveWall( S7StartPlayerPosX < 400, 20, S7StartPlayerPosX + 32 );
+    scrRedS7MoveWall( S7StartPlayerPosX < 400, 20, S7StartPlayerPosX );
     if( S7StartPlayerPosX < 400 ) {
         scrRedShakeViewX( -100, 40 );
     } else {
@@ -89,7 +89,7 @@ if( t == 3158 ) {
 } else if( t == 3444 ) {
     scrRedS7MoveWallBack( S7StartPlayerPosX < 400, 20 );
 } else if( t == 3465 ) {
-    scrRedS7MoveWall( S7StartPlayerPosX >= 400, 20, S7StartPlayerPosX + 32 );
+    scrRedS7MoveWall( S7StartPlayerPosX >= 400, 20, S7StartPlayerPosX );
     if( S7StartPlayerPosX < 400 ) {
         scrRedShakeViewX( 100, 40 );
     } else {

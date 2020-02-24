@@ -1,7 +1,7 @@
 /// scrRedS5TwinDownpourStep(t)
 var t = argument0;
 
-if( t == 2094 ) {
+if( t == 2090 ) {
     if( !instance_exists( oRedS4SourceBullet ) ) {
         instance_create( 400, 300, oRedS5SourceBullet );
     } else {
@@ -9,8 +9,11 @@ if( t == 2094 ) {
             instance_change( oRedS5SourceBullet, false );
         }
     }
+    scrRedCreateCustomSpawner( 0, 0, 43.5, scrRedS5FlashFruit );
+} else if( t == 2094 ) {
     with( oRedS5SourceBullet ) {
         BurstSpawner = scrRedAttachCustomSpawner( id, 43.5, scrRedS5SpawnBurstBullet );
+        BurstSpawner.SectorCount = 4;
         BurstSpawner.SpawnCount = 12;
         BurstSpawner.SpeedMin = 6;
         BurstSpawner.SpeedMax = 8;
@@ -63,6 +66,7 @@ if( t == 2443 ) {
         BarrageSpawner.SpeedMin = 7;
         BarrageSpawner.SpeedMax = 9;
         BurstSpawner.SpawnPeriod /= 2;
+        BurstSpawner.SectorCount = 4;
         BurstSpawner.SpawnCount = 8;
         BurstSpawner.SpeedMin = 10;
         BurstSpawner.SpeedMax = 12;
@@ -76,6 +80,7 @@ if( t == 2565 ) {
 }
 if( t == 2616 ) {
     with( oRedS5SourceBullet ) {
+        BurstSpawner.SectorCount = 6;
         BurstSpawner.SpawnPeriod /= 2;
         BurstSpawner.SpawnCount = 6;
         BurstSpawner.SpeedMin = 14;
@@ -83,9 +88,10 @@ if( t == 2616 ) {
     }
 } else if( t == 2658 ) {
     with( oRedS5SourceBullet ) {
+        BurstSpawner.SectorCount = 5;
         BurstSpawner.SpawnPeriod /= 2;
-        BurstSpawner.SpawnCount = 6;
-        BurstSpawner.SpeedMin = 17;
+        BurstSpawner.SpawnCount = 5;
+        BurstSpawner.SpeedMin = 18;
         BurstSpawner.SpeedMax = 19;
         BurstSpawner.TrailLength = 4;
     }
@@ -109,6 +115,7 @@ if( t >= 2443 && t <= 2702 ) {
 
 if( t == 2702 ) {
     scrRedDestroy( oRedS5BarrageBullet );
+    scrRedDestroy( oRedBaseSpawner );
     with( oRedS5BurstBullet ) {
         speed = 0;
     }

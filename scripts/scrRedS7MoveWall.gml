@@ -12,7 +12,7 @@ var targetCLine;
 var targetFLine;
 if( moveLeft ) {
     targetWall = oRedRightBlock;
-    destWallX = 800 - 32 - distance;
+    destWallX = 800 - distance - 48;
     spikeObj = oRedS7LeftWallSpike;
     spikeX = 800 - 32;
     destSpikeX = destWallX - 32;
@@ -20,7 +20,7 @@ if( moveLeft ) {
     targetFLine = scrRedGetRFLine();
 } else {
     targetWall = oRedLeftBlock;
-    destWallX = distance;
+    destWallX = distance + 48;
     spikeObj = oRedS7RightWallSpike;
     spikeX = 0;
     destSpikeX = destWallX + 32;

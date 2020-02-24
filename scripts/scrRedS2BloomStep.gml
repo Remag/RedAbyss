@@ -10,7 +10,7 @@ if( t == 355 ) {
 } else if( t == 441 ) {
     var period = 3.0;
     scrRedCreateBloomLine( 250, 0, -90, period, 6, 1, 2 );
-    scrRedCreateBloomLine( 650, 0, -90, period, 6, 1, 2 );
+    scrRedCreateBloomLine( 550, 0, -90, period, 6, 1, 2 );
 } else if( t == 463 ) {
 } else if( t == 484 ) {
 } else if( t == 528 ) {

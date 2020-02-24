@@ -492,6 +492,7 @@
         <scripts name="S5_TwinDownpour">
           <script>scripts\scrRedS5TwinDownpourStep.gml</script>
           <script>scripts\scrRedS5SpawnBurstBullet.gml</script>
+          <script>scripts\scrRedS5FlashFruit.gml</script>
         </scripts>
         <scripts name="S6_WarmWelcome">
           <script>scripts\scrRedS6WarmWelcomeStep.gml</script>
@@ -969,9 +970,6 @@
     <room>rooms\rTemplate</room>
     <room>rooms\rRedLunarAbyss</room>
   </rooms>
-  <constants number="1">
-    <constant name="live_enabled">1</constant>
-  </constants>
   <help>
     <rtf>help.rtf</rtf>
   </help>
