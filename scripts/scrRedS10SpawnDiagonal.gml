@@ -1,3 +1,8 @@
+var step = oRedAbyssAvoidanceController.Step;
+if( step < 4885 && !instance_exists( objPlayer ) ) {
+    return 0;
+}
+
 var spawnX = random_range( 48, 800 - 48 );
 var spawnY = -150;
 

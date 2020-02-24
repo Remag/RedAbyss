@@ -16,7 +16,7 @@ if( t == 9746 ) {
 {
     scrRedS17CreateExplosion( 35 );
 } else if( t == 10527 || t == 10593 || t == 10615 || t == 10680 || t == 10702 || t == 10767 || t == 10789 ) {
-    scrRedS17CreateExplosion( 30 );
+    scrRedS17CreateExplosion( 32 );
 }
 
 if( t == 10442 - 50 ) {

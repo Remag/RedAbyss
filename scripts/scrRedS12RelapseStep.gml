@@ -61,7 +61,7 @@ else if( t == 6619 ) {
     scrRedDestroy( oRedBaseSpawner );
     scrRedAttachCustomSpawner( oRedS12Source, 2, scrRedS12SpawnBurstBullet );
     with( oRedS12Source ) {
-        Spawner.DirIndex = 1;
+        Spawner.DirIndex = 2;
     }
 } else if( t == 6879 ) {
     scrRedDestroy( oRedS12Bullet );
