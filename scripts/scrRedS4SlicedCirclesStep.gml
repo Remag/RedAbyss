@@ -109,7 +109,7 @@ if( t == 2049 ) {
     with( oRedS4LineImpulse ) {
         Stage = 1;
     }
-} else if( t == 2068 ) {
+} else if( t == 2077 ) {
     scrRedDeactivateBullets( oRedS4SlidingSpike );
 } else if( t == 2074 ) {
     scrRedDestroy( oRedS4SectorController );
