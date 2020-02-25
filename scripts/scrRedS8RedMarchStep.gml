@@ -153,7 +153,7 @@ if( t == 3488 ) {
     }
 } else if( t == 4120 ) {
     scrRedChangeInstanceXScale( oRedLineImpulse, 30, 25, scrRedTweenLinear );
-    var spikeY = 608 - 132;
+    var spikeY = 608 - 142;
     var spikeOffsetX = 48;
     var leftSpawner = scrRedCreateSpawner( 400 - spikeOffsetX, spikeY, 1, oRedS8CeilingSpike, 4155 - 4120 );
     leftSpawner.direction = 180;

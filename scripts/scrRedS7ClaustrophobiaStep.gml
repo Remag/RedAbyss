@@ -19,7 +19,7 @@ if( t == 3147 && !instance_exists( oRedS6AbyssSource ) ) {
 if( t == 3158 ) {
     oRedS6TargetSource.Spawner.SpriteIndex = sprRedSpikeBullet;
     var spawner = scrRedCreateCustomSpawner( oRedS6TargetSource.x, oRedS6TargetSource.y, 2, scrRedS7SpawnSpikeSpiral, 14 );
-    spawner.TotalDirDelta = 360 / 7;
+    spawner.TotalDirDelta = 360 / 6;
 } else if( t == 3201 ) {
     oRedS6TargetSource.Spawner.SpriteIndex = sprRedSpikeBullet;
     var spawner = scrRedCreateCustomSpawner( oRedS6TargetSource.x, oRedS6TargetSource.y, 1.75, scrRedS7SpawnSpikeFan, 12 );
