@@ -27,7 +27,7 @@ if( t == 4189 ) {
     
     scrRedAttachCustomSpawner( oRedS9DualSource, 2, scrRedS9SpawnDualBullet );
     leftSrc.Spawner.DirIndex = 1;
-    rightSrc.Spawner.DirIndex = 3;
+    rightSrc.Spawner.DirIndex = 2;
 }
 
 if( t == 4220 ) {

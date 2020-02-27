@@ -99,15 +99,21 @@ if( t == 9050 ) {
     
 } else if( t == 9525 ) {
 } else if( t == 9596 ) {
-    scrRedS16CreatePathSpawner( pRedS16TL );
-    scrRedS16CreatePathSpawner( pRedS16TR );
-    scrRedS16CreatePathSpawner( pRedS16BL );
-    scrRedS16CreatePathSpawner( pRedS16BR );
+    scrRedS16CreatePathSpawner( pRedS16TL, 25 );
+    scrRedS16CreatePathSpawner( pRedS16TR, 25 );
+    scrRedS16CreatePathSpawner( pRedS16BL, 25 );
+    scrRedS16CreatePathSpawner( pRedS16BR, 25 );
 } else if( t == 9639 ) {
-    scrRedS16CreatePathSpawner( pRedS16T );
-    scrRedS16CreatePathSpawner( pRedS16R );
-    scrRedS16CreatePathSpawner( pRedS16B );
-    scrRedS16CreatePathSpawner( pRedS16L );
+    scrRedS16CreatePathSpawner( pRedS16T, 25 );
+    scrRedS16CreatePathSpawner( pRedS16R, 25 );
+    scrRedS16CreatePathSpawner( pRedS16B, 25 );
+    scrRedS16CreatePathSpawner( pRedS16L, 25 );
+    
+    scrRedS16CreatePathSpawner( pRedS16BLL, 25 );
+    scrRedS16CreatePathSpawner( pRedS16BBL, 25 );
+    scrRedS16CreatePathSpawner( pRedS16BBR, 25 );
+    scrRedS16CreatePathSpawner( pRedS16TTL, 25 );
+    scrRedS16CreatePathSpawner( pRedS16TTR, 25 );
 } else if( t == 9660 ) {
     scrRedDestroy( oRedBaseSpawner );
     scrRedDestroy( oRedS16PathSpawner );
@@ -118,7 +124,7 @@ if( t == 9050 ) {
         ScaleDelta *= 0.1;
         CurveDelta *= 0.1;
     }
-    scrRedDeactivateBullets( oRedS16PathSpike );
+    scrRedDeactivateBullets( oRedProjectile );
     with( objPlayer ) {
         visible = false;
         frozen = true;
@@ -130,7 +136,7 @@ if( t == 9050 ) {
     }
     with( oRedS16PathSpike ) {
         var distance = point_distance( x, y, 400, 303 );
-        var pushDistance = random_range( 0.01, 0.02 ) * power( distance, 1.5 );
+        var pushDistance = random_range( 0.01, 0.023 ) * power( distance, 1.5 );
         RotateDelta = pushDistance * random_range( -2.0, 2.0 );
         scrRedRotateInstanceImage( id, image_angle + RotateDelta, 100, scrRedTweenSineOut );
         var dir = point_direction( 400, 303, x, y );

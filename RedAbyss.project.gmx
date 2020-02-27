@@ -367,6 +367,11 @@
     <path>paths\pRedS16B</path>
     <path>paths\pRedS16BL</path>
     <path>paths\pRedS16L</path>
+    <path>paths\pRedS16BLL</path>
+    <path>paths\pRedS16BBL</path>
+    <path>paths\pRedS16BBR</path>
+    <path>paths\pRedS16TTL</path>
+    <path>paths\pRedS16TTR</path>
   </paths>
   <scripts name="scripts">
     <scripts name="player">

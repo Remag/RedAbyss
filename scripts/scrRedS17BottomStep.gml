@@ -7,6 +7,7 @@ if( t == 9746 ) {
         y = ystart;
         visible = true;
     }
+    scrRedActivateBullets( oRedProjectile );
     instance_create( 0, 0, oRedS17ColorController );
     scrRedCreateCustomSpawner( 0, 0, 8, scrRedS17SpawnTeardrops );
     scrRedS17CreateExplosion( 40 );

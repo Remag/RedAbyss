@@ -55,7 +55,7 @@ ChangeDuration = 22;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if( x &gt; 800 || x &lt; -140 || y &gt; 615 || y &lt; -140 ) {
+            <string>if( x &gt; 800 || x &lt; -125 || y &gt; 615 || y &lt; -100 ) {
     instance_destroy();
 }
 

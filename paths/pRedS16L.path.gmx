@@ -4,12 +4,12 @@
   <precision>4</precision>
   <backroom>14</backroom>
   <hsnap>16</hsnap>
-  <vsnap>16</vsnap>
+  <vsnap>8</vsnap>
   <points>
-    <point>0,464,100</point>
-    <point>64,416,100</point>
-    <point>96,272,100</point>
-    <point>208,320,100</point>
-    <point>336,288,100</point>
+    <point>0,432,100</point>
+    <point>32,416,100</point>
+    <point>64,320,100</point>
+    <point>240,288,100</point>
+    <point>336,280,100</point>
   </points>
 </path>

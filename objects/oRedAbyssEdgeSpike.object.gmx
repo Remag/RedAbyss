@@ -75,20 +75,22 @@ TwinSpike.image_xscale = -1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var wavePosDelta = scrRedFindSpikeWaveOffset( oRedAbyssAvoidanceController.Step, BaseOffset );
-var playerDeltaX;
-var playerDeltaY;
-if( instance_exists( objPlayer ) ) {
-    playerDeltaX = min( 100, abs( scrRedGetPlayerX() - x ) );
-    playerDeltaY = min( 100, abs( scrRedGetPlayerY() - y ) );
+            <string>var step = oRedAbyssAvoidanceController.Step;
+if( step &gt;= 9660 ) {
+    x -= 0.01 * ( x - ( BaseX - XMajor * 8 ) );
+    y -= 0.01 * ( y - ( BaseY - YMajor * 8 ) );
+} else if( !instance_exists( objPlayer ) ) {
+    x -= 0.08 * ( x - ( BaseX + XMajor * 8 ) );
+    y -= 0.08 * ( y - ( BaseY + YMajor * 8 ) );
 } else {
-    playerDeltaX = 100;
-    playerDeltaY = 100;
+    var wavePosDelta = scrRedFindSpikeWaveOffset( step, BaseOffset );
+    var playerDeltaX = min( 100, abs( scrRedGetPlayerX() - x ) );
+    var playerDeltaY = min( 100, abs( scrRedGetPlayerY() - y ) );
+    var spikeDeltaX = scrRedTweenSineInOut( 8, -8, playerDeltaX, 100 );
+    var spikeDeltaY = scrRedTweenSineInOut( 8, -8, playerDeltaY, 100 );
+    x = BaseX + XMajor * ( wavePosDelta + spikeDeltaY );
+    y = BaseY + YMajor * ( wavePosDelta + spikeDeltaX );
 }
-var spikeDeltaX = scrRedTweenSineInOut( 8, -8, playerDeltaX, 100 );
-var spikeDeltaY = scrRedTweenSineInOut( 8, -8, playerDeltaY, 100 );
-x = BaseX + XMajor * ( wavePosDelta + spikeDeltaY );
-y = BaseY + YMajor * ( wavePosDelta + spikeDeltaX );
 
 </string>
           </argument>
