@@ -1,7 +1,7 @@
 var moveLeft = argument0;
 var duration = argument1;
 var distance = argument2;
-distance = min( distance, 320 );
+distance = clamp( distance, 110, 320 );
 
 var targetWall;
 var destWallX;
@@ -12,7 +12,7 @@ var targetCLine;
 var targetFLine;
 if( moveLeft ) {
     targetWall = oRedRightBlock;
-    destWallX = 800 - distance - 48;
+    destWallX = 800 - distance - 64;
     spikeObj = oRedS7LeftWallSpike;
     spikeX = 800 - 32;
     destSpikeX = destWallX - 32;
@@ -20,7 +20,7 @@ if( moveLeft ) {
     targetFLine = scrRedGetRFLine();
 } else {
     targetWall = oRedLeftBlock;
-    destWallX = distance + 48;
+    destWallX = distance + 64;
     spikeObj = oRedS7RightWallSpike;
     spikeX = 0;
     destSpikeX = destWallX + 32;

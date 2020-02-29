@@ -85,11 +85,11 @@ if( t == 8357 ) {
 } else if( t == 8920 ) {
     scrRedDestroy( oRedAttachedScriptSpawner );    
     var src1 = instance_find( oRedS15Source, 0 );
-    var spawner = scrRedAttachCustomSpawner( src1, 1, scrRedS15SpawnFinalBarrage );
+    var spawner = scrRedAttachCustomSpawner( src1, 2, scrRedS15SpawnFinalBarrage );
     spawner.MinSpeed = 11;
     spawner.MaxSpeed = 11;
     spawner.TrailCount = 3;
-    spawner.DirIndex = 0;
+    spawner.DirIndex = 4;
 } else if( t == 9050 ) {
     scrRedDestroy( oRedAttachedSpawner );
     with( oRedS15DoomSpike ) {

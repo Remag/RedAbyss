@@ -25,9 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>speed = random_range( Spawner.SpeedMin, Spawner.SpeedMax );
-direction = random( 360 );
-scrRedSetScale( random_range( 0.5, 0.7 ) );
+            <string>scrRedSetScale( random_range( 0.5, 0.7 ) );
 image_alpha = 0;
 scrRedChangeInstanceAlpha( id, 1, 10 );
 

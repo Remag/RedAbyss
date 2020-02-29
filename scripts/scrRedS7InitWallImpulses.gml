@@ -2,8 +2,8 @@
 var targetX = argument0;
 
 var distance = min( targetX, 800 - targetX );
-distance = min( distance, 320 );
-var impulseScale = ( distance + 126 - 32 ) * 2 / sprite_get_width( sprRedLightArea );
+distance = clamp( distance, 110, 320 );
+var impulseScale = ( distance + 142 - 32 ) * 2 / sprite_get_width( sprRedLightArea );
 
 var lImpulse1 = instance_create( 0, 0, oRedLineImpulse );
 lImpulse1.Line = scrRedGetBCLine();

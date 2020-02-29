@@ -4,15 +4,19 @@ var t = argument0;
 if( t == 6269 ) {
     var leftSrc = instance_create( -20, 100, oRedS12Source );
     leftSrc.AngleDelta = -1;
-    var leftSpawner = scrRedAttachSpawner( leftSrc, 1.8, oRedS12Bullet );
+    var leftSpawner = scrRedAttachCustomSpawner( leftSrc, 1.8, scrRedS12SpawnBarrageBullet );
     leftSpawner.SpeedMin = 6;
     leftSpawner.SpeedMax = 10;
+    leftSpawner.DirIndex = 0;
+    leftSpawner.SectorCount = 2;
     
     var rightSrc = instance_create( 820, 100, oRedS12Source );
     rightSrc.AngleDelta = 1;
-    var rightSpawner = scrRedAttachSpawner( rightSrc, 1.8, oRedS12Bullet );
+    var rightSpawner = scrRedAttachCustomSpawner( rightSrc, 1.8, scrRedS12SpawnBarrageBullet );
     rightSpawner.SpeedMin = 6;
     rightSpawner.SpeedMax = 10;
+    rightSpawner.DirIndex = 1;
+    rightSpawner.SectorCount = 2;
     
     scrRedMoveInstance( oRedS12Source, 400, 100, 6619 - 6269 );
     instance_create( 0, 0, oRedS12BgDrawMechanism );
@@ -44,18 +48,21 @@ else if( t == 6619 ) {
     scrRedMoveInstance( oRedS12Source, 400, 300, 6879 - 6619 );
 } else if( t == 6664 ) {
     with( oRedBaseSpawner ) {
-        SpeedMin = 8;
+        SpeedMin = 10;
         SpeedMax = 12;
+        SectorCount = 3;
     }
 } else if( t == 6706 ) {
     with( oRedBaseSpawner ) {
-        SpeedMin = 9;
-        SpeedMax = 13;
+        SpeedMin = 12;
+        SpeedMax = 14;
+        SectorCount = 4;
     }
 } else if( t == 6793 ) {
     with( oRedBaseSpawner ) {
-        SpeedMin = 10;
+        SpeedMin = 13;
         SpeedMax = 14;
+        SectorCount = 4;
     }
 } else if( t == 6837 ) {
     scrRedDestroy( oRedBaseSpawner );

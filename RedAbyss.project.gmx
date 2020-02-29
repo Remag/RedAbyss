@@ -549,6 +549,7 @@
           <script>scripts\scrRedS12RelapseStep.gml</script>
           <script>scripts\scrRedS12CreateRedCircle.gml</script>
           <script>scripts\scrRedS12SpawnBurstBullet.gml</script>
+          <script>scripts\scrRedS12SpawnBarrageBullet.gml</script>
         </scripts>
         <scripts name="S13_CorruptedInfinity">
           <script>scripts\scrRedS13CorruptedInfinityStep.gml</script>

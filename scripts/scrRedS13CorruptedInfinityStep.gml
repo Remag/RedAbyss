@@ -61,7 +61,11 @@ if( t == 6966 ) {
     var controller = instance_create( 0, 0, oRedS13SphincterController );
     controller.Circle = circle;
 } else if( t == 7270 ) {
-    scrRedAttachCustomSpawner( oRedS13Source, 1.4, scrRedS13SpawnBulletCircle, 25 );
+    scrRedAttachCustomSpawner( oRedS13Source, 2, scrRedS13SpawnBulletCircle, 25 );
+    with( oRedS13Source ) {
+        Spawner.AngleDelta = 70;
+        Spawner.Speed = 5;
+    }
 } else if( t == 7338 ) { 
     S13WallStartIndex = choose( 1, 2 );
     scrRedS13CreateHSpikeWall( 0, -90, S13WallStartIndex );
@@ -79,7 +83,11 @@ if( t == 6966 ) {
 } else if( t == 7510 ) {
     
 } else if( t == 7525 ) {
-    scrRedAttachCustomSpawner( oRedS13Source, 2, scrRedS13SpawnBulletCircle, 25 );
+    scrRedAttachCustomSpawner( oRedS13Source, 3, scrRedS13SpawnBulletCircle, 25 );
+    with( oRedS13Source ) {
+        Spawner.AngleDelta = 40;
+        Spawner.Speed = 4;
+    }
 } else if( t == 7598 ) {
     
 } else if( t == 7639 ) {

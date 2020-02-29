@@ -33,7 +33,7 @@ var preparationStart = 7510;
 var preparationEnd = preparationStart + 20;
 var squeeze1Start = 7591;
 var squeeze1End = squeeze1Start + 25;
-var squeeze2Start = 7633;
+var squeeze2Start = 7634;
 var squeeze2End = squeeze2Start + 25;
 var circleEnd = squeeze2End + 35;
 

@@ -1,2 +1,2 @@
-scrRedSpawnSectorBullet( DirIndex, 6, oRedS12BurstBullet );
+scrRedSpawnSectorBullet( DirIndex, 4, oRedS12BurstBullet );
 DirIndex++;
