@@ -25,8 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>direction = random_range( 180 - 35, 180 + 35 );
-speed = random_range( 6, 11 );
+            <string>direction = random_range( 180 - 40, 180 + 40 );
+speed = random_range( 8, 10.5 );
 scrRedSetScale( random_range( 0.5, 0.7 ) );
 
 StartSpeed = speed;

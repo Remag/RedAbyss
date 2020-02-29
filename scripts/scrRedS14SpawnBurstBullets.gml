@@ -1,4 +1,4 @@
-var bullet1 = scrRedSpawnSectorBullet( DirIndex, 5, oRedS14BurstBullet );
+var bullet1 = scrRedSpawnSectorBullet( DirIndex, 2, oRedS14BurstBullet );
 var bulletDir = bullet1.direction;
 var bullet2 = instance_create( x, y, oRedS14BurstBullet );
 bullet2.direction = bulletDir + 45;

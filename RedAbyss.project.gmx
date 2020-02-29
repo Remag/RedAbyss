@@ -870,6 +870,7 @@
         <object>objects\oRedS15RandomWallSpike</object>
         <object>objects\oRedS15VerticalSpike</object>
         <object>objects\oRedS15BurstBullet</object>
+        <object>objects\oRedS15MiddleBurstBullet</object>
         <object>objects\oRedS15FinalBurstBullet</object>
         <object>objects\oRedS15SpiralBullet</object>
         <object>objects\oRedS15WallSpike</object>

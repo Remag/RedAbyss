@@ -83,7 +83,7 @@ if( t == 6966 ) {
 } else if( t == 7510 ) {
     
 } else if( t == 7525 ) {
-    scrRedAttachCustomSpawner( oRedS13Source, 3, scrRedS13SpawnBulletCircle, 25 );
+    scrRedAttachCustomSpawner( oRedS13Source, 3.5, scrRedS13SpawnBulletCircle, 25 );
     with( oRedS13Source ) {
         Spawner.AngleDelta = 40;
         Spawner.Speed = 4;

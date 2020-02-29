@@ -24,13 +24,13 @@ if( t == 7660 ) {
     src2.y = src2.YEnd;
     src2.YStep = src2.YDuration;
     src2.AngleDelta = -1;
-    scrRedAttachSpawner( oRedS14Source, 5.5, oRedS14Bullet );
+    scrRedAttachSpawner( oRedS14Source, 5.0, oRedS14Bullet );
     
 } else if( t == 7702 ) {
     with( oRedS14Source ) {
         Spawner.SpawnPeriod = 3;
     }
-    scrRedAttachCustomSpawner( oRedS14Source, 3, scrRedS14SpawnBurstBullets, 21 );
+    scrRedAttachCustomSpawner( oRedS14Source, 4, scrRedS14SpawnBurstBullets, 21 );
     with( oRedS14Source ) {
         Spawner.DirIndex = 0;
     }

@@ -9,6 +9,6 @@ scrRedAttachTrail( bullet2, round( TrailCount ) );
 
 DirIndex++;
 
-MinSpeed += 0.190;
-MaxSpeed += 0.190;
+MinSpeed += 0.188;
+MaxSpeed += 0.188;
 TrailCount += 0.01;

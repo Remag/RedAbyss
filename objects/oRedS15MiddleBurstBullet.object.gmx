@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>oRedS14Bullet</parentName>
+  <parentName>oRedBoundGradBullet</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,15 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>speed = 11;
-scrRedSetScale( random_range( 0.7, 1 ) );
-scrRedAttachTrail( id, 7 );
-
-Gravity = 0;
-StartSpeed = speed;
-TargetSpeed = speed;
-SpeedStep = 0;
-ChangeDuration = 22;
+            <string>scrRedSetScale( random_range( 0.5, 0.75 ) );
 </string>
           </argument>
         </arguments>
