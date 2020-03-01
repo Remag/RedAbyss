@@ -2,14 +2,11 @@
 var t = argument0;
 
 if( t == 4189 ) {
-    with( oRedFloorBlock ) {
+    with( oRedAbyssBlock ) {
         visible = false;
     }
-    with( oRedBrCornerBlock ) {
-        image_alpha = 0;
-    }
-    with( oRedRightBlock ) {
-        image_alpha = 0;
+    with( oRedLightLine ) {
+        visible = false;
     }
     instance_create( 0, 0, oRedS9SurfaceDrawInitiator );
     instance_create( 0, 0, oRedS9SurfaceDrawFinalizer );
@@ -80,15 +77,13 @@ if( t == 4220 ) {
     scrRedDestroy( oRedS9DualSource );
     scrRedDestroy( oRedS9SurfaceDrawInitiator );
     scrRedDestroy( oRedS9SurfaceDrawFinalizer );
-    with( oRedRightBlock ) {
-        image_alpha = 1;
-    }
-    with( oRedBrCornerBlock ) {
-        image_alpha = 1;
-    }
-    with( oRedFloorBlock ) {
+    
+    with( oRedAbyssBlock ) {
         visible = true;
         image_alpha = 1;
+    }
+    with( oRedLightLine ) {
+        visible = true;
     }
 }
 

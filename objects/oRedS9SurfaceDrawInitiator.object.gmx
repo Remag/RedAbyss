@@ -35,11 +35,26 @@ draw_sprite( sprRedAbyssBackground, 0, 0, 0 );
 with( oRedFloorBlock ) {
     draw_sprite( sprite_index, 0, x, y );
 }
+with( oRedLeftBlock ) {
+    draw_sprite( sprite_index, 0, x, y );
+}
+with( oRedBlCornerBlock ) {
+    draw_sprite( sprite_index, 0, x, y );
+}
 surface_reset_target();
 surface_set_target( oRedS9ScreenSeparator.RedSurface );
 var redOffset = separationX - overlapHWidth
+draw_set_color( c_black );
+draw_rectangle( 800 - redOffset, 0, 800, 608, false );
+draw_set_color( c_white );
 draw_sprite( sprRedAbyssRedBackground, 0, -redOffset, y );
 with( oRedFloorBlock ) {
+    draw_sprite( sprite_index, 1, x - redOffset, y );
+}
+with( oRedRightBlock ) {
+    draw_sprite( sprite_index, 1, x - redOffset, y );
+}
+with( oRedBrCornerBlock ) {
     draw_sprite( sprite_index, 1, x - redOffset, y );
 }
 draw_set_blend_mode_ext( bm_zero, bm_src_color );
