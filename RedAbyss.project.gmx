@@ -846,7 +846,7 @@
         <object>objects\oRedS13BurstBullet</object>
         <object>objects\oRedS13TargetSpike</object>
         <object>objects\oRedS13CircleController</object>
-        <object>objects\oS13WallSpike</object>
+        <object>objects\oRedS13WallSpike</object>
         <object>objects\oRedS13SphincterSpike</object>
         <object>objects\oRedS13SphincterController</object>
         <object>objects\oRedS13AntiTargetBullet</object>

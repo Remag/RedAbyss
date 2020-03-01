@@ -1,1 +1,5 @@
-return instance_find( oRedLightLine, 0 );
+with( oRedLightLine ) {
+    if( LineId == 3 ) {
+        return id;
+    }
+}
