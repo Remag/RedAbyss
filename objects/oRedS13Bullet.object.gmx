@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>speed = random_range( 4, 7 );
+            <string>speed = random_range( 5, 7 );
 scrRedSetScale( random_range( 0.5, 0.9 ) );
 </string>
           </argument>

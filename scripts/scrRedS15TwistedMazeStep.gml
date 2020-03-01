@@ -82,12 +82,13 @@ if( t == 8357 ) {
     var spawner = scrRedAttachCustomSpawner( src1, 5, scrRedS15SpawnMiddleBarrage, 25 );
     spawner.MinSpeed = 10;
     spawner.MaxSpeed = 12;
-} else if( t == 8920 ) {
+} else if( t == 8900 ) {
     scrRedDestroy( oRedAttachedScriptSpawner );    
+} else if( t == 8920 ) {
     var src1 = instance_find( oRedS15Source, 0 );
     var spawner = scrRedAttachCustomSpawner( src1, 2, scrRedS15SpawnFinalBarrage );
-    spawner.MinSpeed = 11;
-    spawner.MaxSpeed = 11;
+    spawner.MinSpeed = 10;
+    spawner.MaxSpeed = 10;
     spawner.TrailCount = 3;
     spawner.DirIndex = 4;
 } else if( t == 9050 ) {

@@ -1,4 +1,4 @@
-var bullet = scrRedSpawnSectorBullet( DirIndex, 16, oRedS15FinalBurstBullet );
+var bullet = scrRedSpawnSectorBullet( DirIndex, 20, oRedS15FinalBurstBullet );
 bullet.speed = random_range( MinSpeed, MaxSpeed );
 scrRedAttachTrail( bullet, round( TrailCount ) );
 
@@ -9,6 +9,6 @@ scrRedAttachTrail( bullet2, round( TrailCount ) );
 
 DirIndex++;
 
-MinSpeed += 0.188;
-MaxSpeed += 0.188;
+MinSpeed += 0.189;
+MaxSpeed += 0.189;
 TrailCount += 0.01;

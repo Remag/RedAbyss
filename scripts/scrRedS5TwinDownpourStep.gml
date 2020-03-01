@@ -92,7 +92,7 @@ if( t == 2616 ) {
         BurstSpawner.SpawnPeriod /= 2;
         BurstSpawner.SpawnCount = 5;
         BurstSpawner.SpeedMin = 18;
-        BurstSpawner.SpeedMax = 18.5;
+        BurstSpawner.SpeedMax = 18;
         BurstSpawner.TrailLength = 4;
     }
 }
