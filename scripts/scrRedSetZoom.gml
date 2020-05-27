@@ -1,6 +1,7 @@
 var zoom = argument0;
 
-zoom = ( zoom + 0.25 ) / 1.25;
+var zoomFactor = 0.1;
+zoom = ( zoom + zoomFactor ) / ( 1 + zoomFactor );
 
 view_wview[0] = 800 * zoom;
 view_hview[0] = 608 * zoom;

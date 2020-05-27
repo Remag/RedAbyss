@@ -15,5 +15,5 @@ with( targetId ) {
     command.Step = 0;
     command.Duration = duration;
     command.Smoother = smoother;
-    CurrentXScaleCommand = command;
+    CurrentYScaleCommand = command;
 }

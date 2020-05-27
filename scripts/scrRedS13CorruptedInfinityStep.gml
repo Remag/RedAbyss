@@ -56,6 +56,7 @@ if( t == 6966 ) {
     scrRedS13MoveInstanceCircle( oRedS13Source, 400, 303, 8 );
     var circle = scrRedCreateCircleAdditionalParams();
     circle.Radius = 286;
+    circle.TrembleFactor = 0;
     circle.CurrentDirection = 0;
     scrRedInitializeCircle( 400, 303, 0, 40, oRedS13SphincterSpike, circle );
     var controller = instance_create( 0, 0, oRedS13SphincterController );

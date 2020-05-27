@@ -25,8 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-Circle.CurrentDirection += 1;
+            <string>Circle.CurrentDirection += 1;
 
 var t = oRedAbyssAvoidanceController.Step;
 var preparationStart = 7510;
@@ -41,15 +40,19 @@ if( t &gt;= preparationStart &amp;&amp; t &lt; preparationEnd ) {
     Circle.Radius = scrRedTweenSineInOut( 286, -75, t - preparationStart, preparationEnd - preparationStart );
 } else if( t &gt;= squeeze1Start &amp;&amp; t &lt; squeeze1End ) {
     Circle.Radius = scrRedTweenSineInOut( 211, -125, t - squeeze1Start, squeeze1End - squeeze1Start );
+    Circle.TrembleFactor = 0;
     scrRedSetZoom( min( 1, Circle.Radius / 211 ) );
 } else if( t &gt;= squeeze1End &amp;&amp; t &lt; squeeze2Start ) {
     Circle.Radius = scrRedTweenSineInOut( 86, 150, t - squeeze1End, squeeze2Start - squeeze1End );
+    Circle.TrembleFactor = 0;
     scrRedSetZoom( min( 1, Circle.Radius / 211 ) );
 } else if( t &gt;= squeeze2Start &amp;&amp; t &lt; squeeze2End ) {
     Circle.Radius = scrRedTweenSineInOut( 236, -195, t - squeeze2Start, squeeze2End - squeeze2Start );
+    Circle.TrembleFactor = 0;
     scrRedSetZoom( min( 1, Circle.Radius / 211 ) );
 } else if( t &gt;= squeeze2End &amp;&amp; t &lt; circleEnd ) {
     Circle.Radius = scrRedTweenSineInOut( 46, 450, t - squeeze2End, circleEnd - squeeze2End );
+    Circle.TrembleFactor = 0.0;
     scrRedSetZoom( min( 1, Circle.Radius / 211 ) );
 } else if( t &gt;= circleEnd ) {
     scrRedSetZoom( 1 );

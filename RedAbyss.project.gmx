@@ -476,7 +476,6 @@
         <scripts name="S2_Bloom">
           <script>scripts\scrRedS2BloomStep.gml</script>
           <script>scripts\scrRedCreateBloomLine.gml</script>
-          <script>scripts\scrRedS2SpawnFloorLines.gml</script>
           <script>scripts\scrRedS2CreateCenterImpulse.gml</script>
         </scripts>
         <scripts name="S3_Jitter">
